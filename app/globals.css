@@ -1,8 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@100;200;300;400;500;600;700&display=swap');
+
 @import "tailwindcss";
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
+}
+.font-antonio {
+  font-family: 'Antonio', sans-serif;
 }
 
 @theme inline {
