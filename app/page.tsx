@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Navbar from "./components/navbar";
 import Header from "./components/header";
+import IntroText from "./components/IntroText";
 import SubHeader from "./components/subHeader";
 import ReversedHeader from "./components/ReversedHeader";
 import triheader from "./components/triHeader";
@@ -17,6 +18,7 @@ export default function Home() {
     <div>
       <Navbar />
       <Header />
+      <IntroText />
 
       {/* <Text /> */}
       {/* Flex container for side-by-side components */}

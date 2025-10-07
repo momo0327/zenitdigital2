@@ -1,5 +1,5 @@
 'use client'
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 
 const SelectedWork = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -15,7 +15,7 @@ const SelectedWork = () => {
     {
       title: "Polestar increased its users by 75%",
       subtitle: "anyb o",
-      image: "/api/placeholder/400/300", 
+      image: "/api/placeholder/400/300",
       bgColor: "bg-gray-900"
     },
     {
@@ -33,43 +33,47 @@ const SelectedWork = () => {
   ];
 
   const scrollToNext = () => {
-    if (scrollContainerRef.current) {
+    if (scrollContainerRef.current && currentIndex < workItems.length - 1) {
       const container = scrollContainerRef.current;
-      const scrollAmount = 320; // width of card + gap
-      container.scrollBy({
-        left: scrollAmount,
-        behavior: 'smooth'
-      });
-      if (currentIndex < workItems.length - 1) {
-        setCurrentIndex(currentIndex + 1);
-      }
+      const card = container.children[0] as HTMLElement;
+      if (!card) return;
+
+      const cardWidth = card.offsetWidth;
+      const gap = 24; // gap-6 = 24px
+      const scrollAmount = cardWidth + gap;
+
+      container.scrollLeft += scrollAmount;
+      setCurrentIndex(currentIndex + 1);
     }
   };
 
   const scrollToPrev = () => {
-    if (scrollContainerRef.current) {
+    if (scrollContainerRef.current && currentIndex > 0) {
       const container = scrollContainerRef.current;
-      const scrollAmount = 320; // width of card + gap
-      container.scrollBy({
-        left: -scrollAmount,
-        behavior: 'smooth'
-      });
-      if (currentIndex > 0) {
-        setCurrentIndex(currentIndex - 1);
-      }
+      const card = container.children[0] as HTMLElement;
+      if (!card) return;
+
+      const cardWidth = card.offsetWidth;
+      const gap = 24; // gap-6 = 24px
+      const scrollAmount = cardWidth + gap;
+
+      container.scrollLeft -= scrollAmount;
+      setCurrentIndex(currentIndex - 1);
     }
   };
 
   const scrollToItem = (index: number) => {
     if (scrollContainerRef.current) {
       const container = scrollContainerRef.current;
-      const scrollAmount = 320; // width of card + gap
-      const scrollPosition = index * scrollAmount;
-      
-      container.scrollTo({
-        left: scrollPosition,
-        behavior: 'smooth'
-      });
+      const card = container.children[0] as HTMLElement;
+      if (!card) return;
+
+      const cardWidth = card.offsetWidth;
+      const gap = 24; // gap-6 = 24px
+      const scrollAmount = cardWidth + gap;
+
+      container.scrollLeft = index * scrollAmount;
+      setCurrentIndex(index);
     }
   };
 
@@ -93,7 +97,7 @@ const SelectedWork = () => {
               <button
                 onClick={scrollToPrev}
                 disabled={currentIndex === 0}
-                className="w-12 h-12 rounded-full border-2 border-gray-300 flex items-center justify-center hover:border-gray-500 disabled:opacity-40 disabled:cursor-not-allowed transition-all"
+                className="w-12 h-12 rounded-full border-2 border-black text-black flex items-center justify-center hover:bg-black hover:text-white disabled:opacity-40 disabled:cursor-not-allowed transition-all"
                 aria-label="Previous work"
               >
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -103,7 +107,7 @@ const SelectedWork = () => {
               <button
                 onClick={scrollToNext}
                 disabled={currentIndex === workItems.length - 1}
-                className="w-12 h-12 rounded-full border-2 border-gray-300 flex items-center justify-center hover:border-gray-500 disabled:opacity-40 disabled:cursor-not-allowed transition-all"
+                className="w-12 h-12 rounded-full border-2 border-black text-black flex items-center justify-center hover:bg-black hover:text-white disabled:opacity-40 disabled:cursor-not-allowed transition-all"
                 aria-label="Next work"
               >
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -115,12 +119,13 @@ const SelectedWork = () => {
 
           {/* Right Side - Scrolling Images */}
           <div className="flex-1 relative">
-            <div 
+            <div
               ref={scrollContainerRef}
               className="flex gap-6 overflow-x-auto scrollbar-hide pb-4"
               style={{
                 scrollbarWidth: 'none',
-                msOverflowStyle: 'none'
+                msOverflowStyle: 'none',
+                scrollBehavior: 'smooth'
               }}
             >
               {workItems.map((item, index) => (
@@ -162,9 +167,12 @@ const SelectedWork = () => {
           </div>
 
           {/* Scrolling Images */}
-          <div 
+          <div
             ref={scrollContainerRef}
             className="flex gap-4 overflow-x-auto scrollbar-hide pb-4 mb-8"
+            style={{
+              scrollBehavior: 'smooth'
+            }}
           >
             {workItems.map((item, index) => (
               <div
@@ -194,7 +202,7 @@ const SelectedWork = () => {
             <button
               onClick={scrollToPrev}
               disabled={currentIndex === 0}
-              className="w-12 h-12 rounded-full border-2 border-gray-300 flex items-center justify-center hover:border-gray-500 disabled:opacity-40 disabled:cursor-not-allowed transition-all"
+              className="w-12 h-12 rounded-full border-2 border-black text-black flex items-center justify-center hover:bg-black hover:text-white disabled:opacity-40 disabled:cursor-not-allowed transition-all"
               aria-label="Previous work"
             >
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -204,7 +212,7 @@ const SelectedWork = () => {
             <button
               onClick={scrollToNext}
               disabled={currentIndex === workItems.length - 1}
-              className="w-12 h-12 rounded-full border-2 border-gray-300 flex items-center justify-center hover:border-gray-500 disabled:opacity-40 disabled:cursor-not-allowed transition-all"
+              className="w-12 h-12 rounded-full border-2 border-black text-black flex items-center justify-center hover:bg-black hover:text-white disabled:opacity-40 disabled:cursor-not-allowed transition-all"
               aria-label="Next work"
             >
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
