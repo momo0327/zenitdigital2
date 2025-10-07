@@ -25,14 +25,13 @@ const Navbar = () => {
       <nav className="bg-white px-6 py-3 fixed top-0 left-0 right-0 z-[60] h-[60px]">
         <div className="flex items-center justify-between max-w-7xl mx-auto h-full">
           {/* Logo */}
-          <div className="flex items-center gap-2 cursor-pointer">
+          <div className="flex items-center gap-0.5 cursor-pointer">
             <Image
               src="/logowhite.png"
               alt="ZENIT Logo"
-              width={24}
-              height={24}
+              width={40}
+              height={40}
               priority
-              className="h-6 w-6"
             />
             <span className="text-base font-bold text-black tracking-tight leading-none uppercase">
               ZENIT
