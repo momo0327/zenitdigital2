@@ -19,11 +19,11 @@ const Navbar = () => {
   return (
     <>
       {/* Navbar */}
-      <nav className="bg-white px-6 py-3 fixed top-0 left-0 right-0 z-60">
+      <nav className="bg-white px-6 py-5 fixed top-0 left-0 right-0 z-60">
         <div className="flex items-center justify-between max-w-7xl mx-auto">
           {/* Logo */}
           <div className="text-xl font-bold text-black cursor-pointer">
-            Logo
+            ZENIT
           </div>
           
           {/* Center Navigation - Hidden on mobile */}

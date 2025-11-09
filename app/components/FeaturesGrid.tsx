@@ -34,18 +34,19 @@ const FeaturesGrid = () => {
   ];
 
   return (
-    <div className="px-5 md:px-12 lg:px-16 bg-white py-16 md:py-20 lg:py-24">
+    <div className="px-5 md:px-12 lg:px-16 bg-white py-1 md:py-20 lg:py-24">
       <div className="w-full max-w-7xl mx-auto">
         {/* Desktop Layout */}
         <div className="hidden md:grid md:grid-cols-3 gap-6">
           {/* Strategic Approach Text - Left Column */}
           <div className="flex flex-col justify-start">
             <h2 className="text-5xl lg:text-6xl xl:text-7xl font-antonio font-bold text-black leading-tight">
-              Strategic<br />
-              Approach
+              STRATEGIC<br />
+              APPROACH
             </h2>
             <p className="text-gray-600 mt-4 text-lg">
-              The way we work has changed, but learning software hasnt. until now.
+              The way we work has changed, 
+              software hasnt. until now.
             </p>
           </div>
 
@@ -118,8 +119,8 @@ const FeaturesGrid = () => {
           {/* Strategic Approach Text - Above on mobile */}
           <div className="mb-8">
             <h2 className="text-4xl font-antonio font-bold text-black leading-tight mb-4">
-              Strategic<br />
-              Approach
+              STRATEGIC 
+              APPROACH
             </h2>
             <p className="text-gray-600 text-base">
               The way we work has changed, but learning software hasnt. until now.

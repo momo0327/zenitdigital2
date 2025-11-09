@@ -81,8 +81,8 @@ const SelectedWork = () => {
           {/* Left Side - Title and Controls */}
           <div className="flex-shrink-0 mr-8  lg:mr-12 relative z-10 bg-white">
             <h2 className="text-5xl lg:text-6xl xl:text-7xl font-antonio font-bold text-black leading-tight mb-4">
-              Selected<br />
-              Work
+              SELECTED<br />
+              WORK
             </h2>
             <p className="text-gray-600 text-lg mb-8 max-w-xs">
               The way we work has changed, but learning software hasnt. until now.
@@ -126,7 +126,7 @@ const SelectedWork = () => {
               {workItems.map((item, index) => (
                 <div
                   key={index}
-                  className={`${item.bgColor} rounded-lg flex-shrink-0 w-80 h-96 relative overflow-hidden`}
+                  className={`${item.bgColor} rounded-lg flex-shrink-0 w-80 h-[500px] relative overflow-hidden`}
                 >
                   <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/20"></div>
                   <div className="absolute top-6 left-6 text-white">
@@ -150,11 +150,11 @@ const SelectedWork = () => {
         </div>
 
         {/* Mobile Layout */}
-        <div className="md:hidden">
+        <div className="md:hidden py-6">
           {/* Title at top */}
           <div className="mb-8 pl-5 text-left">
             <h2 className="text-4xl font-antonio font-bold text-black leading-tight mb-4">
-              Selected Work
+              SELECTED WORK
             </h2>
             <p className="text-gray-600 text-base">
               The way we work has changed, but learning software hasnt. until now.
@@ -164,12 +164,12 @@ const SelectedWork = () => {
           {/* Scrolling Images */}
           <div 
             ref={scrollContainerRef}
-            className="flex gap-4 overflow-x-auto scrollbar-hide pb-4 mb-8"
+            className="flex gap-4 overflow-x-auto ml-6 scrollbar-hide pb-4 mb-8"
           >
             {workItems.map((item, index) => (
               <div
                 key={index}
-                className={`${item.bgColor} rounded-lg flex-shrink-0 w-72 h-80 relative overflow-hidden`}
+                className={`${item.bgColor} rounded-lg flex-shrink-0 w-72 h-[420px] relative overflow-hidden`}
               >
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/20"></div>
                 <div className="absolute top-4 left-4 text-white">
