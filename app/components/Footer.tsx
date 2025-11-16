@@ -1,5 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
+import { COMPANY } from '../constants/content';
+import { FOOTER_NAV, SOCIAL_LINKS } from '../constants/navigation';
 
 const Footer = () => {
   return (
@@ -13,7 +15,7 @@ const Footer = () => {
           {/* Logo and Clutch review */}
           <div className="space-y-8">
             <div>
-              <h3 className="text-2xl font-light tracking-wider">UNIKO™</h3>
+              <h3 className="text-2xl font-light tracking-wider uppercase">{COMPANY.name}</h3>
             </div>
             
             {/* Clutch review */}
@@ -61,15 +63,17 @@ const Footer = () => {
           <div>
             <h4 className="text-sm uppercase tracking-wider text-gray-400 mb-6">SOCIALS</h4>
             <div className="space-y-4">
-              <Link href="#" className="block text-white hover:text-gray-300 transition-colors">
-                LinkedIn
-              </Link>
-              <Link href="#" className="block text-white hover:text-gray-300 transition-colors">
-                Instagram
-              </Link>
-              <Link href="#" className="block text-white hover:text-gray-300 transition-colors">
-                Twitter
-              </Link>
+              {SOCIAL_LINKS.map((social) => (
+                <Link
+                  key={social.label}
+                  href={social.href}
+                  className="block text-white hover:text-gray-300 transition-colors"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {social.label}
+                </Link>
+              ))}
             </div>
           </div>
 
@@ -77,11 +81,11 @@ const Footer = () => {
           <div>
             <h4 className="text-sm uppercase tracking-wider text-gray-400 mb-6">BUSINESS ENQUIRIES</h4>
             <div className="space-y-4">
-              <Link href="mailto:hello@unikostudio.co" className="block text-white hover:text-gray-300 transition-colors">
-                hello@unikostudio.co
+              <Link href={`mailto:${COMPANY.email}`} className="block text-white hover:text-gray-300 transition-colors">
+                {COMPANY.email}
               </Link>
-              <Link href="tel:+17864143360" className="block text-white hover:text-gray-300 transition-colors">
-                +1 (786) 414-3360
+              <Link href={`tel:${COMPANY.phone.replace(/\s/g, '')}`} className="block text-white hover:text-gray-300 transition-colors">
+                {COMPANY.phone}
               </Link>
             </div>
 
@@ -117,7 +121,7 @@ const Footer = () => {
         <div className="border-t border-gray-800 pt-8">
           <div className="flex flex-col xl:flex-row justify-between items-start xl:items-center space-y-4 xl:space-y-0">
             <div className="flex flex-wrap items-center space-x-6 text-sm text-gray-500">
-              <span>© 2025 UNIKO™</span>
+              <span>© {new Date().getFullYear()} {COMPANY.name}</span>
               <span className="hidden xl:inline">|</span>
               <span>Miami</span>
               <span className="hidden xl:inline">|</span>

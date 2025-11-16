@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 const Header = () => {
   return (
@@ -30,10 +31,13 @@ const Header = () => {
            
           {/* Right Image - Made Bigger */}
           <div className="flex justify-center">
-            <img 
-              src="/Group 6-3.png" 
-              alt="Phone Header"
-              className="w-80 md:w-96 lg:w-[500px] xl:w-[550px] 2xl:w-[600px] h-auto object-contain "
+            <Image
+              src="/Group 6-3.png"
+              alt="Mobile app development - Native iOS and Android applications with modern features"
+              width={600}
+              height={700}
+              className="w-80 md:w-96 lg:w-[500px] xl:w-[550px] 2xl:w-[600px] h-auto object-contain"
+              priority
             />
           </div>
          

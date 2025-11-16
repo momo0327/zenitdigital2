@@ -1,5 +1,5 @@
 'use client'
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useCallback } from 'react';
 
 const SelectedWork = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -32,7 +32,7 @@ const SelectedWork = () => {
     }
   ];
 
-  const scrollToNext = () => {
+  const scrollToNext = useCallback(() => {
     if (scrollContainerRef.current) {
       const container = scrollContainerRef.current;
       const scrollAmount = 320; // width of card + gap
@@ -44,9 +44,9 @@ const SelectedWork = () => {
         setCurrentIndex(currentIndex + 1);
       }
     }
-  };
+  }, [currentIndex, workItems.length]);
 
-  const scrollToPrev = () => {
+  const scrollToPrev = useCallback(() => {
     if (scrollContainerRef.current) {
       const container = scrollContainerRef.current;
       const scrollAmount = 320; // width of card + gap
@@ -58,20 +58,20 @@ const SelectedWork = () => {
         setCurrentIndex(currentIndex - 1);
       }
     }
-  };
+  }, [currentIndex]);
 
-  const scrollToItem = (index: number) => {
+  const scrollToItem = useCallback((index: number) => {
     if (scrollContainerRef.current) {
       const container = scrollContainerRef.current;
       const scrollAmount = 320; // width of card + gap
       const scrollPosition = index * scrollAmount;
-      
+
       container.scrollTo({
         left: scrollPosition,
         behavior: 'smooth'
       });
     }
-  };
+  }, []);
 
   return (
     <div className="bg-white py-16 md:py-20 lg:py-36 relative overflow-hidden">

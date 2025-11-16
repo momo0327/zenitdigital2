@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Plus, Minus } from 'lucide-react';
 
 const FAQ = () => {
-  const [openIndex, setOpenIndex] = useState(null);
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const faqs = [
     {
@@ -32,7 +32,7 @@ const FAQ = () => {
     }
   ];
 
-  const toggleFAQ = (index: number | React.SetStateAction<null>) => {
+  const toggleFAQ = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 

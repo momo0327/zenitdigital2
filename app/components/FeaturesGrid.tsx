@@ -1,5 +1,5 @@
 'use client'
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useCallback } from 'react';
 
 const FeaturesGrid = () => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
@@ -38,35 +38,35 @@ const FeaturesGrid = () => {
     }
   ];
 
-  const handleMouseDown = (e: React.MouseEvent) => {
+  const handleMouseDown = useCallback((e: React.MouseEvent) => {
     if (!scrollContainerRef.current) return;
     setIsDragging(true);
     setStartX(e.pageX - scrollContainerRef.current.offsetLeft);
     setScrollLeft(scrollContainerRef.current.scrollLeft);
     scrollContainerRef.current.style.cursor = 'grabbing';
-  };
+  }, []);
 
-  const handleMouseLeave = () => {
+  const handleMouseLeave = useCallback(() => {
     setIsDragging(false);
     if (scrollContainerRef.current) {
       scrollContainerRef.current.style.cursor = 'grab';
     }
-  };
+  }, []);
 
-  const handleMouseUp = () => {
+  const handleMouseUp = useCallback(() => {
     setIsDragging(false);
     if (scrollContainerRef.current) {
       scrollContainerRef.current.style.cursor = 'grab';
     }
-  };
+  }, []);
 
-  const handleMouseMove = (e: React.MouseEvent) => {
+  const handleMouseMove = useCallback((e: React.MouseEvent) => {
     if (!isDragging || !scrollContainerRef.current) return;
     e.preventDefault();
     const x = e.pageX - scrollContainerRef.current.offsetLeft;
     const walk = (x - startX) * 2;
     scrollContainerRef.current.scrollLeft = scrollLeft - walk;
-  };
+  }, [isDragging, startX, scrollLeft]);
 
   return (
     <div className="bg-white py-1 md:py-20 lg:py-24">

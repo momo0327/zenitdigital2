@@ -1,4 +1,6 @@
 import Image from "next/image";
+import type { Metadata } from "next";
+import dynamic from 'next/dynamic';
 import Navbar from "./components/navbar";
 import Header from "./components/header";
 import SubHeader from "./components/subHeader";
@@ -12,9 +14,21 @@ import SelectedWork from "./components/selectedWorks";
 import Cta from "./components/Cta";
 import Footer from "./components/Footer";
 import HelpGrid from "./components/HelpGrid";
-import ScrollStack from "./components/ScrollStack";
-import Steps from "./components/Steps";
-import FAQ from "./components/Faq";
+import { HOME_METADATA } from "./constants/seo";
+
+// Dynamic imports for below-the-fold heavy components (code splitting)
+const ScrollStack = dynamic(() => import('./components/ScrollStack'), {
+  loading: () => <div className="min-h-screen" />,
+});
+const Steps = dynamic(() => import('./components/Steps'), {
+  loading: () => <div className="min-h-96" />,
+});
+const FAQ = dynamic(() => import('./components/Faq'), {
+  loading: () => <div className="min-h-96" />,
+});
+
+export const metadata: Metadata = HOME_METADATA;
+
 export default function Home() {
   return (
     <div>

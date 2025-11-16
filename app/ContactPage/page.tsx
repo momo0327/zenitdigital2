@@ -23,8 +23,8 @@ function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
     // Handle form submission here
+    // TODO: Implement form submission logic (e.g., send to API)
   };
 
   return (
@@ -41,7 +41,7 @@ function Contact() {
               IT HAPPEN
             </h1>
             <p className="text-[#0A0D24] text-lg md:text-xl lg:text-2xl max-w-3xl mx-auto">
-              The way we work has changed, but <br /> learning software hasn't. until now.
+              The way we work has changed, but <br /> learning software hasn&apos;t. until now.
             </p>
           </div>
 
