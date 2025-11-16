@@ -12,13 +12,16 @@ import SelectedWork from "./components/selectedWorks";
 import Cta from "./components/Cta";
 import Footer from "./components/Footer";
 import HelpGrid from "./components/HelpGrid";
+import ScrollStack from "./components/ScrollStack";
+import Steps from "./components/Steps";
+import FAQ from "./components/Faq";
 export default function Home() {
   return (
     <div>
       <Navbar />
       <Header />
 
-      {/* <Text /> */}
+      <Text />
       {/* Flex container for side-by-side components */}
       <div className="flex flex-col   lg:flex-row  px-6 bg-white py-12">
         <SubHeader />
@@ -28,8 +31,13 @@ export default function Home() {
       <SelectedWork/>
       <GreenCTA/>
       <FeaturesGrid/>
-      <HelpGrid/>
-      {/* <Cta/> */}
+      {/* <HelpGrid/> */}
+      <ScrollStack/>
+      <Steps/>
+      <FAQ/>
+      <Cta/>
+
+      <Footer/>
       
       <div>
       </div>

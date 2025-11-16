@@ -15,7 +15,7 @@ const Header = () => {
             </p>
             <div className="flex gap-4">
             <Link href="/WebDev">
-              <button className="bg-[#FF5147] text-white px-6 py-3 text-sm rounded-full font-semibold hover:bg-orange-600 transition-colors duration-200">
+              <button className="bg-[#FF5147] text-[#240000] px-6 py-3 text-sm rounded-full font-semibold hover:bg-orange-600 transition-colors duration-200">
                 Demo
               </button>
               </Link>

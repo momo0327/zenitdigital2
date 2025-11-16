@@ -6,11 +6,7 @@ const Footer = () => {
     <footer className="bg-black text-white py-16 px-8">
       <div className="max-w-7xl mx-auto">
         {/* Main heading */}
-        <div className="mb-16">
-          <h2 className="text-4xl md:text-6xl font-light leading-tight">
-            <span className="text-gray-400">atters to you. Let's wo</span>
-          </h2>
-        </div>
+     
 
         {/* Footer content grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8 xl:gap-12 mb-16">
@@ -52,12 +48,6 @@ const Footer = () => {
               <Link href="/services" className="block text-white hover:text-gray-300 transition-colors">
                 Services
               </Link>
-              <Link href="/studio" className="block text-white hover:text-gray-300 transition-colors">
-                Studio
-              </Link>
-              <Link href="/insights" className="block text-white hover:text-gray-300 transition-colors">
-                Insights
-              </Link>
               <Link href="/faqs" className="block text-white hover:text-gray-300 transition-colors">
                 FAQs
               </Link>
@@ -97,7 +87,7 @@ const Footer = () => {
 
             {/* Book a Call section */}
             <div className="mt-8 space-y-3">
-              <div className="text-lime-400 font-medium">Book a Call</div>
+              <div className="text-white font-medium">Book a Call</div>
               <p className="text-sm text-gray-400 leading-relaxed">
                 A 30-min discovery call to see how we can help.
               </p>
@@ -141,8 +131,6 @@ const Footer = () => {
                 <Link href="/sitemap" className="hover:text-white transition-colors">Sitemap</Link>
               </div>
               
-              {/* Green dot indicator */}
-              <div className="w-3 h-3 bg-lime-400 rounded-full"></div>
             </div>
           </div>
         </div>
