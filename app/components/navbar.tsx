@@ -1,22 +1,19 @@
-"use client";
-import React, { useState } from "react";
-import Image from "next/image";
-import StaggeredMenu from "./StaggeredMenu";
+'use client'
+import React from 'react';
+import StaggeredMenu from './StaggeredMenu';
 
 const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
   const menuItems = [
-    { label: "Platform", ariaLabel: "Go to platform page", link: "/platform" },
-    { label: "About", ariaLabel: "Learn about us", link: "/about" },
-    { label: "Explore", ariaLabel: "Explore our features", link: "/explore" },
-    { label: "Demo", ariaLabel: "Try our demo", link: "/demo" },
+    { label: 'Platform', ariaLabel: 'Go to platform page', link: '/platform' },
+    { label: 'About', ariaLabel: 'Learn about us', link: '/about' },
+    { label: 'Explore', ariaLabel: 'Explore our features', link: '/explore' },
+    { label: 'Demo', ariaLabel: 'Try our demo', link: '/demo' }
   ];
 
   const socialItems = [
-    { label: "Twitter", link: "https://twitter.com" },
-    { label: "GitHub", link: "https://github.com" },
-    { label: "LinkedIn", link: "https://linkedin.com" },
+    { label: 'Twitter', link: 'https://twitter.com' },
+    { label: 'GitHub', link: 'https://github.com' },
+    { label: 'LinkedIn', link: 'https://linkedin.com' }
   ];
 
   return (
@@ -35,24 +32,16 @@ const Navbar = () => {
               Platform
             </button>
             <button className="text-gray-700 hover:text-black px-2 md:px-4 py-2 rounded-md hover:bg-gray-100 transition-all duration-200 text-sm md:text-base">
-              Pricing
+              About
             </button>
             <button className="text-gray-700 hover:text-black px-2 md:px-4 py-2 rounded-md hover:bg-gray-100 transition-all duration-200 text-sm md:text-base">
-              Resources
-            </button>
-            <button className="text-gray-700 hover:text-black px-2 md:px-4 py-2 rounded-md hover:bg-gray-100 transition-all duration-200 text-sm md:text-base">
-              About us
+              Explore
             </button>
           </div>
 
-          {/* Right side - Lets Talk button and StaggeredMenu */}
-          <div className="flex items-center gap-3 relative">
-            {!isMenuOpen && (
-              <button className="hidden sm:block px-6 py-2 border border-gray-300 rounded-full text-sm font-medium text-gray-700 hover:bg-gray-50 transition-all duration-200 whitespace-nowrap relative z-[70]">
-                Lets Talk
-              </button>
-            )}
-            <div className="w-auto h-auto relative">
+          {/* Right side - StaggeredMenu */}
+          <div className="flex items-center">
+            <div className="w-auto h-auto">
               <StaggeredMenu
                 position="right"
                 items={menuItems}
@@ -62,11 +51,11 @@ const Navbar = () => {
                 menuButtonColor="#000"
                 openMenuButtonColor="#000"
                 changeMenuColorOnOpen={false}
-                colors={["#B19EEF", "#5227FF"]}
-                logoUrl="/Zenit.png"
+                colors={['#B19EEF', '#5227FF']}
+                logoUrl="/logo.svg"
                 accentColor="blue"
-                onMenuOpen={() => setIsMenuOpen(true)}
-                onMenuClose={() => setIsMenuOpen(false)}
+                onMenuOpen={() => console.log('Menu opened')}
+                onMenuClose={() => console.log('Menu closed')}
               />
             </div>
           </div>
@@ -76,52 +65,27 @@ const Navbar = () => {
       {/* Styles to make StaggeredMenu work properly in navbar */}
       <style jsx global>{`
         .staggered-menu-wrapper {
-          position: static !important;
-          overflow: hidden !important;
-          width: auto !important;
-          height: auto !important;
-        }
-
-        .staggered-menu-wrapper[data-open="true"] {
           position: fixed !important;
           top: 0 !important;
           left: 0 !important;
-          right: 0 !important;
           width: 100vw !important;
           height: 100vh !important;
-          z-index: 50 !important;
+          z-index: 9999 !important;
+          pointer-events: none;
+        }
+
+        .staggered-menu-wrapper[data-open="true"] {
           pointer-events: all;
-          overflow: visible !important;
         }
 
         .staggered-menu-header {
-          position: static !important;
-          pointer-events: all;
-        }
-
-        .staggered-menu-wrapper[data-open="true"] .staggered-menu-header {
-          position: fixed !important;
-          top: -5px !important;
+          position: absolute !important;
+          top: 20px !important;
           right: 24px !important;
           left: auto !important;
           width: auto !important;
-          z-index: 80 !important;
-        }
-
-        .staggered-menu-wrapper:not([data-open="true"]) nav {
-          display: none !important;
-        }
-
-        .staggered-menu-wrapper:not([data-open="true"]) [role="complementary"] {
-          display: none !important;
-        }
-
-        .staggered-menu-wrapper:not([data-open="true"]) .staggered-menu-panel {
-          display: none !important;
-        }
-
-        .staggered-menu-wrapper:not([data-open="true"]) .sm-prelayers {
-          display: none !important;
+          padding: 0 !important;
+          pointer-events: all;
         }
 
         .sm-logo {
@@ -165,7 +129,7 @@ const Navbar = () => {
         }
 
 
-        .sm-panel-item {
+    .sm-panel-item {
           font-family: 'Antonio', sans-serif !important;
         }
 
