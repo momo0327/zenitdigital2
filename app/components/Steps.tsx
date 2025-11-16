@@ -1,8 +1,13 @@
 'use client'
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import { MessageCircle, Target, Code, Rocket } from 'lucide-react';
 
 const Steps = () => {
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
+
   const steps = [
     {
       number: "01",
@@ -38,6 +43,36 @@ const Steps = () => {
     }
   ];
 
+  const handleMouseDown = (e: React.MouseEvent) => {
+    if (!scrollContainerRef.current) return;
+    setIsDragging(true);
+    setStartX(e.pageX - scrollContainerRef.current.offsetLeft);
+    setScrollLeft(scrollContainerRef.current.scrollLeft);
+    scrollContainerRef.current.style.cursor = 'grabbing';
+  };
+
+  const handleMouseLeave = () => {
+    setIsDragging(false);
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.style.cursor = 'grab';
+    }
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.style.cursor = 'grab';
+    }
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging || !scrollContainerRef.current) return;
+    e.preventDefault();
+    const x = e.pageX - scrollContainerRef.current.offsetLeft;
+    const walk = (x - startX) * 2; // Multiply by 2 for faster scrolling
+    scrollContainerRef.current.scrollLeft = scrollLeft - walk;
+  };
+
   return (
     <div className="bg-black py-16 md:py-20 lg:py-42 mb-20">
       <div className="w-full">
@@ -53,7 +88,14 @@ const Steps = () => {
         </div>
 
         {/* Horizontal Scroll Steps */}
-        <div className="overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+        <div 
+          ref={scrollContainerRef}
+          className="overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] cursor-grab active:cursor-grabbing select-none"
+          onMouseDown={handleMouseDown}
+          onMouseLeave={handleMouseLeave}
+          onMouseUp={handleMouseUp}
+          onMouseMove={handleMouseMove}
+        >
           <div className="flex gap-4 md:gap-6 px-5 md:px-12 lg:px-16 pb-4">
             {steps.map((step, index) => {
               const IconComponent = step.icon;

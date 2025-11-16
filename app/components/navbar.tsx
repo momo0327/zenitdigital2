@@ -129,7 +129,9 @@ const Navbar = () => {
         }
          
 
-
+    .sm-panel-item {
+          font-family: 'Antonio', sans-serif !important;
+        }
         
       `}</style>
     </>
