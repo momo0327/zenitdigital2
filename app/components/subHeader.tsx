@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 const Header = () => {
   return (
     <div className="px-3 bg-white py-12">
@@ -27,10 +28,12 @@ const Header = () => {
 
           {/* Right side - Phone Image */}
           <div className="flex-1 flex justify-center">
-            <img 
-              src="/h-2 2.png" 
-              alt="Phone Header"
-              className="w-80 md:w-92 lg:w-96 h-auto object-contain transform "
+            <Image
+              src="/h-2 2.png"
+              alt="Web development services - Responsive website design and modern web applications"
+              width={384}
+              height={400}
+              className="w-80 md:w-92 lg:w-96 h-auto object-contain transform"
             />
           </div>
         </div>

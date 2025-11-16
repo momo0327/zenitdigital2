@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 const HelpGrid = () => {
   return (
@@ -10,14 +11,16 @@ const HelpGrid = () => {
           Prototype & MVP
         </h1>
         <p className="text-gray-600 text-lg mb-8 max-w-md mx-auto">
-          The way we work has changed, but learning software hasn't, until now.
+          The way we work has changed, but learning software hasn&apos;t, until now.
         </p>
         
         {/* Image Container */}
         <div className="relative max-w-2xl mx-auto h-100 bg-gray-100 rounded-xl overflow-hidden">
-          <img 
-            src="/handEffect.png" 
-            alt="Prototype & MVP"
+          <Image
+            src="/handEffect.png"
+            alt="Prototype and MVP development - Rapid iteration and user testing for product validation"
+            width={800}
+            height={400}
             className="w-full h-full object-cover"
           />
         </div>
@@ -29,14 +32,16 @@ const HelpGrid = () => {
         <div className="bg-[#0A0D24] rounded-2xl p-8  text-center">
           <h2 className="text-3xl font-antonio font-bold text-[#9AC2FF]  mb-4">Digital Partner</h2>
           <p className="text-[#9AC2FF] mb-8 mx-auto max-w-sm">
-            The way we work has changed, but learning software hasn't, until now.
+            The way we work has changed, but learning software hasn&apos;t, until now.
           </p>
           
           {/* Image Container */}
           <div className="h-62 rounded-xl overflow-hidden">
-            <img 
-              src="/h-10 2.png" 
-              alt="Digital Partner Dashboard"
+            <Image
+              src="/h-10 2.png"
+              alt="Digital partner services - Comprehensive technology partnership and consulting solutions"
+              width={400}
+              height={300}
               className="w-full h-full object-cover"
             />
           </div>
@@ -46,14 +51,16 @@ const HelpGrid = () => {
         <div className="bg-[#9AC2FF] rounded-xl p-8  text-center">
           <h2 className="text-3xl font-bold font-antonio text-gray-900 mb-4">Scale & Maintain</h2>
           <p className="text-gray-600 mb-8 mx-auto max-w-sm">
-            The way we work has changed, but learning software hasn't, until now.
+            The way we work has changed, but learning software hasn&apos;t, until now.
           </p>
           
           {/* Image Container */}
           <div className="h-64 w-auto rounded-xl overflow-hidden">
-            <img 
-              src="/laptops.png" 
-              alt="Digital Partner Application"
+            <Image
+              src="/laptops.png"
+              alt="Scale and maintain services - Enterprise-grade infrastructure and continuous support"
+              width={400}
+              height={256}
               className="w-full h-full object-cover"
             />
           </div>

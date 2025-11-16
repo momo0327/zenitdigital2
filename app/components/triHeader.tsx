@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 const TriHeader = () => {
   return (
     <div className="px-6 md:px-12 lg:px-8 bg-white">
@@ -27,12 +28,14 @@ const TriHeader = () => {
           </div>
 
           {/* Right side - Phone Image */}
-          <div className="flex-1 flex justify-center overflow-hidden relative lg:justify-end  ">
-  <img 
-    src="/sana-learn-1 2.png" 
-    alt="Learning Features"
-    className="min-w-[400px] md:min-w-[1600px] lg:min-w-[600px]  h-auto object-cover  z-50"
-  />
+          <div className="flex-1 flex justify-center overflow-hidden relative lg:justify-end">
+            <Image
+              src="/sana-learn-1 2.png"
+              alt="Fullstack development - Complete end-to-end solutions from frontend to backend infrastructure"
+              width={600}
+              height={700}
+              className="min-w-[400px] md:min-w-[1600px] lg:min-w-[600px] h-auto object-cover z-50"
+            />
 </div>
 
         </div>

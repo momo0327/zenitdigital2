@@ -1,5 +1,6 @@
 'use client'
 import React, { useEffect, useState } from 'react';
+import Image from 'next/image';
 
 const Header = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -50,15 +51,18 @@ const Header = () => {
                      
         {/* Image positioned below with fade up animation */}
         <div className="flex justify-center">
-          <img 
-            src="/phoneHeader.png" 
-            alt="Phone Header"
+          <Image
+            src="/phoneHeader.png"
+            alt="Zenit Digital mobile app development showcase with modern interface design"
+            width={700}
+            height={800}
             className="w-88 md:w-80 lg:w-96 xl:w-[450px] 2xl:w-[700px] h-auto object-contain transition-all duration-1000 ease-out"
             style={{
               opacity: isVisible ? 1 : 0,
               transform: isVisible ? 'translateY(0)' : 'translateY(50px)',
               transitionDelay: '400ms'
             }}
+            priority
           />
         </div>
       </div>

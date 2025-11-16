@@ -1,5 +1,6 @@
 'use client'
 import React, { useState, useEffect, useRef } from 'react';
+import Image from 'next/image';
 
 export default function ScrollStack() {
   const [scrollProgress, setScrollProgress] = useState<number[]>([]);
@@ -33,12 +34,12 @@ export default function ScrollStack() {
       textColor: 'text-black',
       imagePosition: 'left'
     },
-    { 
+    {
       type: 'image',
       color: 'bg-black',
       title: 'Launch & Scale',
       subtitle: 'Take your product to market with confidence',
-      image: 'h-10 2.png',
+      image: '/h-10 2.png',
       imageSize: 'max-w-lg',
       textColor: 'text-white',
       imagePosition: 'right'
@@ -144,11 +145,15 @@ export default function ScrollStack() {
                   </div>
                   
                   <div className="w-full lg:flex-1 flex items-center justify-center">
-                    <img 
-                      src={section.image} 
-                      alt={section.title}
-                      className={`w-full ${section.imageSize} h-auto object-contain drop-shadow-2xl`}
-                    />
+                    {section.type === 'image' && section.image && (
+                      <Image
+                        src={section.image}
+                        alt={`${section.title} - ${section.subtitle}`}
+                        width={600}
+                        height={700}
+                        className={`w-full ${section.imageSize} h-auto object-contain drop-shadow-2xl`}
+                      />
+                    )}
                   </div>
                 </div>
               </div>
