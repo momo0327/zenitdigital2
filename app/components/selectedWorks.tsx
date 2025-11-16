@@ -9,13 +9,13 @@ const SelectedWork = () => {
     {
       title: "Polestar increased its users by 75%",
       subtitle: "Polestar",
-      image: "/api/placeholder/400/300",
+      image: "/polestar 2.png",
       bgColor: "bg-gray-900"
     },
     {
       title: "Polestar increased its users by 75%",
       subtitle: "anyb o",
-      image: "/api/placeholder/400/300", 
+      image: "/superside 3.png", 
       bgColor: "bg-gray-900"
     },
     {
@@ -128,6 +128,11 @@ const SelectedWork = () => {
                   key={index}
                   className={`${item.bgColor} rounded-lg flex-shrink-0 w-80 h-[500px] relative overflow-hidden`}
                 >
+                  <img 
+                    src={item.image} 
+                    alt={item.title}
+                    className="w-full h-full object-cover"
+                  />
                   <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/20"></div>
                   <div className="absolute top-6 left-6 text-white">
                     <h3 className="text-lg font-semibold mb-1 max-w-64">
@@ -138,10 +143,6 @@ const SelectedWork = () => {
                     <p className="text-2xl font-antonio font-bold">
                       {item.subtitle}
                     </p>
-                  </div>
-                  {/* Placeholder for actual image */}
-                  <div className="w-full h-full flex items-center justify-center text-white/60">
-                    <span className="text-sm">Image placeholder</span>
                   </div>
                 </div>
               ))}
@@ -172,6 +173,11 @@ const SelectedWork = () => {
                   key={index}
                   className={`${item.bgColor} rounded-lg flex-shrink-0 w-72 h-[420px] relative overflow-hidden`}
                 >
+                  <img 
+                    src={item.image} 
+                    alt={item.title}
+                    className="w-full h-full object-cover"
+                  />
                   <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/20"></div>
                   <div className="absolute top-4 left-4 text-white">
                     <h3 className="text-base font-semibold mb-1 max-w-56">
@@ -182,9 +188,6 @@ const SelectedWork = () => {
                     <p className="text-xl font-antonio font-bold">
                       {item.subtitle}
                     </p>
-                  </div>
-                  <div className="w-full h-full flex items-center justify-center text-white/60">
-                    <span className="text-sm">Image placeholder</span>
                   </div>
                 </div>
               ))}

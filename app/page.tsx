@@ -15,6 +15,7 @@ import Cta from "./components/Cta";
 import Footer from "./components/Footer";
 import HelpGrid from "./components/HelpGrid";
 import { HOME_METADATA } from "./constants/seo";
+import Achievements from "./components/Achievments";
 
 // Dynamic imports for below-the-fold heavy components (code splitting)
 const ScrollStack = dynamic(() => import('./components/ScrollStack'), {
@@ -47,6 +48,7 @@ export default function Home() {
       <FeaturesGrid/>
       {/* <HelpGrid/> */}
       <ScrollStack/>
+      <Achievements/>
       <Steps/>
       <FAQ/>
       <Cta/>
