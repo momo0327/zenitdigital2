@@ -2,6 +2,7 @@ import React, { useCallback, useLayoutEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { OptimizedImage } from './ui/OptimizedImage';
 import { IMAGE_QUALITY } from '../utils/image';
+import { useOnClickOutside } from '@/app/hooks/useOnClickOutside';
 
 // Type for CSS custom properties in GSAP
 type CSSCustomProperties = Record<string, string | number>;
@@ -73,6 +74,64 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
   const busyRef = useRef(false);
 
   const itemEntranceTweenRef = useRef<gsap.core.Tween | null>(null);
+
+  // Close menu when clicking outside
+  useOnClickOutside(panelRef, () => {
+    if (openRef.current) {
+      // Manually trigger close sequence
+      openRef.current = false;
+      setOpen(false);
+      onMenuClose?.();
+
+      // Trigger close animations
+      const panel = panelRef.current;
+      const layers = preLayerElsRef.current;
+      if (panel) {
+        const all: HTMLElement[] = [...layers, panel];
+        const offscreen = position === 'left' ? -100 : 100;
+
+        gsap.to(all, {
+          xPercent: offscreen,
+          duration: 0.32,
+          ease: 'power3.in',
+          overwrite: 'auto'
+        });
+      }
+
+      // Animate icon back
+      const icon = iconRef.current;
+      const h = plusHRef.current;
+      const v = plusVRef.current;
+      if (icon && h && v) {
+        gsap.timeline({ defaults: { ease: 'power3.inOut' } })
+          .to(h, { rotate: 0, duration: 0.35 }, 0)
+          .to(v, { rotate: 90, duration: 0.35 }, 0)
+          .to(icon, { rotate: 0, duration: 0.001 }, 0);
+      }
+
+      // Animate color back
+      if (toggleBtnRef.current && changeMenuColorOnOpen) {
+        gsap.to(toggleBtnRef.current, {
+          color: menuButtonColor,
+          delay: 0.18,
+          duration: 0.3,
+          ease: 'power2.out'
+        });
+      }
+
+      // Animate text back
+      const inner = textInnerRef.current;
+      if (inner) {
+        setTextLines(['Close', 'Menu']);
+        gsap.set(inner, { yPercent: 0 });
+        gsap.to(inner, {
+          yPercent: -50,
+          duration: 0.35,
+          ease: 'power4.out'
+        });
+      }
+    }
+  });
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
@@ -194,7 +253,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
 
     openTlRef.current = tl;
     return tl;
-  }, [position]);
+  }, []);
 
   const playOpen = useCallback(() => {
     if (busyRef.current) return;

@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { COMPANY } from '../constants/content';
-import { FOOTER_NAV, SOCIAL_LINKS } from '../constants/navigation';
+import { SOCIAL_LINKS } from '../constants/navigation';
 
 const Footer = () => {
   return (

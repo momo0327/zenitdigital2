@@ -2,9 +2,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { OptimizedImage } from './ui/OptimizedImage';
 import { IMAGE_QUALITY } from '../utils/image';
+import { useDebounce } from '@/app/hooks/useDebounce';
 
 export default function ScrollStack() {
   const [scrollProgress, setScrollProgress] = useState<number[]>([]);
+  // Debounce scroll progress to reduce re-renders during scrolling
+  const debouncedScrollProgress = useDebounce(scrollProgress, 16); // ~60fps
   const sectionRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   const sections = [
@@ -49,10 +52,9 @@ export default function ScrollStack() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const progress = sectionRefs.current.map((ref, i) => {
-        if (!ref) return 0;
-        
-        const rect = ref.getBoundingClientRect();
+      const progress = sectionRefs.current.map((_ref, i) => {
+        if (!_ref) return 0;
+
         const nextRef = sectionRefs.current[i + 1];
         
         if (nextRef) {
@@ -74,7 +76,7 @@ export default function ScrollStack() {
   return (
     <div className="relative">
       {sections.map((section, i) => {
-        const progress = scrollProgress[i] || 0;
+        const progress = debouncedScrollProgress[i] || 0;
         const blur = progress * 10;
         const scale = 1 - progress * 0.15;
         

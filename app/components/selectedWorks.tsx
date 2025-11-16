@@ -60,18 +60,8 @@ const SelectedWork = () => {
     }
   }, [currentIndex]);
 
-  const scrollToItem = useCallback((index: number) => {
-    if (scrollContainerRef.current) {
-      const container = scrollContainerRef.current;
-      const scrollAmount = 320; // width of card + gap
-      const scrollPosition = index * scrollAmount;
-
-      container.scrollTo({
-        left: scrollPosition,
-        behavior: 'smooth'
-      });
-    }
-  }, []);
+  // Removed unused scrollToItem function
+  // If needed in future, can be restored for pagination dots or direct navigation
 
   return (
     <div className="bg-white py-16 md:py-20 lg:py-36 relative overflow-hidden">
