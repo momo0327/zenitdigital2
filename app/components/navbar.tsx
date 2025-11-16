@@ -52,7 +52,7 @@ const Navbar = () => {
                 openMenuButtonColor="#000"
                 changeMenuColorOnOpen={false}
                 colors={['#B19EEF', '#5227FF']}
-                logoUrl="/logo.svg"
+                logoUrl="/logowhite.png"
                 accentColor="blue"
                 onMenuOpen={() => console.log('Menu opened')}
                 onMenuClose={() => console.log('Menu closed')}

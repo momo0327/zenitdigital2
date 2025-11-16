@@ -7,7 +7,8 @@
 
 import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
+import { OptimizedImage } from '../ui/OptimizedImage';
+import { IMAGE_QUALITY } from '../../utils/image';
 import { ServiceType, getServiceTheme } from '../../constants/theme';
 import { SERVICES, CTA } from '../../constants/content';
 
@@ -94,13 +95,14 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
   // Image section
   const ImageSection = () => (
     <div className="flex-1 flex justify-center">
-      <Image
+      <OptimizedImage
         src={imageSrc}
         alt={imageAlt}
         width={384}
         height={400}
         className={`w-80 md:w-92 lg:w-96 h-auto object-contain ${imageClassName}`}
-        priority={false}
+        quality={IMAGE_QUALITY.HIGH}
+        enableBlur
       />
     </div>
   );

@@ -1,19 +1,15 @@
-import Image from "next/image";
 import type { Metadata } from "next";
 import dynamic from 'next/dynamic';
-import Navbar from "./components/navbar";
+import { Suspense } from 'react';
 import Header from "./components/header";
 import SubHeader from "./components/subHeader";
 import ReversedHeader from "./components/ReversedHeader";
-import triheader from "./components/triHeader";
 import Text from "./components/text";
 import TriHeader from "./components/triHeader";
 import GreenCTA from "./components/GreenCta";
 import FeaturesGrid from "./components/FeaturesGrid";
 import SelectedWork from "./components/selectedWorks";
 import Cta from "./components/Cta";
-import Footer from "./components/Footer";
-import HelpGrid from "./components/HelpGrid";
 import { HOME_METADATA } from "./constants/seo";
 
 // Dynamic imports for below-the-fold heavy components (code splitting)
@@ -32,7 +28,6 @@ export const metadata: Metadata = HOME_METADATA;
 export default function Home() {
   return (
     <div>
-      <Navbar />
       <Header />
 
       <Text />
@@ -46,15 +41,16 @@ export default function Home() {
       <GreenCTA/>
       <FeaturesGrid/>
       {/* <HelpGrid/> */}
-      <ScrollStack/>
-      <Steps/>
-      <FAQ/>
+      <Suspense fallback={<div className="min-h-screen bg-white" />}>
+        <ScrollStack/>
+      </Suspense>
+      <Suspense fallback={<div className="min-h-96 bg-white" />}>
+        <Steps/>
+      </Suspense>
+      <Suspense fallback={<div className="min-h-96 bg-white" />}>
+        <FAQ/>
+      </Suspense>
       <Cta/>
-
-      <Footer/>
-      
-      <div>
-      </div>
     </div>
   );
 }

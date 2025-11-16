@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
+import { OptimizedImage } from './ui/OptimizedImage';
+import { IMAGE_QUALITY } from '../utils/image';
 
 const GreenCTA = () => {
   return (
@@ -33,12 +34,14 @@ const GreenCTA = () => {
           <div className="max-w-4xl mx-auto w-full">
             {/* Overlapping Image - Positioned in gray section with top overlapping green */}
             <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/4 z-10">
-              <Image
+              <OptimizedImage
                 src="/h-1 2.png"
                 alt="Modern learning platform interface - Interactive and engaging educational technology"
                 width={800}
                 height={900}
                 className="w-96 md:w-[500px] lg:w-[600px] xl:w-[700px] 2xl:w-[800px] h-auto object-contain"
+                quality={IMAGE_QUALITY.HIGH}
+                enableBlur
               />
             </div>
           </div>

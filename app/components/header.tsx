@@ -1,6 +1,7 @@
 'use client'
 import React, { useEffect, useState } from 'react';
-import Image from 'next/image';
+import { OptimizedImage } from './ui/OptimizedImage';
+import { IMAGE_QUALITY } from '../utils/image';
 
 const Header = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -51,7 +52,7 @@ const Header = () => {
                      
         {/* Image positioned below with fade up animation */}
         <div className="flex justify-center">
-          <Image
+          <OptimizedImage
             src="/phoneHeader.png"
             alt="Zenit Digital mobile app development showcase with modern interface design"
             width={700}
@@ -63,6 +64,8 @@ const Header = () => {
               transitionDelay: '400ms'
             }}
             priority
+            quality={IMAGE_QUALITY.HIGH}
+            enableBlur
           />
         </div>
       </div>

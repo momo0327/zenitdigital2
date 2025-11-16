@@ -1,6 +1,7 @@
 'use client'
 import React, { useState, useEffect, useRef } from 'react';
-import Image from 'next/image';
+import { OptimizedImage } from './ui/OptimizedImage';
+import { IMAGE_QUALITY } from '../utils/image';
 
 export default function ScrollStack() {
   const [scrollProgress, setScrollProgress] = useState<number[]>([]);
@@ -146,12 +147,14 @@ export default function ScrollStack() {
                   
                   <div className="w-full lg:flex-1 flex items-center justify-center">
                     {section.type === 'image' && section.image && (
-                      <Image
+                      <OptimizedImage
                         src={section.image}
                         alt={`${section.title} - ${section.subtitle}`}
                         width={600}
                         height={700}
                         className={`w-full ${section.imageSize} h-auto object-contain drop-shadow-2xl`}
+                        quality={IMAGE_QUALITY.HIGH}
+                        enableBlur
                       />
                     )}
                   </div>

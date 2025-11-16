@@ -6,8 +6,9 @@
  */
 
 import React from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
+import { OptimizedImage } from '../ui/OptimizedImage';
+import { IMAGE_QUALITY } from '../../utils/image';
 import { ServiceType, getServiceTheme } from '../../constants/theme';
 import { SERVICES, CTA } from '../../constants/content';
 
@@ -106,13 +107,15 @@ export const PageHeader: React.FC<PageHeaderProps> = ({
 
           {/* Right Image */}
           <div className="flex justify-center">
-            <Image
+            <OptimizedImage
               src={imageSrc}
               alt={displayImageAlt}
               width={600}
               height={700}
               className="w-80 md:w-96 lg:w-[500px] xl:w-[550px] 2xl:w-[600px] h-auto object-contain"
               priority
+              quality={IMAGE_QUALITY.HIGH}
+              enableBlur
             />
           </div>
         </div>

@@ -1,6 +1,7 @@
 import React, { useCallback, useLayoutEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
-import Image from 'next/image';
+import { OptimizedImage } from './ui/OptimizedImage';
+import { IMAGE_QUALITY } from '../utils/image';
 
 // Type for CSS custom properties in GSAP
 type CSSCustomProperties = Record<string, string | number>;
@@ -382,13 +383,14 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
           aria-label="Main navigation header"
         >
           <div className="sm-logo flex items-center select-none pointer-events-auto" aria-label="Logo">
-            <Image
+            <OptimizedImage
               src={logoUrl || '/src/assets/logos/reactbits-gh-white.svg'}
               alt="Zenit Digital Logo"
               width={110}
               height={32}
               className="sm-logo-img block h-8 w-auto object-contain"
-              draggable={false}
+              quality={IMAGE_QUALITY.HIGH}
+              priority
             />
           </div>
 

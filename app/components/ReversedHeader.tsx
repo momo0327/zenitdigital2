@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
+import { OptimizedImage } from './ui/OptimizedImage';
+import { IMAGE_QUALITY } from '../utils/image';
 
 const ReversedHeader = () => {
   return (
@@ -9,12 +10,14 @@ const ReversedHeader = () => {
         <div className="flex flex-col md:flex-row items-center gap-8">
           {/* Left side - Phone Image */}
           <div className="flex-1 flex justify-center">
-            <Image
+            <OptimizedImage
               src="/h-3 2.png"
               alt="Mobile app development - iOS and Android native applications with beautiful UI"
               width={256}
               height={300}
               className="w-52 md:w-56 lg:w-64 h-auto object-contain transform -rotate-6"
+              quality={IMAGE_QUALITY.HIGH}
+              enableBlur
             />
           </div>
 

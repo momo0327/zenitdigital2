@@ -1,5 +1,6 @@
 import React from 'react';
-import Image from 'next/image';
+import { OptimizedImage } from './ui/OptimizedImage';
+import { IMAGE_QUALITY } from '../utils/image';
 
 const HelpGrid = () => {
   return (
@@ -16,12 +17,14 @@ const HelpGrid = () => {
         
         {/* Image Container */}
         <div className="relative max-w-2xl mx-auto h-100 bg-gray-100 rounded-xl overflow-hidden">
-          <Image
+          <OptimizedImage
             src="/handEffect.png"
             alt="Prototype and MVP development - Rapid iteration and user testing for product validation"
             width={800}
             height={400}
             className="w-full h-full object-cover"
+            quality={IMAGE_QUALITY.HIGH}
+            enableBlur
           />
         </div>
       </div>
@@ -37,12 +40,14 @@ const HelpGrid = () => {
           
           {/* Image Container */}
           <div className="h-62 rounded-xl overflow-hidden">
-            <Image
+            <OptimizedImage
               src="/h-10 2.png"
               alt="Digital partner services - Comprehensive technology partnership and consulting solutions"
               width={400}
               height={300}
               className="w-full h-full object-cover"
+              quality={IMAGE_QUALITY.MEDIUM}
+              enableBlur
             />
           </div>
         </div>
@@ -56,12 +61,14 @@ const HelpGrid = () => {
           
           {/* Image Container */}
           <div className="h-64 w-auto rounded-xl overflow-hidden">
-            <Image
+            <OptimizedImage
               src="/laptops.png"
               alt="Scale and maintain services - Enterprise-grade infrastructure and continuous support"
               width={400}
               height={256}
               className="w-full h-full object-cover"
+              quality={IMAGE_QUALITY.MEDIUM}
+              enableBlur
             />
           </div>
         </div>
