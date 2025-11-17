@@ -36,9 +36,11 @@ const ReversedHeader = () => {
                 Demo
               </button>
                 </Link>
+              <Link href="/ContactPage">
               <button className="border border-[#BEA1FC] text-[#BEA1FC] px-6 py-3 text-sm rounded-full font-semibold hover:bg-[#BEA1FC] hover:text-[#120128] transition-all duration-200">
                 Contact
               </button>
+              </Link>
             </div>
           </div>
         </div>

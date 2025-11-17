@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 const CTA = () => {
   return (
@@ -14,11 +15,13 @@ const CTA = () => {
               <br />
                IT HAPPEN
             </h2>
-            
-            
-            <button className="text-[#240000] bg-white font-semibold font-antonio px-8 py-3 md:px-6 md:py-2 rounded-full text-lg md:text-md transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
-              LETS TALK
-            </button>
+
+
+            <Link href="/ContactPage">
+              <button className="text-[#240000] bg-white font-semibold font-antonio px-8 py-3 md:px-6 md:py-2 rounded-full text-lg md:text-md transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                LETS TALK
+              </button>
+            </Link>
           </div>
 
           {/* Decorative Elements */}

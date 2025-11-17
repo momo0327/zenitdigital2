@@ -21,9 +21,11 @@ const Header = () => {
                 Demo
               </button>
               </Link>
+              <Link href="/ContactPage">
               <button className="border border-[#FF5147] text-[#FF5147] px-6 py-3 text-sm rounded-full font-semibold hover:bg-orange-500 hover:text-white transition-all duration-200">
                 Contact
               </button>
+              </Link>
             </div>
           </div>
 

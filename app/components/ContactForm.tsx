@@ -22,6 +22,9 @@ export default function ContactForm() {
     message: ''
   });
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
@@ -29,14 +32,53 @@ export default function ContactForm() {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
-    // TODO: Implement form submission logic (e.g., send to API)
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    try {
+      // Implement your form submission logic here
+      // Example: await fetch('/api/contact', { method: 'POST', body: JSON.stringify(formData) })
+
+      // For now, simulate submission
+      await new Promise(resolve => setTimeout(resolve, 1000));
+
+      console.log('Form submitted:', formData);
+      setSubmitStatus('success');
+
+      // Reset form on success
+      setFormData({
+        firstName: '',
+        lastName: '',
+        email: '',
+        phone: '',
+        company: '',
+        service: '',
+        message: ''
+      });
+    } catch (error) {
+      console.error('Form submission error:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6 mb-16">
+      {/* Success/Error Messages */}
+      {submitStatus === 'success' && (
+        <div className="bg-green-500/20 border border-green-500 text-green-900 px-6 py-4 rounded-2xl">
+          Thank you! Your message has been sent successfully.
+        </div>
+      )}
+      {submitStatus === 'error' && (
+        <div className="bg-red-500/20 border border-red-500 text-red-900 px-6 py-4 rounded-2xl">
+          Something went wrong. Please try again.
+        </div>
+      )}
+
       {/* Name Fields */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
@@ -47,7 +89,8 @@ export default function ContactForm() {
             onChange={handleChange}
             placeholder="First Name"
             required
-            className="w-full bg-transparent border-1 border-[#0A0D24] text-white placeholder-white/50 py-3 px-4 focus:outline-none focus:border-[#B4FFA8] focus:ring-2 focus:ring-[#B4FFA8]/30 transition-all rounded-2xl"
+            disabled={isSubmitting}
+            className="w-full bg-white/90 border-2 border-[#0A0D24]/20 text-[#0A0D24] placeholder-[#0A0D24]/50 py-3 px-4 focus:outline-none focus:border-[#0A0D24] focus:ring-2 focus:ring-[#0A0D24]/20 transition-all rounded-2xl disabled:opacity-50"
           />
         </div>
         <div>
@@ -58,7 +101,8 @@ export default function ContactForm() {
             onChange={handleChange}
             placeholder="Last Name"
             required
-            className="w-full bg-transparent border-1 border-[#0A0D24] text-white placeholder-white/50 py-3 px-4 focus:outline-none focus:border-[#B4FFA8] focus:ring-2 focus:ring-[#B4FFA8]/30 transition-all rounded-2xl"
+            disabled={isSubmitting}
+            className="w-full bg-white/90 border-2 border-[#0A0D24]/20 text-[#0A0D24] placeholder-[#0A0D24]/50 py-3 px-4 focus:outline-none focus:border-[#0A0D24] focus:ring-2 focus:ring-[#0A0D24]/20 transition-all rounded-2xl disabled:opacity-50"
           />
         </div>
       </div>
@@ -73,7 +117,8 @@ export default function ContactForm() {
             onChange={handleChange}
             placeholder="Email"
             required
-            className="w-full bg-transparent border-1 border-[#0A0D24] text-white placeholder-white/50 py-3 px-4 focus:outline-none focus:border-[#B4FFA8] focus:ring-2 focus:ring-[#B4FFA8]/30 transition-all rounded-2xl"
+            disabled={isSubmitting}
+            className="w-full bg-white/90 border-2 border-[#0A0D24]/20 text-[#0A0D24] placeholder-[#0A0D24]/50 py-3 px-4 focus:outline-none focus:border-[#0A0D24] focus:ring-2 focus:ring-[#0A0D24]/20 transition-all rounded-2xl disabled:opacity-50"
           />
         </div>
         <div>
@@ -84,7 +129,8 @@ export default function ContactForm() {
             onChange={handleChange}
             placeholder="Phone Number"
             required
-            className="w-full bg-transparent border-1 border-[#0A0D24] text-white placeholder-white/50 py-3 px-4 focus:outline-none focus:border-[#B4FFA8] focus:ring-2 focus:ring-[#B4FFA8]/30 transition-all rounded-2xl"
+            disabled={isSubmitting}
+            className="w-full bg-white/90 border-2 border-[#0A0D24]/20 text-[#0A0D24] placeholder-[#0A0D24]/50 py-3 px-4 focus:outline-none focus:border-[#0A0D24] focus:ring-2 focus:ring-[#0A0D24]/20 transition-all rounded-2xl disabled:opacity-50"
           />
         </div>
       </div>
@@ -97,7 +143,8 @@ export default function ContactForm() {
           value={formData.company}
           onChange={handleChange}
           placeholder="Company Name (Optional)"
-          className="w-full bg-transparent border-1 border-[#0A0D24] text-white placeholder-white/50 py-3 px-4 focus:outline-none focus:border-[#B4FFA8] focus:ring-2 focus:ring-[#B4FFA8]/30 transition-all rounded-2xl"
+          disabled={isSubmitting}
+          className="w-full bg-white/90 border-2 border-[#0A0D24]/20 text-[#0A0D24] placeholder-[#0A0D24]/50 py-3 px-4 focus:outline-none focus:border-[#0A0D24] focus:ring-2 focus:ring-[#0A0D24]/20 transition-all rounded-2xl disabled:opacity-50"
         />
       </div>
 
@@ -108,9 +155,10 @@ export default function ContactForm() {
           value={formData.service}
           onChange={handleChange}
           required
-          className="w-full bg-[#051E01] border-1 border-[#0A0D24] text-white py-3 px-4 focus:outline-none focus:border-[#B4FFA8] focus:ring-2 focus:ring-[#B4FFA8]/30 transition-all rounded-md appearance-none cursor-pointer"
+          disabled={isSubmitting}
+          className="w-full bg-white/90 border-2 border-[#0A0D24]/20 text-[#0A0D24] py-3 px-4 focus:outline-none focus:border-[#0A0D24] focus:ring-2 focus:ring-[#0A0D24]/20 transition-all rounded-2xl appearance-none cursor-pointer disabled:opacity-50"
           style={{
-            backgroundImage: `url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23B4FFA8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e")`,
+            backgroundImage: `url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230A0D24' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e")`,
             backgroundRepeat: 'no-repeat',
             backgroundPosition: 'right 1rem center',
             backgroundSize: '1.5em 1.5em',
@@ -120,6 +168,8 @@ export default function ContactForm() {
           <option value="" disabled>Select a Service</option>
           <option value="web-design">Web Design</option>
           <option value="web-development">Web Development</option>
+          <option value="mobile-development">Mobile Development</option>
+          <option value="fullstack-development">Fullstack Development</option>
           <option value="branding">Branding</option>
           <option value="seo">SEO</option>
           <option value="consultation">Consultation</option>
@@ -136,7 +186,8 @@ export default function ContactForm() {
           placeholder="Tell us about your project"
           required
           rows={5}
-          className="w-full bg-transparent border-1 border-[#0A0D24] text-white placeholder-white/50 py-3 px-4 focus:outline-none focus:border-[#B4FFA8] focus:ring-2 focus:ring-[#B4FFA8]/30 transition-all rounded-2xl resize-none"
+          disabled={isSubmitting}
+          className="w-full bg-white/90 border-2 border-[#0A0D24]/20 text-[#0A0D24] placeholder-[#0A0D24]/50 py-3 px-4 focus:outline-none focus:border-[#0A0D24] focus:ring-2 focus:ring-[#0A0D24]/20 transition-all rounded-2xl resize-none disabled:opacity-50"
         />
       </div>
 
@@ -144,9 +195,10 @@ export default function ContactForm() {
       <div className="pt-2">
         <button
           type="submit"
-          className="w-full px-8 py-4 bg-[#0A0D24] text-[#051E01] font-semibold text-lg rounded-md hover:bg-[#a3ef97] transition-colors"
+          disabled={isSubmitting}
+          className="w-full px-8 py-4 bg-[#0A0D24] text-white font-semibold text-lg rounded-2xl hover:bg-[#0A0D24]/90 transition-all duration-300 transform hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
         >
-          Submit
+          {isSubmitting ? 'Sending...' : 'Submit'}
         </button>
       </div>
     </form>
