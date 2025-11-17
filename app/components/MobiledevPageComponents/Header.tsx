@@ -1,5 +1,7 @@
 import React from 'react';
-import Image from 'next/image';
+import Link from 'next/link';
+import { OptimizedImage } from '../ui/OptimizedImage';
+import { IMAGE_QUALITY } from '../../utils/image';
 
 const Header = () => {
   return (
@@ -20,24 +22,30 @@ const Header = () => {
             </p>
                          
             <div className="flex justify-center lg:justify-start flex-row gap-4">
+              <Link href="/ContactPage">
               <button className="bg-[#BEA1FC] hover:bg-[#BEA1FC] text-[#120128] font-semibold px-4 py-3 text-sm md:px-6 md:py-3 rounded-full md:text-md transition-all duration-300 transform hover:scale-105 shadow-lg">
                 Get Started
               </button>
+              </Link>
+              <Link href="/ContactPage">
               <button className="border-1 border-[#BEA1FC] text-[#BEA1FC] font-semibold md:px-6 md:py-3 rounded-full text-md px-4 py-3 text-sm transition-all duration-300 backdrop-blur-sm hover:bg-white/10">
                 Learn More
               </button>
+              </Link>
             </div>
           </div>
            
           {/* Right Image - Made Bigger */}
           <div className="flex justify-center">
-            <Image
+            <OptimizedImage
               src="/Group 6-3.png"
               alt="Mobile app development - Native iOS and Android applications with modern features"
-              width={600}
-              height={700}
+              width={675}
+              height={879}
               className="w-80 md:w-96 lg:w-[500px] xl:w-[550px] 2xl:w-[600px] h-auto object-contain"
               priority
+              quality={IMAGE_QUALITY.MAX}
+              enableBlur
             />
           </div>
          

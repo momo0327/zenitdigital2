@@ -1,11 +1,9 @@
 'use client'
-import React, { useRef, useState, useCallback } from 'react';
+import React from 'react';
+import { useDragScroll } from '@/app/hooks/useDragScroll';
 
 const FeaturesGrid = () => {
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
-  const [isDragging, setIsDragging] = useState(false);
-  const [startX, setStartX] = useState(0);
-  const [scrollLeft, setScrollLeft] = useState(0);
+  const { scrollContainerRef, handlers } = useDragScroll({ scrollSpeed: 2 });
 
   const features = [
     {
@@ -37,36 +35,6 @@ const FeaturesGrid = () => {
       textColor: "text-[#210316]"
     }
   ];
-
-  const handleMouseDown = useCallback((e: React.MouseEvent) => {
-    if (!scrollContainerRef.current) return;
-    setIsDragging(true);
-    setStartX(e.pageX - scrollContainerRef.current.offsetLeft);
-    setScrollLeft(scrollContainerRef.current.scrollLeft);
-    scrollContainerRef.current.style.cursor = 'grabbing';
-  }, []);
-
-  const handleMouseLeave = useCallback(() => {
-    setIsDragging(false);
-    if (scrollContainerRef.current) {
-      scrollContainerRef.current.style.cursor = 'grab';
-    }
-  }, []);
-
-  const handleMouseUp = useCallback(() => {
-    setIsDragging(false);
-    if (scrollContainerRef.current) {
-      scrollContainerRef.current.style.cursor = 'grab';
-    }
-  }, []);
-
-  const handleMouseMove = useCallback((e: React.MouseEvent) => {
-    if (!isDragging || !scrollContainerRef.current) return;
-    e.preventDefault();
-    const x = e.pageX - scrollContainerRef.current.offsetLeft;
-    const walk = (x - startX) * 2;
-    scrollContainerRef.current.scrollLeft = scrollLeft - walk;
-  }, [isDragging, startX, scrollLeft]);
 
   return (
     <div className="bg-white py-1 md:py-20 lg:py-24">
@@ -167,13 +135,10 @@ const FeaturesGrid = () => {
           </div>
 
           {/* Features Horizontal Scroll */}
-          <div 
+          <div
             ref={scrollContainerRef}
             className="overflow-x-auto scrollbar-hide cursor-grab active:cursor-grabbing select-none"
-            onMouseDown={handleMouseDown}
-            onMouseLeave={handleMouseLeave}
-            onMouseUp={handleMouseUp}
-            onMouseMove={handleMouseMove}
+            {...handlers}
           >
             <div className="flex gap-4 px-5 pb-4 snap-x snap-mandatory">
               {features.map((feature, index) => (

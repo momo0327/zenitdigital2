@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
+import { OptimizedImage } from './ui/OptimizedImage';
+import { IMAGE_QUALITY } from '../utils/image';
 const Header = () => {
   return (
     <div className="px-3 bg-white py-12">
@@ -20,20 +21,24 @@ const Header = () => {
                 Demo
               </button>
               </Link>
+              <Link href="/ContactPage">
               <button className="border border-[#FF5147] text-[#FF5147] px-6 py-3 text-sm rounded-full font-semibold hover:bg-orange-500 hover:text-white transition-all duration-200">
                 Contact
               </button>
+              </Link>
             </div>
           </div>
 
           {/* Right side - Phone Image */}
           <div className="flex-1 flex justify-center">
-            <Image
+            <OptimizedImage
               src="/h-2 2.png"
               alt="Web development services - Responsive website design and modern web applications"
               width={384}
               height={400}
               className="w-80 md:w-92 lg:w-96 h-auto object-contain transform"
+              quality={IMAGE_QUALITY.HIGH}
+              enableBlur
             />
           </div>
         </div>

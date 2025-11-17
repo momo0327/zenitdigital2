@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { COMPANY } from '../constants/content';
-import { FOOTER_NAV, SOCIAL_LINKS } from '../constants/navigation';
+import { SOCIAL_LINKS } from '../constants/navigation';
 
 const Footer = () => {
   return (
@@ -53,7 +53,7 @@ const Footer = () => {
               <Link href="/faqs" className="block text-white hover:text-gray-300 transition-colors">
                 FAQs
               </Link>
-              <Link href="/contact" className="block text-white hover:text-gray-300 transition-colors">
+              <Link href="/ContactPage" className="block text-white hover:text-gray-300 transition-colors">
                 Contact
               </Link>
             </nav>
@@ -100,10 +100,10 @@ const Footer = () => {
               <div className="flex items-center justify-between pt-4">
                 <div className="flex items-center space-x-3">
                   <div className="w-10 h-10 bg-gray-600 rounded-full flex items-center justify-center">
-                    <span className="text-sm font-medium">KB</span>
+                    <span className="text-sm font-medium">JA</span>
                   </div>
                   <div>
-                    <div className="text-sm font-medium text-white">Kristijan Binski</div>
+                    <div className="text-sm font-medium text-white">Jassin Al-Safe</div>
                     <div className="text-xs text-gray-500">Co-Founder & Creative Director</div>
                   </div>
                 </div>
@@ -123,9 +123,9 @@ const Footer = () => {
             <div className="flex flex-wrap items-center space-x-6 text-sm text-gray-500">
               <span>© {new Date().getFullYear()} {COMPANY.name}</span>
               <span className="hidden xl:inline">|</span>
-              <span>Miami</span>
+              <span>Sweden</span>
               <span className="hidden xl:inline">|</span>
-              <span>London</span>
+              <span>International</span>
             </div>
             
             <div className="flex items-center space-x-8">
