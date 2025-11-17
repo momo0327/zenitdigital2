@@ -10,8 +10,8 @@ export const COMPANY = {
   name: 'Zenit Digital',
   tagline: 'Digital Excellence, Delivered',
   description: 'We build exceptional digital products that drive business growth.',
-  email: 'hello@zenitdigital.com',
-  phone: '+1 (786) 414-3360',
+  email: 'hello@zenitdigital.se',
+  phone: '+46 (0) 123 456 789', // Update with your Swedish phone number
   founded: '2024',
 } as const;
 

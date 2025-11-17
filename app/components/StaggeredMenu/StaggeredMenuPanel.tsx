@@ -7,14 +7,13 @@ interface StaggeredMenuPanelProps {
   socialItems: StaggeredMenuSocialItem[];
   displaySocials: boolean;
   displayItemNumbering: boolean;
-  accentColor: string;
 }
 
 /**
  * Menu panel with navigation items and social links
  */
 export const StaggeredMenuPanel = forwardRef<HTMLElement, StaggeredMenuPanelProps>(
-  ({ open, items, socialItems, displaySocials, displayItemNumbering, accentColor }, ref) => {
+  ({ open, items, socialItems, displaySocials, displayItemNumbering }, ref) => {
     return (
       <aside
         id="staggered-menu-panel"

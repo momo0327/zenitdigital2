@@ -191,9 +191,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
 
   // Shared close handler
   const handleClose = useCallback(() => {
-    console.log('🔴 handleClose called, openRef.current:', openRef.current);
     if (!openRef.current) {
-      console.log('⚠️ handleClose exiting early - menu already closed');
       return;
     }
 
@@ -206,7 +204,6 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
     if (panel) {
       playClose(panel, layers);
     }
-    console.log('🎨 Calling close animations...');
     animateIcon(false);
     animateColor(false);
     animateText(false);
@@ -219,7 +216,6 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
   const toggleMenu = useCallback(() => {
     // Prevent rapid toggling while animations are in progress
     if (busyRef.current) {
-      console.log('⏸️ Menu is busy, ignoring toggle');
       return;
     }
 
@@ -227,13 +223,10 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
     const panel = panelRef.current;
     const layers = preLayerElsRef.current;
 
-    console.log('🔵 toggleMenu called:', { target, hasPanel: !!panel, currentOpen: openRef.current });
-
     // Set busy state before starting animations
     busyRef.current = true;
 
     if (target && panel) {
-      console.log('✅ Opening menu...');
       openRef.current = true;
       setOpen(true);
       onMenuOpen?.();
@@ -242,7 +235,6 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
       animateColor(true);
       animateText(true);
     } else {
-      console.log('❌ Closing menu...');
       handleClose();
     }
 
@@ -251,7 +243,6 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
     const maxDuration = prefersReducedMotion ? 200 : 1200;
     setTimeout(() => {
       busyRef.current = false;
-      console.log('🔓 Menu no longer busy');
     }, maxDuration);
   }, [playOpen, handleClose, animateIcon, animateColor, animateText, onMenuOpen, prefersReducedMotion]);
 
@@ -300,7 +291,6 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
           socialItems={socialItems}
           displaySocials={displaySocials}
           displayItemNumbering={displayItemNumbering}
-          accentColor={accentColor}
         />
       </div>
 
