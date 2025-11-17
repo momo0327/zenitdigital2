@@ -26,3 +26,6 @@ export { useWindowSize, useWindowSizeDebounced } from './useWindowSize';
 export { useLocalStorage } from './useLocalStorage';
 export { usePrevious } from './usePrevious';
 export { usePageVisibility } from './usePageVisibility';
+
+// Accessibility Hooks
+export { usePrefersReducedMotion } from './usePrefersReducedMotion';

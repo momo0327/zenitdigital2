@@ -1,8 +1,11 @@
 'use client'
 import React from 'react';
-import StaggeredMenu from './StaggeredMenu';
+import StaggeredMenu from './StaggeredMenu/index';
+import { useBreakpoint } from '@/app/hooks/useMediaQuery';
 
 const Navbar = () => {
+  const { isMobile } = useBreakpoint();
+
   const menuItems = [
     { label: 'Platform', ariaLabel: 'Go to platform page', link: '/platform' },
     { label: 'About', ariaLabel: 'Learn about us', link: '/about' },
@@ -26,18 +29,20 @@ const Navbar = () => {
             ZENIT
           </div>
 
-          {/* Center Navigation - Hidden on mobile */}
-          <div className="hidden sm:flex space-x-2 md:space-x-8 absolute left-1/2 transform -translate-x-1/2">
-            <button className="text-gray-700 hover:text-black px-2 md:px-4 py-2 rounded-md hover:bg-gray-100 transition-all duration-200 text-sm md:text-base">
-              Platform
-            </button>
-            <button className="text-gray-700 hover:text-black px-2 md:px-4 py-2 rounded-md hover:bg-gray-100 transition-all duration-200 text-sm md:text-base">
-              About
-            </button>
-            <button className="text-gray-700 hover:text-black px-2 md:px-4 py-2 rounded-md hover:bg-gray-100 transition-all duration-200 text-sm md:text-base">
-              Explore
-            </button>
-          </div>
+          {/* Center Navigation - Responsive with useBreakpoint */}
+          {!isMobile && (
+            <div className="flex space-x-2 md:space-x-8 absolute left-1/2 transform -translate-x-1/2">
+              <button className="text-gray-700 hover:text-black px-2 md:px-4 py-2 rounded-md hover:bg-gray-100 transition-all duration-200 text-sm md:text-base">
+                Platform
+              </button>
+              <button className="text-gray-700 hover:text-black px-2 md:px-4 py-2 rounded-md hover:bg-gray-100 transition-all duration-200 text-sm md:text-base">
+                About
+              </button>
+              <button className="text-gray-700 hover:text-black px-2 md:px-4 py-2 rounded-md hover:bg-gray-100 transition-all duration-200 text-sm md:text-base">
+                Explore
+              </button>
+            </div>
+          )}
 
           {/* Right side - StaggeredMenu */}
           <div className="flex items-center">
