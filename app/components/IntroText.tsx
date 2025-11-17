@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 const IntroText = () => {
   return (
@@ -17,8 +18,8 @@ const IntroText = () => {
             </span>
           </h2>
 
-          <a
-            href="/contact"
+          <Link
+            href="/ContactPage"
             className="inline-flex items-center gap-2 text-base font-medium text-black hover:text-gray-700 transition-colors duration-200 border-b-2 border-black hover:border-gray-700"
           >
             Lets collaborate
@@ -38,7 +39,7 @@ const IntroText = () => {
                 strokeLinejoin="round"
               />
             </svg>
-          </a>
+          </Link>
         </div>
       </div>
     </div>
