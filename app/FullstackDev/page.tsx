@@ -21,8 +21,8 @@ function page() {
   );
 
   const webPageSchema = generateWebPageSchema(
-    'Fullstack Development Services Stockholm',
-    'Complete fullstack development services in Stockholm. End-to-end solutions from frontend to backend, database to cloud deployment.',
+    'Fullstack Development Services Sweden',
+    'Complete fullstack development services in Sweden. End-to-end solutions from frontend to backend, database to cloud deployment.',
     `${BASE_URL}/FullstackDev`
   );
 

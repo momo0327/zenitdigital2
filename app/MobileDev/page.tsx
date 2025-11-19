@@ -21,8 +21,8 @@ function page() {
   );
 
   const webPageSchema = generateWebPageSchema(
-    'Mobile App Development Services Stockholm',
-    'Professional mobile app development in Stockholm. Native iOS and Android apps, React Native cross-platform solutions.',
+    'Mobile App Development Services Sweden',
+    'Professional mobile app development in Sweden. Native iOS and Android apps, React Native cross-platform solutions.',
     `${BASE_URL}/MobileDev`
   );
 

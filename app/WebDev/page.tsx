@@ -21,8 +21,8 @@ function page() {
   );
 
   const webPageSchema = generateWebPageSchema(
-    'Web Development Services Stockholm',
-    'Professional web development services in Stockholm. Custom web applications with Next.js, React, and TypeScript.',
+    'Web Development Services Sweden',
+    'Professional web development services in Sweden. Custom web applications with Next.js, React, and TypeScript.',
     `${BASE_URL}/WebDev`
   );
 

@@ -101,19 +101,19 @@ export const DEFAULT_METADATA: Metadata = {
 
 // Home Page Metadata
 export const HOME_METADATA: Metadata = {
-  title: 'Digital Byrå Stockholm | Webbutveckling & Apputveckling',
-  description: `${COMPANY.name} - Leading digital agency in Stockholm, Sweden. We build exceptional web applications, mobile apps, and fullstack solutions. Expert developers delivering cutting-edge digital products for Swedish businesses.`,
+  title: 'Digital Byrå Sverige | Webbutveckling & Apputveckling',
+  description: `${COMPANY.name} - Leading digital agency in Sweden. We build exceptional web applications, mobile apps, and fullstack solutions. Expert developers delivering cutting-edge digital products for Swedish businesses.`,
   keywords: [
-    'digital byrå Stockholm',
+    'digital byrå Sverige',
     'webbutveckling Sverige',
-    'apputveckling Stockholm',
+    'apputveckling Sverige',
     'fullstack utvecklare Sverige',
-    'Next.js utveckling Stockholm',
+    'Next.js utveckling Sverige',
     'React utvecklare Sverige',
-    'mobilapputveckling Stockholm',
-    'webbyrå Stockholm',
+    'mobilapputveckling Sverige',
+    'webbyrå Sverige',
     'digital agency Sweden',
-    'web development Stockholm',
+    'web development Sweden',
     'app development Sweden',
   ],
   alternates: {
@@ -125,7 +125,7 @@ export const HOME_METADATA: Metadata = {
     },
   },
   openGraph: {
-    title: `${COMPANY.name} | Modern Digital Solutions in Stockholm`,
+    title: `${COMPANY.name} | Modern Digital Solutions in Sweden`,
     description: 'Transform your business with cutting-edge web and mobile development from Sweden\'s leading digital agency',
     url: BASE_URL,
     type: 'website',
@@ -136,7 +136,7 @@ export const HOME_METADATA: Metadata = {
         url: '/og-home.png',
         width: 1200,
         height: 630,
-        alt: `${COMPANY.name} - Digital Agency Stockholm`,
+        alt: `${COMPANY.name} - Digital Agency Sweden`,
         type: 'image/png',
       },
     ],
@@ -145,17 +145,17 @@ export const HOME_METADATA: Metadata = {
 
 // Web Development Page Metadata
 export const WEB_DEV_METADATA: Metadata = {
-  title: 'Webbutveckling Stockholm | Next.js & React Development',
-  description: 'Professional web development services in Stockholm. Custom web applications with Next.js, React, and TypeScript. Build fast, scalable, SEO-optimized websites. Expert Swedish web developers.',
+  title: 'Webbutveckling Sverige | Next.js & React Development',
+  description: 'Professional web development services in Sweden. Custom web applications with Next.js, React, and TypeScript. Build fast, scalable, SEO-optimized websites. Expert Swedish web developers.',
   keywords: [
-    'webbutveckling Stockholm',
+    'webbutveckling Sverige',
     'webbapplikation utveckling',
     'Next.js utvecklare Sverige',
-    'React utveckling Stockholm',
+    'React utveckling Sverige',
     'TypeScript webbutveckling',
     'responsiv webbdesign',
     'SEO-optimerad hemsida',
-    'web development Stockholm',
+    'web development Sweden',
     'custom web applications Sweden',
     'responsive web design Sweden',
     'e-handel utveckling',
@@ -169,7 +169,7 @@ export const WEB_DEV_METADATA: Metadata = {
     },
   },
   openGraph: {
-    title: 'Web Development Stockholm | Zenit Digital',
+    title: 'Web Development Sweden | Zenit Digital',
     description: 'Build fast, scalable web applications with modern technologies. Expert web development in Sweden.',
     url: `${BASE_URL}/WebDev`,
     type: 'website',
@@ -180,7 +180,7 @@ export const WEB_DEV_METADATA: Metadata = {
         url: '/og-web-dev.png',
         width: 1200,
         height: 630,
-        alt: 'Zenit Digital Web Development Services Stockholm',
+        alt: 'Zenit Digital Web Development Services Sweden',
         type: 'image/png',
       },
     ],
@@ -188,27 +188,27 @@ export const WEB_DEV_METADATA: Metadata = {
   twitter: {
     card: 'summary_large_image',
     site: '@zenitdigital',
-    title: 'Web Development Stockholm | Zenit Digital',
+    title: 'Web Development Sweden | Zenit Digital',
     description: 'Build fast, scalable web applications with modern technologies',
   },
 };
 
 // Mobile Development Page Metadata
 export const MOBILE_DEV_METADATA: Metadata = {
-  title: 'Apputveckling Stockholm | iOS & Android App Development',
-  description: 'Professional mobile app development in Stockholm. Native iOS and Android apps, React Native cross-platform solutions. Expert Swedish mobile developers creating engaging user experiences.',
+  title: 'Apputveckling Sverige | iOS & Android App Development',
+  description: 'Professional mobile app development in Sweden. Native iOS and Android apps, React Native cross-platform solutions. Expert Swedish mobile developers creating engaging user experiences.',
   keywords: [
-    'apputveckling Stockholm',
+    'apputveckling Sverige',
     'mobilapp utveckling Sverige',
-    'iOS utvecklare Stockholm',
+    'iOS utvecklare Sverige',
     'Android utveckling Sverige',
     'React Native utvecklare',
     'native app utveckling',
     'cross-platform appar',
-    'mobile app development Stockholm',
+    'mobile app development Sweden',
     'iPhone app utveckling',
     'Android app Sverige',
-    'app design Stockholm',
+    'app design Sverige',
   ],
   alternates: {
     canonical: `${BASE_URL}/MobileDev`,
@@ -219,7 +219,7 @@ export const MOBILE_DEV_METADATA: Metadata = {
     },
   },
   openGraph: {
-    title: 'Mobile App Development Stockholm | Zenit Digital',
+    title: 'Mobile App Development Sweden | Zenit Digital',
     description: 'Build native iOS and Android applications that users love. Expert mobile development in Sweden.',
     url: `${BASE_URL}/MobileDev`,
     type: 'website',
@@ -230,7 +230,7 @@ export const MOBILE_DEV_METADATA: Metadata = {
         url: '/og-mobile-dev.png',
         width: 1200,
         height: 630,
-        alt: 'Zenit Digital Mobile App Development Services Stockholm',
+        alt: 'Zenit Digital Mobile App Development Services Sweden',
         type: 'image/png',
       },
     ],
@@ -238,26 +238,26 @@ export const MOBILE_DEV_METADATA: Metadata = {
   twitter: {
     card: 'summary_large_image',
     site: '@zenitdigital',
-    title: 'Mobile App Development Stockholm | Zenit Digital',
+    title: 'Mobile App Development Sweden | Zenit Digital',
     description: 'Build native iOS and Android applications that users love',
   },
 };
 
 // Fullstack Development Page Metadata
 export const FULLSTACK_DEV_METADATA: Metadata = {
-  title: 'Fullstack Utveckling Stockholm | Backend & Frontend Development',
-  description: 'Complete fullstack development services in Stockholm. End-to-end solutions from frontend to backend, database to cloud deployment. Expert Swedish fullstack developers.',
+  title: 'Fullstack Utveckling Sverige | Backend & Frontend Development',
+  description: 'Complete fullstack development services in Sweden. End-to-end solutions from frontend to backend, database to cloud deployment. Expert Swedish fullstack developers.',
   keywords: [
-    'fullstack utvecklare Stockholm',
+    'fullstack utvecklare Sverige',
     'backend utveckling Sverige',
-    'API utveckling Stockholm',
+    'API utveckling Sverige',
     'databasdesign Sverige',
     'cloud deployment Sweden',
-    'Node.js utvecklare Stockholm',
-    'fullstack development Stockholm',
+    'Node.js utvecklare Sverige',
+    'fullstack development Sweden',
     'backend developer Sweden',
     'cloud architecture Sverige',
-    'DevOps Stockholm',
+    'DevOps Sverige',
     'serverless utveckling',
   ],
   alternates: {
@@ -269,7 +269,7 @@ export const FULLSTACK_DEV_METADATA: Metadata = {
     },
   },
   openGraph: {
-    title: 'Fullstack Development Stockholm | Zenit Digital',
+    title: 'Fullstack Development Sweden | Zenit Digital',
     description: 'Complete end-to-end development solutions for your business. Expert fullstack development in Sweden.',
     url: `${BASE_URL}/FullstackDev`,
     type: 'website',
@@ -280,7 +280,7 @@ export const FULLSTACK_DEV_METADATA: Metadata = {
         url: '/og-fullstack-dev.png',
         width: 1200,
         height: 630,
-        alt: 'Zenit Digital Fullstack Development Services Stockholm',
+        alt: 'Zenit Digital Fullstack Development Services Sweden',
         type: 'image/png',
       },
     ],
@@ -288,20 +288,20 @@ export const FULLSTACK_DEV_METADATA: Metadata = {
   twitter: {
     card: 'summary_large_image',
     site: '@zenitdigital',
-    title: 'Fullstack Development Stockholm | Zenit Digital',
+    title: 'Fullstack Development Sweden | Zenit Digital',
     description: 'Complete end-to-end development solutions for your business',
   },
 };
 
 // Contact Page Metadata
 export const CONTACT_METADATA: Metadata = {
-  title: 'Kontakta Oss | Digital Byrå Stockholm',
-  description: `Contact ${COMPANY.name} in Stockholm, Sweden. Let's discuss your digital project - web development, app development, or fullstack solutions. Email: ${COMPANY.email} | Phone: ${COMPANY.phone}`,
+  title: 'Kontakta Oss | Digital Byrå Sverige',
+  description: `Contact ${COMPANY.name} in Sweden. Let's discuss your digital project - web development, app development, or fullstack solutions. Email: ${COMPANY.email} | Phone: ${COMPANY.phone}`,
   keywords: [
     'kontakta digital byrå',
-    'webbyrå Stockholm kontakt',
+    'webbyrå Sverige kontakt',
     'offert webbutveckling',
-    'digital agency contact Stockholm',
+    'digital agency contact Sweden',
     'project inquiry Sweden',
     'kostnadsfri konsultation',
   ],
@@ -314,7 +314,7 @@ export const CONTACT_METADATA: Metadata = {
     },
   },
   openGraph: {
-    title: 'Contact Us | Zenit Digital Stockholm',
+    title: 'Contact Us | Zenit Digital Sweden',
     description: "Let's discuss your next digital project. Professional web and app development in Sweden.",
     url: `${BASE_URL}/ContactPage`,
     type: 'website',
@@ -331,11 +331,11 @@ export const CONTACT_METADATA: Metadata = {
 
 // About Page Metadata (for future use)
 export const ABOUT_METADATA: Metadata = {
-  title: 'Om Oss | Digital Byrå i Stockholm',
-  description: `Learn about ${COMPANY.name} - leading digital agency in Stockholm, Sweden. Our team, values, and approach to building exceptional digital products. Passionate developers dedicated to your success.`,
+  title: 'Om Oss | Digital Byrå i Sverige',
+  description: `Learn about ${COMPANY.name} - leading digital agency in Sweden. Our team, values, and approach to building exceptional digital products. Passionate developers dedicated to your success.`,
   keywords: [
     'om oss',
-    'digital byrå Stockholm',
+    'digital byrå Sverige',
     'webbyrå team',
     'about us',
     'Swedish web developers',
@@ -349,7 +349,7 @@ export const ABOUT_METADATA: Metadata = {
     },
   },
   openGraph: {
-    title: 'About Us | Zenit Digital Stockholm',
+    title: 'About Us | Zenit Digital Sweden',
     description: 'Meet the team behind exceptional digital products in Sweden',
     url: `${BASE_URL}/about`,
     type: 'website',
@@ -365,7 +365,7 @@ export const LOCAL_BUSINESS_SCHEMA = {
   '@id': `${BASE_URL}/#organization`,
   name: COMPANY.name,
   alternateName: 'Zenit Digital Agency',
-  description: 'Leading digital agency in Stockholm, Sweden. Specializing in web development, mobile apps, and fullstack solutions.',
+  description: 'Leading digital agency in Sweden. Specializing in web development, mobile apps, and fullstack solutions.',
   url: BASE_URL,
   logo: {
     '@type': 'ImageObject',
@@ -393,10 +393,6 @@ export const LOCAL_BUSINESS_SCHEMA = {
     {
       '@type': 'Country',
       name: 'Sweden',
-    },
-    {
-      '@type': 'City',
-      name: 'Stockholm',
     },
     'Worldwide',
   ],
@@ -438,10 +434,6 @@ export const generateServiceSchema = (serviceName: string, description: string, 
     {
       '@type': 'Country',
       name: 'Sweden',
-    },
-    {
-      '@type': 'City',
-      name: 'Stockholm',
     },
     'Worldwide',
   ],
