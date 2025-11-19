@@ -2,37 +2,14 @@
 import React, { useState, useRef, useCallback } from 'react';
 import { OptimizedImage } from './ui/OptimizedImage';
 import { IMAGE_QUALITY } from '../utils/image';
+import { PORTFOLIO_ITEMS } from '../constants/content';
 
 const SelectedWork = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
-  const workItems = [
-    {
-      title: "Polestar increased its users by 75%",
-      subtitle: "Polestar",
-      image: "/polestar 2.png",
-      bgColor: "bg-gray-900"
-    },
-    {
-      title: "Polestar increased its users by 75%",
-      subtitle: "anyb o",
-      image: "/superside 3.png", 
-      bgColor: "bg-gray-900"
-    },
-    {
-      title: "Another project title",
-      subtitle: "Client Name",
-      image: "/api/placeholder/400/300",
-      bgColor: "bg-gray-900"
-    },
-    {
-      title: "Fourth project showcase",
-      subtitle: "Brand Name",
-      image: "/api/placeholder/400/300",
-      bgColor: "bg-gray-900"
-    }
-  ];
+  // Use portfolio items from constants
+  const workItems = PORTFOLIO_ITEMS;
 
   const scrollToNext = useCallback(() => {
     if (scrollContainerRef.current) {

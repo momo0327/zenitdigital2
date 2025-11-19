@@ -130,6 +130,22 @@ export const FEATURES = {
   ],
 } as const;
 
+// Portfolio/Selected Work Items
+export const PORTFOLIO_ITEMS = [
+  {
+    title: 'Polestar increased its users by 75%',
+    subtitle: 'Polestar',
+    image: '/polestar 2.png',
+    bgColor: 'bg-gray-900',
+  },
+  {
+    title: 'Superside creative platform showcase',
+    subtitle: 'Superside',
+    image: '/superside 3.png',
+    bgColor: 'bg-gray-900',
+  },
+] as const;
+
 // FAQ Content
 export const FAQ_ITEMS = [
   {
