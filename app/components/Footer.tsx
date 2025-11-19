@@ -87,6 +87,11 @@ const Footer = () => {
               <Link href={`tel:${COMPANY.phone.replace(/\s/g, '')}`} className="block text-white hover:text-gray-300 transition-colors">
                 {COMPANY.phone}
               </Link>
+              <div className="text-gray-400 text-sm leading-relaxed pt-2">
+                {COMPANY.address.street}<br />
+                {COMPANY.address.postalCode} {COMPANY.address.city}<br />
+                {COMPANY.address.country}
+              </div>
             </div>
 
             {/* Book a Call section */}
