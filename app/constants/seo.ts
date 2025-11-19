@@ -18,8 +18,8 @@ export const SWEDISH_MARKET = {
   countryCode: 'SE',
   locale: 'sv_SE',
   language: 'sv',
-  city: 'Stockholm',
-  region: 'Stockholm County',
+  city: 'Göteborg',
+  region: 'Västra Götaland',
   timezone: 'Europe/Stockholm',
   currency: 'SEK',
 } as const;
@@ -380,14 +380,16 @@ export const LOCAL_BUSINESS_SCHEMA = {
   priceRange: '$$',
   address: {
     '@type': 'PostalAddress',
+    streetAddress: 'St Badhusgatan 18',
+    postalCode: '411 21',
     addressLocality: SWEDISH_MARKET.city,
     addressRegion: SWEDISH_MARKET.region,
     addressCountry: SWEDISH_MARKET.countryCode,
   },
   geo: {
     '@type': 'GeoCoordinates',
-    latitude: 59.3293,
-    longitude: 18.0686,
+    latitude: 57.7089,
+    longitude: 11.9746,
   },
   areaServed: [
     {

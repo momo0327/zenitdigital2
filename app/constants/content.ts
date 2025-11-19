@@ -13,6 +13,12 @@ export const COMPANY = {
   email: 'hello@zenitdigital.se',
   phone: '+46 (0) 123 456 789', // Update with your Swedish phone number
   founded: '2024',
+  address: {
+    street: 'St Badhusgatan 18',
+    postalCode: '411 21',
+    city: 'Göteborg',
+    country: 'Sweden',
+  },
 } as const;
 
 // Repeated Marketing Copy

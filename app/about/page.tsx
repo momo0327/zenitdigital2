@@ -151,18 +151,98 @@ export default function AboutPage() {
       </section>
 
       {/* Location Section */}
-      <section className="px-6 md:px-12 lg:px-16 py-24">
-        <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-4xl md:text-6xl font-antonio font-bold text-black mb-8">
-            Based in Sweden,<br />Serving the World
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-12">
-            Our headquarters are in Sweden, but we work with clients across the globe, delivering world-class digital solutions regardless of geography.
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-8 text-gray-500">
-            <span className="text-lg">🇸🇪 Sweden</span>
-            <span>•</span>
-            <span className="text-lg">🌍 International</span>
+      <section className="px-6 md:px-12 lg:px-16 py-24 bg-gray-50">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-6xl font-antonio font-bold text-black mb-8">
+              Based in Göteborg,<br />Serving the World
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Our headquarters are in Göteborg, Sweden, but we work with clients across the globe, delivering world-class digital solutions regardless of geography.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            {/* Office Details */}
+            <div className="bg-white rounded-2xl p-8 md:p-12 shadow-lg">
+              <h3 className="text-3xl font-antonio font-bold text-black mb-8">
+                Office Location
+              </h3>
+              <div className="space-y-6">
+                <div>
+                  <div className="flex items-start gap-4">
+                    <div className="bg-[#0558F9]/10 p-3 rounded-xl">
+                      <svg className="w-6 h-6 text-[#0558F9]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <p className="text-gray-500 text-sm font-medium mb-2">Address</p>
+                      <p className="text-black text-lg leading-relaxed">
+                        St Badhusgatan 18<br />
+                        411 21 Göteborg<br />
+                        Sweden
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="border-t pt-6">
+                  <div className="flex items-center gap-4">
+                    <div className="bg-[#0558F9]/10 p-2.5 rounded-lg">
+                      <svg className="w-5 h-5 text-[#0558F9]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <p className="text-gray-500 text-sm font-medium">Email</p>
+                      <a href="mailto:hello@zenitdigital.se" className="text-black hover:text-[#0558F9] transition-colors">
+                        hello@zenitdigital.se
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="border-t pt-6">
+                  <div className="flex items-center gap-4">
+                    <div className="bg-[#0558F9]/10 p-2.5 rounded-lg">
+                      <svg className="w-5 h-5 text-[#0558F9]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <p className="text-gray-500 text-sm font-medium">Phone</p>
+                      <a href="tel:+46123456789" className="text-black hover:text-[#0558F9] transition-colors">
+                        +46 (0) 123 456 789
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="border-t pt-6">
+                  <div className="flex flex-wrap items-center justify-start gap-6 text-gray-600">
+                    <span className="text-base">🇸🇪 Sweden</span>
+                    <span>•</span>
+                    <span className="text-base">🌍 International</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Google Maps */}
+            <div className="bg-white rounded-2xl overflow-hidden shadow-lg h-[500px]">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2132.163826!2d11.959!3d57.709!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x464ff369c3e1e1e1%3A0x1234567890abcdef!2sStore%20Badhusgatan%2018%2C%20411%2021%20G%C3%B6teborg!5e0!3m2!1sen!2sse!4v1234567890123!5m2!1sen!2sse"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Zenit Digital Office Location - Göteborg, Sweden"
+              />
+            </div>
           </div>
         </div>
       </section>
