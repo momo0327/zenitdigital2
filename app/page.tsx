@@ -18,6 +18,7 @@ import {
   generateWebPageSchema,
   generateBreadcrumbSchema
 } from "./constants/seo";
+import Achievements from "./components/Achievments";
 
 // Dynamic imports for below-the-fold heavy components (code splitting)
 const ScrollStack = dynamic(() => import('./components/ScrollStack'), {
@@ -89,6 +90,9 @@ export default function Home() {
       <Suspense fallback={<div className="min-h-screen bg-white" />}>
         <ScrollStack/>
       </Suspense>
+      <FadeInOnScroll direction="up">
+        <Achievements/>
+      </FadeInOnScroll>
       <Suspense fallback={<div className="min-h-96 bg-white" />}>
         <Steps/>
       </Suspense>

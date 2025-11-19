@@ -61,15 +61,15 @@ const Steps = () => {
           className="overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] cursor-grab active:cursor-grabbing select-none"
           {...handlers}
         >
-          <div className="flex gap-4 md:gap-6 px-5 md:px-12 lg:px-16 pb-4">
+          <div className="flex gap-4 md:gap-6  px-5 md:px-12 lg:px-16 pb-4">
             {steps.map((step, index) => {
               const IconComponent = step.icon;
               return (
                 <div 
                   key={index}
-                  className={`${step.bgColor} ${step.textColor} rounded-2xl p-8 md:p-10 w-[350px] md:w-[400px] lg:w-[420px] h-76 md:h-74 flex flex-col justify-between flex-shrink-0`}
+                  className={`${step.bgColor} ${step.textColor} rounded-2xl  p-8 md:p-10 w-[350px] md:w-[400px] lg:w-[420px] h-76 md:h-74 flex flex-col  justify-between flex-shrink-0`}
                 >
-                  <div>
+                  <div className=''>
                     <div className="mb-6">
                       <div className="bg-white/5 p-3 rounded-xl w-fit">
                         <IconComponent className="w-5 h-5 md:w-6 md:h-6 text-white" />
