@@ -10,10 +10,11 @@ This is a Next.js 15 company website for Zenit Digital built with React 19, Type
 
 - **Framework**: Next.js 15.5.3 with Turbopack
 - **React**: 19.1.0
-- **TypeScript**: 5.x
+- **TypeScript**: 5.x (strict mode enabled)
 - **Styling**: Tailwind CSS 4 with PostCSS
 - **Animation**: GSAP 3.13.0
-- **Fonts**: Google Fonts (Antonio, Geist Sans, Geist Mono)
+- **Icons**: lucide-react
+- **Fonts**: Geist Sans, Geist Mono (via next/font)
 
 ## Common Commands
 
@@ -26,77 +27,237 @@ npm run build        # Build for production with Turbopack
 npm start           # Start production server
 
 # Code Quality
-npm run lint        # Run ESLint
+npm run lint        # Run ESLint (configured with Next.js ESLint rules)
 ```
 
-## Project Structure
+## Project Architecture
 
-### App Router Organization
+### Directory Structure
+```
+app/
+├── components/          # Shared React components
+│   ├── StaggeredMenu/  # Complex animated menu (modular structure)
+│   ├── sections/       # Reusable page sections
+│   └── ui/            # Base UI components (Skeleton, Images, etc.)
+├── constants/          # Centralized configuration and content
+│   ├── content.ts     # Marketing copy, company info, CTA text
+│   ├── navigation.ts  # All navigation items and menu structures
+│   ├── seo.ts        # SEO metadata and schema
+│   └── theme.ts      # Brand colors and theme tokens
+├── hooks/             # Custom React hooks
+├── utils/             # Utility functions (GSAP helpers, image utils)
+├── [page-routes]/     # Route-specific pages (WebDev, MobileDev, etc.)
+└── globals.css       # Global styles with CSS variables
+```
+
+### App Router Pages
 - `app/page.tsx` - Homepage
-- `app/layout.tsx` - Root layout with Geist font configuration
-- `app/globals.css` - Global styles with Tailwind and custom CSS variables
+- `app/layout.tsx` - Root layout with fonts, SEO, and structure (Navbar, Footer, CookieConsent)
+- `app/about/page.tsx` - About page
 - `app/ContactPage/` - Contact page route
-- `app/WebDev/` - Web development services page
-- `app/MobileDev/` - Mobile development services page
-- `app/FullstackDev/` - Full-stack development services page
+- `app/WebDev/`, `app/MobileDev/`, `app/FullstackDev/` - Service pages
+- `app/work/page.tsx` - Portfolio page
+- `app/faqs/page.tsx` - FAQ page
+- `app/services/page.tsx` - Services overview
+- `app/privacy/page.tsx`, `app/terms/page.tsx` - Legal pages
+- `app/sitemap.ts`, `app/robots.ts` - SEO configuration files
 
-### Components Architecture
-- `app/components/` - Shared React components
-  - `navbar.tsx` - Main navigation with StaggeredMenu integration
-  - `StaggeredMenu.tsx` - Complex animated menu component using GSAP
-  - `header.tsx`, `subHeader.tsx`, `ReversedHeader.tsx`, `triHeader.tsx` - Various header layouts
-  - `FeaturesGrid.tsx` - Features display grid
-  - `HelpGrid.tsx` - Help/support grid section
-  - `selectedWorks.tsx` - Portfolio/case studies section
-  - `Cta.tsx`, `GreenCta.tsx` - Call-to-action components
-  - `Footer.tsx` - Site footer
-  - Page-specific component subdirectories:
-    - `WebDevPageComponents/`
-    - `MobiledevPageComponents/`
-    - `FullstackDevPageComponents/`
+### Component Organization
 
-### Styling System
-- Custom font: Antonio (loaded via Google Fonts)
-- CSS variables for theming (background, foreground)
-- Dark mode support via `prefers-color-scheme`
-- Tailwind configuration via PostCSS plugin
-- Path alias: `@/*` maps to root directory
+**Base Components**
+- `navbar.tsx` - Main navigation with StaggeredMenu integration
+- `Footer.tsx` - Site footer with company info and navigation
+- `ContactForm.tsx` - Contact form with validation
+- `CookieConsent.tsx` - GDPR-compliant cookie consent banner
 
-### Animation Implementation
-- GSAP is used for complex animations, particularly in `StaggeredMenu.tsx`
-- StaggeredMenu features:
-  - Timeline-based open/close animations
-  - Icon rotation animations
-  - Text cycle animations
-  - Color transition effects
-  - Staggered entrance animations for menu items
-  - Uses React refs and `useLayoutEffect` for DOM manipulation
+**Layout Components**
+- `header.tsx`, `subHeader.tsx`, `ReversedHeader.tsx`, `triHeader.tsx` - Various header layouts
+- `sections/PageHeader.tsx` - Standardized page header component
+- `sections/ServiceCard.tsx` - Service card component
+
+**Feature Components**
+- `FeaturesGrid.tsx` - Feature display grid
+- `HelpGrid.tsx` - Help/support grid section
+- `selectedWorks.tsx` - Portfolio/case studies section
+- `Achievments.tsx` - Achievement stats display
+- `Faq.tsx` - FAQ accordion component
+- `Steps.tsx` - Process steps component
+
+**CTA Components**
+- `Cta.tsx`, `GreenCta.tsx` - Call-to-action components
+
+**UI Components** (`app/components/ui/`)
+- `Skeleton.tsx` - Loading skeleton component
+- `PageSkeletons.tsx` - Page-specific loading states
+- `OptimizedImage.tsx` - Image component with optimization
+- `ResponsiveImage.tsx` - Responsive image handling
+- `FadeInOnScroll.tsx` - Scroll-based animation wrapper
+
+**Page-Specific Components**
+- `WebDevPageComponents/` - Web development page components
+- `MobiledevPageComponents/` - Mobile development page components
+- `FullstackDevPageComponents/` - Fullstack development page components
+
+### StaggeredMenu Architecture
+
+The `StaggeredMenu` component is a sophisticated animated navigation menu with modular architecture:
+
+**Structure:**
+- `index.tsx` - Main component orchestrating animations and state
+- `StaggeredMenuHeader.tsx` - Logo and toggle button
+- `StaggeredMenuPanel.tsx` - Menu panel with navigation items
+- `StaggeredMenuToggle.tsx` - Toggle button component
+- `StaggeredMenu.types.ts` - TypeScript type definitions
+- `StaggeredMenu.constants.ts` - Default configuration values
+
+**Animation Hooks** (`animations/`):
+- `useMenuAnimations.ts` - Panel open/close animations
+- `useIconAnimation.ts` - Toggle icon rotation animations
+- `useTextAnimation.ts` - Text cycling animations
+- `useColorAnimation.ts` - Color transition effects
+
+**Key Features:**
+- GSAP-powered timeline animations with stagger effects
+- Accessibility support (reduced motion, keyboard navigation)
+- Position configuration (left/right)
+- Customizable gradient backgrounds
+- Social links integration
+- Mobile-responsive full-screen overlay
+
+### Constants Architecture
+
+Centralized configuration files in `app/constants/`:
+
+**content.ts** - Single source of truth for all copy:
+- `COMPANY` - Company information (name, contact, address)
+- `MARKETING_COPY` - Reusable taglines and marketing text
+- `SERVICES` - Service page content (web, mobile, fullstack)
+- `CTA` - Call-to-action button labels
+- `FOOTER` - Footer content and links
+- `FEATURES` - Feature grid content
+- `PORTFOLIO_ITEMS` - Portfolio case studies
+- `FAQ_ITEMS` - FAQ questions and answers
+- `CONTACT_FORM` - Form labels and validation messages
+
+**navigation.ts** - All navigation structures:
+- `MAIN_NAV_ITEMS` - Primary navigation
+- `CENTER_NAV_ITEMS` - Center navigation items
+- `SERVICES_NAV` - Service navigation with descriptions
+- `SOCIAL_LINKS` - Social media links
+- `FOOTER_NAV` - Footer navigation structure
+- `MOBILE_MENU_ITEMS` - Mobile-specific navigation
+
+**theme.ts** - Brand colors and design tokens:
+- `BRAND_COLORS` - Primary brand color palette
+- Theme-related constants
+
+**seo.ts** - SEO metadata and structured data:
+- `DEFAULT_METADATA` - Default Next.js metadata
+- `LOCAL_BUSINESS_SCHEMA` - JSON-LD schema for Swedish market SEO
+
+### Custom Hooks System
+
+Comprehensive set of custom React hooks in `app/hooks/`:
+
+**Image Optimization:**
+- `useOptimizedImage` - Image optimization utilities
+- `useBlurDataURL` - Generate blur placeholder data URLs
+- `useProgressiveImage` - Progressive image loading
+- `useImagePreload` - Preload images for faster display
+
+**UI Interaction:**
+- `useOnClickOutside` - Detect clicks outside an element
+- `useDragScroll` - Drag-to-scroll functionality
+
+**Performance:**
+- `useDebounce` - Debounce values
+- `useThrottle` - Throttle function calls
+- `useIntersectionObserver` - Observe element visibility
+
+**Responsive Design:**
+- `useMediaQuery` - Match media queries
+- `useBreakpoint` - Get current breakpoint
+- `useWindowSize` - Track window dimensions
+- `useWindowSizeDebounced` - Debounced window size
+
+**State Management:**
+- `useLocalStorage` - Persist state to localStorage
+- `usePrevious` - Track previous value
+- `usePageVisibility` - Detect when tab is visible
+
+**Accessibility:**
+- `usePrefersReducedMotion` - Respect user motion preferences
+
+### Utility Functions
+
+**gsapHelpers.ts** - GSAP animation utilities:
+- `getOffscreenValue()` - Calculate off-screen positioning
+- `killTweens()` - Clean up GSAP animations
+- `CSSCustomProperties` type for CSS custom properties
+
+**image.ts** - Image processing utilities
 
 ## Key Technical Details
 
-### StaggeredMenu Component
-This is a sophisticated animated navigation menu with:
-- Position configuration (left/right)
-- Customizable gradient background layers
-- GSAP-powered animations for smooth transitions
-- Mobile-responsive full-screen overlay
-- Social links display
-- Item numbering system
-- Extensive inline styles for z-index management and fixed positioning
-
-### Configuration Files
-- `tsconfig.json` - TypeScript config with strict mode, ES2017 target
-- `next.config.ts` - Next.js configuration (minimal setup)
-- `postcss.config.mjs` - PostCSS with Tailwind plugin
-- `eslint.config.mjs` - ESLint configuration
+### TypeScript Configuration
+- Target: ES2017
+- Strict mode enabled
+- Path alias: `@/*` maps to root directory
+- Module resolution: bundler (optimized for Next.js)
 
 ### Client Components
-Components using hooks or browser APIs must include `'use client'` directive (e.g., `navbar.tsx`, `StaggeredMenu.tsx`)
+Components using hooks or browser APIs must include `'use client'` directive:
+- Navigation components (navbar, StaggeredMenu)
+- Interactive components (ContactForm, CookieConsent)
+- Animation components (FadeInOnScroll)
 
-## Development Notes
+### GSAP Animation Patterns
+- Use `useLayoutEffect` for DOM-dependent GSAP setup
+- Always create cleanup functions with `gsap.context().revert()`
+- Use refs for DOM elements, never query selectors directly in effects
+- Respect `prefersReducedMotion` for accessibility
+- Pause animations when page visibility changes
 
-- Turbopack is enabled for faster builds and dev server
-- All component imports use relative paths
+### Content Management
+- All text content should be added to `app/constants/content.ts`
+- All navigation items should be defined in `app/constants/navigation.ts`
+- This ensures consistency and makes updates easy
+- Import from `@/app/constants` or `@/constants` using the path alias
+
+### Styling Approach
+- Tailwind CSS 4 for styling (configured via PostCSS)
+- CSS variables for theming in `globals.css`
+- Dark mode support via `prefers-color-scheme`
+- Antonio font for headings (custom), Geist for body text
+- Responsive breakpoints: mobile (640px), tablet (768px), desktop (1024px)
+
+### SEO & Performance
+- Metadata exported from page components using Next.js Metadata API
+- LocalBusiness JSON-LD schema for Swedish market SEO
+- Loading states with Skeleton components
+- Image optimization with custom hooks and Next.js Image
+- `robots.ts` and `sitemap.ts` for search engine configuration
+
+### Error Handling
+- `error.tsx` - Route-level error boundary
+- `global-error.tsx` - Global error boundary
+- `not-found.tsx` - 404 page
+- `loading.tsx` - Loading states for pages
+
+## Development Workflow
+
+1. **Adding New Content**: Update constants files first, then use them in components
+2. **Creating New Pages**: Follow App Router conventions, add metadata, include loading/error states
+3. **New Components**: Place in appropriate directory (components/, sections/, ui/)
+4. **Animations**: Use existing GSAP hooks or create new ones following established patterns
+5. **Styling**: Use Tailwind classes, refer to theme constants for colors
+6. **Navigation**: Add new routes to navigation constants, update StaggeredMenu items
+
+## Important Notes
+
+- Turbopack is enabled for faster builds and dev server (--turbopack flag)
+- All component imports use path alias `@/app/...` or relative paths
 - Image assets are in `/public` directory
-- The project uses the App Router, not Pages Router
-- TypeScript strict mode is enabled
+- The project uses App Router, not Pages Router
+- SEO is configured for Swedish market (Göteborg office location)
+- Company contact: hello@zenitdigital.se

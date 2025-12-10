@@ -121,7 +121,7 @@ const Achievements = () => {
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
               }`}
             >
-              <span className="bg-white/5 text-white px-6 py-2 rounded-full text-sm font-medium">
+              <span className="bg-white/5 text-white px-6 py-2 rounded-full text-sm font-bold">
                 Resultat
               </span>
             </div>
@@ -155,7 +155,7 @@ const Achievements = () => {
                 }`}
                 style={{ transitionDelay: `${600 + index * 150}ms` }}
               >
-                <div className="flex flex-col">
+                <div className="flex flex-col ">
                   <div className="text-6xl md:text-7xl lg:text-8xl font-light text-white mb-4">
                     {formatNumber(counts[achievement.id as keyof typeof counts], achievement.decimals)}
                     <span className="text-white">{achievement.suffix}</span>

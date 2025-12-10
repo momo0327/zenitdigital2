@@ -6,6 +6,7 @@ import { DEFAULT_METADATA, LOCAL_BUSINESS_SCHEMA } from "./constants/seo";
 import Navbar from "./components/navbar";
 import Footer from "./components/Footer";
 import { CookieConsent } from "./components/CookieConsent";
+import TransitionProvider from "./components/TransitionProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -41,7 +42,9 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Navbar />
-        {children}
+        <TransitionProvider>
+          {children}
+        </TransitionProvider>
         <Footer />
         <CookieConsent />
       </body>

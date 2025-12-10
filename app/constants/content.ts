@@ -28,6 +28,38 @@ export const MARKETING_COPY = {
   innovation: 'Innovation meets excellence',
 } as const;
 
+// Services Overview
+export const SERVICES_OVERVIEW = {
+  title: 'OUR SERVICES',
+  subtitle: "The way we work has changed, but learning software hasn't. until now.",
+  items: [
+    {
+      title: 'Web App Development',
+      description: "The way we work has changed, but learning software hasnt. until now.",
+      bgColor: 'bg-[#240000]',
+      textColor: 'text-[#FF5147]',
+      href: '/WebDev',
+      image: '/h-1 3.png',
+    },
+    {
+      title: 'Mobile App Development',
+      description: "The way we work has changed, but learning software hasnt. until now.",
+      bgColor: 'bg-[#1a0f2e]',
+      textColor: 'text-[#BEA1FC]',
+      href: '/MobileDev',
+      image: '/Group 6-3.png',
+    },
+    {
+      title: 'Fullstack Development',
+      description: "The way we work has changed, but learning software hasnt. until now.",
+      bgColor: 'bg-[#051E01]',
+      textColor: 'text-[#B4FFA8]',
+      href: '/FullstackDev',
+      image: '/Group 6-3.png',
+    },
+  ],
+} as const;
+
 // Service Pages Content
 export const SERVICES = {
   web: {
@@ -39,6 +71,23 @@ export const SERVICES = {
       'Performance Optimization',
       'SEO Best Practices',
       'Modern Frameworks',
+    ],
+    advantages: [
+      {
+        title: 'Custom UI/UX',
+        description: 'Tailored design solutions that perfectly match your brand identity and user needs',
+        icon: 'Palette',
+      },
+      {
+        title: 'Lightning Fast',
+        description: 'Optimized performance with modern frameworks for exceptional speed and efficiency',
+        icon: 'Zap',
+      },
+      {
+        title: 'SEO Optimized',
+        description: 'Built-in search engine optimization to maximize your online visibility and reach',
+        icon: 'TrendingUp',
+      },
     ],
   },
   mobile: {

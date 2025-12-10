@@ -66,21 +66,26 @@ export default function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6 mb-16">
+    <form onSubmit={handleSubmit} className="bg-white/90 backdrop-blur-sm rounded-3xl 2xl:rounded-[2.5rem] p-8 md:p-10 lg:p-12 2xl:p-20 shadow-xl space-y-5 2xl:space-y-9">
+      {/* Title */}
+      {/* <h2 className="text-2xl md:text-3xl font-antonio font-bold text-[#0A0D24] text-left">
+        Boka en fri konsultation
+      </h2> */}
+
       {/* Success/Error Messages */}
       {submitStatus === 'success' && (
-        <div className="bg-green-500/20 border border-green-500 text-green-900 px-6 py-4 rounded-2xl">
-          Thank you! Your message has been sent successfully.
+        <div className="bg-green-500/20 border border-green-500 text-green-900 px-4 py-3 2xl:px-8 2xl:py-5 rounded-xl 2xl:rounded-2xl text-sm 2xl:text-xl">
+          Tack! Ditt meddelande har skickats.
         </div>
       )}
       {submitStatus === 'error' && (
-        <div className="bg-red-500/20 border border-red-500 text-red-900 px-6 py-4 rounded-2xl">
-          Something went wrong. Please try again.
+        <div className="bg-red-500/20 border border-red-500 text-red-900 px-4 py-3 2xl:px-8 2xl:py-5 rounded-xl 2xl:rounded-2xl text-sm 2xl:text-xl">
+          Något gick fel. Vänligen försök igen.
         </div>
       )}
 
       {/* Name Fields */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 2xl:gap-8">
         <div>
           <input
             type="text"
@@ -90,7 +95,7 @@ export default function ContactForm() {
             placeholder="First Name"
             required
             disabled={isSubmitting}
-            className="w-full bg-white/90 border-2 border-[#0A0D24]/20 text-[#0A0D24] placeholder-[#0A0D24]/50 py-3 px-4 focus:outline-none focus:border-[#0A0D24] focus:ring-2 focus:ring-[#0A0D24]/20 transition-all rounded-2xl disabled:opacity-50"
+            className="w-full bg-white border border-[#0A0D24]/20 text-[#0A0D24] placeholder-[#0A0D24]/50 py-3 px-4 2xl:py-6 2xl:px-8 2xl:text-2xl focus:outline-none focus:border-[#0A0D24] focus:ring-1 focus:ring-[#0A0D24]/20 transition-all rounded-xl 2xl:rounded-2xl disabled:opacity-50"
           />
         </div>
         <div>
@@ -102,13 +107,13 @@ export default function ContactForm() {
             placeholder="Last Name"
             required
             disabled={isSubmitting}
-            className="w-full bg-white/90 border-2 border-[#0A0D24]/20 text-[#0A0D24] placeholder-[#0A0D24]/50 py-3 px-4 focus:outline-none focus:border-[#0A0D24] focus:ring-2 focus:ring-[#0A0D24]/20 transition-all rounded-2xl disabled:opacity-50"
+            className="w-full bg-white border border-[#0A0D24]/20 text-[#0A0D24] placeholder-[#0A0D24]/50 py-3 px-4 2xl:py-6 2xl:px-8 2xl:text-2xl focus:outline-none focus:border-[#0A0D24] focus:ring-1 focus:ring-[#0A0D24]/20 transition-all rounded-xl 2xl:rounded-2xl disabled:opacity-50"
           />
         </div>
       </div>
 
       {/* Email and Phone */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 2xl:gap-8">
         <div>
           <input
             type="email"
@@ -118,7 +123,7 @@ export default function ContactForm() {
             placeholder="Email"
             required
             disabled={isSubmitting}
-            className="w-full bg-white/90 border-2 border-[#0A0D24]/20 text-[#0A0D24] placeholder-[#0A0D24]/50 py-3 px-4 focus:outline-none focus:border-[#0A0D24] focus:ring-2 focus:ring-[#0A0D24]/20 transition-all rounded-2xl disabled:opacity-50"
+            className="w-full bg-white border border-[#0A0D24]/20 text-[#0A0D24] placeholder-[#0A0D24]/50 py-3 px-4 2xl:py-6 2xl:px-8 2xl:text-2xl focus:outline-none focus:border-[#0A0D24] focus:ring-1 focus:ring-[#0A0D24]/20 transition-all rounded-xl 2xl:rounded-2xl disabled:opacity-50"
           />
         </div>
         <div>
@@ -130,7 +135,7 @@ export default function ContactForm() {
             placeholder="Phone Number"
             required
             disabled={isSubmitting}
-            className="w-full bg-white/90 border-2 border-[#0A0D24]/20 text-[#0A0D24] placeholder-[#0A0D24]/50 py-3 px-4 focus:outline-none focus:border-[#0A0D24] focus:ring-2 focus:ring-[#0A0D24]/20 transition-all rounded-2xl disabled:opacity-50"
+            className="w-full bg-white border border-[#0A0D24]/20 text-[#0A0D24] placeholder-[#0A0D24]/50 py-3 px-4 2xl:py-6 2xl:px-8 2xl:text-2xl focus:outline-none focus:border-[#0A0D24] focus:ring-1 focus:ring-[#0A0D24]/20 transition-all rounded-xl 2xl:rounded-2xl disabled:opacity-50"
           />
         </div>
       </div>
@@ -144,7 +149,7 @@ export default function ContactForm() {
           onChange={handleChange}
           placeholder="Company Name (Optional)"
           disabled={isSubmitting}
-          className="w-full bg-white/90 border-2 border-[#0A0D24]/20 text-[#0A0D24] placeholder-[#0A0D24]/50 py-3 px-4 focus:outline-none focus:border-[#0A0D24] focus:ring-2 focus:ring-[#0A0D24]/20 transition-all rounded-2xl disabled:opacity-50"
+          className="w-full bg-white border border-[#0A0D24]/20 text-[#0A0D24] placeholder-[#0A0D24]/50 py-3 px-4 2xl:py-6 2xl:px-8 2xl:text-2xl focus:outline-none focus:border-[#0A0D24] focus:ring-1 focus:ring-[#0A0D24]/20 transition-all rounded-xl 2xl:rounded-2xl disabled:opacity-50"
         />
       </div>
 
@@ -156,13 +161,13 @@ export default function ContactForm() {
           onChange={handleChange}
           required
           disabled={isSubmitting}
-          className="w-full bg-white/90 border-2 border-[#0A0D24]/20 text-[#0A0D24] py-3 px-4 focus:outline-none focus:border-[#0A0D24] focus:ring-2 focus:ring-[#0A0D24]/20 transition-all rounded-2xl appearance-none cursor-pointer disabled:opacity-50"
+          className="w-full bg-white border border-[#0A0D24]/20 text-[#0A0D24] py-3 px-4 2xl:py-6 2xl:px-8 2xl:text-2xl focus:outline-none focus:border-[#0A0D24] focus:ring-1 focus:ring-[#0A0D24]/20 transition-all rounded-xl 2xl:rounded-2xl appearance-none cursor-pointer disabled:opacity-50"
           style={{
             backgroundImage: `url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230A0D24' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e")`,
             backgroundRepeat: 'no-repeat',
             backgroundPosition: 'right 1rem center',
-            backgroundSize: '1.5em 1.5em',
-            paddingRight: '3rem'
+            backgroundSize: '1.2em 1.2em',
+            paddingRight: '2.5rem'
           }}
         >
           <option value="" disabled>Select a Service</option>
@@ -185,20 +190,35 @@ export default function ContactForm() {
           onChange={handleChange}
           placeholder="Tell us about your project"
           required
-          rows={5}
+          rows={4}
           disabled={isSubmitting}
-          className="w-full bg-white/90 border-2 border-[#0A0D24]/20 text-[#0A0D24] placeholder-[#0A0D24]/50 py-3 px-4 focus:outline-none focus:border-[#0A0D24] focus:ring-2 focus:ring-[#0A0D24]/20 transition-all rounded-2xl resize-none disabled:opacity-50"
+          className="w-full bg-white border border-[#0A0D24]/20 text-[#0A0D24] placeholder-[#0A0D24]/50 py-3 px-4 2xl:py-6 2xl:px-8 2xl:text-2xl focus:outline-none focus:border-[#0A0D24] focus:ring-1 focus:ring-[#0A0D24]/20 transition-all rounded-xl 2xl:rounded-2xl resize-none disabled:opacity-50"
         />
       </div>
 
+      {/* Consent Checkbox */}
+      <div className="flex items-start gap-3 2xl:gap-5">
+        <input
+          type="checkbox"
+          id="consent"
+          required
+          className="mt-1 w-4 h-4 2xl:w-6 2xl:h-6 rounded border-[#0A0D24]/30 text-[#0A0D24] focus:ring-[#0A0D24] focus:ring-offset-0"
+        />
+        <label htmlFor="consent" className="text-sm 2xl:text-xl text-[#0A0D24]/70 leading-relaxed">
+
+          Genom att skicka in detta formulär samtycker jag till att Zenit Digital får lagra och
+          behandla mina personuppgifter för att kunna kontakta mig.
+        </label>
+      </div>
+
       {/* Submit Button */}
-      <div className="pt-2">
+      <div className="pt-2 2xl:pt-4">
         <button
           type="submit"
           disabled={isSubmitting}
-          className="w-full px-8 py-4 bg-[#0A0D24] text-white font-semibold text-lg rounded-2xl hover:bg-[#0A0D24]/90 transition-all duration-300 transform hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+          className="w-full px-8 py-4 2xl:px-12 2xl:py-6 bg-[#0A0D24] text-white font-semibold text-lg 2xl:text-3xl rounded-xl 2xl:rounded-2xl hover:bg-[#0A0D24]/90 transition-all duration-300 transform hover:scale-[1.01] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
         >
-          {isSubmitting ? 'Sending...' : 'Submit'}
+          {isSubmitting ? 'Skickar...' : 'Skicka meddelande'}
         </button>
       </div>
     </form>

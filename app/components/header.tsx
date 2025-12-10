@@ -72,22 +72,22 @@ const Header = () => {
         </div>
 
         {/* Desktop subtitle and buttons - Absolutely positioned on the right */}
-        <div 
-          className="hidden md:block absolute right-12 lg:right-16 bottom-32 lg:bottom-52 max-w-xs transition-all duration-1000 ease-out"
+        <div
+          className="hidden md:block absolute right-12 lg:right-16 2xl:right-24 bottom-32 lg:bottom-52 2xl:bottom-64 max-w-xs 2xl:max-w-md transition-all duration-1000 ease-out"
           style={{
             opacity: isVisible ? 1 : 0,
             transform: isVisible ? 'translateX(0)' : 'translateX(30px)',
             transitionDelay: '600ms'
           }}
         >
-          <p className='text-lg lg:text-xl leading-tight text-[#14AAFF] mb-3'>
+          <p className='text-lg lg:text-xl 2xl:text-2xl leading-tight text-[#14AAFF] mb-3 2xl:mb-5'>
             The way we work has changed, but learning software hasnt. until now.
           </p>
-          <div className='flex gap-3'>
-            <button className='bg-[#14AAFF] text-[#010A1E] py-3 px-7 text-sm rounded-full font-medium hover:bg-[#0FA0EF] transition-colors'>
+          <div className='flex gap-3 2xl:gap-4'>
+            <button className='bg-[#14AAFF] text-[#010A1E] py-3 px-7 2xl:py-4 2xl:px-10 text-sm 2xl:text-lg rounded-full font-bold hover:bg-[#0FA0EF] transition-colors'>
               Explore
             </button>
-            <button className='bg-transparent border-2 border-[#14AAFF] text-[#14AAFF] py-3 px-7 text-sm rounded-full font-medium hover:bg-[#14AAFF]/10 transition-colors'>
+            <button className='bg-transparent border-2 border-[#14AAFF] text-[#14AAFF] py-3 px-7 2xl:py-4 2xl:px-10 text-sm 2xl:text-lg rounded-full font-medium hover:bg-[#14AAFF]/10 transition-colors'>
               Contact
             </button>
           </div>
