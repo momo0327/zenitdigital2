@@ -1,16 +1,57 @@
 'use client'
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import StaggeredMenu from './StaggeredMenu/index';
 import { useBreakpoint } from '@/app/hooks/useMediaQuery';
 
-const Navbar = () => {
+interface NavbarProps {
+  bgColor?: string;
+  textColor?: string;
+  logoColor?: string;
+  hoverBgColor?: string;
+}
+
+const Navbar: React.FC<NavbarProps> = ({
+  bgColor = 'bg-white',
+  textColor = 'text-black',
+  logoColor = 'text-black',
+  hoverBgColor = 'hover:bg-gray-100'
+}) => {
   const { isMobile } = useBreakpoint();
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      // Only apply scroll behavior on larger devices (desktop)
+      if (window.innerWidth >= 1024) {
+        if (currentScrollY > lastScrollY && currentScrollY > 100) {
+          // Scrolling down
+          setIsVisible(false);
+        } else {
+          // Scrolling up
+          setIsVisible(true);
+        }
+      } else {
+        // Always visible on smaller devices
+        setIsVisible(true);
+      }
+
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [lastScrollY]);
 
   const menuItems = [
-    { label: 'Platform', ariaLabel: 'Go to platform page', link: '/platform' },
+    { label: 'Home', ariaLabel: 'Go to home page', link: '/' },
     { label: 'About', ariaLabel: 'Learn about us', link: '/about' },
-    { label: 'Explore', ariaLabel: 'Explore our features', link: '/explore' },
-    { label: 'Demo', ariaLabel: 'Try our demo', link: '/demo' }
+    { label: 'Services', ariaLabel: 'Explore our features', link: '/services' },
   ];
 
   const socialItems = [
@@ -22,30 +63,32 @@ const Navbar = () => {
   return (
     <>
       {/* Navbar */}
-      <nav className="bg-white px-6 py-5 fixed top-0 left-0 right-0 z-60">
-        <div className="flex items-center justify-between max-w-7xl mx-auto">
+      <nav className={`${bgColor} px-6 py-5 2xl:px-10 2xl:py-7 fixed left-0 right-0 z-60 transition-transform duration-300 ease-in-out ${
+        isVisible ? 'top-0 translate-y-0' : '-translate-y-full'
+      }`}>
+        <div className="flex items-center justify-between max-w-7xl 2xl:max-w-[1600px] mx-auto">
           {/* Logo */}
-          <div className="text-xl font-bold text-black cursor-pointer">
+          <div className={`text-xl 2xl:text-3xl font-bold ${logoColor} cursor-pointer`}>
             ZENIT
           </div>
 
           {/* Center Navigation - Responsive with useBreakpoint */}
           {!isMobile && (
-            <div className="flex space-x-2 md:space-x-8 absolute left-1/2 transform -translate-x-1/2">
-              <button className="text-gray-700 hover:text-black px-2 md:px-4 py-2 rounded-md hover:bg-gray-100 transition-all duration-200 text-sm md:text-base">
-                Platform
+            <div className="flex space-x-2 md:space-x-8 2xl:space-x-12 absolute left-1/2 transform -translate-x-1/2">
+              <button className={`${textColor} opacity-70 hover:opacity-100 px-2 md:px-4 2xl:px-6 py-2 2xl:py-3 rounded-md ${hoverBgColor} transition-all duration-200 text-sm md:text-base 2xl:text-xl`}>
+                Home
               </button>
-              <button className="text-gray-700 hover:text-black px-2 md:px-4 py-2 rounded-md hover:bg-gray-100 transition-all duration-200 text-sm md:text-base">
+              <button className={`${textColor} opacity-70 hover:opacity-100 px-2 md:px-4 2xl:px-6 py-2 2xl:py-3 rounded-md ${hoverBgColor} transition-all duration-200 text-sm md:text-base 2xl:text-xl`}>
                 About
               </button>
-              <button className="text-gray-700 hover:text-black px-2 md:px-4 py-2 rounded-md hover:bg-gray-100 transition-all duration-200 text-sm md:text-base">
-                Explore
+              <button className={`${textColor} opacity-70 hover:opacity-100 px-2 md:px-4 2xl:px-6 py-2 2xl:py-3 rounded-md ${hoverBgColor} transition-all duration-200 text-sm md:text-base 2xl:text-xl`}>
+                Services
               </button>
             </div>
           )}
 
-          {/* Right side - StaggeredMenu */}
-          <div className="flex items-center">
+          {/* Right side - StaggeredMenu (only on mobile/tablet) */}
+          <div className="flex items-center lg:hidden">
             <div className="w-auto h-auto">
               <StaggeredMenu
                 position="right"
@@ -63,6 +106,13 @@ const Navbar = () => {
                 onMenuClose={() => console.log('Menu closed')}
               />
             </div>
+          </div>
+
+          {/* Right side - Let's Talk button (only on desktop) */}
+          <div className="hidden lg:flex items-center">
+            <button className="bg-gray-100 text-black px-6 py-2 2xl:px-8 2xl:py-3 rounded-full hover:bg-gray-200 transition-colors duration-200 text-base 2xl:text-xl">
+              Let's Talk
+            </button>
           </div>
         </div>
       </nav>
@@ -129,12 +179,22 @@ const Navbar = () => {
         }
 
         .sm-icon {
+          display: inline-flex !important;
           order: 2 !important;
           margin-left: 0.3rem !important;
+          width: 14px !important;
+          height: 14px !important;
+          position: relative !important;
         }
 
+        .sm-icon-line {
+          display: block !important;
+          position: absolute !important;
+          background: currentColor !important;
+          border-radius: 2px !important;
+        }
 
-    .sm-panel-item {
+        .sm-panel-item {
           font-family: 'Antonio', sans-serif !important;
         }
 

@@ -5,7 +5,7 @@ import { IMAGE_QUALITY } from '../../utils/image';
 
 const Header = () => {
   return (
-    <div className="px-2 md:px-12 lg:px-8 bg-white lg:py-20 py-17">
+    <div className="px-2 md:px-12 lg:px-8 bg-white lg:py-20 py-17 ">
       <div className="bg-[#240000] rounded-lg px-8 md:px-12 lg:px-16 py-12 md:py-16 lg:py-10 min-h-[600px] md:min-h-[700px] lg:min-h-[800px] flex items-center justify-center">
                  
         {/* Content Grid */}

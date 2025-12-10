@@ -15,7 +15,7 @@ const Footer = () => {
           {/* Logo and Clutch review */}
           <div className="space-y-8">
             <div>
-              <h3 className="text-2xl font-light tracking-wider uppercase">{COMPANY.name}</h3>
+              <h3 className="text-2xl font-antonio font-bold tracking-wider uppercase">{COMPANY.name}</h3>
             </div>
             
             {/* Clutch review */}
@@ -44,15 +44,15 @@ const Footer = () => {
               <Link href="/" className="block text-white hover:text-gray-300 transition-colors">
                 Home
               </Link>
-              <Link href="/work" className="block text-white hover:text-gray-300 transition-colors">
+              {/* <Link href="/work" className="block text-white hover:text-gray-300 transition-colors">
                 Work
-              </Link>
+              </Link> */}
               <Link href="/services" className="block text-white hover:text-gray-300 transition-colors">
                 Services
               </Link>
-              <Link href="/faqs" className="block text-white hover:text-gray-300 transition-colors">
+              {/* <Link href="/faqs" className="block text-white hover:text-gray-300 transition-colors">
                 FAQs
-              </Link>
+              </Link> */}
               <Link href="/ContactPage" className="block text-white hover:text-gray-300 transition-colors">
                 Contact
               </Link>
@@ -95,30 +95,7 @@ const Footer = () => {
             </div>
 
             {/* Book a Call section */}
-            <div className="mt-8 space-y-3">
-              <div className="text-white font-medium">Book a Call</div>
-              <p className="text-sm text-gray-400 leading-relaxed">
-                A 30-min discovery call to see how we can help.
-              </p>
-              
-              {/* Profile section */}
-              <div className="flex items-center justify-between pt-4">
-                <div className="flex items-center space-x-3">
-                  <div className="w-10 h-10 bg-gray-600 rounded-full flex items-center justify-center">
-                    <span className="text-sm font-medium">JA</span>
-                  </div>
-                  <div>
-                    <div className="text-sm font-medium text-white">Jassin Al-Safe</div>
-                    <div className="text-xs text-gray-500">Co-Founder & Creative Director</div>
-                  </div>
-                </div>
-                <button className="w-8 h-8 border border-gray-600 rounded-full flex items-center justify-center hover:border-gray-400 transition-colors">
-                  <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17l9.2-9.2M17 17V7H7" />
-                  </svg>
-                </button>
-              </div>
-            </div>
+          
           </div>
         </div>
 

@@ -91,7 +91,7 @@ export default function ScrollStack() {
             style={{ zIndex: i + 1 }}
           >
             {section.type === 'text' ? (
-              <div 
+              <div
                 className={`absolute inset-0 ${section.bg} flex items-center mb-8 justify-center will-change-transform`}
                 style={{
                   filter: `blur(${blur}px)`,
@@ -99,19 +99,19 @@ export default function ScrollStack() {
                   transformOrigin: 'center center'
                 }}
               >
-                <div className="max-w-5xl w-full px-6 md:px-8 mx-auto">
-                  <h1 
-                    className={`text-5xl md:text-6xl lg:text-8xl font-bold ${section.textColor} text-left leading-tight font-antonio mb-6 md:mb-8`}
+                <div className="max-w-5xl 2xl:max-w-7xl w-full px-6 md:px-8 2xl:px-12 mx-auto">
+                  <h1
+                    className={`text-5xl md:text-6xl lg:text-8xl 2xl:text-9xl font-bold ${section.textColor} text-left leading-tight font-antonio mb-6 md:mb-8 2xl:mb-12`}
                     style={{
                       opacity: 1 - progress * 0.6
                     }}
                   >
                     {section.title}
                   </h1>
-                  
+
                   <div className="flex justify-start md:justify-end">
-                    <p 
-                      className={`text-base md:text-lg ${section.textColor} opacity-70 max-w-md text-left md:leading-tight`}
+                    <p
+                      className={`text-base md:text-lg 2xl:text-2xl ${section.textColor} opacity-70 max-w-md 2xl:max-w-2xl text-left md:leading-tight`}
                       style={{
                         opacity: 1 - progress * 0.6
                       }}
@@ -130,8 +130,8 @@ export default function ScrollStack() {
                   transformOrigin: 'center center'
                 }}
               >
-                <div 
-                  className={`h-full flex flex-col lg:flex-row items-center justify-center px-6 md:px-12 lg:px-16 py-12 gap-8 lg:gap-16 max-w-7xl mx-auto ${
+                <div
+                  className={`h-full flex flex-col lg:flex-row items-center justify-center px-6 md:px-12 lg:px-16 2xl:px-24 py-12 2xl:py-16 gap-8 lg:gap-16 2xl:gap-24 max-w-7xl 2xl:max-w-[2000px] mx-auto ${
                     section.imagePosition === 'left' ? 'lg:flex-row-reverse' : ''
                   }`}
                   style={{
@@ -139,14 +139,14 @@ export default function ScrollStack() {
                   }}
                 >
                   <div className="w-full lg:flex-1 text-left">
-                    <h2 className={`text-4xl sm:text-5xl md:text-6xl font-bold ${section.textColor} mb-4 md:mb-6 leading-tight font-antonio`}>
+                    <h2 className={`text-4xl sm:text-5xl md:text-6xl 2xl:text-8xl font-bold ${section.textColor} mb-4 md:mb-6 2xl:mb-10 leading-tight font-antonio`}>
                       {section.title}
                     </h2>
-                    <p className={`text-base md:text-xl ${section.textColor} opacity-70 leading-relaxed`}>
+                    <p className={`text-base md:text-xl 2xl:text-3xl ${section.textColor} opacity-70 leading-relaxed`}>
                       {section.subtitle}
                     </p>
                   </div>
-                  
+
                   <div className="w-full lg:flex-1 flex items-center justify-center">
                     {section.type === 'image' && section.image && (
                       <OptimizedImage
@@ -154,7 +154,7 @@ export default function ScrollStack() {
                         alt={`${section.title} - ${section.subtitle}`}
                         width={600}
                         height={700}
-                        className={`w-full ${section.imageSize} h-auto object-contain drop-shadow-2xl`}
+                        className={`w-full ${section.imageSize} 2xl:max-w-4xl h-auto object-contain drop-shadow-2xl`}
                         quality={IMAGE_QUALITY.HIGH}
                         enableBlur
                       />

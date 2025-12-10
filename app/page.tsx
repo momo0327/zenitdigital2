@@ -66,33 +66,18 @@ export default function Home() {
 
       <Text />
       {/* Flex container for side-by-side components */}
-      <div className="flex flex-col   lg:flex-row  px-6 bg-white py-12">
-        <FadeInOnScroll direction="left" delay={100}>
+      <div className="flex flex-col lg:flex-row bg-white">
           <SubHeader />
-        </FadeInOnScroll>
-        <FadeInOnScroll direction="right" delay={200}>
           <ReversedHeader />
-        </FadeInOnScroll>
       </div>
-      <FadeInOnScroll direction="up">
-        <TriHeader/>
-      </FadeInOnScroll>
-      <FadeInOnScroll direction="up" delay={100}>
+      <TriHeader/>
         <SelectedWork/>
-      </FadeInOnScroll>
-      <FadeInOnScroll direction="up">
         <GreenCTA/>
-      </FadeInOnScroll>
-      <FadeInOnScroll direction="up" delay={150}>
         <FeaturesGrid/>
-      </FadeInOnScroll>
       {/* <HelpGrid/> */}
       <Suspense fallback={<div className="min-h-screen bg-white" />}>
         <ScrollStack/>
       </Suspense>
-      <FadeInOnScroll direction="up">
-        <Achievements/>
-      </FadeInOnScroll>
       <Suspense fallback={<div className="min-h-96 bg-white" />}>
         <Steps/>
       </Suspense>

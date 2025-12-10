@@ -37,51 +37,51 @@ const FeaturesGrid = () => {
   ];
 
   return (
-    <div className="bg-white py-1 md:py-20 lg:py-24">
+    <div className="bg-white py-1 md:py-20 lg:py-24 2xl:py-32">
       <div className="w-full">
         {/* Desktop Layout */}
-        <div className="hidden md:block px-5 md:px-12 lg:px-16">
-          <div className="max-w-7xl mx-auto">
-            <div className="md:grid md:grid-cols-3 gap-6">
+        <div className="hidden md:block px-5 md:px-12 lg:px-16 2xl:px-24">
+          <div className="max-w-7xl 2xl:max-w-[2000px] mx-auto">
+            <div className="md:grid md:grid-cols-3 gap-6 2xl:gap-10">
               {/* Strategic Approach Text - Left Column */}
               <div className="flex flex-col justify-start">
-                <h2 className="text-5xl lg:text-6xl xl:text-7xl font-antonio font-bold text-black leading-tight">
+                <h2 className="text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-antonio font-bold text-black leading-tight">
                   STRATEGIC<br />
                   APPROACH
                 </h2>
-                <p className="text-gray-600 mt-4 text-lg">
-                  The way we work has changed, 
+                <p className="text-gray-600 mt-4 2xl:mt-6 text-lg 2xl:text-2xl">
+                  The way we work has changed,
                   software hasnt. until now.
                 </p>
               </div>
 
               {/* Features Grid - Right 2 columns */}
-              <div className="md:col-span-2 grid grid-cols-2 gap-6">
+              <div className="md:col-span-2 grid grid-cols-2 gap-6 2xl:gap-10">
                 {/* Research - 01 */}
-                <div className={`${features[0].bgColor} ${features[0].textColor} rounded-lg p-8 h-64 flex flex-col justify-between`}>
+                <div className={`${features[0].bgColor} ${features[0].textColor} rounded-lg 2xl:rounded-2xl p-8 2xl:p-12 h-64 2xl:h-80 flex flex-col justify-between`}>
                   <div>
-                    <div className="text-4xl lg:text-5xl font-antonio font-bold mb-4 opacity-60">
+                    <div className="text-4xl lg:text-5xl 2xl:text-7xl font-antonio font-bold mb-4 2xl:mb-6 opacity-60">
                       {features[0].number}
                     </div>
-                    <h3 className="text-2xl lg:text-3xl font-antonio font-bold mb-4">
+                    <h3 className="text-2xl lg:text-3xl 2xl:text-5xl font-antonio font-bold mb-4 2xl:mb-6">
                       {features[0].title}
                     </h3>
-                    <p className="text-sm opacity-80 leading-relaxed">
+                    <p className="text-sm 2xl:text-lg opacity-80 leading-relaxed">
                       {features[0].description}
                     </p>
                   </div>
                 </div>
 
                 {/* Design - 02 */}
-                <div className={`${features[1].bgColor} ${features[1].textColor} rounded-lg p-8 h-64 flex flex-col justify-between`}>
+                <div className={`${features[1].bgColor} ${features[1].textColor} rounded-lg 2xl:rounded-2xl p-8 2xl:p-12 h-64 2xl:h-80 flex flex-col justify-between`}>
                   <div>
-                    <div className="text-4xl lg:text-5xl font-antonio font-bold mb-4 opacity-60">
+                    <div className="text-4xl lg:text-5xl 2xl:text-7xl font-antonio font-bold mb-4 2xl:mb-6 opacity-60">
                       {features[1].number}
                     </div>
-                    <h3 className="text-2xl lg:text-3xl font-antonio font-bold mb-4">
+                    <h3 className="text-2xl lg:text-3xl 2xl:text-5xl font-antonio font-bold mb-4 2xl:mb-6">
                       {features[1].title}
                     </h3>
-                    <p className="text-sm opacity-80 leading-relaxed">
+                    <p className="text-sm 2xl:text-lg opacity-80 leading-relaxed">
                       {features[1].description}
                     </p>
                   </div>
@@ -89,30 +89,30 @@ const FeaturesGrid = () => {
               </div>
 
               {/* Development - 03 (spans full width below) */}
-              <div className={`${features[2].bgColor} ${features[2].textColor} rounded-lg p-8 h-64 flex flex-col justify-between col-span-2`}>
+              <div className={`${features[2].bgColor} ${features[2].textColor} rounded-lg 2xl:rounded-2xl p-8 2xl:p-12 h-64 2xl:h-80 flex flex-col justify-between col-span-2`}>
                 <div>
-                  <div className="text-4xl lg:text-5xl font-antonio font-bold mb-4 opacity-60">
+                  <div className="text-4xl lg:text-5xl 2xl:text-7xl font-antonio font-bold mb-4 2xl:mb-6 opacity-60">
                     {features[2].number}
                   </div>
-                  <h3 className="text-2xl lg:text-3xl font-antonio font-bold mb-4">
+                  <h3 className="text-2xl lg:text-3xl 2xl:text-5xl font-antonio font-bold mb-4 2xl:mb-6">
                     {features[2].title}
                   </h3>
-                  <p className="text-sm opacity-80 leading-relaxed">
+                  <p className="text-sm 2xl:text-lg opacity-80 leading-relaxed">
                     {features[2].description}
                   </p>
                 </div>
               </div>
 
               {/* Release - 04 */}
-              <div className={`${features[3].bgColor} ${features[3].textColor} rounded-lg p-8 h-64 flex flex-col justify-between`}>
+              <div className={`${features[3].bgColor} ${features[3].textColor} rounded-lg 2xl:rounded-2xl p-8 2xl:p-12 h-64 2xl:h-80 flex flex-col justify-between`}>
                 <div>
-                  <div className="text-4xl lg:text-5xl font-antonio font-bold mb-4 opacity-60">
+                  <div className="text-4xl lg:text-5xl 2xl:text-7xl font-antonio font-bold mb-4 2xl:mb-6 opacity-60">
                     {features[3].number}
                   </div>
-                  <h3 className="text-2xl lg:text-3xl font-antonio font-bold mb-4">
+                  <h3 className="text-2xl lg:text-3xl 2xl:text-5xl font-antonio font-bold mb-4 2xl:mb-6">
                     {features[3].title}
                   </h3>
-                  <p className="text-sm opacity-80 leading-relaxed">
+                  <p className="text-sm 2xl:text-lg opacity-80 leading-relaxed">
                     {features[3].description}
                   </p>
                 </div>
