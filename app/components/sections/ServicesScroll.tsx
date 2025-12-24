@@ -6,6 +6,7 @@ import { SERVICES_OVERVIEW } from '@/app/constants/content';
 import { OptimizedImage } from '../ui/OptimizedImage';
 import { IMAGE_QUALITY } from '@/app/utils/image';
 import { AvatarCircles } from '../ui/avatar-circles';
+import { ArrowRight } from 'lucide-react';
 
 const ServicesScroll = () => {
   const { scrollContainerRef, handlers } = useDragScroll({ scrollSpeed: 2 });
@@ -95,8 +96,9 @@ const ServicesScroll = () => {
 
               {/* Button on the left (desktop) / under subtitle (mobile) */}
               <Link href="/ContactPage">
-                <button className="bg-[#F4F4F4] text-black font-medium text-sm md:text-lg 2xl:text-2xl px-5 py-3 md:px-8 md:py-4 2xl:px-12 2xl:py-5 rounded-full hover:bg-gray-300 transition-all duration-300">
+                <button className="group bg-[#F4F4F4] text-black font-medium text-sm md:text-lg 2xl:text-2xl px-5 py-3 md:px-8 md:py-4 2xl:px-12 2xl:py-5 rounded-full hover:bg-gray-300 transition-all duration-300 flex items-center gap-2">
                   Let's Talk
+                  <ArrowRight className="w-4 h-4 md:w-5 md:h-5 2xl:w-6 2xl:h-6 transition-transform duration-300 group-hover:translate-x-1" />
                 </button>
               </Link>
             </div>

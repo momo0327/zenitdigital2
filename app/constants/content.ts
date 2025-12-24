@@ -23,7 +23,7 @@ export const COMPANY = {
 
 // Repeated Marketing Copy
 export const MARKETING_COPY = {
-  tagline: "The way we work has changed, but learning software hasn't. Until now.",
+  tagline: "We elevate startups and businesses with digital solutions.",
   modernWorkplace: 'Modern workplace learning solutions',
   innovation: 'Innovation meets excellence',
 } as const;
@@ -31,7 +31,7 @@ export const MARKETING_COPY = {
 // Services Overview
 export const SERVICES_OVERVIEW = {
   title: 'OUR SERVICES',
-  subtitle: "The way we work has changed, but learning software hasn't. until now.",
+  subtitle: "We build high-quality digital solutions for startups and growing businesses. From web to mobile development, we help bring your ideas to life.",
   items: [
     {
       title: 'Web App Development',

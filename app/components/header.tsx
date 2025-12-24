@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { OptimizedImage } from './ui/OptimizedImage';
 import { IMAGE_QUALITY } from '../utils/image';
+import { MARKETING_COPY } from '@/app/constants/content';
 
 const Header = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -17,7 +18,7 @@ const Header = () => {
         {/* Title positioned at the very top */}
         <div className="text-center">
           <h1 className="text-6xl md:text-8xl font-antonio lg:text-9xl 2xl:text-[12rem] font-bold text-center text-[#14AAFF] lg:mb-[-27px]">
-            <div 
+            <div
               className="transition-all duration-1000 ease-out"
               style={{
                 opacity: isVisible ? 1 : 0,
@@ -27,7 +28,7 @@ const Header = () => {
             >
               We Develop
             </div>
-            <div 
+            <div
               className="transition-all duration-1000 ease-out"
               style={{
                 opacity: isVisible ? 1 : 0,
@@ -41,9 +42,8 @@ const Header = () => {
           
           {/* Mobile subtitle and buttons */}
           <div className='mt-5 md:hidden'>
-            <p className='text-lg leading-tight text-[#14AAFF]'>
-              The way we work has changed, but 
-              learning software hasnt. until now. 
+            <p className='text-lg leading-tight text-[#14AAFF] font-poppins'>
+              {MARKETING_COPY.tagline}
             </p>
             <div className='gap-2 flex justify-center mt-6 mb-[-6px]'>
               <button className='bg-[#14AAFF] text-[#010A1E] py-2 px-6 rounded-full'>Explore</button>
@@ -53,18 +53,20 @@ const Header = () => {
         </div>
                      
         {/* Image positioned below with fade up animation */}
-        <div className="flex justify-center">
+        <div
+          className="flex justify-center transition-all duration-1000 ease-out"
+          style={{
+            opacity: isVisible ? 1 : 0,
+            transform: isVisible ? 'translateY(0)' : 'translateY(50px)',
+            transitionDelay: '400ms'
+          }}
+        >
           <OptimizedImage
             src="/phoneHeader.png"
             alt="Zenit Digital mobile app development showcase with modern interface design"
             width={700}
             height={800}
-            className="w-88 md:w-80 lg:w-96 xl:w-[430px] 2xl:w-[700px] h-auto object-contain transition-all duration-1000 ease-out"
-            style={{
-              opacity: isVisible ? 1 : 0,
-              transform: isVisible ? 'translateY(0)' : 'translateY(50px)',
-              transitionDelay: '400ms'
-            }}
+            className="w-88 md:w-80 lg:w-96 xl:w-[430px] 2xl:w-[700px] h-auto object-contain"
             priority
             quality={IMAGE_QUALITY.HIGH}
             enableBlur
@@ -80,8 +82,8 @@ const Header = () => {
             transitionDelay: '600ms'
           }}
         >
-          <p className='text-lg lg:text-xl 2xl:text-2xl leading-tight text-[#14AAFF] mb-3 2xl:mb-5'>
-            The way we work has changed, but learning software hasnt. until now.
+          <p className='text-lg lg:text-lg 2xl:text-2xl leading-tight text-[#14AAFF] mb-3 2xl:mb-5 font-poppins'>
+            {MARKETING_COPY.tagline}
           </p>
           <div className='flex gap-3 2xl:gap-4'>
             <button className='bg-[#14AAFF] text-[#010A1E] py-3 px-7 2xl:py-4 2xl:px-10 text-sm 2xl:text-lg rounded-full font-bold hover:bg-[#0FA0EF] transition-colors'>

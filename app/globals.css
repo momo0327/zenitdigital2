@@ -10,11 +10,16 @@
   font-family: 'Antonio', sans-serif;
 }
 
+.font-poppins {
+  font-family: var(--font-poppins), sans-serif;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-poppins: var(--font-poppins);
 }
 
 @media (prefers-color-scheme: dark) {

@@ -1,7 +1,9 @@
 'use client'
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 import StaggeredMenu from './StaggeredMenu/index';
 import { useBreakpoint } from '@/app/hooks/useMediaQuery';
+import { ArrowRight } from 'lucide-react';
 
 interface NavbarProps {
   bgColor?: string;
@@ -68,7 +70,15 @@ const Navbar: React.FC<NavbarProps> = ({
       }`}>
         <div className="flex items-center justify-between max-w-7xl 2xl:max-w-[1600px] mx-auto">
           {/* Logo */}
-          <div className={`text-xl 2xl:text-3xl font-bold ${logoColor} cursor-pointer`}>
+          <div className={`flex items-center gap-2 2xl:gap-3 text-xl 2xl:text-3xl font-bold ${logoColor} cursor-pointer`}>
+            <Image
+              src="/ZenitLogo.png"
+              alt="Zenit Digital Logo"
+              width={32}
+              height={32}
+              className="w-6 h-6 2xl:w-10 2xl:h-10"
+              priority
+            />
             ZENIT
           </div>
 
@@ -110,8 +120,9 @@ const Navbar: React.FC<NavbarProps> = ({
 
           {/* Right side - Let's Talk button (only on desktop) */}
           <div className="hidden lg:flex items-center">
-            <button className="bg-gray-100 text-black px-6 py-2 2xl:px-8 2xl:py-3 rounded-full hover:bg-gray-200 transition-colors duration-200 text-base 2xl:text-xl">
+            <button className="group bg-black text-white px-6 py-2.5 2xl:px-8 2xl:py-3.5 rounded-full hover:bg-gray-900 transition-all duration-300 text-base 2xl:text-xl font-medium flex items-center gap-2 shadow-md hover:shadow-lg">
               Let's Talk
+              <ArrowRight className="w-4 h-4 2xl:w-5 2xl:h-5 transition-transform duration-300 group-hover:translate-x-1" />
             </button>
           </div>
         </div>
