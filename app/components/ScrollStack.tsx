@@ -18,21 +18,21 @@ export default function ScrollStack() {
       bg: 'bg-white',
       textColor: 'text-black'
     },
-    { 
+    {
       type: 'image',
       color: 'bg-[#F6F5F8]',
       title: 'Prototype & MVP',
-      subtitle: 'We are an award winning strategic design studio focusing on building bespoke websites and brand identities that instill trust, make an impact, and drive growth.',
+      subtitle: 'We help you develop and launch MVPs fast to gather real user feedback and validate your ideas quickly in the market. We make sure to turn your idea into a hands-on product fast.',
       image: '/p-10 2.png',
       imageSize: 'max-w-sm',
       textColor: 'text-gray-800',
       imagePosition: 'right'
     },
-    { 
+    {
       type: 'image',
       color: 'bg-[#9AC2FF]',
       title: 'Digital Partner',
-      subtitle: 'We are an award winning strategic design studio focusing on building bespoke websites and brand indentities that instill trust, make an impact, and drive growth. ',
+      subtitle: 'We become your dedicated digital partner, working alongside your team to bring your vision to life. From strategy to execution, we handle the technical complexity so you can focus on growing your business.',
       image: '/image 121.png',
       imageSize: 'max-w-xl',
       textColor: 'text-black',
@@ -41,8 +41,8 @@ export default function ScrollStack() {
     {
       type: 'image',
       color: 'bg-black',
-      title: 'Launch & Scale',
-      subtitle: 'Take your product to market with confidence',
+      title: 'Consultation',
+      subtitle: 'Get expert guidance to navigate your digital journey. We provide strategic consultation to help you make informed decisions, avoid costly mistakes, and choose the right technology stack for your goals.',
       image: '/h-10 2.png',
       imageSize: 'max-w-lg',
       textColor: 'text-white',

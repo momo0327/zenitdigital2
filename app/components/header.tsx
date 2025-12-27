@@ -42,10 +42,24 @@ const Header = () => {
           
           {/* Mobile subtitle and buttons */}
           <div className='mt-5 md:hidden'>
-            <p className='text-lg leading-tight text-[#14AAFF] font-poppins'>
+            <p
+              className='text-lg leading-tight text-[#14AAFF] font-poppins transition-all duration-1000 ease-out'
+              style={{
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+                transitionDelay: '400ms'
+              }}
+            >
               {MARKETING_COPY.tagline}
             </p>
-            <div className='gap-2 flex justify-center mt-6 mb-[-6px]'>
+            <div
+              className='gap-2 flex justify-center mt-6 mb-[-6px] transition-all duration-1000 ease-out'
+              style={{
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+                transitionDelay: '600ms'
+              }}
+            >
               <button className='bg-[#14AAFF] text-[#010A1E] py-2 px-6 rounded-full'>Explore</button>
               <button className='bg-[#010A1E] border-1 border-[#14AAFF] text-[#14AAFF] py-2 px-6 rounded-full'>Contact</button>
             </div>

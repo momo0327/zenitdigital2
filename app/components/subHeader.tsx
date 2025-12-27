@@ -9,7 +9,7 @@ const Header = () => {
         <div className="flex flex-col md:flex-row items-center gap-8 2xl:gap-12 w-full">
           {/* Left side - Content */}
           <div className="flex-1 text-left">
-            <h2 className="text-4xl md:text-5xl 2xl:text-7xl font-antonio font-bold text-[#FF5147] leading-tight mb-6 2xl:mb-8">
+            <h2 className="text-5xl md:text-5xl 2xl:text-7xl font-antonio font-bold text-[#FF5147] leading-tight mb-6 2xl:mb-8">
               Web App Development
             </h2>
             <p className="text-base md:text-lg 2xl:text-2xl text-[#FF5147] mb-6 2xl:mb-10 leading-relaxed">
@@ -32,9 +32,9 @@ const Header = () => {
           {/* Right side - Phone Image */}
           <div className="flex-1 flex justify-center">
             <OptimizedImage
-              src="/h-1 3.png"
+              src="/ipadred.png"
               alt="Web development services - Responsive website design and modern web applications"
-              width={384}
+              width={584}
               height={400}
               className="w-80 md:w-92 lg:w-96 2xl:w-[500px] h-auto object-contain transform"
               quality={IMAGE_QUALITY.HIGH}

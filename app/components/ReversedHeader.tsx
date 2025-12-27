@@ -23,7 +23,7 @@ const ReversedHeader = () => {
 
           {/* Right side - Content */}
           <div className="flex-1 text-left">
-            <h2 className="text-4xl md:text-5xl 2xl:text-7xl font-antonio font-bold text-[#BEA1FC] leading-tight mb-6 2xl:mb-8">
+            <h2 className="text-5xl md:text-5xl 2xl:text-7xl font-antonio font-bold text-[#BEA1FC] leading-tight mb-6 2xl:mb-8">
               Mobile App Development
             </h2>
             <p className="text-base md:text-lg 2xl:text-2xl text-[#BEA1FC] mb-6 2xl:mb-10 leading-relaxed">

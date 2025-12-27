@@ -81,9 +81,11 @@ export default function Home() {
       <Suspense fallback={<div className="min-h-96 bg-white" />}>
         <Steps/>
       </Suspense>
-      <Suspense fallback={<div className="min-h-96 bg-white" />}>
-        <FAQ/>
-      </Suspense>
+      <div id="faq">
+        <Suspense fallback={<div className="min-h-96 bg-white" />}>
+          <FAQ/>
+        </Suspense>
+      </div>
       <Cta/>
     </div>
   );

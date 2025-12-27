@@ -1,9 +1,10 @@
 'use client'
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import StaggeredMenu from './StaggeredMenu/index';
 import { useBreakpoint } from '@/app/hooks/useMediaQuery';
-import { ArrowRight } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 
 interface NavbarProps {
   bgColor?: string;
@@ -52,8 +53,8 @@ const Navbar: React.FC<NavbarProps> = ({
 
   const menuItems = [
     { label: 'Home', ariaLabel: 'Go to home page', link: '/' },
-    { label: 'About', ariaLabel: 'Learn about us', link: '/about' },
-    { label: 'Services', ariaLabel: 'Explore our features', link: '/services' },
+    { label: 'Services', ariaLabel: 'Explore our services', link: '/services' },
+    { label: 'Contact', ariaLabel: 'Get in touch with us', link: '/ContactPage' },
   ];
 
   const socialItems = [
@@ -70,30 +71,30 @@ const Navbar: React.FC<NavbarProps> = ({
       }`}>
         <div className="flex items-center justify-between max-w-7xl 2xl:max-w-[1600px] mx-auto">
           {/* Logo */}
-          <div className={`flex items-center gap-2 2xl:gap-3 text-xl 2xl:text-3xl font-bold ${logoColor} cursor-pointer`}>
+          <Link href="/" className={`flex items-center gap-2 2xl:gap-3 text-xl 2xl:text-3xl font-bold ${logoColor} cursor-pointer`}>
             <Image
               src="/ZenitLogo.png"
               alt="Zenit Digital Logo"
               width={32}
               height={32}
-              className="w-6 h-6 2xl:w-10 2xl:h-10"
+              className="w-5 h-5 md:w-6 md:h-6 2xl:w-8 2xl:h-8"
               priority
             />
             ZENIT
-          </div>
+          </Link>
 
           {/* Center Navigation - Responsive with useBreakpoint */}
           {!isMobile && (
             <div className="flex space-x-2 md:space-x-8 2xl:space-x-12 absolute left-1/2 transform -translate-x-1/2">
-              <button className={`${textColor} opacity-70 hover:opacity-100 px-2 md:px-4 2xl:px-6 py-2 2xl:py-3 rounded-md ${hoverBgColor} transition-all duration-200 text-sm md:text-base 2xl:text-xl`}>
+              <Link href="/" className={`${textColor} opacity-70 hover:opacity-100 px-2 md:px-4 2xl:px-6 py-2 2xl:py-3 rounded-md ${hoverBgColor} transition-all duration-200 text-sm md:text-base 2xl:text-xl cursor-pointer`}>
                 Home
-              </button>
-              <button className={`${textColor} opacity-70 hover:opacity-100 px-2 md:px-4 2xl:px-6 py-2 2xl:py-3 rounded-md ${hoverBgColor} transition-all duration-200 text-sm md:text-base 2xl:text-xl`}>
-                About
-              </button>
-              <button className={`${textColor} opacity-70 hover:opacity-100 px-2 md:px-4 2xl:px-6 py-2 2xl:py-3 rounded-md ${hoverBgColor} transition-all duration-200 text-sm md:text-base 2xl:text-xl`}>
+              </Link>
+              <Link href="/services" className={`${textColor} opacity-70 hover:opacity-100 px-2 md:px-4 2xl:px-6 py-2 2xl:py-3 rounded-md ${hoverBgColor} transition-all duration-200 text-sm md:text-base 2xl:text-xl cursor-pointer`}>
                 Services
-              </button>
+              </Link>
+              <Link href="/#faq" className={`${textColor} opacity-70 hover:opacity-100 px-2 md:px-4 2xl:px-6 py-2 2xl:py-3 rounded-md ${hoverBgColor} transition-all duration-200 text-sm md:text-base 2xl:text-xl cursor-pointer`}>
+                FAQ
+              </Link>
             </div>
           )}
 
@@ -120,10 +121,11 @@ const Navbar: React.FC<NavbarProps> = ({
 
           {/* Right side - Let's Talk button (only on desktop) */}
           <div className="hidden lg:flex items-center">
-            <button className="group bg-black text-white px-6 py-2.5 2xl:px-8 2xl:py-3.5 rounded-full hover:bg-gray-900 transition-all duration-300 text-base 2xl:text-xl font-medium flex items-center gap-2 shadow-md hover:shadow-lg">
-              Let's Talk
-              <ArrowRight className="w-4 h-4 2xl:w-5 2xl:h-5 transition-transform duration-300 group-hover:translate-x-1" />
-            </button>
+            <Link href="/ContactPage" className="group relative bg-black text-white px-6 py-2.5 2xl:px-8 2xl:py-3.5 rounded-full overflow-hidden transition-all duration-300 text-base 2xl:text-xl font-medium flex items-center gap-2 shadow-md hover:shadow-lg cursor-pointer transform hover:scale-105 z-10">
+              <span className="absolute inset-0 bg-[#D5EA9D] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out rounded-full -z-10"></span>
+              <span className="relative z-10 transition-colors duration-500 group-hover:text-black">Let's Talk</span>
+              <ArrowUpRight className="relative z-10 w-4 h-4 2xl:w-5 2xl:h-5 transition-all duration-500 ease-in-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-black" />
+            </Link>
           </div>
         </div>
       </nav>

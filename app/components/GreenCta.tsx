@@ -11,9 +11,9 @@ const GreenCTA = () => {
         <div className="bg-[#0A0D24] px-8 md:px-12 lg:px-16 2xl:px-24 py-20 md:py-24 lg:py-32 2xl:py-40 text-center h-1/2 flex items-center rounded-b-lg">
           <div className="max-w-4xl 2xl:max-w-6xl mx-auto w-full">
             {/* Main Title */}
-            <p className='font-antonio text-lg 2xl:text-2xl'>COME ON</p>
+            <p className='font-antonio text-lg 2xl:text-2xl'>HAVE AN IDEA?</p>
             <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl 2xl:text-[10rem] font-antonio font-bold text-[#9AC2FF] mb-8 2xl:mb-12">
-              LETS TURN YOUR <br /> IDEA  INTO REALITY
+              LETS MAKE <br /> IT  HAPPEN
             </h2>
             {/* Subtitle */}
             {/* CTA Buttons */}

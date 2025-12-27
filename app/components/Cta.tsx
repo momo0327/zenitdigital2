@@ -19,7 +19,7 @@ const CTA: React.FC<CTAProps> = ({
 
           {/* Content */}
           <div className="relative z-10 max-w-2xl 2xl:max-w-4xl mx-auto">
-            <p className={`${textColor} font-bold font-antonio text-lg 2xl:text-2xl`}>COME ON</p>
+            <p className={`${textColor} font-bold font-antonio text-lg 2xl:text-2xl`}>HAVE AN IDEA?</p>
             <h2 className={`text-5xl md:text-4xl lg:text-5xl xl:text-8xl 2xl:text-[10rem] font-antonio font-bold ${accentColor} leading-tight mb-6 2xl:mb-10`}>
               LETS MAKE
               <br />

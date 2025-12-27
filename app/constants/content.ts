@@ -35,27 +35,30 @@ export const SERVICES_OVERVIEW = {
   items: [
     {
       title: 'Web App Development',
-      description: "The way we work has changed, but learning software hasnt. until now.",
+      description: "We build responsive web applications optimized for performance and SEO. From landing pages to complex web platforms, we create solutions that drive traffic and convert visitors into customers.",
       bgColor: 'bg-[#240000]',
       textColor: 'text-[#FF5147]',
       href: '/WebDev',
       image: '/h-1 3.png',
+      technologies: ['Next.js', 'React', 'TypeScript'],
     },
     {
       title: 'Mobile App Development',
-      description: "The way we work has changed, but learning software hasnt. until now.",
+      description: "We create native and cross-platform mobile applications that deliver exceptional user experiences. From iOS to Android, we build apps that engage users and drive business growth.",
       bgColor: 'bg-[#1a0f2e]',
       textColor: 'text-[#BEA1FC]',
       href: '/MobileDev',
       image: '/Group 6-3.png',
+      technologies: ['React Native', 'Swift', 'Kotlin'],
     },
     {
       title: 'Fullstack Development',
-      description: "The way we work has changed, but learning software hasnt. until now.",
+      description: "We deliver complete end-to-end solutions combining frontend and backend development. From database design to user interfaces, we build scalable applications that power your entire digital ecosystem.",
       bgColor: 'bg-[#051E01]',
       textColor: 'text-[#B4FFA8]',
       href: '/FullstackDev',
       image: '/Group 6-3.png',
+      technologies: ['Node.js', 'PostgreSQL', 'MongoDB'],
     },
   ],
 } as const;

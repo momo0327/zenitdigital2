@@ -123,26 +123,38 @@ const ServicesScroll = () => {
                 className="block flex-shrink-0 group"
               >
                 <div
-                  className={`${service.bgColor} rounded-2xl 2xl:rounded-3xl p-8 md:p-12 lg:p-14 2xl:p-20 w-[340px] h-[480px] md:w-[800px] md:h-[420px] lg:w-[1000px] 2xl:w-[1400px] 2xl:h-[600px] flex flex-col md:flex-row items-center md:justify-between transition-shadow duration-300 group-hover:shadow-2xl`}
+                  className={`${service.bgColor} rounded-2xl 2xl:rounded-3xl p-6 sm:p-8 md:p-10 lg:p-14 2xl:p-20 w-[85vw] min-w-[300px] max-w-[380px] h-auto min-h-[500px] sm:w-[90vw] sm:max-w-[400px] md:w-[700px] md:max-w-[800px] md:h-[420px] lg:w-[900px] lg:max-w-[1000px] lg:h-[420px] 2xl:w-[1200px] 2xl:max-w-[1400px] 2xl:h-[600px] flex flex-col md:flex-row items-center md:items-start md:justify-between transition-shadow duration-300 group-hover:shadow-2xl`}
                 >
                   {/* Text Content */}
                   <div className="flex-1 text-left mb-6 md:mb-0">
-                    <h3 className={`text-4xl md:text-5xl lg:text-7xl 2xl:text-8xl font-bold font-antonio ${service.textColor} mb-4 2xl:mb-6 leading-tight`}>
+                    <h3 className={`text-3xl md:text-4xl lg:text-6xl 2xl:text-7xl font-bold font-antonio ${service.textColor} mb-4 2xl:mb-6 leading-tight`}>
                       {service.title}
                     </h3>
-                    <p className={`text-base md:text-lg lg:text-xl 2xl:text-3xl ${service.textColor} opacity-80 leading-relaxed md:max-w-md 2xl:max-w-2xl`}>
+                    <p className={`text-base md:text-lg lg:text-md 2xl:text-2xl ${service.textColor} opacity-80 leading-relaxed md:max-w-md 2xl:max-w-2xl mb-4 2xl:mb-6`}>
                       {service.description}
                     </p>
+                    {'technologies' in service && service.technologies && (
+                      <div className="flex gap-1.5 md:gap-2 2xl:gap-3 flex-wrap mt-3 2xl:mt-4">
+                        {service.technologies.map((tech: string, techIndex: number) => (
+                          <span
+                            key={techIndex}
+                            className={`${service.textColor} bg-white/10 backdrop-blur-sm px-2 py-0.5 md:px-2.5 md:py-1 2xl:px-4 2xl:py-1.5 rounded-full text-[10px] md:text-xs 2xl:text-base font-medium border border-current/20`}
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    )}
                   </div>
 
                   {/* Image */}
-                  <div className="flex-shrink-0 flex items-center justify-center md:ml-8 2xl:ml-12 mt-auto">
+                  <div className="flex-shrink-0 flex items-center justify-center md:ml-6 lg:ml-8 2xl:ml-12 mt-4 md:mt-0 w-[180px] sm:w-[200px] md:w-[200px] lg:w-[260px] xl:w-[300px] 2xl:w-[400px] h-[180px] sm:h-[200px] md:h-[200px] lg:h-[260px] xl:h-[300px] 2xl:h-[400px]">
                     <OptimizedImage
                       src={service.image}
                       alt={`${service.title} - Zenit Digital`}
-                      width={300}
-                      height={250}
-                      className="w-[220px] md:w-[220px] lg:w-[280px] 2xl:w-[400px] h-auto object-contain"
+                      width={400}
+                      height={400}
+                      className="w-full h-full object-contain max-w-full max-h-full"
                       quality={IMAGE_QUALITY.HIGH}
                       enableBlur
                     />
