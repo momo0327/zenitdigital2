@@ -138,7 +138,10 @@ const FeaturesGrid = () => {
           <div
             ref={scrollContainerRef}
             className="overflow-x-auto scrollbar-hide cursor-grab active:cursor-grabbing select-none"
-            {...handlers}
+            onMouseDown={handlers.onMouseDown}
+            onMouseUp={handlers.onMouseUp}
+            onMouseMove={handlers.onMouseMove}
+            onMouseLeave={handlers.onMouseLeave}
           >
             <div className="flex gap-4 px-5 pb-4 snap-x snap-mandatory">
               {features.map((feature, index) => (

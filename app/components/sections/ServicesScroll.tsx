@@ -10,7 +10,6 @@ import { ArrowRight } from 'lucide-react';
 
 const ServicesScroll = () => {
   const { scrollContainerRef, handlers } = useDragScroll({ scrollSpeed: 2 });
-  const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const autoScrollInterval = useRef<NodeJS.Timeout | null>(null);
 
@@ -19,20 +18,19 @@ const ServicesScroll = () => {
 
     // Auto-scroll every 4 seconds
     autoScrollInterval.current = setInterval(() => {
-      setCurrentIndex((prevIndex) => {
-        const nextIndex = (prevIndex + 1) % SERVICES_OVERVIEW.items.length;
+      if (scrollContainerRef.current) {
+        const container = scrollContainerRef.current;
+        const cardWidth = container.scrollWidth / SERVICES_OVERVIEW.items.length;
+        const currentScroll = container.scrollLeft;
+        const nextScroll = currentScroll + cardWidth;
 
-        // Scroll to the next card
-        if (scrollContainerRef.current) {
-          const cardWidth = scrollContainerRef.current.scrollWidth / SERVICES_OVERVIEW.items.length;
-          scrollContainerRef.current.scrollTo({
-            left: cardWidth * nextIndex,
-            behavior: 'smooth'
-          });
+        // Loop back to start if at the end
+        if (nextScroll >= container.scrollWidth) {
+          container.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+          container.scrollTo({ left: nextScroll, behavior: 'smooth' });
         }
-
-        return nextIndex;
-      });
+      }
     }, 4000);
 
     return () => {
@@ -40,17 +38,19 @@ const ServicesScroll = () => {
         clearInterval(autoScrollInterval.current);
       }
     };
-  }, [isPaused, SERVICES_OVERVIEW.items.length, scrollContainerRef]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isPaused]);
 
   // Pause auto-scroll on hover or interaction
-  const handleMouseEnter = () => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const handleMouseEnter = (e: any) => {
     setIsPaused(true);
-    if (handlers.onMouseEnter) handlers.onMouseEnter();
+    handlers.onMouseEnter(e);
   };
 
   const handleMouseLeave = () => {
     setIsPaused(false);
-    if (handlers.onMouseLeave) handlers.onMouseLeave();
+    handlers.onMouseLeave();
   };
 
   return (
@@ -97,7 +97,7 @@ const ServicesScroll = () => {
               {/* Button on the left (desktop) / under subtitle (mobile) */}
               <Link href="/ContactPage">
                 <button className="group bg-[#F4F4F4] text-black font-medium text-sm md:text-lg 2xl:text-2xl px-5 py-3 md:px-8 md:py-4 2xl:px-12 2xl:py-5 rounded-full hover:bg-gray-300 transition-all duration-300 flex items-center gap-2">
-                  Let's Talk
+                  Let&apos;s Talk
                   <ArrowRight className="w-4 h-4 md:w-5 md:h-5 2xl:w-6 2xl:h-6 transition-transform duration-300 group-hover:translate-x-1" />
                 </button>
               </Link>

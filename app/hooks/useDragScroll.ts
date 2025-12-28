@@ -1,4 +1,4 @@
-import { useRef, useState, useCallback } from 'react';
+import { useRef, useState, useCallback, MouseEvent } from 'react';
 
 interface UseDragScrollOptions {
   /**
@@ -23,6 +23,7 @@ interface UseDragScrollReturn {
 
   /** Mouse event handlers to attach to the container */
   handlers: {
+    onMouseEnter(e: MouseEvent<Element, MouseEvent>): unknown;
     onMouseDown: (e: React.MouseEvent) => void;
     onMouseMove: (e: React.MouseEvent) => void;
     onMouseUp: () => void;
@@ -110,6 +111,7 @@ export const useDragScroll = (
     scrollContainerRef,
     isDragging,
     handlers: {
+      onMouseEnter: () => {},
       onMouseDown: handleMouseDown,
       onMouseMove: handleMouseMove,
       onMouseUp: handleMouseUp,

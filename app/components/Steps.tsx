@@ -69,7 +69,10 @@ const Steps: React.FC<StepsProps> = ({
         <div
           ref={scrollContainerRef}
           className="overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] cursor-grab active:cursor-grabbing select-none"
-          {...handlers}
+          onMouseDown={handlers.onMouseDown}
+          onMouseUp={handlers.onMouseUp}
+          onMouseMove={handlers.onMouseMove}
+          onMouseLeave={handlers.onMouseLeave}
         >
           <div className="flex gap-4 md:gap-6 2xl:gap-10 px-5 md:px-12 lg:px-16 2xl:px-24 pb-4 2xl:pb-8">
             {steps.map((step, index) => {

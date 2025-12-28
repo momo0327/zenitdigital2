@@ -4,10 +4,8 @@ import ServicesScroll from '../components/sections/ServicesScroll';
 import Steps from '../components/Steps';
 import Achievements from '../components/Achievments';
 import FAQ from '../components/Faq';
-import { CTA } from '../constants';
 import Cta from '../components/Cta';
 import ExpandableFeatures from '../components/ExpandableFeatures';
-import FeaturesGrid from '../components/FeaturesGrid';
 
 export const metadata: Metadata = {
   title: 'Our Services - Zenit Digital',

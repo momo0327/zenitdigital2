@@ -11,14 +11,12 @@ import GreenCTA from "./components/GreenCta";
 import FeaturesGrid from "./components/FeaturesGrid";
 import SelectedWork from "./components/selectedWorks";
 import Cta from "./components/Cta";
-import { FadeInOnScroll } from "./components/ui/FadeInOnScroll";
 import {
   HOME_METADATA,
   BASE_URL,
   generateWebPageSchema,
   generateBreadcrumbSchema
 } from "./constants/seo";
-import Achievements from "./components/Achievments";
 
 // Dynamic imports for below-the-fold heavy components (code splitting)
 const ScrollStack = dynamic(() => import('./components/ScrollStack'), {
