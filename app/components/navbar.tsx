@@ -66,7 +66,7 @@ const Navbar: React.FC<NavbarProps> = ({
   return (
     <>
       {/* Navbar */}
-      <nav className={`${bgColor} px-6 py-5 2xl:px-10 2xl:py-7 fixed left-0 right-0 z-60 transition-transform duration-300 ease-in-out ${
+      <nav className={`${bgColor} px-5 py-5 sm:px-6 2xl:px-10 2xl:py-7 fixed left-0 right-0 z-60 transition-transform duration-300 ease-in-out ${
         isVisible ? 'top-0 translate-y-0' : '-translate-y-full'
       }`}>
         <div className="flex items-center justify-between max-w-7xl 2xl:max-w-[1600px] mx-auto">
@@ -148,12 +148,27 @@ const Navbar: React.FC<NavbarProps> = ({
 
         .staggered-menu-header {
           position: absolute !important;
-          top: 20px !important;
-          right: 24px !important;
+          top: 27px !important;
+          right: 20px !important;
           left: auto !important;
           width: auto !important;
           padding: 0 !important;
           pointer-events: all;
+          display: flex !important;
+          align-items: center !important;
+        }
+
+        @media (min-width: 640px) {
+          .staggered-menu-header {
+            right: 24px !important;
+            top: 30px !important;
+          }
+        }
+
+        @media (min-width: 1536px) {
+          .staggered-menu-header {
+            top: 30px !important;
+          }
         }
 
         .sm-logo {

@@ -1,5 +1,6 @@
 'use client'
 import React, { useEffect, useState } from 'react';
+import Link from 'next/link';
 import { OptimizedImage } from './ui/OptimizedImage';
 import { IMAGE_QUALITY } from '../utils/image';
 import { MARKETING_COPY } from '@/app/constants/content';
@@ -60,8 +61,8 @@ const Header = () => {
                 transitionDelay: '600ms'
               }}
             >
-              <button className='bg-[#14AAFF] text-[#010A1E] py-2 px-6 rounded-full'>Explore</button>
-              <button className='bg-[#010A1E] border-1 border-[#14AAFF] text-[#14AAFF] py-2 px-6 rounded-full'>Contact</button>
+              <Link href='/services' className='bg-[#14AAFF] text-[#010A1E] py-2 px-6 rounded-full'>Explore</Link>
+              <Link href='/ContactPage' className='bg-[#010A1E] border-1 border-[#14AAFF] text-[#14AAFF] py-2 px-6 rounded-full'>Contact</Link>
             </div>
           </div>
         </div>
@@ -100,12 +101,12 @@ const Header = () => {
             {MARKETING_COPY.tagline}
           </p>
           <div className='flex gap-3 2xl:gap-4'>
-            <button className='bg-[#14AAFF] text-[#010A1E] py-3 px-7 2xl:py-4 2xl:px-10 text-sm 2xl:text-lg rounded-full font-bold hover:bg-[#0FA0EF] transition-colors'>
+            <Link href='/services' className='bg-[#14AAFF] text-[#010A1E] py-3 px-7 2xl:py-4 2xl:px-10 text-sm 2xl:text-lg rounded-full font-bold hover:bg-[#0FA0EF] transition-colors'>
               Explore
-            </button>
-            <button className='bg-transparent border-2 border-[#14AAFF] text-[#14AAFF] py-3 px-7 2xl:py-4 2xl:px-10 text-sm 2xl:text-lg rounded-full font-medium hover:bg-[#14AAFF]/10 transition-colors'>
+            </Link>
+            <Link href='/ContactPage' className='bg-transparent border-2 border-[#14AAFF] text-[#14AAFF] py-3 px-7 2xl:py-4 2xl:px-10 text-sm 2xl:text-lg rounded-full font-medium hover:bg-[#14AAFF]/10 transition-colors'>
               Contact
-            </button>
+            </Link>
           </div>
         </div>
       </div>

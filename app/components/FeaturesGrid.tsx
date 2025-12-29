@@ -60,7 +60,7 @@ const FeaturesGrid = () => {
                 {/* Research - 01 */}
                 <div className={`${features[0].bgColor} ${features[0].textColor} rounded-lg 2xl:rounded-2xl p-8 2xl:p-12 h-64 2xl:h-80 flex flex-col justify-between`}>
                   <div>
-                    <div className="text-4xl lg:text-5xl 2xl:text-7xl font-antonio font-bold mb-4 2xl:mb-6 opacity-60">
+                    <div className="text-4xl lg:text-5xl 2xl:text-7xl font-antonio font-bold mb-4 2xl:mb-6 ">
                       {features[0].number}
                     </div>
                     <h3 className="text-2xl lg:text-3xl 2xl:text-5xl font-antonio font-bold mb-4 2xl:mb-6">
@@ -75,7 +75,7 @@ const FeaturesGrid = () => {
                 {/* Design - 02 */}
                 <div className={`${features[1].bgColor} ${features[1].textColor} rounded-lg 2xl:rounded-2xl p-8 2xl:p-12 h-64 2xl:h-80 flex flex-col justify-between`}>
                   <div>
-                    <div className="text-4xl lg:text-5xl 2xl:text-7xl font-antonio font-bold mb-4 2xl:mb-6 opacity-60">
+                    <div className="text-4xl lg:text-5xl 2xl:text-7xl font-antonio font-bold mb-4 2xl:mb-6 ">
                       {features[1].number}
                     </div>
                     <h3 className="text-2xl lg:text-3xl 2xl:text-5xl font-antonio font-bold mb-4 2xl:mb-6">
@@ -91,7 +91,7 @@ const FeaturesGrid = () => {
               {/* Development - 03 (spans full width below) */}
               <div className={`${features[2].bgColor} ${features[2].textColor} rounded-lg 2xl:rounded-2xl p-8 2xl:p-12 h-64 2xl:h-80 flex flex-col justify-between col-span-2`}>
                 <div>
-                  <div className="text-4xl lg:text-5xl 2xl:text-7xl font-antonio font-bold mb-4 2xl:mb-6 opacity-60">
+                  <div className="text-4xl lg:text-5xl 2xl:text-7xl font-antonio font-bold mb-4 2xl:mb-6 ">
                     {features[2].number}
                   </div>
                   <h3 className="text-2xl lg:text-3xl 2xl:text-5xl font-antonio font-bold mb-4 2xl:mb-6">
@@ -106,7 +106,7 @@ const FeaturesGrid = () => {
               {/* Release - 04 */}
               <div className={`${features[3].bgColor} ${features[3].textColor} rounded-lg 2xl:rounded-2xl p-8 2xl:p-12 h-64 2xl:h-80 flex flex-col justify-between`}>
                 <div>
-                  <div className="text-4xl lg:text-5xl 2xl:text-7xl font-antonio font-bold mb-4 2xl:mb-6 opacity-60">
+                  <div className="text-4xl lg:text-5xl 2xl:text-7xl font-antonio font-bold mb-4 2xl:mb-6 ">
                     {features[3].number}
                   </div>
                   <h3 className="text-2xl lg:text-3xl 2xl:text-5xl font-antonio font-bold mb-4 2xl:mb-6">
@@ -145,18 +145,21 @@ const FeaturesGrid = () => {
           >
             <div className="flex gap-4 px-5 pb-4 snap-x snap-mandatory">
               {features.map((feature, index) => (
-                <div 
+                <div
                   key={index}
                   className={`${feature.bgColor} ${feature.textColor} rounded-xl p-6 w-[280px] h-[480px] flex flex-col justify-between snap-start flex-shrink-0`}
                 >
+                  {/* Number at top left */}
+                  <div className="text-8xl font-antonio font-medium ">
+                    {feature.number}
+                  </div>
+
+                  {/* Title and description at bottom */}
                   <div>
-                    <div className="text-3xl font-antonio font-bold mb-4 opacity-60">
-                      {feature.number}
-                    </div>
-                    <h3 className="text-xl font-antonio font-bold mb-4">
+                    <h3 className="text-4xl font-antonio font-bold mb-3">
                       {feature.title}
                     </h3>
-                    <p className="text-sm opacity-80 leading-relaxed">
+                    <p className="text-md opacity-80 leading-tight">
                       {feature.description}
                     </p>
                   </div>

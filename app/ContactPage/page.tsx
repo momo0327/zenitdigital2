@@ -27,9 +27,9 @@ export default function ContactPage() {
                   Ready to transform your ideas into reality? Get in touch with us and let&apos;s start building something amazing together.
                 </p>
 
-                <p className="font-medium text-[#0A0D24]">
+                {/* <p className="font-medium text-[#0A0D24]">
                   Fill out the form, and we&apos;ll get back to you within 24 hours!
-                </p>
+                </p> */}
               </div>
 
               {/* Contact Info Container */}
@@ -45,7 +45,7 @@ export default function ContactPage() {
                       href="mailto:info@zenitdigital.se"
                       className="text-[#0A0D24] text-sm 2xl:text-xl font-medium hover:underline"
                     >
-                      info@zenitdigital.se
+                      hello@zenitdigital.se
                     </a>
                   </div>
                 </div>
@@ -61,7 +61,7 @@ export default function ContactPage() {
                       href="tel:+46123456789"
                       className="text-[#0A0D24] text-sm 2xl:text-xl font-medium hover:underline"
                     >
-                      +46 123 456 789
+                      +46 72-336 43 84
                     </a>
                   </div>
                 </div>
@@ -74,7 +74,7 @@ export default function ContactPage() {
                   <div>
                     <p className="text-xs 2xl:text-base text-[#0A0D24]/60 mb-0.5">Location</p>
                     <p className="text-[#0A0D24] text-sm 2xl:text-xl font-medium">
-                      Stockholm, Sweden
+                      Gothemburg, Sweden
                     </p>
                   </div>
                 </div>

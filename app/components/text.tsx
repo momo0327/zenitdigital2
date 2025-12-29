@@ -1,6 +1,7 @@
 'use client'
 
 import React from 'react';
+import Link from 'next/link';
 import ScrollTextReveal from './ScrollTextReveal';
 
 const BigText = () => {
@@ -51,12 +52,12 @@ const BigText = () => {
           </h1>
                      
           <div className="mt-8 lg:mt-12 2xl:mt-16">
-            <button className="group inline-flex items-center text-base lg:text-lg 2xl:text-xl font-medium text-black hover:text-gray-700 transition-all duration-300 border-b-2 border-black hover:border-gray-700 pb-1 2xl:pb-2 cursor-pointer">
+            <Link href="/ContactPage" className="group inline-flex items-center text-base lg:text-lg 2xl:text-xl font-medium text-black hover:text-gray-700 transition-all duration-300 border-b-2 border-black hover:border-gray-700 pb-1 2xl:pb-2 cursor-pointer">
               <span className="transition-transform duration-300 group-hover:translate-x-1">Let&apos;s Talk</span>
               <svg className="w-4 h-4 lg:w-5 lg:h-5 2xl:w-6 2xl:h-6 ml-2 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17l9.2-9.2M17 17V7H7" />
               </svg>
-            </button>
+            </Link>
           </div>
         </div>
       </div>

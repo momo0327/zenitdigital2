@@ -35,6 +35,16 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/* Global cursor pointer for interactive elements */
+button,
+a,
+[role="button"],
+[type="button"],
+[type="submit"],
+[type="reset"] {
+  cursor: pointer;
+}
+
 /* Skeleton shimmer animation */
 @keyframes shimmer {
   0% {

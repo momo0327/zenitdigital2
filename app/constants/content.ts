@@ -23,7 +23,7 @@ export const COMPANY = {
 
 // Repeated Marketing Copy
 export const MARKETING_COPY = {
-  tagline: "We elevate startups and businesses with digital solutions.",
+  tagline: "We elevate startups and businesses with custom digital solutions.",
   modernWorkplace: 'Modern workplace learning solutions',
   innovation: 'Innovation meets excellence',
 } as const;
