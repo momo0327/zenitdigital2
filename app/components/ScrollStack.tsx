@@ -101,7 +101,7 @@ export default function ScrollStack() {
               >
                 <div className="max-w-5xl 2xl:max-w-7xl w-full px-6 md:px-8 2xl:px-12 mx-auto">
                   <h1
-                    className={`text-5xl md:text-6xl lg:text-8xl 2xl:text-9xl font-bold ${section.textColor} text-left leading-tight font-antonio mb-6 md:mb-8 2xl:mb-12`}
+                    className={`xs:text-4xl sm:text-5xl md:text-6xl lg:text-8xl 2xl:text-9xl font-bold ${section.textColor} text-left leading-tight font-antonio mb-6 md:mb-8 2xl:mb-12`}
                     style={{
                       opacity: 1 - progress * 0.6
                     }}

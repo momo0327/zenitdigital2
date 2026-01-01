@@ -81,7 +81,7 @@ const ServicesScroll = () => {
             </div>
 
             {/* Large Title */}
-            <h1 className="text-7xl md:text-8xl lg:text-[10rem] 2xl:text-[15rem] font-bold font-antonio text-black leading-[0.85] mb-8 md:mb-12 2xl:mb-16">
+            <h1 className="xs:text-5xl sm:text-7xl md:text-8xl lg:text-[10rem] 2xl:text-[15rem] font-bold font-antonio text-black leading-[0.85] mb-8 md:mb-12 2xl:mb-16">
               {SERVICES_OVERVIEW.title}
             </h1>
 

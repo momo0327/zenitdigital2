@@ -18,7 +18,7 @@ export default function ContactPage() {
           {/* Left Side - Content */}
           <div className="flex items-center justify-center px-6 md:px-12 lg:px-16 2xl:px-24 py-24 lg:py-32 2xl:py-40">
             <div className="max-w-xl 2xl:max-w-3xl w-full">
-              <h1 className="text-8xl md:text-6xl lg:text-7xl xl:text-9xl 2xl:text-[12rem] font-antonio font-bold text-[#0A0D24] text-center lg:text-left leading-none mb-8 2xl:mb-12">
+              <h1 className=" xs:text-6xl sm:text-8xl md:text-6xl lg:text-7xl xl:text-9xl 2xl:text-[12rem] font-antonio font-bold text-[#0A0D24] text-center lg:text-left leading-none mb-8 2xl:mb-12">
                 LET&apos;S MAKE <br /> IT HAPPEN
               </h1>
 

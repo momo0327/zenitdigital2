@@ -35,7 +35,7 @@ const TriHeader = () => {
               alt="Fullstack development - Complete end-to-end solutions from frontend to backend infrastructure"
               width={390}
               height={227}
-              className="min-w-[400px] md:min-w-[600px] lg:min-w-[600px] 2xl:min-w-[800px] h-auto object-cover z-50"
+              className=" sm:min-w-[340px] md:min-w-[600px] lg:min-w-[600px] 2xl:min-w-[800px] h-auto object-cover z-50"
               quality={IMAGE_QUALITY.MAX}
               enableBlur
             />
