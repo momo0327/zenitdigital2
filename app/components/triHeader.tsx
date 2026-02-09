@@ -31,7 +31,7 @@ const TriHeader = () => {
           {/* Right side - Phone Image */}
           <div className="flex-1 flex justify-center lg:justify-end relative">
             <OptimizedImage
-              src="/scene 10-2.png"
+              src="/sana-learn-1 2.png"
               alt="Fullstack development - Complete end-to-end solutions from frontend to backend infrastructure"
               width={800}
               height={480}
