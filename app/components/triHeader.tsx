@@ -29,13 +29,13 @@ const TriHeader = () => {
           </div>
 
           {/* Right side - Phone Image */}
-          <div className="flex-1 flex justify-center overflow-hidden relative lg:justify-end">
+          <div className="flex-1 flex justify-center lg:justify-end relative">
             <OptimizedImage
-              src="/sana-learn-1 2.png"
+              src="/scene 10-2.png"
               alt="Fullstack development - Complete end-to-end solutions from frontend to backend infrastructure"
-              width={390}
-              height={227}
-              className=" sm:min-w-[340px] md:min-w-[600px] lg:min-w-[600px] 2xl:min-w-[800px] h-auto object-cover z-50"
+              width={800}
+              height={480}
+              className="w-[450px] sm:w-[550px] md:w-[700px] lg:w-[850px] 2xl:w-[1100px] h-auto object-contain z-50"
               quality={IMAGE_QUALITY.MAX}
               enableBlur
             />
