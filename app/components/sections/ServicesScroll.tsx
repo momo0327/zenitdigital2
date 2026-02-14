@@ -1,12 +1,12 @@
 'use client'
 import React, { useEffect, useState, useRef } from 'react';
-import Link from 'next/link';
 import { useDragScroll } from '@/app/hooks/useDragScroll';
 import { SERVICES_OVERVIEW } from '@/app/constants/content';
 import { OptimizedImage } from '../ui/OptimizedImage';
 import { IMAGE_QUALITY } from '@/app/utils/image';
 import { AvatarCircles } from '../ui/avatar-circles';
 import { ArrowRight } from 'lucide-react';
+import Link from 'next/link';
 
 const ServicesScroll = () => {
   const { scrollContainerRef, handlers } = useDragScroll({ scrollSpeed: 2 });
@@ -117,13 +117,12 @@ const ServicesScroll = () => {
         >
           <div className="flex gap-6 md:gap-8 2xl:gap-12 pl-5 md:px-12 lg:px-16 2xl:px-24 pb-8 2xl:pb-12">
             {SERVICES_OVERVIEW.items.map((service, index) => (
-              <Link
+              <div
                 key={index}
-                href={service.href}
                 className="block flex-shrink-0 group"
               >
                 <div
-                  className={`${service.bgColor} rounded-2xl 2xl:rounded-3xl p-6 sm:p-8 md:p-10 lg:p-14 2xl:p-20 w-[85vw] min-w-[300px] max-w-[380px] h-auto min-h-[500px] sm:w-[90vw] sm:max-w-[400px] md:w-[700px] md:max-w-[800px] md:h-[420px] lg:w-[900px] lg:max-w-[1000px] lg:h-[420px] 2xl:w-[1200px] 2xl:max-w-[1400px] 2xl:h-[600px] flex flex-col md:flex-row items-center md:items-start md:justify-between transition-shadow duration-300 group-hover:shadow-2xl`}
+                  className={`${service.bgColor} rounded-2xl 2xl:rounded-3xl p-6 sm:p-8 md:p-10 lg:p-14 2xl:p-20 w-[85vw] min-w-[300px] max-w-[420px] h-auto min-h-[500px] sm:w-[90vw] sm:max-w-[450px] md:w-[750px] md:max-w-[900px] md:h-[420px] lg:w-[1000px] lg:max-w-[1100px] lg:h-[420px] 2xl:w-[1300px] 2xl:max-w-[1500px] 2xl:h-[600px] flex flex-col md:flex-row items-center md:items-start md:justify-between transition-shadow duration-300 group-hover:shadow-2xl`}
                 >
                   {/* Text Content */}
                   <div className="flex-1 text-left mb-6 md:mb-0">
@@ -154,13 +153,13 @@ const ServicesScroll = () => {
                       alt={`${service.title} - Zenit Digital`}
                       width={400}
                       height={400}
-                      className="w-full h-full object-contain max-w-full max-h-full"
+                      className="w-full h-full object-contain max-w-full max-h-full pointer-events-none"
                       quality={IMAGE_QUALITY.HIGH}
                       enableBlur
                     />
                   </div>
                 </div>
-              </Link>
+              </div>
             ))}
           </div>
         </div>

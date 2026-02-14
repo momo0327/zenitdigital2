@@ -14,8 +14,8 @@ const Header = () => {
   }, []);
 
   return (
-    <div className="px-2 md:px-12 lg:px-8 bg-white lg:py-20 py-17">
-      <div className="bg-[#010A1E] rounded-lg px-8 md:px-12 lg:px-16 py-12 md:py-16 lg:py-10 min-h-[600px] md:min-h-[700px] lg:min-h-[800px] relative">
+    <div className="bg-white lg:py-20 py-17">
+      <div className="bg-[#010A1E] px-8 md:px-12 lg:px-16 py-12 md:py-16 lg:py-10 min-h-[600px] md:min-h-[700px] lg:min-h-[800px] relative">
         {/* Title positioned at the very top */}
         <div className="text-center">
           <h1 className="text-6xl md:text-8xl font-antonio lg:text-9xl 2xl:text-[12rem] font-bold text-center text-[#14AAFF] lg:mb-[-27px]">
@@ -27,7 +27,7 @@ const Header = () => {
                 transitionDelay: '0ms'
               }}
             >
-              We Develop
+              WE DEVELOP
             </div>
             <div
               className="transition-all duration-1000 ease-out"
@@ -37,7 +37,7 @@ const Header = () => {
                 transitionDelay: '200ms'
               }}
             >
-              Your Dreams.
+              YOUR DREAMS.
             </div>
           </h1>
           

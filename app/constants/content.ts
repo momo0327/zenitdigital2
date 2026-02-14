@@ -188,6 +188,62 @@ export const FEATURES = {
   ],
 } as const;
 
+// Card Stack Content
+export const CARD_STACK = {
+  cards: [
+    {
+      id: 1,
+      title: 'Design & Create',
+      subtitle: 'Transform your ideas into stunning visual experiences with modern design principles',
+      bgColor: '#FFAB46',
+      textColor: '#291900',
+      buttonText: 'Join',
+      buttonBgColor: '#291900',
+      buttonTextColor: '#FFAB46',
+    },
+    {
+      id: 2,
+      title: 'Develop & Build',
+      subtitle: 'Build robust and scalable applications with cutting-edge technologies',
+      bgColor: '#E894FF',
+      textColor: '#23002B',
+      buttonText: 'Join',
+      buttonBgColor: '#23002B',
+      buttonTextColor: '#E894FF',
+    },
+    {
+      id: 3,
+      title: 'Launch & Scale',
+      subtitle: 'Deploy your projects and scale them to reach millions of users worldwide',
+      bgColor: '#002529',
+      textColor: '#94FFE3',
+      buttonText: 'Join',
+      buttonBgColor: '#94FFE3',
+      buttonTextColor: '#002529',
+    },
+    {
+      id: 4,
+      title: 'Analyze & Optimize',
+      subtitle: 'Monitor performance and optimize for the best user experience',
+      bgColor: '#291900',
+      textColor: '#FFAB46',
+      buttonText: 'Join',
+      buttonBgColor: '#FFAB46',
+      buttonTextColor: '#291900',
+    },
+    {
+      id: 5,
+      title: 'Support & Maintain',
+      subtitle: 'Continuous support and maintenance to keep your project running smoothly',
+      bgColor: '#23002B',
+      textColor: '#E894FF',
+      buttonText: 'Join',
+      buttonBgColor: '#E894FF',
+      buttonTextColor: '#23002B',
+    },
+  ],
+} as const;
+
 // Portfolio/Selected Work Items
 export const PORTFOLIO_ITEMS = [
   {

@@ -6,6 +6,7 @@ import Achievements from '../components/Achievments';
 import FAQ from '../components/Faq';
 import Cta from '../components/Cta';
 import ExpandableFeatures from '../components/ExpandableFeatures';
+import CardStack from '../components/CardStack';
 
 export const metadata: Metadata = {
   title: 'Our Services - Zenit Digital',
@@ -16,6 +17,7 @@ export default function ServicesPage() {
   return (
     <div className="min-h-screen bg-white">
       <ServicesScroll />
+      {/* <CardStack /> */}
       <ExpandableFeatures
       title="Digital utveckling på prenumeration"
       subtitle="Få tillgång till expertisen bakom några av världens mest älskade digitala tjänster. Med vårt abonnemang får du ett flexibelt team specialister som kliver in med rätt kompetens i rätt fas. Ta dina idéer till marknaden i rekordfart, med digitala lösningar som gör skillnad från dag ett."
