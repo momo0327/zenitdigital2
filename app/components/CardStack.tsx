@@ -21,7 +21,7 @@ interface CardStackProps {
   cards?: readonly Card[] | Card[];
 }
 
-const iconMap: { [key: number]: React.ComponentType<any> } = {
+const iconMap: { [key: number]: React.ComponentType<{ className?: string; size?: number; style?: React.CSSProperties }> } = {
   1: Palette,
   2: Code,
   3: Rocket,

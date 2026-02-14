@@ -6,7 +6,6 @@ import Achievements from '../components/Achievments';
 import FAQ from '../components/Faq';
 import Cta from '../components/Cta';
 import ExpandableFeatures from '../components/ExpandableFeatures';
-import CardStack from '../components/CardStack';
 
 export const metadata: Metadata = {
   title: 'Our Services - Zenit Digital',
