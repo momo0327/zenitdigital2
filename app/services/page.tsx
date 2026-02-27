@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import type { Metadata } from 'next';
 import ServicesScroll from '../components/sections/ServicesScroll';
 import Steps from '../components/Steps';
@@ -6,6 +6,9 @@ import Achievements from '../components/Achievments';
 import FAQ from '../components/Faq';
 import Cta from '../components/Cta';
 import ExpandableFeatures from '../components/ExpandableFeatures';
+import ScrollStack from '../components/ScrollStack';
+import HelpGrid from '../components/HelpGrid';
+import FeaturesGrid from '../components/FeaturesGrid';
 
 export const metadata: Metadata = {
   title: 'Our Services - Zenit Digital',
@@ -17,7 +20,7 @@ export default function ServicesPage() {
     <div className="min-h-screen bg-white">
       <ServicesScroll />
       {/* <CardStack /> */}
-      <ExpandableFeatures
+      {/* <ExpandableFeatures
       title="Digital utveckling på prenumeration"
       subtitle="Få tillgång till expertisen bakom några av världens mest älskade digitala tjänster. Med vårt abonnemang får du ett flexibelt team specialister som kliver in med rätt kompetens i rätt fas. Ta dina idéer till marknaden i rekordfart, med digitala lösningar som gör skillnad från dag ett."
       features={[
@@ -47,9 +50,15 @@ export default function ServicesPage() {
         }
       ]}
       autoPlayDuration={5000}
-      />
-      <Achievements/>
+      /> */}
+      {/* <Achievements/> */}
+        <FeaturesGrid/>
+       {/* <HelpGrid/>  */}
+      <Suspense fallback={<div className="min-h-screen bg-white" />}>
+        <ScrollStack/>
+      </Suspense> 
       <Steps />
+
       <FAQ
         bgColor="bg-[#051E01]"
         textColor="text-[#B4FFA8]"

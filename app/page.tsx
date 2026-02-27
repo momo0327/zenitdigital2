@@ -71,11 +71,11 @@ export default function Home() {
       <TriHeader/>
         <SelectedWork/>
         <GreenCTA/>
-        <FeaturesGrid/>
+        {/* <FeaturesGrid/> */}
       {/* <HelpGrid/> */}
-      <Suspense fallback={<div className="min-h-screen bg-white" />}>
+      {/* <Suspense fallback={<div className="min-h-screen bg-white" />}>
         <ScrollStack/>
-      </Suspense>
+      </Suspense> */}
       <Suspense fallback={<div className="min-h-96 bg-white" />}>
         <Steps/>
       </Suspense>
