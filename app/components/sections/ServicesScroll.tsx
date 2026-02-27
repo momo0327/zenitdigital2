@@ -2,9 +2,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { useDragScroll } from '@/app/hooks/useDragScroll';
 import { SERVICES_OVERVIEW } from '@/app/constants/content';
-import { OptimizedImage } from '../ui/OptimizedImage';
-import { IMAGE_QUALITY } from '@/app/utils/image';
-import { AvatarCircles } from '../ui/avatar-circles';
 import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 
@@ -59,48 +56,26 @@ const ServicesScroll = () => {
         {/* Header Section */}
         <div className="mb-16 md:mb-20 lg:mb-24 2xl:mb-32 px-5 md:px-12 lg:px-16 2xl:px-24">
           <div className="max-w-7xl 2xl:max-w-[2400px] mx-auto">
-            {/* Avatar Circles and Text */}
-            <div className="inline-flex items-center gap-3 2xl:gap-4 mb-8 md:mb-10 2xl:mb-14 bg-[#F4F4F4] px-6 py-2 2xl:px-8 2xl:py-3 rounded-full">
-              <AvatarCircles
-                numPeople={99}
-                avatarUrls={[
-                  {
-                    imageUrl: "https://avatars.githubusercontent.com/u/16860528",
-                    profileUrl: "#",
-                  },
-                  {
-                    imageUrl: "https://avatars.githubusercontent.com/u/20110627",
-                    profileUrl: "#",
-                  },
+            {/* Title and Subtitle in parallel layout */}
+            <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 md:gap-12 lg:gap-16 2xl:gap-24 mb-12 md:mb-16 2xl:mb-20">
+              {/* Title on the left */}
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl 2xl:text-8xl font-bold font-antonio text-black leading-tight md:max-w-xl lg:max-w-xl 2xl:max-w-4xl">
+                {SERVICES_OVERVIEW.title}
+              </h1>
 
-                ]}
-              />
-              <p className="text-xs md:text-sm 2xl:text-lg text-gray-500 font-normal">
-                Elevating software for startups and business
-              </p>
-            </div>
-
-            {/* Large Title */}
-            <h1 className="xs:text-5xl sm:text-7xl md:text-8xl lg:text-[10rem] 2xl:text-[15rem] font-bold font-antonio text-black leading-[0.85] mb-8 md:mb-12 2xl:mb-16">
-              {SERVICES_OVERVIEW.title}
-            </h1>
-
-            {/* Button and Subtitle Row */}
-            <div className="flex flex-col md:flex-row-reverse md:items-start md:justify-between gap-6 md:gap-8 2xl:gap-12">
-              {/* Subtitle on the right (desktop) / under title (mobile) */}
-              <div className="md:max-w-lg 2xl:max-w-3xl">
-                <p className="text-base md:text-lg lg:text-xl 2xl:text-4xl text-gray-700 leading-relaxed text-left">
+              {/* Subtitle on the right, parallel to title */}
+              <div className="md:max-w-md lg:max-w-lg 2xl:max-w-2xl md:pt-2">
+                <p className="text-base md:text-lg lg:text-xl 2xl:text-3xl text-gray-700 leading-relaxed">
                   {SERVICES_OVERVIEW.subtitle}
                 </p>
+                {/* Optional CTA Button */}
+                <Link href="/ContactPage" className="inline-block mt-6 2xl:mt-8">
+                  <button className="group bg-[#F4F4F4] text-black font-medium text-sm md:text-base 2xl:text-xl px-6 py-3 md:px-8 md:py-4 2xl:px-10 2xl:py-5 rounded-full hover:bg-gray-300 transition-all duration-300 flex items-center gap-2">
+                    Let&apos;s Talk
+                    <ArrowRight className="w-4 h-4 md:w-5 md:h-5 2xl:w-6 2xl:h-6 transition-transform duration-300 group-hover:translate-x-1" />
+                  </button>
+                </Link>
               </div>
-
-              {/* Button on the left (desktop) / under subtitle (mobile) */}
-              <Link href="/ContactPage">
-                <button className="group bg-[#F4F4F4] text-black font-medium text-sm md:text-lg 2xl:text-2xl px-5 py-3 md:px-8 md:py-4 2xl:px-12 2xl:py-5 rounded-full hover:bg-gray-300 transition-all duration-300 flex items-center gap-2">
-                  Let&apos;s Talk
-                  <ArrowRight className="w-4 h-4 md:w-5 md:h-5 2xl:w-6 2xl:h-6 transition-transform duration-300 group-hover:translate-x-1" />
-                </button>
-              </Link>
             </div>
           </div>
         </div>
@@ -122,42 +97,31 @@ const ServicesScroll = () => {
                 className="block flex-shrink-0 group"
               >
                 <div
-                  className={`${service.bgColor} rounded-2xl 2xl:rounded-3xl p-6 sm:p-8 md:p-10 lg:p-14 2xl:p-20 w-[85vw] min-w-[300px] max-w-[420px] h-auto min-h-[500px] sm:w-[90vw] sm:max-w-[450px] md:w-[750px] md:max-w-[900px] md:h-[420px] lg:w-[1000px] lg:max-w-[1100px] lg:h-[420px] 2xl:w-[1300px] 2xl:max-w-[1500px] 2xl:h-[600px] flex flex-col md:flex-row items-center md:items-start md:justify-between transition-shadow duration-300 group-hover:shadow-2xl`}
+                  className={`${service.bgColor} rounded-2xl 2xl:rounded-3xl p-8 md:p-12 lg:p-16 2xl:p-20 w-[85vw] md:w-[700px] lg:w-[900px] 2xl:w-[1100px] h-[500px] md:h-[500px] lg:h-[500px] 2xl:h-[600px] flex flex-col justify-between transition-shadow duration-300 group-hover:shadow-2xl`}
                 >
                   {/* Text Content */}
-                  <div className="flex-1 text-left mb-6 md:mb-0">
-                    <h3 className={`text-3xl md:text-4xl lg:text-6xl 2xl:text-7xl font-bold font-antonio ${service.textColor} mb-4 2xl:mb-6 leading-tight`}>
+                  <div className="text-left">
+                    <h3 className={`text-5xl md:text-7xl lg:text-8xl 2xl:text-9xl font-bold font-antonio ${service.textColor} mb-6 2xl:mb-8 leading-none`}>
                       {service.title}
                     </h3>
-                    <p className={`text-base md:text-lg lg:text-md 2xl:text-2xl ${service.textColor} opacity-80 leading-relaxed md:max-w-md 2xl:max-w-2xl mb-4 2xl:mb-6`}>
+                    <p className={`text-sm md:text-base lg:text-lg 2xl:text-xl lg:w-max-md ${service.textColor} opacity-80 leading-relaxed`}>
                       {service.description}
                     </p>
-                    {'technologies' in service && service.technologies && (
-                      <div className="flex gap-1.5 md:gap-2 2xl:gap-3 flex-wrap mt-3 2xl:mt-4">
-                        {service.technologies.map((tech: string, techIndex: number) => (
-                          <span
-                            key={techIndex}
-                            className={`${service.textColor} bg-white/10 backdrop-blur-sm px-2 py-0.5 md:px-2.5 md:py-1 2xl:px-4 2xl:py-1.5 rounded-full text-[10px] md:text-xs 2xl:text-base font-medium border border-current/20`}
-                          >
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
-                    )}
                   </div>
 
-                  {/* Image */}
-                  <div className="flex-shrink-0 flex items-center justify-center md:ml-6 lg:ml-8 2xl:ml-12 mt-4 md:mt-0 w-[180px] sm:w-[200px] md:w-[200px] lg:w-[260px] xl:w-[300px] 2xl:w-[400px] h-[180px] sm:h-[200px] md:h-[200px] lg:h-[260px] xl:h-[300px] 2xl:h-[400px]">
-                    <OptimizedImage
-                      src={service.image}
-                      alt={`${service.title} - Zenit Digital`}
-                      width={400}
-                      height={400}
-                      className="w-full h-full object-contain max-w-full max-h-full pointer-events-none"
-                      quality={IMAGE_QUALITY.HIGH}
-                      enableBlur
-                    />
-                  </div>
+                  {/* Technologies at bottom */}
+                  {'technologies' in service && service.technologies && (
+                    <div className="flex gap-2 2xl:gap-3 flex-wrap">
+                      {service.technologies.map((tech: string, techIndex: number) => (
+                        <span
+                          key={techIndex}
+                          className={`${service.textColor} bg-white/10 backdrop-blur-sm px-3 py-1.5 2xl:px-4 2xl:py-2 rounded-full text-xs md:text-sm 2xl:text-base font-medium border border-current/20`}
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </div>
             ))}

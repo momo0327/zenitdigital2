@@ -80,7 +80,7 @@ const Navbar: React.FC<NavbarProps> = ({
               className="w-5 h-5 md:w-6 md:h-6 2xl:w-8 2xl:h-8"
               priority
             />
-            ZENIT
+            ZENIA
           </Link>
 
           {/* Center Navigation - Responsive with useBreakpoint */}

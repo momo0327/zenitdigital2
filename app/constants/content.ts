@@ -30,7 +30,7 @@ export const MARKETING_COPY = {
 
 // Services Overview
 export const SERVICES_OVERVIEW = {
-  title: 'OUR SERVICES',
+  title: 'DIGITAL SOLUTIONS FOR YOUR STARTUP ',
   subtitle: "We build high-quality digital solutions for startups and growing businesses. From web to mobile development, we help bring your ideas to life.",
   items: [
     {
