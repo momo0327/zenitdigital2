@@ -1,7 +1,7 @@
 import React from 'react'
 import type { Metadata } from 'next'
 import Script from 'next/script'
-import Header from '../components/FullstackDevPageComponents/Header'
+import { ServiceHeader } from '../components/services'
 import {
   FULLSTACK_DEV_METADATA,
   BASE_URL,
@@ -55,7 +55,11 @@ function page() {
         strategy="afterInteractive"
       />
 
-      <Header/>
+      <ServiceHeader
+        service="fullstack"
+        title={<>Fullstack <br /> Development</>}
+        imageAlt="Fullstack development - Complete end-to-end application development from frontend to backend"
+      />
     </div>
   )
 }

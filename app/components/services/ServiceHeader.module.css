@@ -1,0 +1,234 @@
+/* ServiceHeader — CSS Module */
+
+.wrapper {
+  --_btn-hover: var(--color-mobile);
+  --_primary-btn-text: var(--_btn-text);
+
+  padding: 4.25rem 0.5rem;
+  background-color: var(--ui-white);
+}
+
+@media (min-width: 768px) {
+  .wrapper {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .wrapper {
+    padding: 5rem 2rem;
+  }
+}
+
+/* ---- Card ---- */
+.card {
+  background-color: var(--_bg);
+  border-radius: 0.5rem;
+  padding: 3rem 2rem;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .card {
+    padding: 4rem 3rem;
+    min-height: 700px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .card {
+    padding: 2.5rem 4rem;
+    min-height: 800px;
+  }
+}
+
+/* ---- Grid ---- */
+.grid {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+  width: 100%;
+  max-width: 80rem; /* max-w-7xl */
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+  }
+}
+
+/* ---- Content column ---- */
+.content {
+  color: var(--ui-white);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .content {
+    align-items: flex-start;
+  }
+}
+
+/* ---- Title ---- */
+.title {
+  font-family: 'Antonio', sans-serif;
+  font-weight: 700;
+  color: var(--_accent);
+  text-align: center;
+  font-size: 3.75rem; /* text-6xl */
+  line-height: 1;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 3.75rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .title {
+    font-size: 6rem; /* text-8xl */
+    text-align: left;
+  }
+}
+
+@media (min-width: 1280px) {
+  .title {
+    font-size: 6rem;
+  }
+}
+
+/* ---- Description ---- */
+.description {
+  color: var(--_accent);
+  text-align: center;
+  font-size: 1.125rem; /* text-lg */
+  line-height: 1.75rem;
+  margin-bottom: 2rem;
+  max-width: 32rem; /* max-w-lg */
+}
+
+@media (min-width: 768px) {
+  .description {
+    font-size: 1.25rem; /* text-xl */
+    line-height: 1.75rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .description {
+    font-size: 1.5rem; /* text-2xl */
+    line-height: 2rem;
+    text-align: left;
+  }
+}
+
+/* ---- Actions row ---- */
+.actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1rem;
+}
+
+@media (min-width: 1024px) {
+  .actions {
+    justify-content: flex-start;
+  }
+}
+
+/* ---- Primary button ---- */
+.primaryButton {
+  background-color: var(--_accent);
+  color: var(--_primary-btn-text);
+  font-weight: 600;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+.primaryButton:hover {
+  background-color: var(--_btn-hover);
+  transform: scale(1.05);
+}
+
+@media (min-width: 768px) {
+  .primaryButton {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+/* ---- Secondary button ---- */
+.secondaryButton {
+  border: 1px solid var(--_accent);
+  color: var(--_accent);
+  background: transparent;
+  font-weight: 600;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(12px);
+}
+
+.secondaryButton:hover {
+  background-color: rgb(255 255 255 / 0.1);
+}
+
+@media (min-width: 768px) {
+  .secondaryButton {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+/* ---- Image section ---- */
+.imageSection {
+  display: flex;
+  justify-content: center;
+}
+
+.image {
+  width: 20rem; /* w-80 */
+  height: auto;
+  object-fit: contain;
+}
+
+@media (min-width: 768px) {
+  .image {
+    width: 24rem; /* w-96 */
+  }
+}
+
+@media (min-width: 1024px) {
+  .image {
+    width: 500px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .image {
+    width: 550px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .image {
+    width: 600px;
+  }
+}

@@ -1,17 +1,17 @@
 import React from 'react';
-import ContactForm from '../components/ContactForm';
-import Navbar from '../components/navbar';
+import ContactForm from '../components/sections/ContactForm';
+import { Navbar } from '../components/layout';
 import { Mail, Phone, MapPin } from 'lucide-react';
-import Steps from '../components/Steps';
+import Steps from '../components/sections/Steps';
 
 export default function ContactPage() {
   return (
     <>
       <Navbar
-        bgColor="bg-[#9AC2FF]"
-        textColor="text-[#0A0D24]"
-        logoColor="text-[#0A0D24]"
-        hoverBgColor="hover:bg-[#0A0D24]/10"
+        bgColor="#9AC2FF"
+        textColor="#0A0D24"
+        logoColor="#0A0D24"
+        hoverBgColor="rgba(10, 13, 36, 0.1)"
       />
       <div className="min-h-screen bg-[#9AC2FF]">
         <div className="grid grid-cols-1 lg:grid-cols-2 min-h-screen">

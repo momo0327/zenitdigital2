@@ -2,6 +2,7 @@ import React from 'react';
 import { OptimizedImage } from '../ui/OptimizedImage';
 import { IMAGE_QUALITY } from '@/app/utils/image';
 import { StaggeredMenuToggle } from './StaggeredMenuToggle';
+import styles from './StaggeredMenu.module.css';
 
 interface StaggeredMenuHeaderProps {
   logoUrl: string;
@@ -33,16 +34,17 @@ export const StaggeredMenuHeader: React.FC<StaggeredMenuHeaderProps> = ({
 }) => {
   return (
     <header
-      className="staggered-menu-header absolute top-0 left-0 w-full flex items-center justify-between p-[2em] bg-transparent pointer-events-none z-20"
+      className={styles.header}
       aria-label="Main navigation header"
+      data-sm="header"
     >
-      <div className="sm-logo flex items-center select-none pointer-events-auto" aria-label="Logo">
+      <div className={styles.logo} aria-label="Logo" data-sm="logo">
         <OptimizedImage
           src={logoUrl}
           alt="Zenit Digital Logo"
           width={110}
           height={32}
-          className="sm-logo-img block h-8 w-auto object-contain"
+          className={styles.logoImg}
           quality={IMAGE_QUALITY.HIGH}
           priority
         />

@@ -1,0 +1,339 @@
+/* ===================================================================
+   StaggeredMenu CSS Module
+   Migrated from inline <style> block to CSS Module for proper scoping.
+   GSAP targets use data-sm attributes instead of class selectors.
+   =================================================================== */
+
+/* --- Wrapper --- */
+.wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 40;
+}
+
+/* --- Header --- */
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2em;
+  background: transparent;
+  pointer-events: none;
+  z-index: 20;
+}
+
+.header > * {
+  pointer-events: auto;
+}
+
+/* --- Logo --- */
+.logo {
+  display: flex;
+  align-items: center;
+  user-select: none;
+}
+
+.logoImg {
+  display: block;
+  height: 32px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* --- Toggle button --- */
+.toggle {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #e9e9ef;
+  font-weight: 500;
+  line-height: 1;
+  overflow: visible;
+  pointer-events: auto;
+}
+
+.toggle:focus-visible {
+  outline: 2px solid #ffffffaa;
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+/* --- Toggle text --- */
+.toggleTextWrap {
+  position: relative;
+  margin-right: 0.5em;
+  display: inline-block;
+  height: 1em;
+  overflow: hidden;
+  white-space: nowrap;
+  width: var(--sm-toggle-width, auto);
+  min-width: var(--sm-toggle-width, auto);
+}
+
+.toggleTextInner {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.toggleLine {
+  display: block;
+  height: 1em;
+  line-height: 1;
+}
+
+/* --- Icon (plus / cross) --- */
+.icon {
+  position: relative;
+  width: 14px;
+  height: 14px;
+  flex: 0 0 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  will-change: transform;
+}
+
+.iconLine {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 100%;
+  height: 2px;
+  background: currentColor;
+  border-radius: 2px;
+  transform: translate(-50%, -50%);
+  will-change: transform;
+}
+
+/* Hidden line (legacy element) */
+.line {
+  display: none !important;
+}
+
+/* --- Pre-layers (colored reveal sheets) --- */
+.prelayers {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: clamp(260px, 38vw, 420px);
+  pointer-events: none;
+  z-index: 5;
+}
+
+.prelayer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  transform: translateX(0);
+}
+
+/* --- Panel --- */
+.panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: clamp(260px, 38vw, 420px);
+  height: 100%;
+  background: white;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  display: flex;
+  flex-direction: column;
+  padding: 6em 2em 2em 2em;
+  overflow-y: auto;
+  z-index: 10;
+}
+
+.panelInner {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* --- Panel list --- */
+.panelList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.panelList[data-numbering] {
+  counter-reset: smItem;
+}
+
+/* --- Panel item --- */
+.panelItemWrap {
+  position: relative;
+  overflow: hidden;
+  line-height: 1;
+}
+
+.panelItem {
+  position: relative;
+  color: #000;
+  font-weight: 600;
+  font-size: 5rem;
+  font-family: 'Antonio', sans-serif;
+  cursor: pointer;
+  line-height: 1;
+  letter-spacing: -2px;
+  text-transform: uppercase;
+  transition: background 0.25s, color 0.25s;
+  display: inline-block;
+  text-decoration: none;
+  padding-right: 1.4em;
+}
+
+.panelItem:hover {
+  color: var(--sm-accent, #ff0000);
+}
+
+.panelItemLabel {
+  display: inline-block;
+  will-change: transform;
+  transform-origin: 50% 100%;
+}
+
+/* Numbering pseudo-element */
+.panelList[data-numbering] .panelItem::after {
+  counter-increment: smItem;
+  content: counter(smItem, decimal-leading-zero);
+  position: absolute;
+  top: 0.1em;
+  right: 3.2em;
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--sm-accent, #ff0000);
+  letter-spacing: 0;
+  pointer-events: none;
+  user-select: none;
+  opacity: var(--sm-num-opacity, 0);
+}
+
+/* --- Panel title --- */
+.panelTitle {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+/* --- Socials section --- */
+.socials {
+  margin-top: auto;
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.socialsTitle {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--sm-accent, #ff0000);
+}
+
+.socialsList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.socialsLink {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #111;
+  text-decoration: none;
+  position: relative;
+  padding: 2px 0;
+  display: inline-block;
+  transition: color 0.3s ease, opacity 0.3s ease;
+  opacity: 1;
+}
+
+.socialsLink:hover {
+  color: var(--sm-accent, #ff0000);
+}
+
+.socialsLink:focus-visible {
+  outline: 2px solid var(--sm-accent, #ff0000);
+  outline-offset: 3px;
+}
+
+/* Hover/focus-within dimming for social links */
+.socialsList .socialsLink {
+  transition: opacity 0.3s ease;
+}
+
+.socialsList:hover .socialsLink:not(:hover) {
+  opacity: 0.35;
+}
+
+.socialsList:focus-within .socialsLink:not(:focus-visible) {
+  opacity: 0.35;
+}
+
+.socialsList .socialsLink:hover,
+.socialsList .socialsLink:focus-visible {
+  opacity: 1;
+}
+
+/* --- Position: left overrides --- */
+:global([data-position='left']) .panel {
+  right: auto;
+  left: 0;
+}
+
+:global([data-position='left']) .prelayers {
+  right: auto;
+  left: 0;
+}
+
+/* --- Logo inversion when menu is open (tablet / mobile) --- */
+@media (max-width: 1024px) {
+  .panel {
+    width: 100%;
+    left: 0;
+    right: 0;
+  }
+
+  :global([data-open]) .logoImg {
+    filter: invert(100%);
+  }
+}
+
+@media (max-width: 640px) {
+  .panel {
+    width: 100%;
+    left: 0;
+    right: 0;
+  }
+
+  :global([data-open]) .logoImg {
+    filter: invert(100%);
+  }
+}

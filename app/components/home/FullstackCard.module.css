@@ -1,0 +1,211 @@
+/* FullstackCard.module.css — Fullstack Development header */
+
+.wrapper {
+  padding: 0.5rem;
+  background-color: var(--ui-white);
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.card {
+  background-color: var(--bg-fullstack);
+  border-radius: 0.75rem;
+  padding: 3rem 1.5rem;
+  height: 700px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  width: 100%;
+}
+
+.textSection {
+  flex: 1;
+  width: 100%;
+  text-align: left;
+}
+
+.title {
+  font-size: 3rem;
+  line-height: 1;
+  font-family: 'Antonio', sans-serif;
+  font-weight: 700;
+  color: var(--color-fullstack);
+  margin-bottom: 2rem;
+}
+
+.description {
+  font-size: 1.25rem;
+  line-height: 1.25;
+  color: var(--color-fullstack);
+  margin-bottom: 2.5rem;
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.primaryButton {
+  background-color: var(--color-fullstack);
+  color: var(--ui-black);
+  padding: 0.75rem 1.5rem;
+  font-size: 0.875rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  border: none;
+  transition: background-color 0.2s;
+}
+
+.primaryButton:hover {
+  background-color: var(--color-fullstack);
+}
+
+.secondaryButton {
+  border: 2px solid var(--color-fullstack);
+  color: var(--color-fullstack);
+  background: transparent;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.875rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.secondaryButton:hover {
+  background-color: var(--color-fullstack-blue);
+  color: var(--ui-white);
+}
+
+.imageSection {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.image {
+  width: 450px;
+  height: auto;
+  object-fit: contain;
+  z-index: 50;
+}
+
+/* ---- sm: 640px ---- */
+@media (min-width: 640px) {
+  .image {
+    width: 550px;
+  }
+}
+
+/* ---- md: 768px ---- */
+@media (min-width: 768px) {
+  .wrapper {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  .card {
+    height: 600px;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+
+  .title {
+    font-size: 4.5rem;
+  }
+
+  .description {
+    font-size: 1.25rem;
+  }
+
+  .image {
+    width: 700px;
+  }
+}
+
+/* ---- lg: 1024px ---- */
+@media (min-width: 1024px) {
+  .wrapper {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .card {
+    height: 550px;
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+
+  .content {
+    flex-direction: row;
+    gap: 4rem;
+  }
+
+  .title {
+    font-size: 8rem;
+  }
+
+  .imageSection {
+    justify-content: flex-end;
+  }
+
+  .image {
+    width: 850px;
+  }
+}
+
+/* ---- 2xl: 1536px ---- */
+@media (min-width: 1536px) {
+  .wrapper {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+
+  .card {
+    height: 700px;
+    padding: 4rem 6rem;
+  }
+
+  .content {
+    gap: 6rem;
+  }
+
+  .title {
+    font-size: 10rem;
+    margin-bottom: 3rem;
+  }
+
+  .description {
+    font-size: 1.875rem;
+    margin-bottom: 3.5rem;
+  }
+
+  .actions {
+    gap: 1.5rem;
+  }
+
+  .primaryButton {
+    padding: 1rem 2.5rem;
+    font-size: 1.125rem;
+  }
+
+  .secondaryButton {
+    padding: 1rem 2.5rem;
+    font-size: 1.125rem;
+  }
+
+  .image {
+    width: 1100px;
+  }
+}

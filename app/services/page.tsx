@@ -1,14 +1,11 @@
 import React, { Suspense } from 'react';
 import type { Metadata } from 'next';
 import ServicesScroll from '../components/sections/ServicesScroll';
-import Steps from '../components/Steps';
-import Achievements from '../components/Achievments';
-import FAQ from '../components/Faq';
-import Cta from '../components/Cta';
-import ExpandableFeatures from '../components/ExpandableFeatures';
-import ScrollStack from '../components/ScrollStack';
-import HelpGrid from '../components/HelpGrid';
-import FeaturesGrid from '../components/FeaturesGrid';
+import Steps from '../components/sections/Steps';
+import FAQ from '../components/sections/Faq';
+import Cta from '../components/sections/Cta';
+import ScrollStack from '../components/sections/ScrollStack';
+import FeaturesGrid from '../components/sections/FeaturesGrid';
 
 export const metadata: Metadata = {
   title: 'Our Services - Zenit Digital',
@@ -19,41 +16,7 @@ export default function ServicesPage() {
   return (
     <div className="min-h-screen bg-white">
       <ServicesScroll />
-      {/* <CardStack /> */}
-      {/* <ExpandableFeatures
-      title="Digital utveckling på prenumeration"
-      subtitle="Få tillgång till expertisen bakom några av världens mest älskade digitala tjänster. Med vårt abonnemang får du ett flexibelt team specialister som kliver in med rätt kompetens i rätt fas. Ta dina idéer till marknaden i rekordfart, med digitala lösningar som gör skillnad från dag ett."
-      features={[
-        {
-          number: '01',
-          title: 'Krångelfri utveckling på abonnemang',
-          description: 'Få tillgång till ett komplett utvecklingsteam utan långsiktiga bindningar. Skala upp eller ner efter behov, med transparent prissättning och flexibla villkor som följer din verksamhet.',
-          image: "/voz.png"
-        },
-        {
-          number: '02',
-          title: 'Allt under ett tak',
-          description: 'Från strategi och design till utveckling och drift - vi hanterar hela kedjan. Ett team, en kontakt, en helhetslösning som sparar tid och eliminerar kommunikationsbrister.',
-          image: "/group 6-3.png"
-        },
-        {
-          number: '03',
-          title: 'Plattformsoberoende partner',
-          description: 'Vi låter alltid affärsnytta styra teknikvalet. Oavsett om du behöver webblösningar, mobilappar eller integrerade system - vi bygger med rätt teknologi för dina specifika behov.',
-          image: "/h-1 3.png"
-        },
-        {
-          number: '04',
-          title: 'Ledande expertis',
-          description: 'Vårt team består av erfarna specialister som har byggt lösningar för ledande företag. Du får tillgång till deep tech-kunskap och best practices från dag ett.',
-          image: "/voz.png"
-        }
-      ]}
-      autoPlayDuration={5000}
-      /> */}
-      {/* <Achievements/> */}
         <FeaturesGrid/>
-       {/* <HelpGrid/>  */}
       <Suspense fallback={<div className="min-h-screen bg-white" />}>
         <ScrollStack/>
       </Suspense> 

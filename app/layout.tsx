@@ -3,10 +3,7 @@ import { Geist, Geist_Mono, Poppins } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import { DEFAULT_METADATA, LOCAL_BUSINESS_SCHEMA } from "./constants/seo";
-import Navbar from "./components/navbar";
-import Footer from "./components/Footer";
-import { CookieConsent } from "./components/CookieConsent";
-import TransitionProvider from "./components/TransitionProvider";
+import { Navbar, Footer, CookieConsent, TransitionProvider } from './components/layout';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

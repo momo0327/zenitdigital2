@@ -1,5 +1,6 @@
 import React, { forwardRef } from 'react';
 import { StaggeredMenuItem, StaggeredMenuSocialItem } from './StaggeredMenu.types';
+import styles from './StaggeredMenu.module.css';
 
 interface StaggeredMenuPanelProps {
   open: boolean;
@@ -18,35 +19,36 @@ export const StaggeredMenuPanel = forwardRef<HTMLElement, StaggeredMenuPanelProp
       <aside
         id="staggered-menu-panel"
         ref={ref}
-        className="staggered-menu-panel absolute top-0 right-0 h-full bg-white flex flex-col p-[6em_2em_2em_2em] overflow-y-auto z-10 backdrop-blur-[12px]"
-        style={{ WebkitBackdropFilter: 'blur(12px)' }}
+        className={styles.panel}
         aria-hidden={!open}
       >
-        <div className="sm-panel-inner flex-1 flex flex-col gap-5">
+        <div className={styles.panelInner}>
           <ul
-            className="sm-panel-list list-none m-0 p-0 flex flex-col gap-2"
+            className={styles.panelList}
             role="list"
             data-numbering={displayItemNumbering || undefined}
+            data-sm="panel-list"
           >
             {items && items.length ? (
               items.map((it, idx) => (
-                <li className="sm-panel-itemWrap relative overflow-hidden leading-none" key={it.label + idx}>
+                <li className={styles.panelItemWrap} key={it.label + idx}>
                   <a
-                    className="sm-panel-item relative text-black font-semibold text-[4rem] cursor-pointer leading-none tracking-[-2px] uppercase transition-[background,color] duration-150 ease-linear inline-block no-underline pr-[1.4em]"
+                    className={styles.panelItem}
                     href={it.link}
                     aria-label={it.ariaLabel}
                     data-index={idx + 1}
+                    data-sm="panel-item"
                   >
-                    <span className="sm-panel-itemLabel inline-block [transform-origin:50%_100%] will-change-transform">
+                    <span className={styles.panelItemLabel} data-sm="panel-itemLabel">
                       {it.label}
                     </span>
                   </a>
                 </li>
               ))
             ) : (
-              <li className="sm-panel-itemWrap relative overflow-hidden leading-none" aria-hidden="true">
-                <span className="sm-panel-item relative text-black font-semibold text-[4rem] cursor-pointer leading-none tracking-[-2px] uppercase transition-[background,color] duration-150 ease-linear inline-block no-underline pr-[1.4em]">
-                  <span className="sm-panel-itemLabel inline-block [transform-origin:50%_100%] will-change-transform">
+              <li className={styles.panelItemWrap} aria-hidden="true">
+                <span className={styles.panelItem}>
+                  <span className={styles.panelItemLabel} data-sm="panel-itemLabel">
                     No items
                   </span>
                 </span>
@@ -55,21 +57,22 @@ export const StaggeredMenuPanel = forwardRef<HTMLElement, StaggeredMenuPanelProp
           </ul>
 
           {displaySocials && socialItems && socialItems.length > 0 && (
-            <div className="sm-socials mt-auto pt-8 flex flex-col gap-3" aria-label="Social links">
-              <h3 className="sm-socials-title m-0 text-base font-medium [color:var(--sm-accent,#ff0000)]">
+            <div className={styles.socials} aria-label="Social links">
+              <h3 className={styles.socialsTitle} data-sm="socials-title">
                 Socials
               </h3>
               <ul
-                className="sm-socials-list list-none m-0 p-0 flex flex-row items-center gap-4 flex-wrap"
+                className={styles.socialsList}
                 role="list"
               >
                 {socialItems.map((s, i) => (
-                  <li key={s.label + i} className="sm-socials-item">
+                  <li key={s.label + i}>
                     <a
                       href={s.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="sm-socials-link text-[1.2rem] font-medium text-[#111] no-underline relative inline-block py-[2px] transition-[color,opacity] duration-300 ease-linear"
+                      className={styles.socialsLink}
+                      data-sm="socials-link"
                     >
                       {s.label}
                     </a>

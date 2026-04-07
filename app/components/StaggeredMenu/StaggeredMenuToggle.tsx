@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './StaggeredMenu.module.css';
 
 interface StaggeredMenuToggleProps {
   open: boolean;
@@ -29,21 +30,23 @@ export const StaggeredMenuToggle: React.FC<StaggeredMenuToggleProps> = ({
   return (
     <button
       ref={toggleBtnRef}
-      className="sm-toggle relative inline-flex items-center gap-[0.3rem] bg-transparent border-0 cursor-pointer text-[#e9e9ef] font-medium leading-none overflow-visible pointer-events-auto"
+      className={styles.toggle}
       aria-label={open ? 'Close menu' : 'Open menu'}
       aria-expanded={open}
       aria-controls="staggered-menu-panel"
       onClick={onClick}
       type="button"
+      data-sm="toggle"
     >
       <span
         ref={textWrapRef}
-        className="sm-toggle-textWrap relative inline-block h-[1em] overflow-hidden whitespace-nowrap w-[var(--sm-toggle-width,auto)] min-w-[var(--sm-toggle-width,auto)]"
+        className={styles.toggleTextWrap}
         aria-hidden="true"
+        data-sm="toggle-textWrap"
       >
-        <span ref={textInnerRef} className="sm-toggle-textInner flex flex-col leading-none">
+        <span ref={textInnerRef} className={styles.toggleTextInner} data-sm="toggle-textInner">
           {textLines.map((l, i) => (
-            <span className="sm-toggle-line block h-[1em] leading-none" key={i}>
+            <span className={styles.toggleLine} key={i} data-sm="toggle-line">
               {l}
             </span>
           ))}
@@ -52,16 +55,19 @@ export const StaggeredMenuToggle: React.FC<StaggeredMenuToggleProps> = ({
 
       <span
         ref={iconRef}
-        className="sm-icon relative w-[14px] h-[14px] shrink-0 inline-flex items-center justify-center [will-change:transform]"
+        className={styles.icon}
         aria-hidden="true"
+        data-sm="icon"
       >
         <span
           ref={plusHRef}
-          className="sm-icon-line absolute left-1/2 top-1/2 w-full h-[2px] bg-current rounded-[2px] -translate-x-1/2 -translate-y-1/2 [will-change:transform]"
+          className={styles.iconLine}
+          data-sm="icon-line"
         />
         <span
           ref={plusVRef}
-          className="sm-icon-line sm-icon-line-v absolute left-1/2 top-1/2 w-full h-[2px] bg-current rounded-[2px] -translate-x-1/2 -translate-y-1/2 [will-change:transform]"
+          className={styles.iconLine}
+          data-sm="icon-line"
         />
       </span>
     </button>

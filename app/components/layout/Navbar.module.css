@@ -1,0 +1,345 @@
+/* ==========================================================================
+   Navbar — CSS Module
+   Colors are driven by CSS custom properties set inline on <nav>:
+     --navbar-bg, --navbar-text, --navbar-logo, --navbar-hover-bg
+   ========================================================================== */
+
+/* ---- Root nav bar ---- */
+.navbar {
+  background-color: var(--navbar-bg);
+  padding: 1.25rem 1.25rem; /* px-5 py-5 */
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 60;
+  transition: transform 0.3s ease-in-out;
+}
+
+@media (min-width: 640px) {
+  .navbar {
+    padding: 1.25rem 1.5rem; /* sm:px-6 */
+  }
+}
+
+@media (min-width: 1536px) {
+  .navbar {
+    padding: 1.75rem 2.5rem; /* 2xl:px-10 2xl:py-7 */
+  }
+}
+
+/* Scroll show / hide */
+.visible {
+  top: 0;
+  transform: translateY(0);
+}
+
+.hidden {
+  transform: translateY(-100%);
+}
+
+/* ---- Inner container ---- */
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 80rem; /* max-w-7xl */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 1536px) {
+  .inner {
+    max-width: 1600px;
+  }
+}
+
+/* ---- Logo ---- */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* gap-2 */
+  font-size: 1.25rem; /* text-xl */
+  font-weight: 700;
+  color: var(--navbar-logo);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+@media (min-width: 1536px) {
+  .logo {
+    gap: 0.75rem; /* 2xl:gap-3 */
+    font-size: 1.875rem; /* 2xl:text-3xl */
+  }
+}
+
+.logoImage {
+  width: 1.25rem; /* w-5 */
+  height: 1.25rem; /* h-5 */
+}
+
+@media (min-width: 768px) {
+  .logoImage {
+    width: 1.5rem; /* md:w-6 */
+    height: 1.5rem; /* md:h-6 */
+  }
+}
+
+@media (min-width: 1536px) {
+  .logoImage {
+    width: 2rem; /* 2xl:w-8 */
+    height: 2rem; /* 2xl:h-8 */
+  }
+}
+
+/* ---- Center navigation ---- */
+.centerNav {
+  display: flex;
+  gap: 0.5rem; /* space-x-2 */
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@media (min-width: 768px) {
+  .centerNav {
+    gap: 2rem; /* md:space-x-8 */
+  }
+}
+
+@media (min-width: 1536px) {
+  .centerNav {
+    gap: 3rem; /* 2xl:space-x-12 */
+  }
+}
+
+.navLink {
+  color: var(--navbar-text);
+  opacity: 0.7;
+  padding: 0.5rem 0.5rem; /* py-2 px-2 */
+  border-radius: 0.375rem;
+  transition: all 0.2s;
+  font-size: 0.875rem; /* text-sm */
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.navLink:hover {
+  opacity: 1;
+  background-color: var(--navbar-hover-bg);
+}
+
+@media (min-width: 768px) {
+  .navLink {
+    padding: 0.5rem 1rem; /* md:px-4 */
+    font-size: 1rem; /* md:text-base */
+  }
+}
+
+@media (min-width: 1536px) {
+  .navLink {
+    padding: 0.75rem 1.5rem; /* 2xl:py-3 2xl:px-6 */
+    font-size: 1.25rem; /* 2xl:text-xl */
+  }
+}
+
+/* ---- Mobile menu wrapper (visible < 1024px) ---- */
+.mobileMenu {
+  display: flex;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .mobileMenu {
+    display: none;
+  }
+}
+
+.mobileMenuInner {
+  width: auto;
+  height: auto;
+}
+
+/* ---- StaggeredMenu global overrides (scoped via .mobileMenu) ---- */
+.mobileMenu :global([data-sm="wrapper"]) {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  z-index: 9999 !important;
+  pointer-events: none;
+}
+
+.mobileMenu :global([data-sm="wrapper"][data-open="true"]) {
+  pointer-events: all;
+}
+
+.mobileMenu :global([data-sm="header"]) {
+  position: absolute !important;
+  top: 27px !important;
+  right: 20px !important;
+  left: auto !important;
+  width: auto !important;
+  padding: 0 !important;
+  pointer-events: all;
+  display: flex !important;
+  align-items: center !important;
+}
+
+@media (min-width: 640px) {
+  .mobileMenu :global([data-sm="header"]) {
+    right: 24px !important;
+    top: 30px !important;
+  }
+}
+
+@media (min-width: 1536px) {
+  .mobileMenu :global([data-sm="header"]) {
+    top: 30px !important;
+  }
+}
+
+.mobileMenu :global([data-sm="logo"]) {
+  display: none !important;
+}
+
+.mobileMenu :global([data-sm="toggle"]) {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #000 !important;
+  gap: 0.3rem !important;
+}
+
+.mobileMenu :global([data-sm="toggle-textWrap"]) {
+  position: relative !important;
+  display: inline-block !important;
+  height: 1em !important;
+  overflow: hidden !important;
+  line-height: 1 !important;
+  width: auto !important;
+  min-width: auto !important;
+  white-space: nowrap !important;
+}
+
+.mobileMenu :global([data-sm="toggle-textInner"]) {
+  display: flex !important;
+  flex-direction: column !important;
+  line-height: 1 !important;
+}
+
+.mobileMenu :global([data-sm="toggle-line"]) {
+  display: block !important;
+  height: 1em !important;
+  line-height: 1 !important;
+}
+
+.mobileMenu :global([data-sm="icon"]) {
+  display: inline-flex !important;
+  order: 2 !important;
+  margin-left: 0.3rem !important;
+  width: 14px !important;
+  height: 14px !important;
+  position: relative !important;
+}
+
+.mobileMenu :global([data-sm="icon-line"]) {
+  display: block !important;
+  position: absolute !important;
+  background: currentColor !important;
+  border-radius: 2px !important;
+}
+
+.mobileMenu :global([data-sm="panel-item"]) {
+  font-family: 'Antonio', sans-serif !important;
+}
+
+/* ---- CTA button (visible >= 1024px) ---- */
+.ctaWrapper {
+  display: none;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .ctaWrapper {
+    display: flex;
+  }
+}
+
+.ctaButton {
+  position: relative;
+  background-color: #000;
+  color: #fff;
+  padding: 0.625rem 1.5rem; /* py-2.5 px-6 */
+  border-radius: 9999px;
+  overflow: hidden;
+  transition: all 0.3s;
+  font-size: 1rem; /* text-base */
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  text-decoration: none;
+  z-index: 10;
+}
+
+.ctaButton:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  transform: scale(1.05);
+}
+
+@media (min-width: 1536px) {
+  .ctaButton {
+    padding: 0.875rem 2rem; /* 2xl:py-3.5 2xl:px-8 */
+    font-size: 1.25rem; /* 2xl:text-xl */
+  }
+}
+
+/* Green overlay that slides up on hover */
+.ctaOverlay {
+  position: absolute;
+  inset: 0;
+  background-color: #D5EA9D;
+  transform: translateY(100%);
+  transition: transform 0.5s ease-in-out;
+  border-radius: 9999px;
+  z-index: -1;
+}
+
+.ctaButton:hover .ctaOverlay {
+  transform: translateY(0);
+}
+
+/* CTA text */
+.ctaText {
+  position: relative;
+  z-index: 10;
+  transition: color 0.5s;
+}
+
+.ctaButton:hover .ctaText {
+  color: black;
+}
+
+/* CTA icon */
+.ctaIcon {
+  position: relative;
+  z-index: 10;
+  width: 1rem; /* w-4 */
+  height: 1rem; /* h-4 */
+  transition: all 0.5s ease-in-out;
+}
+
+.ctaButton:hover .ctaIcon {
+  transform: translate(2px, -2px);
+  color: black;
+}
+
+@media (min-width: 1536px) {
+  .ctaIcon {
+    width: 1.25rem; /* 2xl:w-5 */
+    height: 1.25rem; /* 2xl:h-5 */
+  }
+}

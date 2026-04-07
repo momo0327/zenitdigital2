@@ -2,15 +2,8 @@ import type { Metadata } from "next";
 import dynamic from 'next/dynamic';
 import Script from 'next/script';
 import { Suspense } from 'react';
-import Header from "./components/header";
-import SubHeader from "./components/subHeader";
-import ReversedHeader from "./components/ReversedHeader";
-import Text from "./components/text";
-import TriHeader from "./components/triHeader";
-import GreenCTA from "./components/GreenCta";
-import FeaturesGrid from "./components/FeaturesGrid";
-import SelectedWork from "./components/selectedWorks";
-import Cta from "./components/Cta";
+import { Hero, TextReveal, WebAppCard, MobileAppCard, FullstackCard, SelectedWorks, GreenCta } from './components/home';
+import Cta from "./components/sections/Cta";
 import {
   HOME_METADATA,
   BASE_URL,
@@ -19,13 +12,10 @@ import {
 } from "./constants/seo";
 
 // Dynamic imports for below-the-fold heavy components (code splitting)
-const ScrollStack = dynamic(() => import('./components/ScrollStack'), {
-  loading: () => <div className="min-h-screen" />,
-});
-const Steps = dynamic(() => import('./components/Steps'), {
+const Steps = dynamic(() => import('./components/sections/Steps'), {
   loading: () => <div className="min-h-96" />,
 });
-const FAQ = dynamic(() => import('./components/Faq'), {
+const FAQ = dynamic(() => import('./components/sections/Faq'), {
   loading: () => <div className="min-h-96" />,
 });
 
@@ -60,22 +50,17 @@ export default function Home() {
         strategy="afterInteractive"
       />
 
-      <Header />
+      <Hero />
 
-      <Text />
+      <TextReveal />
       {/* Flex container for side-by-side components */}
       <div className="flex flex-col lg:flex-row bg-white">
-          <SubHeader />
-          <ReversedHeader />
+          <WebAppCard />
+          <MobileAppCard />
       </div>
-      <TriHeader/>
-        <SelectedWork/>
-        <GreenCTA/>
-        {/* <FeaturesGrid/> */}
-      {/* <HelpGrid/> */}
-      {/* <Suspense fallback={<div className="min-h-screen bg-white" />}>
-        <ScrollStack/>
-      </Suspense> */}
+      <FullstackCard/>
+        <SelectedWorks/>
+        <GreenCta/>
       <Suspense fallback={<div className="min-h-96 bg-white" />}>
         <Steps/>
       </Suspense>

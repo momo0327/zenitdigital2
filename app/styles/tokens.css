@@ -1,0 +1,37 @@
+/* Design tokens — mirrors app/constants/theme.ts */
+:root {
+  /* Brand colors */
+  --color-web: #FF5147;
+  --color-mobile: #BEA1FC;
+  --color-fullstack: #B4FFA8;
+  --color-accent: #9AC2FF;
+  --color-hero-cyan: #14AAFF;
+  --color-fullstack-blue: #0558F9;
+
+  /* Background colors */
+  --bg-web: #240000;
+  --bg-mobile: #120128;
+  --bg-fullstack: #051E01;
+  --bg-dark: #0A0D24;
+  --bg-dark-alt: #010A1E;
+  --bg-dark-neutral: #0D0D0D;
+  --bg-fullstack-page: #F4F4F6;
+
+  /* UI colors */
+  --ui-white: #FFFFFF;
+  --ui-black: #000000;
+  --ui-gray-50: #F9FAFB;
+  --ui-gray-100: #F3F4F6;
+  --ui-gray-200: #E5E7EB;
+  --ui-gray-300: #D1D5DB;
+  --ui-gray-700: #374151;
+  --ui-gray-800: #1F2937;
+
+  /* CTA colors */
+  --cta-lime: #D5EA9D;
+
+  /* Z-index */
+  --z-navbar: 60;
+  --z-menu-button: 70;
+  --z-menu-panel: 80;
+}

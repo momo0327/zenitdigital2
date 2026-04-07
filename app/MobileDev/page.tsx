@@ -1,7 +1,7 @@
 import React from 'react'
 import type { Metadata } from 'next'
 import Script from 'next/script'
-import Header from '../components/MobiledevPageComponents/Header'
+import { ServiceHeader } from '../components/services'
 import {
   MOBILE_DEV_METADATA,
   BASE_URL,
@@ -55,7 +55,11 @@ function page() {
         strategy="afterInteractive"
       />
 
-      <Header/>
+      <ServiceHeader
+        service="mobile"
+        title={<>Mobile App <br /> Development</>}
+        imageAlt="Mobile app development - Native iOS and Android applications with modern features"
+      />
     </div>
   )
 }

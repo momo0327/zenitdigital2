@@ -1,8 +1,7 @@
 import React from 'react'
 import type { Metadata } from 'next'
 import Script from 'next/script'
-import Header from '../components/WebDevPageComponents/Header'
-import AdvantageCards from '../components/WebDevPageComponents/AdvantageCards'
+import { ServiceHeader, AdvantageCards } from '../components/services'
 import {
   WEB_DEV_METADATA,
   BASE_URL,
@@ -56,7 +55,11 @@ function page() {
         strategy="afterInteractive"
       />
 
-      <Header/>
+      <ServiceHeader
+        service="web"
+        title={<>Web App <br /> Development</>}
+        imageAlt="Web development services showcase - Modern responsive web applications and enterprise solutions"
+      />
       <AdvantageCards/>
     </div>
   )

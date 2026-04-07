@@ -28,12 +28,12 @@ export const useMenuAnimations = (
       // Reset panel elements to initial state
       resetPanelElements();
 
-      const itemEls = Array.from(panel.querySelectorAll('.sm-panel-itemLabel')) as HTMLElement[];
+      const itemEls = Array.from(panel.querySelectorAll('[data-sm="panel-itemLabel"]')) as HTMLElement[];
       const numberEls = Array.from(
-        panel.querySelectorAll('.sm-panel-list[data-numbering] .sm-panel-item')
+        panel.querySelectorAll('[data-sm="panel-list"][data-numbering] [data-sm="panel-item"]')
       ) as HTMLElement[];
-      const socialTitle = panel.querySelector('.sm-socials-title') as HTMLElement | null;
-      const socialLinks = Array.from(panel.querySelectorAll('.sm-socials-link')) as HTMLElement[];
+      const socialTitle = panel.querySelector('[data-sm="socials-title"]') as HTMLElement | null;
+      const socialLinks = Array.from(panel.querySelectorAll('[data-sm="socials-link"]')) as HTMLElement[];
 
       const layerStates = layers.map(el => ({ el, start: Number(gsap.getProperty(el, 'xPercent')) }));
       const panelStart = Number(gsap.getProperty(panel, 'xPercent'));
