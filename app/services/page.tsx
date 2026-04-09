@@ -9,6 +9,7 @@ import ExpandableFeatures from '../components/ExpandableFeatures';
 import ScrollStack from '../components/ScrollStack';
 import HelpGrid from '../components/HelpGrid';
 import FeaturesGrid from '../components/FeaturesGrid';
+import Footer from '../components/Footer';
 
 export const metadata: Metadata = {
   title: 'Our Services - Zenit Digital',
@@ -68,7 +69,7 @@ export default function ServicesPage() {
         textColor="text-white"
         accentColor="text-[#BEA1FC]"
       />
-
+      <Footer />
     </div>
   );
 }

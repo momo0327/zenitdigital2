@@ -14,12 +14,17 @@
   font-family: var(--font-poppins), sans-serif;
 }
 
+.font-shentox {
+  font-family: var(--font-shentox), sans-serif;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: Arial, Helvetica, sans-serif;
   --font-mono: var(--font-geist-mono);
   --font-poppins: var(--font-poppins);
+  --font-shentox: var(--font-shentox);
   --breakpoint-xs: 250px;
   --breakpoint-sm: 400px;
 }

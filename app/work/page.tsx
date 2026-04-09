@@ -1,6 +1,7 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Footer from '../components/Footer';
 
 export const metadata: Metadata = {
   title: 'Our Work - Zenit Digital Portfolio',
@@ -136,6 +137,7 @@ export default function WorkPage() {
           </Link>
         </div>
       </section>
+      <Footer />
     </div>
   );
 }

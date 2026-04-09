@@ -1,6 +1,7 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Footer from '../components/Footer';
 
 export const metadata: Metadata = {
   title: 'Privacy Policy - Zenit Digital',
@@ -160,6 +161,7 @@ export default function PrivacyPage() {
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   );
 }

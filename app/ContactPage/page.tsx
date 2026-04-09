@@ -3,6 +3,7 @@ import ContactForm from '../components/ContactForm';
 import Navbar from '../components/navbar';
 import { Mail, Phone, MapPin } from 'lucide-react';
 import Steps from '../components/Steps';
+import Footer from '../components/Footer';
 
 export default function ContactPage() {
   return (
@@ -102,6 +103,7 @@ export default function ContactPage() {
         iconBgColor="bg-[#0A0D24]/10"
         iconColor="text-[#0A0D24]"
       />
+      <Footer />
     </>
   );
 }

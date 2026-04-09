@@ -11,6 +11,7 @@ import GreenCTA from "./components/GreenCta";
 import FeaturesGrid from "./components/FeaturesGrid";
 import SelectedWork from "./components/selectedWorks";
 import Cta from "./components/Cta";
+import Footer from "./components/Footer";
 import {
   HOME_METADATA,
   BASE_URL,
@@ -85,6 +86,7 @@ export default function Home() {
         </Suspense>
       </div>
       <Cta/>
+      <Footer/>
     </div>
   );
 }

@@ -2,6 +2,7 @@ import React from 'react'
 import type { Metadata } from 'next'
 import Script from 'next/script'
 import Header from '../components/FullstackDevPageComponents/Header'
+import Footer from '../components/Footer'
 import {
   FULLSTACK_DEV_METADATA,
   BASE_URL,
@@ -56,6 +57,7 @@ function page() {
       />
 
       <Header/>
+      <Footer />
     </div>
   )
 }

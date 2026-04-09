@@ -1,6 +1,7 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Footer from '../components/Footer';
 
 export const metadata: Metadata = {
   title: 'Terms of Service - Zenit Digital',
@@ -173,6 +174,7 @@ export default function TermsPage() {
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   );
 }

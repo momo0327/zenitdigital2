@@ -71,28 +71,29 @@ const Navbar: React.FC<NavbarProps> = ({
       }`}>
         <div className="flex items-center justify-between max-w-7xl 2xl:max-w-[1600px] mx-auto">
           {/* Logo */}
-          <Link href="/" className={`flex items-center gap-2 2xl:gap-3 text-xl 2xl:text-3xl font-bold ${logoColor} cursor-pointer`}>
+          <Link href="/" className={`flex items-center gap-1 md:gap-2 2xl:gap-3 text-2xl  md:text-3xl 2xl:text-3xl font-semibold ${logoColor} cursor-pointer`}>
             <Image
-              src="/ZenitLogo.png"
+              src="/zenialogo.png"
               alt="Zenit Digital Logo"
               width={32}
               height={32}
-              className="w-5 h-5 md:w-6 md:h-6 2xl:w-8 2xl:h-8"
+              className="w-8 h-8 md:w-10 md:h-10 2xl:w-8 2xl:h-8 "
               priority
+              unoptimized
             />
-            ZENIA
+            <span className="font-shentox  font-normal">ZENIA</span>
           </Link>
 
           {/* Center Navigation - Responsive with useBreakpoint */}
           {!isMobile && (
             <div className="flex space-x-2 md:space-x-8 2xl:space-x-12 absolute left-1/2 transform -translate-x-1/2">
-              <Link href="/" className={`${textColor} opacity-70 hover:opacity-100 px-2 md:px-4 2xl:px-6 py-2 2xl:py-3 rounded-md ${hoverBgColor} transition-all duration-200 text-sm md:text-base 2xl:text-xl cursor-pointer`}>
+              <Link href="/" className={`${textColor} opacity-70 hover:opacity-100 px-2 md:px-4 2xl:px-6 py-2 2xl:py-3 rounded-md ${hoverBgColor} transition-all duration-200 text-sm md:text-lg 2xl:text-xl cursor-pointer`}>
                 Home
               </Link>
-              <Link href="/services" className={`${textColor} opacity-70 hover:opacity-100 px-2 md:px-4 2xl:px-6 py-2 2xl:py-3 rounded-md ${hoverBgColor} transition-all duration-200 text-sm md:text-base 2xl:text-xl cursor-pointer`}>
+              <Link href="/services" className={`${textColor} opacity-70 hover:opacity-100 px-2 md:px-4 2xl:px-6 py-2 2xl:py-3 rounded-md ${hoverBgColor} transition-all duration-200 text-sm md:text-lg 2xl:text-xl cursor-pointer`}>
                 Services
               </Link>
-              <Link href="/#faq" className={`${textColor} opacity-70 hover:opacity-100 px-2 md:px-4 2xl:px-6 py-2 2xl:py-3 rounded-md ${hoverBgColor} transition-all duration-200 text-sm md:text-base 2xl:text-xl cursor-pointer`}>
+              <Link href="/#faq" className={`${textColor} opacity-70 hover:opacity-100 px-2 md:px-4 2xl:px-6 py-2 2xl:py-3 rounded-md ${hoverBgColor} transition-all duration-200 text-sm md:text-lg 2xl:text-xl cursor-pointer`}>
                 FAQ
               </Link>
             </div>

@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import Script from 'next/script'
 import Header from '../components/WebDevPageComponents/Header'
 import AdvantageCards from '../components/WebDevPageComponents/AdvantageCards'
+import Footer from '../components/Footer'
 import {
   WEB_DEV_METADATA,
   BASE_URL,
@@ -58,6 +59,7 @@ function page() {
 
       <Header/>
       <AdvantageCards/>
+      <Footer />
     </div>
   )
 }

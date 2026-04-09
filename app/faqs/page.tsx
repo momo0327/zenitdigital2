@@ -1,6 +1,7 @@
 'use client'
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Footer from '../components/Footer';
 
 export default function FAQsPage() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -173,6 +174,7 @@ export default function FAQsPage() {
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   );
 }

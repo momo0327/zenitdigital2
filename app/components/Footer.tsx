@@ -1,59 +1,64 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { COMPANY } from '../constants/content';
 import { SOCIAL_LINKS } from '../constants/navigation';
 
-const Footer = () => {
+interface FooterProps {
+  bgColor?: string;
+  textColor?: string;
+}
+
+const Footer = ({ bgColor = '#000000', textColor }: FooterProps) => {
+  // Auto-detect text color based on background if not provided
+  const isLightBackground = bgColor !== '#000000' && bgColor !== 'black';
+  const finalTextColor = textColor || (isLightBackground ? '#000000' : '#ffffff');
+  const mutedTextColor = isLightBackground ? '#6B7280' : '#9CA3AF';
+  const lighterTextColor = isLightBackground ? '#4B5563' : '#D1D5DB';
+  const borderColor = isLightBackground ? '#E5E7EB' : '#1F2937';
+
   return (
-    <footer className="bg-black text-white py-16 px-8">
+    <footer className="py-16 px-8" style={{ backgroundColor: bgColor, color: finalTextColor }}>
       <div className="max-w-7xl mx-auto">
         {/* Main heading */}
      
 
         {/* Footer content grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8 xl:gap-12 mb-16">
-          {/* Logo and Clutch review */}
-          <div className="space-y-8">
-            <div>
-              <h3 className="text-2xl font-antonio font-bold tracking-wider uppercase">{COMPANY.name}</h3>
-            </div>
-            
-            {/* Clutch review */}
-            <div className="space-y-2">
-              <div className="text-xs text-gray-500 uppercase tracking-wider">
-                REVIEWED ON
-              </div>
-              <div className="flex items-center space-x-2">
-                <span className="text-xl font-semibold text-gray-400">Clutch</span>
-                <div className="flex space-x-1">
-                  {[...Array(5)].map((_, i) => (
-                    <svg key={i} className="w-4 h-4 fill-current text-white" viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                  ))}
-                </div>
-              </div>
-              <div className="text-sm text-gray-500">9 REVIEWS</div>
-            </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4  xl:gap-12 mb-16">
+          {/* Logo and Wordmark */}
+          <div>
+            <Link href="/" className="flex items-center -ml-12 md:-ml-8 -mt-6 md:-mt-8">
+              <Image
+                src="/zeniaWhite.png"
+                alt="Zenia Logo"
+                width={168}
+                height={128}
+                className="w-[168px] h-32"
+                unoptimized
+              />
+              <span className="text-5xl font-shentox font-normal tracking-wide -ml-10" style={{ color: finalTextColor }}>
+                ZENIA
+              </span>
+            </Link>
           </div>
 
           {/* Menu */}
           <div>
-            <h4 className="text-sm uppercase tracking-wider text-gray-400 mb-6">MENU</h4>
+            <h4 className="text-base uppercase tracking-wider mb-6" style={{ color: mutedTextColor }}>MENU</h4>
             <nav className="space-y-4">
-              <Link href="/" className="block text-white hover:text-gray-300 transition-colors">
+              <Link href="/" className="block text-lg transition-colors hover:opacity-70" style={{ color: finalTextColor }}>
                 Home
               </Link>
-              {/* <Link href="/work" className="block text-white hover:text-gray-300 transition-colors">
+              {/* <Link href="/work" className="block text-lg transition-colors hover:opacity-70" style={{ color: finalTextColor }}>
                 Work
               </Link> */}
-              <Link href="/services" className="block text-white hover:text-gray-300 transition-colors">
+              <Link href="/services" className="block text-lg transition-colors hover:opacity-70" style={{ color: finalTextColor }}>
                 Services
               </Link>
-              {/* <Link href="/faqs" className="block text-white hover:text-gray-300 transition-colors">
+              {/* <Link href="/faqs" className="block text-lg transition-colors hover:opacity-70" style={{ color: finalTextColor }}>
                 FAQs
               </Link> */}
-              <Link href="/ContactPage" className="block text-white hover:text-gray-300 transition-colors">
+              <Link href="/ContactPage" className="block text-lg transition-colors hover:opacity-70" style={{ color: finalTextColor }}>
                 Contact
               </Link>
             </nav>
@@ -61,13 +66,14 @@ const Footer = () => {
 
           {/* Socials */}
           <div>
-            <h4 className="text-sm uppercase tracking-wider text-gray-400 mb-6">SOCIALS</h4>
+            <h4 className="text-base uppercase tracking-wider mb-6" style={{ color: mutedTextColor }}>SOCIALS</h4>
             <div className="space-y-4">
               {SOCIAL_LINKS.map((social) => (
                 <Link
                   key={social.label}
                   href={social.href}
-                  className="block text-white hover:text-gray-300 transition-colors"
+                  className="block text-lg transition-colors hover:opacity-70"
+                  style={{ color: finalTextColor }}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -79,15 +85,15 @@ const Footer = () => {
 
           {/* Business Enquiries */}
           <div>
-            <h4 className="text-sm uppercase tracking-wider text-gray-400 mb-6">BUSINESS ENQUIRIES</h4>
+            <h4 className="text-base uppercase tracking-wider mb-6" style={{ color: mutedTextColor }}>BUSINESS ENQUIRIES</h4>
             <div className="space-y-4">
-              <Link href={`mailto:${COMPANY.email}`} className="block text-white hover:text-gray-300 transition-colors">
+              <Link href={`mailto:${COMPANY.email}`} className="block text-lg transition-colors hover:opacity-70" style={{ color: finalTextColor }}>
                 {COMPANY.email}
               </Link>
-              <Link href={`tel:${COMPANY.phone.replace(/\s/g, '')}`} className="block text-white hover:text-gray-300 transition-colors">
+              <Link href={`tel:${COMPANY.phone.replace(/\s/g, '')}`} className="block text-lg transition-colors hover:opacity-70" style={{ color: finalTextColor }}>
                 {COMPANY.phone}
               </Link>
-              <div className="text-gray-400 text-sm leading-relaxed pt-2">
+              <div className="text-base leading-relaxed pt-2" style={{ color: mutedTextColor }}>
                 {COMPANY.address.street}<br />
                 {COMPANY.address.postalCode} {COMPANY.address.city}<br />
                 {COMPANY.address.country}
@@ -100,23 +106,23 @@ const Footer = () => {
         </div>
 
         {/* Bottom section */}
-        <div className="border-t border-gray-800 pt-8">
+        <div className="border-t pt-8" style={{ borderColor }}>
           <div className="flex flex-col xl:flex-row justify-between items-start xl:items-center space-y-4 xl:space-y-0">
-            <div className="flex flex-wrap items-center space-x-6 text-sm text-gray-500">
+            <div className="flex flex-wrap items-center space-x-6 text-base" style={{ color: lighterTextColor }}>
               <span>© {new Date().getFullYear()} {COMPANY.name}</span>
               <span className="hidden xl:inline">|</span>
               <span>Sweden</span>
               <span className="hidden xl:inline">|</span>
               <span>International</span>
             </div>
-            
+
             <div className="flex items-center space-x-8">
-              <div className="flex space-x-6 text-sm text-gray-400">
-                <Link href="/privacy" className="hover:text-white transition-colors">Privacy</Link>
-                <Link href="/terms" className="hover:text-white transition-colors">Terms</Link>
-                <Link href="/sitemap" className="hover:text-white transition-colors">Sitemap</Link>
+              <div className="flex space-x-6 text-base" style={{ color: mutedTextColor }}>
+                <Link href="/privacy" className="hover:opacity-70 transition-colors">Privacy</Link>
+                <Link href="/terms" className="hover:opacity-70 transition-colors">Terms</Link>
+                <Link href="/sitemap" className="hover:opacity-70 transition-colors">Sitemap</Link>
               </div>
-              
+
             </div>
           </div>
         </div>
