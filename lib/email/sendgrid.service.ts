@@ -75,11 +75,11 @@ export async function sendEmail(
         success: true,
         messageId: response[0].headers['x-message-id'],
       };
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error(`Email send attempt ${attempt} failed:`, error);
 
-      if (error.response) {
-        const { statusCode, body } = error.response;
+      if (error && typeof error === 'object' && 'response' in error) {
+        const { statusCode, body } = (error as { response: { statusCode: number; body: unknown } }).response;
         console.error('SendGrid error details:', { statusCode, body });
 
         // Don't retry on client errors (4xx) - these won't succeed on retry
