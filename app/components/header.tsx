@@ -18,7 +18,7 @@ const Header = () => {
       <div className="bg-[transparent] px-8 md:px-12 lg:px-16 py-12 md:py-16 lg:py-10 min-h-[600px] md:min-h-[700px] lg:min-h-[800px] relative">
         {/* Title positioned at the very top */}
         <div className="text-center">
-          <h1 className="text-6xl md:text-8xl font-antonio lg:text-9xl 2xl:text-[12rem] font-bold text-center text-[#000]  lg:mb-[-10px]">
+          <h1 className="text-7xl md:text-8xl font-antonio lg:text-9xl 2xl:text-[12rem] font-bold text-center text-[#000]  lg:mb-[-10px]">
             <div
               className="transition-all duration-1000 ease-out"
               style={{

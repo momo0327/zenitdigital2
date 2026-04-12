@@ -12,6 +12,8 @@ interface NavbarProps {
   logoColor?: string;
   hoverBgColor?: string;
   logoSrc?: string;
+  menuButtonColor?: string;
+  openMenuButtonColor?: string;
 }
 
 const Navbar: React.FC<NavbarProps> = ({
@@ -19,7 +21,9 @@ const Navbar: React.FC<NavbarProps> = ({
   textColor = 'text-black',
   logoColor = 'text-black',
   hoverBgColor = 'hover:bg-gray-100',
-  logoSrc = '/zenialogo.png'
+  logoSrc = '/zenialogo.png',
+  menuButtonColor = '#000',
+  openMenuButtonColor = '#000'
 }) => {
   const { isMobile } = useBreakpoint();
   const [isVisible, setIsVisible] = useState(true);
@@ -77,25 +81,25 @@ const Navbar: React.FC<NavbarProps> = ({
             <Image
               src={logoSrc}
               alt="Zenit Digital Logo"
-              width={32}
-              height={32}
-              className="w-8 h-8 md:w-10 md:h-10 2xl:w-8 2xl:h-8 "
+              width={40}
+              height={40}
+              className="w-10 h-10 md:w-10 md:h-10 2xl:w-14 2xl:h-14 object-contain"
               priority
               unoptimized
             />
-            <span className="font-shentox  font-normal">ZENIA</span>
+            <span className="font-shentox md:text-3xl font-normal">ZENIA</span>
           </Link>
 
           {/* Center Navigation - Responsive with useBreakpoint */}
           {!isMobile && (
             <div className="flex space-x-2 md:space-x-8 2xl:space-x-12 absolute left-1/2 transform -translate-x-1/2">
-              <Link href="/" className={`${textColor} opacity-70 hover:opacity-100 px-2 md:px-4 2xl:px-6 py-2 2xl:py-3 rounded-md ${hoverBgColor} transition-all duration-200 text-sm md:text-lg 2xl:text-xl cursor-pointer`}>
+              <Link href="/" className={`${textColor}  hover:opacity-100 px-2 md:px-4 2xl:px-6 py-2 2xl:py-3 rounded-md ${hoverBgColor} transition-all duration-200 text-sm md:text-lg 2xl:text-xl cursor-pointer`}>
                 Home
               </Link>
-              <Link href="/services" className={`${textColor} opacity-70 hover:opacity-100 px-2 md:px-4 2xl:px-6 py-2 2xl:py-3 rounded-md ${hoverBgColor} transition-all duration-200 text-sm md:text-lg 2xl:text-xl cursor-pointer`}>
+              <Link href="/services" className={`${textColor}  hover:opacity-100 px-2 md:px-4 2xl:px-6 py-2 2xl:py-3 rounded-md ${hoverBgColor} transition-all duration-200 text-sm md:text-lg 2xl:text-xl cursor-pointer`}>
                 Services
               </Link>
-              <Link href="/#faq" className={`${textColor} opacity-70 hover:opacity-100 px-2 md:px-4 2xl:px-6 py-2 2xl:py-3 rounded-md ${hoverBgColor} transition-all duration-200 text-sm md:text-lg 2xl:text-xl cursor-pointer`}>
+              <Link href="/#faq" className={`${textColor}  hover:opacity-100 px-2 md:px-4 2xl:px-6 py-2 2xl:py-3 rounded-md ${hoverBgColor} transition-all duration-200 text-sm md:text-lg 2xl:text-xl cursor-pointer`}>
                 FAQ
               </Link>
             </div>
@@ -110,9 +114,9 @@ const Navbar: React.FC<NavbarProps> = ({
                 socialItems={socialItems}
                 displaySocials={true}
                 displayItemNumbering={true}
-                menuButtonColor="#000"
-                openMenuButtonColor="#000"
-                changeMenuColorOnOpen={false}
+                menuButtonColor={menuButtonColor}
+                openMenuButtonColor={openMenuButtonColor}
+                changeMenuColorOnOpen={true}
                 colors={['#B19EEF', '#5227FF']}
                 logoUrl="/logowhite.png"
                 accentColor="blue"
@@ -182,7 +186,6 @@ const Navbar: React.FC<NavbarProps> = ({
           display: flex !important;
           align-items: center !important;
           justify-content: center !important;
-          color: #000 !important;
           gap: 0.3rem !important;
         }
 

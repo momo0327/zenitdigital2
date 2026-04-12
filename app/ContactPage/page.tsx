@@ -14,6 +14,8 @@ export default function ContactPage() {
         logoColor="text-white"
         hoverBgColor="hover:bg-white/10"
         logoSrc="/zeniaWhite.png"
+        menuButtonColor="#fff"
+        openMenuButtonColor="#000"
       />
       <div className="min-h-screen bg-black">
         <div className="grid grid-cols-1 lg:grid-cols-2 min-h-screen">

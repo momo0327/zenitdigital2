@@ -28,15 +28,15 @@ const Footer = ({ bgColor = '#000000', textColor }: FooterProps) => {
           {/* Logo and Wordmark */}
           <div>
             <Link href="/" className="flex items-center -ml-12 md:-ml-8 -mt-6 md:-mt-8">
-              <Image
+              {/* <Image
                 src="/zeniaWhite.png"
                 alt="Zenia Logo"
                 width={168}
                 height={128}
                 className="w-[168px] h-32"
                 unoptimized
-              />
-              <span className="text-5xl font-shentox font-normal tracking-wide -ml-10" style={{ color: finalTextColor }}>
+              /> */}
+              <span className="text-5xl font-shentox font-normal tracking-wide" style={{ color: finalTextColor }}>
                 ZENIA
               </span>
             </Link>
