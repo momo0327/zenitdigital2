@@ -38,35 +38,59 @@ export default function ContactForm() {
     setSubmitStatus('idle');
 
     try {
-      // Implement your form submission logic here
-      // Example: await fetch('/api/contact', { method: 'POST', body: JSON.stringify(formData) })
-
-      // For now, simulate submission
-      await new Promise(resolve => setTimeout(resolve, 1000));
-
-      console.log('Form submitted:', formData);
-      setSubmitStatus('success');
-
-      // Reset form on success
-      setFormData({
-        firstName: '',
-        lastName: '',
-        email: '',
-        phone: '',
-        company: '',
-        service: '',
-        message: ''
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
       });
+
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        console.log('Form submitted successfully:', data);
+        setSubmitStatus('success');
+
+        // Reset form on success
+        setFormData({
+          firstName: '',
+          lastName: '',
+          email: '',
+          phone: '',
+          company: '',
+          service: '',
+          message: ''
+        });
+
+        // Auto-hide success message after 5 seconds
+        setTimeout(() => {
+          setSubmitStatus('idle');
+        }, 5000);
+      } else {
+        console.error('Form submission failed:', data);
+        setSubmitStatus('error');
+
+        // Auto-hide error message after 7 seconds
+        setTimeout(() => {
+          setSubmitStatus('idle');
+        }, 7000);
+      }
     } catch (error) {
       console.error('Form submission error:', error);
       setSubmitStatus('error');
+
+      // Auto-hide error message after 7 seconds
+      setTimeout(() => {
+        setSubmitStatus('idle');
+      }, 7000);
     } finally {
       setIsSubmitting(false);
     }
   };
 
   return (
-    <form onSubmit={handleSubmit} className="bg-white/90 backdrop-blur-sm rounded-3xl 2xl:rounded-[2.5rem] p-8 md:p-10 lg:p-12 2xl:p-20 shadow-xl space-y-5 2xl:space-y-9">
+    <form onSubmit={handleSubmit} className="bg-white rounded-3xl 2xl:rounded-[2.5rem] p-8 md:p-10 lg:p-12 2xl:p-20 shadow-2xl space-y-5 2xl:space-y-9">
       {/* Title */}
       {/* <h2 className="text-2xl md:text-3xl font-antonio font-bold text-[#0A0D24] text-left">
         Boka en fri konsultation

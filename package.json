@@ -9,7 +9,9 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@sendgrid/mail": "^8.1.6",
     "clsx": "^2.1.1",
+    "dotenv": "^17.4.1",
     "framer-motion": "^12.23.25",
     "gsap": "^3.13.0",
     "lucide-react": "^0.552.0",
