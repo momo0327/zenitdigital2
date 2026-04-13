@@ -18,7 +18,7 @@ const Header = () => {
       <div className="bg-[transparent] px-8 md:px-12 lg:px-16 py-12 md:py-16 lg:py-10 min-h-[600px] md:min-h-[700px] lg:min-h-[800px] relative">
         {/* Title positioned at the very top */}
         <div className="text-center">
-          <h1 className="text-7xl md:text-8xl font-antonio lg:text-9xl 2xl:text-[12rem] font-bold text-center text-[#000]  lg:mb-[-10px]">
+          <h1 className="text-6xl md:text-8xl font-antonio lg:text-9xl 2xl:text-[12rem] font-bold text-center lg:mb-[-10px] text-[#1E1F1F]">
             <div
               className="transition-all duration-1000 ease-out"
               style={{
@@ -61,8 +61,8 @@ const Header = () => {
                 transitionDelay: '600ms'
               }}
             >
-              <Link href='/services' className='bg-[#000] text-[#fff] py-2 px-6 rounded-full'>Explore</Link>
-              <Link href='/ContactPage' className='bg-[#fff] border-1 border-[#000] text-[#000] py-2 px-6 rounded-full'>Contact</Link>
+              <Link href='/services' className='bg-[#1E1F1F] text-[#fff] py-2 px-6 rounded-full'>Explore</Link>
+              <Link href='/ContactPage' className='bg-[#fff] border-1 border-[#1E1F1F] text-[#1E1F1F] py-2 px-6 rounded-full'>Contact</Link>
             </div>
           </div>
         </div>
@@ -81,7 +81,7 @@ const Header = () => {
             alt="Zenit Digital mobile app development showcase with modern interface design"
             width={700}
             height={800}
-            className="w-[500px] md:w-80 lg:w-[96] xl:w-[550px] 2xl:w-[700px] h-auto object-contain"
+            className="w-[400px] md:w-80 lg:w-[96] xl:w-[550px] 2xl:w-[700px] h-auto object-contain"
             priority
             quality={IMAGE_QUALITY.HIGH}
             enableBlur

@@ -83,11 +83,11 @@ const Navbar: React.FC<NavbarProps> = ({
               alt="Zenit Digital Logo"
               width={40}
               height={40}
-              className="w-10 h-10 md:w-10 md:h-10 2xl:w-14 2xl:h-14 object-contain"
+              className="w-8 h-8 md:w-10 md:h-10 2xl:w-14 2xl:h-14 object-contain"
               priority
               unoptimized
             />
-            <span className="font-shentox md:text-3xl font-normal">ZENIA</span>
+            <span className="font-shentox md:text-3xl text-2xl font-normal">ZENIA</span>
           </Link>
 
           {/* Center Navigation - Responsive with useBreakpoint */}
