@@ -11,14 +11,14 @@ const PageTransition: React.FC<PageTransitionProps> = ({ children }) => {
     <>
       {children}
       <motion.div
-        className="fixed top-0 left-0 w-full h-screen bg-white z-[100] origin-bottom"
+        className="fixed top-0 left-0 w-full h-screen bg-[#F5F5F5] z-[100] origin-bottom"
         initial={{ scaleY: 0 }}
         animate={{ scaleY: 0 }}
         exit={{ scaleY: 1 }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
       />
       <motion.div
-        className="fixed top-0 left-0 w-full h-screen bg-white z-[100] origin-top"
+        className="fixed top-0 left-0 w-full h-screen bg-[#F5F5F5] z-[100] origin-top"
         initial={{ scaleY: 1 }}
         animate={{ scaleY: 0 }}
         exit={{ scaleY: 0 }}

@@ -4,7 +4,7 @@ import { OptimizedImage } from './ui/OptimizedImage';
 import { IMAGE_QUALITY } from '../utils/image';
 const TriHeader = () => {
   return (
-    <div className="px-2 md:px-12 lg:px-4 2xl:px-8 bg-white py-6 2xl:py-10">
+    <div className="px-2 md:px-12 lg:px-4 2xl:px-8 bg-[#F5F5F5] py-6 2xl:py-10">
       <div className="bg-[#051E01] rounded-xl px-6 md:px-10 lg:px-16 2xl:px-24 py-12 md:py-12 2xl:py-16 h-[700px] md:h-[600px] lg:h-[550px] 2xl:h-[700px] w-full mx-auto flex items-center">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16 2xl:gap-24 w-full">
           {/* Left side - Content */}

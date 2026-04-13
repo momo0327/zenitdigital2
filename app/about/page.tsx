@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#F5F5F5]">
       {/* Hero Section */}
       <section className="px-6 md:px-12 lg:px-16 py-24 md:py-32">
         <div className="max-w-7xl mx-auto">
@@ -105,11 +105,11 @@ export default function AboutPage() {
 
           {/* Featured Team Member */}
           <div className="max-w-4xl mx-auto">
-            <div className="bg-white rounded-2xl overflow-hidden shadow-lg">
+            <div className="bg-[#F5F5F5] rounded-2xl overflow-hidden shadow-lg">
               <div className="grid grid-cols-1 md:grid-cols-2">
                 {/* Profile Image Placeholder */}
                 <div className="bg-gradient-to-br from-[#0558F9] to-[#BEA1FC] aspect-square flex items-center justify-center">
-                  <div className="w-48 h-48 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
+                  <div className="w-48 h-48 bg-[#F5F5F5]/20 rounded-full flex items-center justify-center backdrop-blur-sm">
                     <span className="text-8xl font-antonio text-white">JA</span>
                   </div>
                 </div>
@@ -165,7 +165,7 @@ export default function AboutPage() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             {/* Office Details */}
-            <div className="bg-white rounded-2xl p-8 md:p-12 shadow-lg">
+            <div className="bg-[#F5F5F5] rounded-2xl p-8 md:p-12 shadow-lg">
               <h3 className="text-3xl font-antonio font-bold text-black mb-8">
                 Office Location
               </h3>
@@ -232,7 +232,7 @@ export default function AboutPage() {
             </div>
 
             {/* Google Maps */}
-            <div className="bg-white rounded-2xl overflow-hidden shadow-lg h-[500px]">
+            <div className="bg-[#F5F5F5] rounded-2xl overflow-hidden shadow-lg h-[500px]">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2132.163826!2d11.959!3d57.709!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x464ff369c3e1e1e1%3A0x1234567890abcdef!2sStore%20Badhusgatan%2018%2C%20411%2021%20G%C3%B6teborg!5e0!3m2!1sen!2sse!4v1234567890123!5m2!1sen!2sse"
                 width="100%"
@@ -258,7 +258,7 @@ export default function AboutPage() {
             Let&apos;s discuss your project and create something amazing
           </p>
           <Link href="/ContactPage">
-            <button className="px-8 py-4 bg-white text-black font-semibold text-lg rounded-full hover:bg-gray-100 transition-all duration-300 transform hover:scale-105">
+            <button className="px-8 py-4 bg-[#F5F5F5] text-black font-semibold text-lg rounded-full hover:bg-gray-100 transition-all duration-300 transform hover:scale-105">
               Contact Us
             </button>
           </Link>

@@ -10,8 +10,8 @@ export default function NotFound() {
     <div className="min-h-screen bg-gradient-to-br from-[#0558F9] via-[#5227FF] to-[#BEA1FC] flex items-center justify-center px-4 py-20 relative overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-white/5 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-white/5 rounded-full blur-3xl animate-pulse delay-1000" />
+        <div className="absolute top-20 left-10 w-72 h-72 bg-[#F5F5F5]/5 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#F5F5F5]/5 rounded-full blur-3xl animate-pulse delay-1000" />
       </div>
 
       {/* Main content */}
@@ -38,14 +38,14 @@ export default function NotFound() {
           {/* Action buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8">
             <Link href="/">
-              <button className="group relative px-8 py-4 bg-white text-[#0558F9] font-semibold text-lg rounded-full hover:bg-white/90 transition-all duration-300 transform hover:scale-105 shadow-lg min-w-[200px]">
+              <button className="group relative px-8 py-4 bg-white text-[#0558F9] font-semibold text-lg rounded-full hover:bg-[#F5F5F5]/90 transition-all duration-300 transform hover:scale-105 shadow-lg min-w-[200px]">
                 <span className="relative z-10">Go Home</span>
               </button>
             </Link>
 
             <button
               onClick={() => router.back()}
-              className="group relative px-8 py-4 bg-transparent border-2 border-white text-white font-semibold text-lg rounded-full hover:bg-white hover:text-[#0558F9] transition-all duration-300 transform hover:scale-105 min-w-[200px]"
+              className="group relative px-8 py-4 bg-transparent border-2 border-white text-white font-semibold text-lg rounded-full hover:bg-[#F5F5F5] hover:text-[#0558F9] transition-all duration-300 transform hover:scale-105 min-w-[200px]"
             >
               <span className="relative z-10">Go Back</span>
             </button>

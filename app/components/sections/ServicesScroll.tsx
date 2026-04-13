@@ -51,7 +51,7 @@ const ServicesScroll = () => {
   };
 
   return (
-    <div className="bg-white min-h-screen py-32 md:py-28 lg:py-44 2xl:py-56">
+    <div className="bg-[#F5F5F5] min-h-screen py-32 md:py-28 lg:py-44 2xl:py-56">
       <div className="w-full">
         {/* Header Section */}
         <div className="mb-16 md:mb-20 lg:mb-24 2xl:mb-32 px-5 md:px-12 lg:px-16 2xl:px-24">

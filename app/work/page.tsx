@@ -41,7 +41,7 @@ export default function WorkPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#F5F5F5]">
       {/* Hero Section */}
       <section className="px-6 md:px-12 lg:px-16 py-24 md:py-32">
         <div className="max-w-7xl mx-auto">
@@ -131,7 +131,7 @@ export default function WorkPage() {
             Let&apos;s create something amazing together
           </p>
           <Link href="/ContactPage">
-            <button className="px-8 py-4 bg-white text-black font-semibold text-lg rounded-full hover:bg-gray-100 transition-all duration-300 transform hover:scale-105">
+            <button className="px-8 py-4 bg-[#F5F5F5] text-black font-semibold text-lg rounded-full hover:bg-gray-100 transition-all duration-300 transform hover:scale-105">
               Get In Touch
             </button>
           </Link>

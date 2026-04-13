@@ -9,7 +9,7 @@ export default function GlobalError({
   return (
     <html lang="en">
       <body>
-        <div className="min-h-screen flex items-center justify-center bg-white px-4">
+        <div className="min-h-screen flex items-center justify-center bg-[#F5F5F5] px-4">
           <div className="max-w-md w-full text-center">
             <h1 className="text-8xl font-bold text-red-500 mb-4">500</h1>
             <h2 className="text-3xl font-bold text-gray-900 mb-4">

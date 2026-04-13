@@ -3,7 +3,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: #F5F5F5;
   --foreground: #171717;
 }
 .font-antonio {
@@ -21,6 +21,7 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-white: #F5F5F5;
   --font-sans: Arial, Helvetica, sans-serif;
   --font-mono: var(--font-geist-mono);
   --font-poppins: var(--font-poppins);
@@ -34,7 +35,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #fff;
+    --background: #F5F5F5;
     --foreground: #ededed;
   }
 }

@@ -18,7 +18,7 @@ export const StaggeredMenuPanel = forwardRef<HTMLElement, StaggeredMenuPanelProp
       <aside
         id="staggered-menu-panel"
         ref={ref}
-        className="staggered-menu-panel absolute top-0 right-0 h-full bg-white flex flex-col p-[6em_2em_2em_2em] overflow-y-auto z-10 backdrop-blur-[12px]"
+        className="staggered-menu-panel absolute top-0 right-0 h-full bg-[#F5F5F5] flex flex-col p-[6em_2em_2em_2em] overflow-y-auto z-10 backdrop-blur-[12px]"
         style={{ WebkitBackdropFilter: 'blur(12px)' }}
         aria-hidden={!open}
       >

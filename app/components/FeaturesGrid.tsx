@@ -37,7 +37,7 @@ const FeaturesGrid = () => {
   ];
 
   return (
-    <div className="bg-white py-1 md:py-20 lg:py-24 2xl:py-32">
+    <div className="bg-[#F5F5F5] py-1 md:py-20 lg:py-24 2xl:py-32">
       <div className="w-full">
         {/* Desktop Layout */}
         <div className="hidden md:block px-5 md:px-12 lg:px-16 2xl:px-24">

@@ -6,7 +6,7 @@ import ScrollTextReveal from './ScrollTextReveal';
 
 const BigText = () => {
   return (
-    <div className="bg-white flex items-center flex-col justify-center py-12 md:py-16 2xl:py-24 px-4 2xl:px-8">
+    <div className="bg-[#F5F5F5] flex items-center flex-col justify-center py-12 md:py-16 2xl:py-24 px-4 2xl:px-8">
       {/* Main heading section */}
       <div className="max-w-7xl 2xl:max-w-[2400px] mx-auto w-full flex justify-center lg:justify-end 2xl:justify-end 2xl:pl-16">
         <div className="text-left lg:text-left max-w-2xl lg:max-w-none">

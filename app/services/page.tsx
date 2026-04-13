@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 
 export default function ServicesPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#F5F5F5]">
       <ServicesScroll />
       {/* <CardStack /> */}
       {/* <ExpandableFeatures
@@ -55,7 +55,7 @@ export default function ServicesPage() {
       {/* <Achievements/> */}
         <FeaturesGrid/>
        {/* <HelpGrid/>  */}
-      <Suspense fallback={<div className="min-h-screen bg-white" />}>
+      <Suspense fallback={<div className="min-h-screen bg-[#F5F5F5]" />}>
         <ScrollStack/>
       </Suspense> 
       <Steps />

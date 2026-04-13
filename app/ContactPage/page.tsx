@@ -37,10 +37,10 @@ export default function ContactPage() {
               </div>
 
               {/* Contact Info Container */}
-              <div className="bg-white/5 border border-white/10 rounded-xl 2xl:rounded-2xl p-5 2xl:p-8 space-y-3 2xl:space-y-5">
+              <div className="bg-[#F5F5F5]/5 border border-white/10 rounded-xl 2xl:rounded-2xl p-5 2xl:p-8 space-y-3 2xl:space-y-5">
                 {/* Email */}
                 <div className="flex items-center gap-3 2xl:gap-5">
-                  <div className="bg-white p-2 2xl:p-3 rounded-full flex-shrink-0">
+                  <div className="bg-[#F5F5F5] p-2 2xl:p-3 rounded-full flex-shrink-0">
                     <Mail className="w-4 h-4 2xl:w-6 2xl:h-6 text-black" />
                   </div>
                   <div>
@@ -56,7 +56,7 @@ export default function ContactPage() {
 
                 {/* Phone */}
                 <div className="flex items-center gap-3 2xl:gap-5">
-                  <div className="bg-white p-2 2xl:p-3 rounded-full flex-shrink-0">
+                  <div className="bg-[#F5F5F5] p-2 2xl:p-3 rounded-full flex-shrink-0">
                     <Phone className="w-4 h-4 2xl:w-6 2xl:h-6 text-black" />
                   </div>
                   <div>
@@ -72,7 +72,7 @@ export default function ContactPage() {
 
                 {/* Location */}
                 <div className="flex items-center gap-3 2xl:gap-5">
-                  <div className="bg-white p-2 2xl:p-3 rounded-full flex-shrink-0">
+                  <div className="bg-[#F5F5F5] p-2 2xl:p-3 rounded-full flex-shrink-0">
                     <MapPin className="w-4 h-4 2xl:w-6 2xl:h-6 text-black" />
                   </div>
                   <div>

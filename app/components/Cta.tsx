@@ -13,7 +13,7 @@ const CTA: React.FC<CTAProps> = ({
   accentColor = 'text-[#FF5147]'
 }) => {
   return (
-    <div className="px-5 md:px-12 lg:px-16 2xl:px-16 py-16 md:py-20 lg:py-24 2xl:py-32 bg-white">
+    <div className="px-5 md:px-12 lg:px-16 2xl:px-16 py-16 md:py-20 lg:py-24 2xl:py-32 bg-[#F5F5F5]">
       <div className="max-w-6xl 2xl:max-w-[2250px] mx-auto relative">
         <div className={`${bgColor} rounded-xl 2xl:rounded-2xl px-8 py-24 md:px-16 md:py-20 lg:px-20 lg:py-24 2xl:px-28 2xl:py-32 text-center relative overflow-hidden`}>
 
@@ -28,7 +28,7 @@ const CTA: React.FC<CTAProps> = ({
 
 
             <Link href="/ContactPage">
-              <button className="text-[#240000] bg-white font-semibold font-antonio px-8 py-3 md:px-6 md:py-2 2xl:px-10 2xl:py-4 rounded-full text-lg md:text-md 2xl:text-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+              <button className="text-[#240000] bg-[#F5F5F5] font-semibold font-antonio px-8 py-3 md:px-6 md:py-2 2xl:px-10 2xl:py-4 rounded-full text-lg md:text-md 2xl:text-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
                 LETS TALK
               </button>
             </Link>

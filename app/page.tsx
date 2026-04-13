@@ -45,7 +45,7 @@ export default function Home() {
   ]);
 
   return (
-    <div>
+    <div className="bg-[#F5F5F5]">
       {/* WebPage Schema */}
       <Script
         id="webpage-schema"
@@ -65,7 +65,7 @@ export default function Home() {
 
       <Text />
       {/* Flex container for side-by-side components */}
-      <div className="flex flex-col lg:flex-row bg-white">
+      <div className="flex flex-col lg:flex-row bg-[#F5F5F5]">
           <SubHeader />
           <ReversedHeader />
       </div>
@@ -74,14 +74,14 @@ export default function Home() {
         <GreenCTA/>
         {/* <FeaturesGrid/> */}
       {/* <HelpGrid/> */}
-      {/* <Suspense fallback={<div className="min-h-screen bg-white" />}>
+      {/* <Suspense fallback={<div className="min-h-screen bg-[#F5F5F5]" />}>
         <ScrollStack/>
       </Suspense> */}
-      <Suspense fallback={<div className="min-h-96 bg-white" />}>
+      <Suspense fallback={<div className="min-h-96 bg-[#F5F5F5]" />}>
         <Steps/>
       </Suspense>
       <div id="faq">
-        <Suspense fallback={<div className="min-h-96 bg-white" />}>
+        <Suspense fallback={<div className="min-h-96 bg-[#F5F5F5]" />}>
           <FAQ/>
         </Suspense>
       </div>

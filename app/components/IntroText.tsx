@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const IntroText = () => {
   return (
-    <div className="bg-white px-6 md:px-12 lg:px-16 py-16 md:py-20 lg:py-24">
+    <div className="bg-[#F5F5F5] px-6 md:px-12 lg:px-16 py-16 md:py-20 lg:py-24">
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-20">
         {/* Empty left side */}
         <div className="hidden lg:block"></div>

@@ -121,7 +121,7 @@ const Achievements = () => {
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
               }`}
             >
-              <span className="bg-white/5 text-white px-6 py-2 rounded-full text-sm font-bold">
+              <span className="bg-[#F5F5F5]/5 text-white px-6 py-2 rounded-full text-sm font-bold">
                 Resultat
               </span>
             </div>

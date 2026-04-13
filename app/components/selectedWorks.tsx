@@ -74,12 +74,12 @@ const SelectedWork = () => {
   }, []);
 
   return (
-    <div className="bg-white py-16 md:py-20 lg:py-36 2xl:py-48 relative">
+    <div className="bg-[#F5F5F5] py-16 md:py-20 lg:py-36 2xl:py-48 relative">
       <div className="md:px-12 lg:px-16 2xl:px-24">
         {/* Desktop Layout */}
         <div className="hidden md:grid md:grid-cols-12 gap-8 2xl:gap-12 max-w-7xl 2xl:max-w-[2000px] mx-auto">
           {/* Left Side - Title and Controls (Fixed on scroll) */}
-          <div className="col-span-4 lg:col-span-3 sticky top-32 2xl:top-40 self-start z-20 bg-white">
+          <div className="col-span-4 lg:col-span-3 sticky top-32 2xl:top-40 self-start z-20 bg-[#F5F5F5]">
             <h2 className="text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-antonio font-bold text-black leading-tight mb-4 2xl:mb-6">
               SELECTED<br />
               WORK

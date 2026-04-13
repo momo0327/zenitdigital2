@@ -14,7 +14,7 @@ const Header = () => {
   }, []);
 
   return (
-    <div className="bg-white lg:py-20 py-17">
+    <div className="bg-[#F5F5F5] lg:py-20 py-17">
       <div className="bg-[transparent] px-8 md:px-12 lg:px-16 py-12 md:py-16 lg:py-10 min-h-[600px] md:min-h-[700px] lg:min-h-[800px] relative">
         {/* Title positioned at the very top */}
         <div className="text-center">

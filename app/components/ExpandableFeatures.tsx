@@ -59,7 +59,7 @@ const ExpandableFeatures: React.FC<ExpandableFeaturesProps> = ({
   };
 
   return (
-    <div className="bg-white py-12 md:py-16 lg:py-20 2xl:py-28">
+    <div className="bg-[#F5F5F5] py-12 md:py-16 lg:py-20 2xl:py-28">
       <div className="max-w-7xl 2xl:max-w-[2400px] mx-auto px-5 md:px-12 lg:px-16 2xl:px-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 2xl:gap-16 items-center">
           {/* Left Side - Content */}

@@ -26,13 +26,13 @@ export const CookieConsent: React.FC = () => {
         <div className="flex gap-3">
           <button
             onClick={() => setHasConsented(true)}
-            className="px-6 py-2 bg-white text-black rounded-full font-semibold hover:bg-gray-100 transition-colors duration-200 whitespace-nowrap"
+            className="px-6 py-2 bg-[#F5F5F5] text-black rounded-full font-semibold hover:bg-gray-100 transition-colors duration-200 whitespace-nowrap"
           >
             Accept All
           </button>
           <button
             onClick={() => setHasConsented(true)}
-            className="px-6 py-2 border border-white text-white rounded-full font-semibold hover:bg-white hover:text-black transition-colors duration-200 whitespace-nowrap"
+            className="px-6 py-2 border border-white text-white rounded-full font-semibold hover:bg-[#F5F5F5] hover:text-black transition-colors duration-200 whitespace-nowrap"
           >
             Decline
           </button>

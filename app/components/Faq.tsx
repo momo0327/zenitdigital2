@@ -51,7 +51,7 @@ const FAQ: React.FC<FAQProps> = ({
   const opacityTextColor = `text-${textColorValue}/70`;
 
   return (
-    <div className="bg-white py-16 md:py-20 lg:py-62 2xl:py-72">
+    <div className="bg-[#F5F5F5] py-16 md:py-20 lg:py-62 2xl:py-72">
       <div className="mx-auto px-5 md:px-12 lg:px-16 2xl:px-16 max-w-7xl 2xl:max-w-[2400px]">
         {/* Modal-like Container */}
         <div className={`${bgColor} rounded-xl 2xl:rounded-2xl p-8 md:p-12 lg:p-16 2xl:p-20 py-20 2xl:py-28 shadow-2xl`}>

@@ -4,7 +4,7 @@ import { OptimizedImage } from './ui/OptimizedImage';
 import { IMAGE_QUALITY } from '../utils/image';
 const Header = () => {
   return (
-    <div className="px-2 md:px-12 lg:px-4 2xl:px-8 bg-white py-6 2xl:py-10 flex-1">
+    <div className="px-2 md:px-12 lg:px-4 2xl:px-8 bg-[#F5F5F5] py-6 2xl:py-10 flex-1">
       <div className="bg-[#240000] h-[700px] md:h-[600px] lg:h-[442px] 2xl:h-[600px] rounded-xl px-6 md:px-10 2xl:px-16 py-12 md:py-12 2xl:py-16 w-full flex items-center">
         <div className="flex flex-col md:flex-row items-center gap-8 2xl:gap-12 w-full">
           {/* Left side - Content */}

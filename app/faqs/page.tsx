@@ -50,7 +50,7 @@ export default function FAQsPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#F5F5F5]">
       {/* Hero Section */}
       <section className="px-6 md:px-12 lg:px-16 py-24 md:py-32 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-4xl mx-auto text-center">

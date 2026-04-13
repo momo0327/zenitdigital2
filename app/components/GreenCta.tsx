@@ -5,7 +5,7 @@ import { IMAGE_QUALITY } from '../utils/image';
 
 const GreenCTA = () => {
   return (
-    <div className="px-6 md:px-12 lg:px-16 2xl:px-24 bg-white py-6 md:py-20 lg:py-24 2xl:py-32">
+    <div className="px-6 md:px-12 lg:px-16 2xl:px-24 bg-[#F5F5F5] py-6 md:py-20 lg:py-24 2xl:py-32">
       <div className="rounded-2xl overflow-hidden min-h-[800px] md:min-h-[900px] lg:min-h-[1000px] 2xl:min-h-[1200px] relative">
         {/* Green Section - Top Half */}
         <div className="bg-[#0A0D24] px-8 md:px-12 lg:px-16 2xl:px-24 py-20 md:py-24 lg:py-32 2xl:py-40 text-center h-1/2 flex items-center rounded-b-lg">
@@ -19,7 +19,7 @@ const GreenCTA = () => {
             {/* CTA Buttons */}
             <div className="flex sm:flex-row gap-4 md:gap-6 2xl:gap-8 justify-center items-center">
               <Link href="/ContactPage">
-              <button className=" bg-white font-antonio font-bold text-[#0A0D24] px-6 py-3 2xl:px-10 2xl:py-4 text-sm md:text-lg 2xl:text-2xl rounded-full hover:bg-[#B4FFA8] hover:text-green-900 transition-all duration-200 transform hover:scale-105">
+              <button className=" bg-[#F5F5F5] font-antonio font-bold text-[#0A0D24] px-6 py-3 2xl:px-10 2xl:py-4 text-sm md:text-lg 2xl:text-2xl rounded-full hover:bg-[#B4FFA8] hover:text-green-900 transition-all duration-200 transform hover:scale-105">
                 LETS TALK
               </button>
               </Link>

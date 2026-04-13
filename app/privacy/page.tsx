@@ -12,7 +12,7 @@ export default function PrivacyPage() {
   const lastUpdated = 'January 2025';
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#F5F5F5]">
       {/* Hero Section */}
       <section className="px-6 md:px-12 lg:px-16 py-24 md:py-32 bg-gray-50">
         <div className="max-w-4xl mx-auto">

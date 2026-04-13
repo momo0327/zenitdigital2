@@ -17,7 +17,7 @@ interface NavbarProps {
 }
 
 const Navbar: React.FC<NavbarProps> = ({
-  bgColor = 'bg-white',
+  bgColor = 'bg-[#F5F5F5]',
   textColor = 'text-black',
   logoColor = 'text-black',
   hoverBgColor = 'hover:bg-gray-100',

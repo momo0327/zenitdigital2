@@ -249,7 +249,7 @@ export default function CardStack({ cards = CARD_STACK.cards }: CardStackProps) 
   }
 
   return (
-    <div className="relative w-full min-h-screen flex flex-col items-center justify-center py-20 bg-white overflow-hidden">
+    <div className="relative w-full min-h-screen flex flex-col items-center justify-center py-20 bg-[#F5F5F5] overflow-hidden">
       {/* Title Section */}
       <div className="text-center mb-12 text-black md:mb-16">
         <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold font-antonio uppercase tracking-tight leading-none">

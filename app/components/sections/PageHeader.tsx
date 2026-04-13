@@ -91,7 +91,7 @@ export const PageHeader: React.FC<PageHeaderProps> = ({
               <Link href={secondaryButtonLink}>
                 <button
                   type="button"
-                  className="font-semibold md:px-6 md:py-3 rounded-full text-md px-4 py-3 text-sm transition-all duration-300 backdrop-blur-sm hover:bg-white/10"
+                  className="font-semibold md:px-6 md:py-3 rounded-full text-md px-4 py-3 text-sm transition-all duration-300 backdrop-blur-sm hover:bg-[#F5F5F5]/10"
                   style={{
                     borderColor: theme.color,
                     color: theme.color,

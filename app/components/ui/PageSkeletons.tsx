@@ -6,7 +6,7 @@ import { Skeleton, SkeletonCard, SkeletonText } from './Skeleton';
  */
 export const HomePageSkeleton: React.FC = () => {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#F5F5F5]">
       {/* Header Skeleton */}
       <div className="px-6 py-12 md:py-20">
         <div className="max-w-7xl mx-auto">
@@ -53,7 +53,7 @@ export const HomePageSkeleton: React.FC = () => {
  */
 export const ServicePageSkeleton: React.FC = () => {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#F5F5F5]">
       {/* Hero Section */}
       <div className="px-6 py-16 md:py-24">
         <div className="max-w-7xl mx-auto">
@@ -113,7 +113,7 @@ export const ServicePageSkeleton: React.FC = () => {
  */
 export const ContactPageSkeleton: React.FC = () => {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#F5F5F5]">
       <div className="px-6 py-16 md:py-24">
         <div className="max-w-4xl mx-auto">
           {/* Header */}
