@@ -10,7 +10,7 @@ const BigText = () => {
       {/* Main heading section */}
       <div className="max-w-7xl 2xl:max-w-[2400px] mx-auto w-full flex justify-center lg:justify-end 2xl:justify-end 2xl:pl-16">
         <div className="text-left lg:text-left max-w-2xl lg:max-w-none">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-4xl xl:text-5xl 2xl:text-7xl font-normal text-black leading-tight mb-3 2xl:mb-6 font-sans">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-[400] text-black leading-none mb-3 2xl:mb-6 font-sans">
             <ScrollTextReveal
               highlightColor="#000000"
               dimColor="#D1D5DB"

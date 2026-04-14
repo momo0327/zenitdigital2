@@ -36,9 +36,9 @@ const Footer = ({ bgColor = '#000000', textColor }: FooterProps) => {
                 className="w-[168px] h-32"
                 unoptimized
               /> */}
-              <span className="text-5xl font-shentox font-normal tracking-wide" style={{ color: finalTextColor }}>
+              {/* <span className="text-5xl font-shentox font-normal tracking-wide" style={{ color: finalTextColor }}>
                 ZENIA
-              </span>
+              </span> */}
             </Link>
           </div>
 

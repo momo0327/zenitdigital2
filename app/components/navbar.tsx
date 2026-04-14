@@ -87,7 +87,7 @@ const Navbar: React.FC<NavbarProps> = ({
               priority
               unoptimized
             />
-            <span className="font-shentox md:text-3xl text-2xl font-normal">ZENIA</span>
+            <span className="font-shentox md:text-3xl text-2xl 2xl:text-4xl font-normal">ZENIA</span>
           </Link>
 
           {/* Center Navigation - Responsive with useBreakpoint */}

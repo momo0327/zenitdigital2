@@ -30,6 +30,12 @@ const shentox = localFont({
   display: "swap",
 });
 
+const suisseIntl = localFont({
+  src: "./assets/SuisseIntlBook.ttf",
+  variable: "--font-suisse",
+  display: "swap",
+});
+
 export const metadata: Metadata = DEFAULT_METADATA;
 
 export default function RootLayout({
@@ -51,7 +57,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} ${shentox.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} ${shentox.variable} ${suisseIntl.variable} antialiased`}
       >
         <Navbar />
         <TransitionProvider>

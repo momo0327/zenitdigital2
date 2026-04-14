@@ -70,21 +70,29 @@ export default function Home() {
           <ReversedHeader />
       </div>
       <TriHeader/>
-        <SelectedWork/>
-        <GreenCTA/>
+        {/* <SelectedWork/> */}
+        {/* <GreenCTA/> */}
         {/* <FeaturesGrid/> */}
       {/* <HelpGrid/> */}
       {/* <Suspense fallback={<div className="min-h-screen bg-[#F5F5F5]" />}>
         <ScrollStack/>
       </Suspense> */}
       <Suspense fallback={<div className="min-h-96 bg-[#F5F5F5]" />}>
-        <Steps/>
+            <Steps
+        bgColor="bg-white"
+        titleColor="text-[#1E1F1F]"
+        subtitleColor="text-[#0A0D24]/70"
+        cardBgColor="bg-[#F0F0F0]"
+        cardTextColor="text-[#0A0D24]"
+        iconBgColor="bg-[#0A0D24]/10"
+        iconColor="text-[#0A0D24]"
+      />
       </Suspense>
-      <div id="faq">
+      {/* <div id="faq">
         <Suspense fallback={<div className="min-h-96 bg-[#F5F5F5]" />}>
           <FAQ/>
         </Suspense>
-      </div>
+      </div> */}
       <Cta/>
       <Footer/>
     </div>
