@@ -1,5 +1,4 @@
 import React from 'react';
-import ContactForm from '../components/ContactForm';
 import Navbar from '../components/navbar';
 import { Mail, Phone, MapPin } from 'lucide-react';
 import Steps from '../components/Steps';
@@ -18,82 +17,93 @@ export default function ContactPage() {
         menuButtonColor="#fff"
         openMenuButtonColor="#000"
       />
-      <div className="min-h-screen bg-black">
-        <div className="grid grid-cols-1 lg:grid-cols-2 min-h-screen">
-          {/* Left Side - Content */}
-          <div className="flex items-center justify-center px-6 md:px-12 lg:px-16 2xl:px-24 py-24 lg:py-32 2xl:py-40">
-            <div className="max-w-xl 2xl:max-w-3xl w-full">
-              <h1 className=" xs:text-6xl sm:text-[80px] md:text-6xl lg:text-7xl xl:text-9xl 2xl:text-[12rem] font-antonio font-bold text-white text-center lg:text-left leading-none mb-8 2xl:mb-12">
-                LET&apos;S MAKE <br /> IT HAPPEN
-              </h1>
+      <div className="relative overflow-hidden min-h-screen bg-black flex items-center justify-center px-[clamp(1.5rem,5vw,5rem)] py-[clamp(6rem,10vw,9rem)]">
 
-              <div className="space-y-6 2xl:space-y-10 text-white/70 text-center lg:text-left text-base md:text-lg 2xl:text-2xl leading-relaxed mb-10 2xl:mb-14">
-                <p>
-                  Ready to transform your ideas into reality? Get in touch with us and let&apos;s start building something amazing together.
+        {/* Dot grid texture */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0"
+          style={{
+            backgroundImage:
+              'radial-gradient(circle at 1px 1px, rgba(255,255,255,0.09) 1px, transparent 0)',
+            backgroundSize: '32px 32px',
+            maskImage:
+              'radial-gradient(ellipse at center, black 35%, transparent 80%)',
+            WebkitMaskImage:
+              'radial-gradient(ellipse at center, black 35%, transparent 80%)',
+          }}
+        />
+
+        {/* Ambient brand glow */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background:
+              'radial-gradient(ellipse 60% 50% at 50% 35%, rgba(154,194,255,0.13), transparent 70%)',
+          }}
+        />
+
+        <div className="relative z-10 w-full max-w-[60rem] text-center">
+          <h1 className="font-antonio font-bold text-white leading-[0.95] mb-[clamp(1.75rem,2.5vw,2.75rem)] text-[clamp(3rem,9vw,9.5rem)]">
+            LET&apos;S MAKE <br /> IT HAPPEN
+          </h1>
+
+          <p className="text-white/70 leading-relaxed mb-[clamp(2.5rem,4vw,4rem)] text-[clamp(1rem,0.5vw+0.875rem,1.25rem)] max-w-[36rem] mx-auto">
+            Ready to transform your ideas into reality? Get in touch and let&apos;s start building something amazing together.
+          </p>
+
+          {/* Contact Info */}
+          <div className="bg-[#F5F5F5]/5 border border-white/10 rounded-2xl p-[clamp(1.5rem,2vw,2.5rem)] space-y-[clamp(0.875rem,1.25vw,1.5rem)] text-left max-w-[40rem] mx-auto">
+            {/* Email */}
+            <a
+              href="mailto:hello@zenitdigital.se"
+              className="flex items-center gap-[clamp(0.75rem,1vw,1.25rem)] group"
+            >
+              <div className="bg-[#F5F5F5] p-[clamp(0.5rem,0.7vw,0.75rem)] rounded-full flex-shrink-0">
+                <Mail className="size-[clamp(1rem,1.2vw,1.5rem)] text-black" />
+              </div>
+              <div className="min-w-0">
+                <p className="text-white/50 mb-[clamp(0.05rem,0.1vw,0.25rem)] text-[clamp(0.7rem,0.3vw+0.625rem,0.875rem)]">Email</p>
+                <p className="text-white font-medium group-hover:underline text-[clamp(0.875rem,0.5vw+0.75rem,1.125rem)]">
+                  hello@zenitdigital.se
                 </p>
-
-                {/* <p className="font-medium text-white">
-                  Fill out the form, and we&apos;ll get back to you within 24 hours!
-                </p> */}
               </div>
+            </a>
 
-              {/* Contact Info Container */}
-              <div className="bg-[#F5F5F5]/5 border border-white/10 rounded-xl 2xl:rounded-2xl p-5 2xl:p-8 space-y-3 2xl:space-y-5">
-                {/* Email */}
-                <div className="flex items-center gap-3 2xl:gap-5">
-                  <div className="bg-[#F5F5F5] p-2 2xl:p-3 rounded-full flex-shrink-0">
-                    <Mail className="w-4 h-4 2xl:w-6 2xl:h-6 text-black" />
-                  </div>
-                  <div>
-                    <p className="text-xs 2xl:text-base text-white/50 mb-0.5">Email</p>
-                    <a
-                      href="mailto:info@zenitdigital.se"
-                      className="text-white text-sm 2xl:text-xl font-medium hover:underline"
-                    >
-                      hello@zenitdigital.se
-                    </a>
-                  </div>
-                </div>
+            {/* Phone */}
+            <a
+              href="tel:+46723364384"
+              className="flex items-center gap-[clamp(0.75rem,1vw,1.25rem)] group"
+            >
+              <div className="bg-[#F5F5F5] p-[clamp(0.5rem,0.7vw,0.75rem)] rounded-full flex-shrink-0">
+                <Phone className="size-[clamp(1rem,1.2vw,1.5rem)] text-black" />
+              </div>
+              <div className="min-w-0">
+                <p className="text-white/50 mb-[clamp(0.05rem,0.1vw,0.25rem)] text-[clamp(0.7rem,0.3vw+0.625rem,0.875rem)]">Phone</p>
+                <p className="text-white font-medium group-hover:underline text-[clamp(0.875rem,0.5vw+0.75rem,1.125rem)]">
+                  +46 72-336 43 84
+                </p>
+              </div>
+            </a>
 
-                {/* Phone */}
-                <div className="flex items-center gap-3 2xl:gap-5">
-                  <div className="bg-[#F5F5F5] p-2 2xl:p-3 rounded-full flex-shrink-0">
-                    <Phone className="w-4 h-4 2xl:w-6 2xl:h-6 text-black" />
-                  </div>
-                  <div>
-                    <p className="text-xs 2xl:text-base text-white/50 mb-0.5">Phone</p>
-                    <a
-                      href="tel:+46123456789"
-                      className="text-white text-sm 2xl:text-xl font-medium hover:underline"
-                    >
-                      +46 72-336 43 84
-                    </a>
-                  </div>
-                </div>
-
-                {/* Location */}
-                <div className="flex items-center gap-3 2xl:gap-5">
-                  <div className="bg-[#F5F5F5] p-2 2xl:p-3 rounded-full flex-shrink-0">
-                    <MapPin className="w-4 h-4 2xl:w-6 2xl:h-6 text-black" />
-                  </div>
-                  <div>
-                    <p className="text-xs 2xl:text-base text-white/50 mb-0.5">Location</p>
-                    <p className="text-white text-sm 2xl:text-xl font-medium">
-                      Gothemburg, Sweden
-                    </p>
-                  </div>
-                </div>
+            {/* Location */}
+            <div className="flex items-center gap-[clamp(0.75rem,1vw,1.25rem)]">
+              <div className="bg-[#F5F5F5] p-[clamp(0.5rem,0.7vw,0.75rem)] rounded-full flex-shrink-0">
+                <MapPin className="size-[clamp(1rem,1.2vw,1.5rem)] text-black" />
+              </div>
+              <div className="min-w-0">
+                <p className="text-white/50 mb-[clamp(0.05rem,0.1vw,0.25rem)] text-[clamp(0.7rem,0.3vw+0.625rem,0.875rem)]">Location</p>
+                <p className="text-white font-medium text-[clamp(0.875rem,0.5vw+0.75rem,1.125rem)]">
+                  Gothenburg, Sweden
+                </p>
               </div>
             </div>
           </div>
 
-          {/* Right Side - Form */}
-          <div className="flex items-center justify-center px-6 md:px-12 lg:px-16 2xl:px-24 mb-12 lg:py-32 2xl:py-40">
-            <div className="w-full max-w-lg 2xl:max-w-4xl">
-              <ContactForm />
-            </div>
-          </div>
-
+          <p className="text-white/50 mt-[clamp(1rem,1.5vw,1.5rem)] text-[clamp(0.8rem,0.3vw+0.7rem,0.95rem)]">
+            Replies within 24 hours.
+          </p>
         </div>
       </div>
 

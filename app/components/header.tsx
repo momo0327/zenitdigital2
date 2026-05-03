@@ -81,7 +81,7 @@ const Header = () => {
             alt="Zenit Digital mobile app development showcase with modern interface design"
             width={700}
             height={800}
-            className="w-[400px] md:w-80 lg:w-[96] xl:w-[550px] 2xl:w-[600px] h-auto object-contain"
+            className="w-[400px] md:w-80 lg:w-[96] xl:w-[550px] 2xl:w-[600px] h-auto object-contain [mask-image:linear-gradient(to_bottom,black_75%,transparent_100%)] [-webkit-mask-image:linear-gradient(to_bottom,black_75%,transparent_100%)]"
             priority
             quality={IMAGE_QUALITY.HIGH}
             enableBlur
