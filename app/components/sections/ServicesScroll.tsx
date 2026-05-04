@@ -101,7 +101,7 @@ const ServicesScroll = () => {
                 >
                   {/* Text Content */}
                   <div className="text-left">
-                    <h3 className={`text-5xl md:text-7xl lg:text-8xl 2xl:text-9xl font-bold font-antonio ${service.textColor} mb-6 2xl:mb-8 leading-none`}>
+                    <h3 className={`text-5xl md:text-7xl lg:text-8xl 2xl:text-9xl font-bold font-antonio ${service.textColor} mb-6 2xl:mb-8 leading-none whitespace-pre-line`}>
                       {service.title}
                     </h3>
                     <p className={`text-sm md:text-base lg:text-lg 2xl:text-xl lg:w-max-md ${service.textColor} opacity-80 leading-relaxed`}>

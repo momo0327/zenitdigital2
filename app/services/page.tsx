@@ -1,7 +1,6 @@
 import React, { Suspense } from 'react';
 import type { Metadata } from 'next';
 import ServicesScroll from '../components/sections/ServicesScroll';
-import Steps from '../components/Steps';
 import Achievements from '../components/Achievments';
 import FAQ from '../components/Faq';
 import Cta from '../components/Cta';
@@ -57,8 +56,7 @@ export default function ServicesPage() {
        {/* <HelpGrid/>  */}
       <Suspense fallback={<div className="min-h-screen bg-[#F5F5F5]" />}>
         <ScrollStack/>
-      </Suspense> 
-      <Steps />
+      </Suspense>
 
       <FAQ
         bgColor="bg-[#051E01]"

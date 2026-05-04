@@ -13,7 +13,7 @@ const TriHeader = () => {
               Fullstack Develpment
             </h2>
             <p className="text-xl md:text-xl 2xl:text-3xl text-[#B4FFA8] mb-10 2xl:mb-14 leading-tight">
-              Discover a revolutionary way to learn with our cutting-edge platform that adapts to your pace and style.
+              From polished interfaces to resilient backends, we build end-to-end web platforms that perform, scale, and evolve with your business.
             </p>
             <div className="flex gap-4 2xl:gap-6">
             <Link href="/services">

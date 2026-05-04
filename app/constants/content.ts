@@ -7,10 +7,10 @@
 
 // Company Information
 export const COMPANY = {
-  name: 'Zenit Digital',
+  name: 'Zenia Digital',
   tagline: 'Digital Excellence, Delivered',
   description: 'We build exceptional digital products that drive business growth.',
-  email: 'hello@zenitdigital.se',
+  email: 'hello@zeniadigital.se',
   phone: '+46 (0) 123 456 789', // Update with your Swedish phone number
   founded: '2024',
   address: {
@@ -30,12 +30,12 @@ export const MARKETING_COPY = {
 
 // Services Overview
 export const SERVICES_OVERVIEW = {
-  title: 'DIGITAL SOLUTIONS FOR YOUR IDEAS ',
-  subtitle: "We build high-quality digital solutions for startups and growing businesses. From web to mobile development, we help bring your ideas to life.",
+  title: 'WHAT WE BUILD',
+  subtitle: "Three services, one outcome: digital products that ship, scale, and earn their place in your business.",
   items: [
     {
       title: 'Web App Development',
-      description: "We build responsive web applications optimized for performance and SEO. From landing pages to complex web platforms, we create solutions that drive traffic and convert visitors into customers.",
+      description: "Web platforms for the work they actually do — internal tools, SaaS dashboards, and marketing sites engineered for speed, conversion, and search.",
       bgColor: 'bg-[#240000]',
       textColor: 'text-[#FF5147]',
       href: '/WebDev',
@@ -44,7 +44,7 @@ export const SERVICES_OVERVIEW = {
     },
     {
       title: 'Mobile App Development',
-      description: "We create native and cross-platform mobile applications that deliver exceptional user experiences. From iOS to Android, we build apps that engage users and drive business growth.",
+      description: "iOS, Android, or one React Native codebase that ships to both — chosen for your roadmap and budget, not what's trending this quarter.",
       bgColor: 'bg-[#1a0f2e]',
       textColor: 'text-[#BEA1FC]',
       href: '/MobileDev',
@@ -53,15 +53,73 @@ export const SERVICES_OVERVIEW = {
     },
     {
       title: 'Fullstack Development',
-      description: "We deliver complete end-to-end solutions combining frontend and backend development. From database design to user interfaces, we build scalable applications that power your entire digital ecosystem.",
+      description: "End-to-end builds where one team owns the database, API, and interface — so the seams disappear and shipping speed doesn't slow as you scale.",
       bgColor: 'bg-[#051E01]',
       textColor: 'text-[#B4FFA8]',
       href: '/FullstackDev',
       image: '/Group 6-3.png',
       technologies: ['Node.js', 'PostgreSQL', 'MongoDB'],
     },
+    {
+      title: 'AI\nDevelopment',
+      description: "Practical AI work, whether you're starting from scratch or already shipping. Sized to the problem you're solving, not the hype cycle.",
+      bgColor: 'bg-[#001028]',
+      textColor: 'text-[#67E8F9]',
+      href: '/AIDev',
+      image: '/Group 6-3.png',
+      technologies: ['Anthropic', 'OpenAI', 'Google AI'],
+    },
   ],
 } as const;
+
+// Homepage paired service cards (rendered by SubHeader + ReversedHeader)
+// Order matches visual order: cards[0] left, cards[1] right at lg+, stacked below.
+export const HOMEPAGE_SERVICE_CARDS = [
+  {
+    id: 'web',
+    title: 'Web App Development',
+    description: 'Custom web applications engineered to perform, scale, and drive growth for your business.',
+    image: {
+      src: '/ipadred.png',
+      alt: 'Web development services - Responsive website design and modern web applications',
+      width: 584,
+      height: 400,
+      rotate: false,
+      widthClass: 'w-[clamp(9rem,16vw,23rem)]',
+    },
+    bgColor: '#240000',
+    accentColor: '#FF5147',
+    hoverFilledClass: 'hover:bg-orange-600',
+    hoverOutlinedClass: 'hover:bg-orange-500 hover:text-white',
+    imageOnLeft: false,
+    cta: {
+      explore: { label: 'Explore', href: '/services' },
+      contact: { label: 'Contact', href: '/ContactPage' },
+    },
+  },
+  {
+    id: 'mobile',
+    title: 'Mobile App Development',
+    description: 'Custom mobile applications engineered to engage, scale, and drive growth for your business.',
+    image: {
+      src: '/h-3 2.png',
+      alt: 'Mobile app development - iOS and Android native applications with beautiful UI',
+      width: 356,
+      height: 480,
+      rotate: true,
+      widthClass: 'w-[clamp(7rem,12vw,18rem)]',
+    },
+    bgColor: '#120128',
+    accentColor: '#BEA1FC',
+    hoverFilledClass: 'hover:bg-purple-400',
+    hoverOutlinedClass: 'hover:bg-[#BEA1FC] hover:text-[#120128]',
+    imageOnLeft: true,
+    cta: {
+      explore: { label: 'Explore', href: '/services' },
+      contact: { label: 'Contact', href: '/ContactPage' },
+    },
+  },
+] as const;
 
 // Service Pages Content
 export const SERVICES = {
@@ -263,24 +321,28 @@ export const PORTFOLIO_ITEMS = [
 // FAQ Content
 export const FAQ_ITEMS = [
   {
-    question: 'What services does Zenit Digital offer?',
-    answer: 'We specialize in web development, mobile app development, and fullstack solutions. Our team delivers custom digital products tailored to your business needs.',
+    question: 'What does Zenia Digital do?',
+    answer: "We're a digital studio based in Göteborg, Sweden. We build web platforms, mobile apps, full-stack systems, and practical AI integrations for startups and growing businesses.",
   },
   {
-    question: 'How long does a typical project take?',
-    answer: 'Project timelines vary based on scope and complexity. A typical web application takes 8-12 weeks, while mobile apps range from 10-16 weeks. We provide detailed timelines during our discovery phase.',
+    question: 'How does a project usually work?',
+    answer: 'We build in two-week sprints with weekly demos, so you see real working software instead of status reports. Every engagement starts with a written proposal you can hold us to.',
   },
   {
-    question: 'Do you offer ongoing support and maintenance?',
-    answer: 'Yes! We offer comprehensive support packages including bug fixes, updates, monitoring, and feature enhancements to keep your application running smoothly.',
+    question: 'How quickly do you respond to new inquiries?',
+    answer: "We reply within one working day. The first call is a no-pressure conversation about what you want to build, who it's for, and what success looks like.",
   },
   {
-    question: 'What technologies do you work with?',
-    answer: 'We use modern tech stacks including Next.js, React, TypeScript, Node.js, and cloud platforms like AWS and Vercel. We choose technologies based on your specific project requirements.',
+    question: 'Do you work with clients outside Sweden?',
+    answer: "Yes. We're based in Göteborg but work remotely with clients internationally. Async communication and time zones aren't a blocker.",
   },
   {
-    question: 'How do you ensure project quality?',
-    answer: 'We follow industry best practices including code reviews, automated testing, continuous integration, and regular client communication. Quality is built into every step of our process.',
+    question: 'What technologies do you typically use?',
+    answer: 'For web and mobile, we lean on Next.js, React, TypeScript, and React Native. For backend, Node.js with PostgreSQL or MongoDB. For AI work, Anthropic, OpenAI, and Google AI. We pick what fits the problem, not the trend.',
+  },
+  {
+    question: 'Can you take over an existing project?',
+    answer: 'Yes. We do architecture reviews, audits, and continued development on existing codebases. Sometimes a focused conversation saves a six-month rebuild.',
   },
 ] as const;
 

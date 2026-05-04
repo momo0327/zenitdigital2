@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@100;200;300;400;500;600;700&display=swap');
-
 @import "tailwindcss";
 
 :root {
@@ -7,7 +5,7 @@
   --foreground: #171717;
 }
 .font-antonio {
-  font-family: 'Antonio', sans-serif;
+  font-family: var(--font-antonio), 'Antonio', sans-serif;
 }
 
 .font-poppins {
@@ -29,6 +27,7 @@
   --font-sans: var(--font-suisse), system-ui, sans-serif;
   --font-mono: var(--font-geist-mono);
   --font-poppins: var(--font-poppins);
+  --font-antonio: var(--font-antonio);
   --font-shentox: var(--font-shentox);
   --font-suisse: var(--font-suisse);
   --breakpoint-xs: 250px;

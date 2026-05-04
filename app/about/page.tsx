@@ -198,8 +198,8 @@ export default function AboutPage() {
                     </div>
                     <div>
                       <p className="text-gray-500 text-sm font-medium">Email</p>
-                      <a href="mailto:hello@zenitdigital.se" className="text-black hover:text-[#0558F9] transition-colors">
-                        hello@zenitdigital.se
+                      <a href="mailto:hello@zeniadigital.se" className="text-black hover:text-[#0558F9] transition-colors">
+                        hello@zeniadigital.se
                       </a>
                     </div>
                   </div>

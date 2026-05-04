@@ -172,6 +172,7 @@ The "right" fix is re-exporting the asset with a transparent alpha channel; reac
 
 Add a new bullet whenever the system changes. Link to commit/PR if useful.
 
-- **2026-05-04** — Initial system documented. Migrated ContactPage from stepped breakpoints to clamp(). Capped page max-width at 1600px. Switched ContactPage from 2-column form layout to single-column hero + contact card after deciding to remove the contact form (using `mailto:hello@zenitdigital.se` instead).
+- **2026-05-04** — Initial system documented. Migrated ContactPage from stepped breakpoints to clamp(). Capped page max-width at 1600px. Switched ContactPage from 2-column form layout to single-column hero + contact card after deciding to remove the contact form (using `mailto:hello@zeniadigital.se` instead).
 - **2026-05-04** — Added ambient background pattern (dot grid + brand glow) on ContactPage hero. Documented as the "Ambient background effects" pattern.
 - **2026-05-04** — Applied bottom `mask-image` fade to the homepage hero image (`/dinfarsa.png`) to hide the visible JPEG edge. Documented as the "Image edge blending" pattern.
+- **2026-05-04** — Migrated `subHeader` (Web App) and `ReversedHeader` (Mobile App) cards from stepped breakpoints to the documented clamp scale. Dropped the fixed `h-[700px] md:h-[600px] lg:h-[442px] 2xl:h-[600px]` heights in favour of `min-h-[clamp(20rem,30vw,34rem)]` + content-driven sizing. Added `flex-1 min-w-0` to text columns and `flex-shrink-0 w-[clamp(...)]` to image columns to fix flex squeeze where wide-headline text starved the image column at certain widths. Image clamps: iPad `w-[clamp(9rem,16vw,23rem)]`, phone `w-[clamp(7rem,12vw,18rem)]`.

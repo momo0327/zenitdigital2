@@ -120,7 +120,6 @@ const Footer = ({ bgColor = '#000000', textColor }: FooterProps) => {
               <div className="flex space-x-6 text-base" style={{ color: mutedTextColor }}>
                 <Link href="/privacy" className="hover:opacity-70 transition-colors">Privacy</Link>
                 <Link href="/terms" className="hover:opacity-70 transition-colors">Terms</Link>
-                <Link href="/sitemap" className="hover:opacity-70 transition-colors">Sitemap</Link>
               </div>
 
             </div>

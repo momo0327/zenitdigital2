@@ -75,22 +75,12 @@ export const SERVICES_NAV = [
 export const SOCIAL_LINKS = [
   {
     label: 'LinkedIn',
-    href: 'https://linkedin.com/company/zenitdigital',
+    href: 'https://linkedin.com/company/zeniadigital',
     icon: 'linkedin',
   },
   {
-    label: 'Twitter',
-    href: 'https://twitter.com/zenitdigital',
-    icon: 'twitter',
-  },
-  {
-    label: 'GitHub',
-    href: 'https://github.com/zenitdigital',
-    icon: 'github',
-  },
-  {
     label: 'Instagram',
-    href: 'https://instagram.com/zenitdigital',
+    href: 'https://instagram.com/zeniadigital',
     icon: 'instagram',
   },
 ] as const;

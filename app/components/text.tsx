@@ -10,7 +10,7 @@ const BigText = () => {
       {/* Main heading section */}
       <div className="max-w-7xl 2xl:max-w-[2400px] mx-auto w-full flex justify-center lg:justify-end 2xl:justify-end 2xl:pl-16">
         <div className="text-left lg:text-left max-w-2xl lg:max-w-none">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-[400] text-black leading-none mb-3 2xl:mb-6 font-sans">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-[400] text-black leading-none mb-3 2xl:mb-6 font-sans">
             <ScrollTextReveal
               highlightColor="#000000"
               dimColor="#D1D5DB"
@@ -21,27 +21,26 @@ const BigText = () => {
             >
               <span className="reveal-word" style={{ color: '#D1D5DB' }}>We</span>{' '}
               <span className="reveal-word" style={{ color: '#D1D5DB' }}>are</span>{' '}
-              <span className="reveal-word" style={{ color: '#D1D5DB' }}>award-winning</span>{' '}
+              <span className="reveal-word" style={{ color: '#D1D5DB' }}>a</span>{' '}
               <span className="reveal-word" style={{ color: '#D1D5DB' }}>strategic</span>{' '}
-              <span className="reveal-word" style={{ color: '#D1D5DB' }}>design</span>
+              <span className="reveal-word" style={{ color: '#D1D5DB' }}>digital</span>{' '}
+              <span className="reveal-word" style={{ color: '#D1D5DB' }}>studio</span>
               <br className="hidden sm:block" />
               <span className="sm:hidden"> </span>
-              <span className="reveal-word" style={{ color: '#D1D5DB' }}>studios</span>{' '}
-              <span className="reveal-word" style={{ color: '#D1D5DB' }}>focusing</span>{' '}
-              <span className="reveal-word" style={{ color: '#D1D5DB' }}>on</span>{' '}
               <span className="reveal-word" style={{ color: '#D1D5DB' }}>building</span>{' '}
-              <span className="reveal-word" style={{ color: '#D1D5DB' }}>bespoke</span>
+              <span className="reveal-word" style={{ color: '#D1D5DB' }}>bespoke</span>{' '}
+              <span className="reveal-word" style={{ color: '#D1D5DB' }}>websites,</span>{' '}
+              <span className="reveal-word" style={{ color: '#D1D5DB' }}>apps,</span>
               <br className="hidden sm:block" />
               <span className="sm:hidden"> </span>
-              <span className="reveal-word" style={{ color: '#D1D5DB' }}>websites</span>{' '}
               <span className="reveal-word" style={{ color: '#D1D5DB' }}>and</span>{' '}
-              <span className="reveal-word" style={{ color: '#D1D5DB' }}>brand</span>{' '}
-              <span className="reveal-word" style={{ color: '#D1D5DB' }}>identities</span>{' '}
+              <span className="reveal-word" style={{ color: '#D1D5DB' }}>digital</span>{' '}
+              <span className="reveal-word" style={{ color: '#D1D5DB' }}>products</span>{' '}
               <span className="reveal-word" style={{ color: '#D1D5DB' }}>that</span>{' '}
-              <span className="reveal-word" style={{ color: '#D1D5DB' }}>instill</span>
+              <span className="reveal-word" style={{ color: '#D1D5DB' }}>instill</span>{' '}
+              <span className="reveal-word" style={{ color: '#D1D5DB' }}>trust,</span>
               <br className="hidden sm:block" />
               <span className="sm:hidden"> </span>
-              <span className="reveal-word" style={{ color: '#D1D5DB' }}>trust,</span>{' '}
               <span className="reveal-word" style={{ color: '#D1D5DB' }}>make</span>{' '}
               <span className="reveal-word" style={{ color: '#D1D5DB' }}>an</span>{' '}
               <span className="reveal-word" style={{ color: '#D1D5DB' }}>impact,</span>{' '}

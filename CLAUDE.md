@@ -260,4 +260,4 @@ Components using hooks or browser APIs must include `'use client'` directive:
 - Image assets are in `/public` directory
 - The project uses App Router, not Pages Router
 - SEO is configured for Swedish market (Göteborg office location)
-- Company contact: hello@zenitdigital.se
+- Company contact: hello@zeniadigital.se

@@ -9,28 +9,28 @@ const FeaturesGrid = () => {
     {
       number: "01",
       title: "Research",
-      description: "The way we work has changed, but learning software hasnt. until now.",
+      description: "Stakeholder interviews and technical discovery — built for the real problem, not the assumed one.",
       bgColor: "bg-[#FF90C0]",
       textColor: "text-[#40001C]"
     },
     {
       number: "02",
-      title: "Design", 
-      description: "The way we work has changed, but learning software hasnt. until now.",
+      title: "Design",
+      description: "Wireframes, prototypes, and a design system — tested with real users before code begins.",
       bgColor: "bg-[#40001C]",
       textColor: "text-[#FF90C0]"
     },
     {
       number: "03",
       title: "Development",
-      description: "The way we work has changed, but learning software hasnt. until now.",
-      bgColor: "bg-[#210316]", 
+      description: "Built in two-week sprints. Each one ends in working software you can click through, not a slide deck.",
+      bgColor: "bg-[#210316]",
       textColor: "text-[#FBCBEA]"
     },
     {
       number: "04",
       title: "Release",
-      description: "The way we work has changed, but learning software hasnt. until now.",
+      description: "Production deploys, monitoring, and post-launch iteration. Day one is the start, not the end.",
       bgColor: "bg-[#FBCBEA]",
       textColor: "text-[#210316]"
     }
@@ -46,12 +46,11 @@ const FeaturesGrid = () => {
               {/* Strategic Approach Text - Left Column */}
               <div className="flex flex-col justify-start">
                 <h2 className="text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-antonio font-bold text-black leading-tight">
-                  STRATEGIC<br />
-                  APPROACH
+                  HOW WE<br />
+                  WORK
                 </h2>
                 <p className="text-gray-600 mt-4 2xl:mt-6 text-lg 2xl:text-2xl">
-                  The way we work has changed,
-                  software hasnt. until now.
+                  Four phases that turn a question into shipped software — no walls between them.
                 </p>
               </div>
 
@@ -126,11 +125,11 @@ const FeaturesGrid = () => {
           {/* Strategic Approach Text - Above on mobile */}
           <div className="mb-8 px-5">
             <h2 className="text-4xl font-antonio font-bold text-black leading-tight mb-4">
-              STRATEGIC 
-              APPROACH
+              HOW WE
+              WORK
             </h2>
             <p className="text-gray-600 text-base">
-              The way we work has changed, but learning software hasnt. until now.
+              Four phases that turn a question into shipped software — no walls between them.
             </p>
           </div>
 

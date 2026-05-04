@@ -10,7 +10,7 @@ import { Metadata } from 'next';
 import { COMPANY, SEO_KEYWORDS } from './content';
 
 // Base URL - Update this when deploying to production
-export const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://zenitdigital.com';
+export const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://zeniadigital.se';
 
 // Swedish Market Information
 export const SWEDISH_MARKET = {
@@ -69,8 +69,8 @@ export const DEFAULT_METADATA: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    site: '@zenitdigital',
-    creator: '@zenitdigital',
+    site: '@zeniadigital',
+    creator: '@zeniadigital',
     title: `${COMPANY.name} | ${COMPANY.tagline}`,
     description: COMPANY.description,
     images: ['/twitter-image.png'],
@@ -187,7 +187,7 @@ export const WEB_DEV_METADATA: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    site: '@zenitdigital',
+    site: '@zeniadigital',
     title: 'Web Development Sweden | Zenit Digital',
     description: 'Build fast, scalable web applications with modern technologies',
   },
@@ -237,7 +237,7 @@ export const MOBILE_DEV_METADATA: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    site: '@zenitdigital',
+    site: '@zeniadigital',
     title: 'Mobile App Development Sweden | Zenit Digital',
     description: 'Build native iOS and Android applications that users love',
   },
@@ -287,7 +287,7 @@ export const FULLSTACK_DEV_METADATA: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    site: '@zenitdigital',
+    site: '@zeniadigital',
     title: 'Fullstack Development Sweden | Zenit Digital',
     description: 'Complete end-to-end development solutions for your business',
   },
@@ -323,7 +323,7 @@ export const CONTACT_METADATA: Metadata = {
   },
   twitter: {
     card: 'summary',
-    site: '@zenitdigital',
+    site: '@zeniadigital',
     title: 'Contact Us | Zenit Digital',
     description: "Let's discuss your next digital project",
   },
@@ -399,9 +399,9 @@ export const LOCAL_BUSINESS_SCHEMA = {
     'Worldwide',
   ],
   sameAs: [
-    'https://linkedin.com/company/zenitdigital',
-    'https://twitter.com/zenitdigital',
-    'https://github.com/zenitdigital',
+    'https://linkedin.com/company/zeniadigital',
+    'https://twitter.com/zeniadigital',
+    'https://github.com/zeniadigital',
   ],
   knowsAbout: [
     'Web Development',

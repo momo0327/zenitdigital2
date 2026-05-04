@@ -13,8 +13,8 @@ export default function ScrollStack() {
   const sections = [
     { 
       type: 'text',
-      title: 'HOW WE CAN ELEVATE YOUR\u00A0STARTUP',
-      subtitle: 'We are an award winning strategic design studio focusing on building bespoke websites and brand identities that instill trust, make an impact, and drive growth.',
+      title: 'WAYS TO WORK\nTOGETHER',
+      subtitle: 'Whether you need a first version shipped, a dedicated dev team, or strategic guidance \u2014 pick the engagement that fits where you are.',
       bg: 'bg-white',
       textColor: 'text-black'
     },
@@ -22,9 +22,9 @@ export default function ScrollStack() {
       type: 'image',
       color: 'bg-[#F6F5F8]',
       title: 'Prototype & MVP',
-      subtitle: 'We help you develop and launch MVPs fast to gather real user feedback and validate your ideas quickly in the market. We make sure to turn your idea into a hands-on product fast.',
+      subtitle: 'A working first version in weeks, not months. Real user feedback before you commit budget to the full build.',
       image: '/p-10 2.png',
-      imageSize: 'max-w-sm',
+      imageSize: 'max-w-xl',
       textColor: 'text-gray-800',
       imagePosition: 'right'
     },
@@ -32,7 +32,7 @@ export default function ScrollStack() {
       type: 'image',
       color: 'bg-[#9AC2FF]',
       title: 'Digital Partner',
-      subtitle: 'We become your dedicated digital partner, working alongside your team to bring your vision to life. From strategy to execution, we handle the technical complexity so you can focus on growing your business.',
+      subtitle: 'A dedicated build partner embedded with your team — owning the roadmap, shipping in weekly sprints, and running the system once it\'s live. You stay close to customers; we stay close to the code.',
       image: '/image 121.png',
       imageSize: 'max-w-xl',
       textColor: 'text-black',
@@ -42,7 +42,7 @@ export default function ScrollStack() {
       type: 'image',
       color: 'bg-black',
       title: 'Consultation',
-      subtitle: 'Get expert guidance to navigate your digital journey. We provide strategic consultation to help you make informed decisions, avoid costly mistakes, and choose the right technology stack for your goals.',
+      subtitle: 'Architecture reviews, stack decisions, and second opinions on the build in front of you. Sometimes the right call is a focused conversation, not a six-month rebuild — that\'s what this is for.',
       image: '/h-10 2.png',
       imageSize: 'max-w-lg',
       textColor: 'text-white',
@@ -101,7 +101,7 @@ export default function ScrollStack() {
               >
                 <div className="max-w-5xl 2xl:max-w-7xl w-full px-6 md:px-8 2xl:px-12 mx-auto">
                   <h1
-                    className={`xs:text-4xl sm:text-5xl md:text-6xl lg:text-8xl 2xl:text-9xl font-bold ${section.textColor} text-left leading-tight font-antonio mb-6 md:mb-8 2xl:mb-12`}
+                    className={`xs:text-4xl sm:text-5xl md:text-6xl lg:text-8xl 2xl:text-9xl font-bold ${section.textColor} text-left leading-tight font-antonio mb-6 md:mb-8 2xl:mb-12 whitespace-pre-line`}
                     style={{
                       opacity: 1 - progress * 0.6
                     }}

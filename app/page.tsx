@@ -3,8 +3,8 @@ import dynamic from 'next/dynamic';
 import Script from 'next/script';
 import { Suspense } from 'react';
 import Header from "./components/header";
-import SubHeader from "./components/subHeader";
-import ReversedHeader from "./components/ReversedHeader";
+import HomepageServiceCard from "./components/sections/HomepageServiceCard";
+import { HOMEPAGE_SERVICE_CARDS } from "./constants/content";
 import Text from "./components/text";
 import TriHeader from "./components/triHeader";
 import GreenCTA from "./components/GreenCta";
@@ -66,8 +66,9 @@ export default function Home() {
       <Text />
       {/* Flex container for side-by-side components */}
       <div className="flex flex-col lg:flex-row bg-[#F5F5F5]">
-          <SubHeader />
-          <ReversedHeader />
+        {HOMEPAGE_SERVICE_CARDS.map((card) => (
+          <HomepageServiceCard key={card.id} card={card} />
+        ))}
       </div>
       <TriHeader/>
         {/* <SelectedWork/> */}

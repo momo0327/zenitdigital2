@@ -57,7 +57,7 @@ export default function ContactPage() {
           <div className="bg-[#F5F5F5]/5 border border-white/10 rounded-2xl p-[clamp(1.5rem,2vw,2.5rem)] space-y-[clamp(0.875rem,1.25vw,1.5rem)] text-left max-w-[40rem] mx-auto">
             {/* Email */}
             <a
-              href="mailto:hello@zenitdigital.se"
+              href="mailto:hello@zeniadigital.se"
               className="flex items-center gap-[clamp(0.75rem,1vw,1.25rem)] group"
             >
               <div className="bg-[#F5F5F5] p-[clamp(0.5rem,0.7vw,0.75rem)] rounded-full flex-shrink-0">
@@ -66,7 +66,7 @@ export default function ContactPage() {
               <div className="min-w-0">
                 <p className="text-white/50 mb-[clamp(0.05rem,0.1vw,0.25rem)] text-[clamp(0.7rem,0.3vw+0.625rem,0.875rem)]">Email</p>
                 <p className="text-white font-medium group-hover:underline text-[clamp(0.875rem,0.5vw+0.75rem,1.125rem)]">
-                  hello@zenitdigital.se
+                  hello@zeniadigital.se
                 </p>
               </div>
             </a>
