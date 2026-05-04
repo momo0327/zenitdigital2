@@ -69,7 +69,7 @@ const Header = () => {
                      
         {/* Image positioned below with fade up animation */}
         <div
-          className="flex justify-center transition-all duration-1000 ease-out -mx-8 md:mx-0"
+          className="flex justify-center transition-all duration-1000 ease-out -mx-8 md:mx-0 relative z-10 -mt-1 md:-mt-6 lg:-mt-12 xl:-mt-20 2xl:-mt-28"
           style={{
             opacity: isVisible ? 1 : 0,
             transform: isVisible ? 'translateY(0)' : 'translateY(50px)',
@@ -77,11 +77,11 @@ const Header = () => {
           }}
         >
           <OptimizedImage
-            src="/dinfarsa.png"
+            src="/newlandingpageimagev2.png"
             alt="Zenia Digital mobile app development showcase with modern interface design"
             width={700}
             height={800}
-            className="w-[400px] md:w-80 lg:w-[96] xl:w-[550px] 2xl:w-[600px] h-auto object-contain [mask-image:linear-gradient(to_bottom,black_75%,transparent_100%)] [-webkit-mask-image:linear-gradient(to_bottom,black_75%,transparent_100%)]"
+            className="w-[480px] md:w-[480px] lg:w-[600px] xl:w-[680px] 2xl:w-[760px] h-auto object-contain [mask-image:linear-gradient(to_bottom,black_75%,transparent_100%)] [-webkit-mask-image:linear-gradient(to_bottom,black_75%,transparent_100%)]"
             priority
             quality={IMAGE_QUALITY.HIGH}
             enableBlur
