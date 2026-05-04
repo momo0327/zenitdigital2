@@ -35,7 +35,7 @@ export const metadata: Metadata = HOME_METADATA;
 export default function Home() {
   // Structured Data for Homepage
   const webPageSchema = generateWebPageSchema(
-    'Zenit Digital - Digital Agency Sweden',
+    'Zenia Digital - Digital Agency Sweden',
     'Leading digital agency in Sweden. Web development, mobile apps, and fullstack solutions.',
     BASE_URL
   );

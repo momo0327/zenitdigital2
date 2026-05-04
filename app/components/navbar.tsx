@@ -81,7 +81,7 @@ const Navbar: React.FC<NavbarProps> = ({
             <Link href="/" className={`flex items-center gap-1 md:gap-2 2xl:gap-3 text-2xl  md:text-3xl 2xl:text-3xl font-semibold ${logoColor} cursor-pointer`}>
               <Image
                 src={logoSrc}
-                alt="Zenit Digital Logo"
+                alt="Zenia Digital Logo"
                 width={40}
                 height={40}
                 className="w-8 h-8 md:w-10 md:h-10 2xl:w-14 2xl:h-14 object-contain"

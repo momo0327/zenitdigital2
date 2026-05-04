@@ -11,7 +11,7 @@ import FeaturesGrid from '../components/FeaturesGrid';
 import Footer from '../components/Footer';
 
 export const metadata: Metadata = {
-  title: 'Our Services - Zenit Digital',
+  title: 'Our Services - Zenia Digital',
   description: 'Explore our comprehensive digital services: Web Development, Mobile App Development, and Fullstack Solutions. Custom-built solutions for your business needs.',
 };
 

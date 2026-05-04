@@ -1,7 +1,7 @@
 /**
  * SEO Constants
  *
- * Centralized SEO metadata and configuration for Zenit Digital
+ * Centralized SEO metadata and configuration for Zenia Digital
  * Optimized for Swedish market visibility and international reach
  * Includes default metadata, Open Graph, Twitter cards, structured data, and page-specific SEO
  */
@@ -169,7 +169,7 @@ export const WEB_DEV_METADATA: Metadata = {
     },
   },
   openGraph: {
-    title: 'Web Development Sweden | Zenit Digital',
+    title: 'Web Development Sweden | Zenia Digital',
     description: 'Build fast, scalable web applications with modern technologies. Expert web development in Sweden.',
     url: `${BASE_URL}/WebDev`,
     type: 'website',
@@ -180,7 +180,7 @@ export const WEB_DEV_METADATA: Metadata = {
         url: '/og-web-dev.png',
         width: 1200,
         height: 630,
-        alt: 'Zenit Digital Web Development Services Sweden',
+        alt: 'Zenia Digital Web Development Services Sweden',
         type: 'image/png',
       },
     ],
@@ -188,7 +188,7 @@ export const WEB_DEV_METADATA: Metadata = {
   twitter: {
     card: 'summary_large_image',
     site: '@zeniadigital',
-    title: 'Web Development Sweden | Zenit Digital',
+    title: 'Web Development Sweden | Zenia Digital',
     description: 'Build fast, scalable web applications with modern technologies',
   },
 };
@@ -219,7 +219,7 @@ export const MOBILE_DEV_METADATA: Metadata = {
     },
   },
   openGraph: {
-    title: 'Mobile App Development Sweden | Zenit Digital',
+    title: 'Mobile App Development Sweden | Zenia Digital',
     description: 'Build native iOS and Android applications that users love. Expert mobile development in Sweden.',
     url: `${BASE_URL}/MobileDev`,
     type: 'website',
@@ -230,7 +230,7 @@ export const MOBILE_DEV_METADATA: Metadata = {
         url: '/og-mobile-dev.png',
         width: 1200,
         height: 630,
-        alt: 'Zenit Digital Mobile App Development Services Sweden',
+        alt: 'Zenia Digital Mobile App Development Services Sweden',
         type: 'image/png',
       },
     ],
@@ -238,7 +238,7 @@ export const MOBILE_DEV_METADATA: Metadata = {
   twitter: {
     card: 'summary_large_image',
     site: '@zeniadigital',
-    title: 'Mobile App Development Sweden | Zenit Digital',
+    title: 'Mobile App Development Sweden | Zenia Digital',
     description: 'Build native iOS and Android applications that users love',
   },
 };
@@ -269,7 +269,7 @@ export const FULLSTACK_DEV_METADATA: Metadata = {
     },
   },
   openGraph: {
-    title: 'Fullstack Development Sweden | Zenit Digital',
+    title: 'Fullstack Development Sweden | Zenia Digital',
     description: 'Complete end-to-end development solutions for your business. Expert fullstack development in Sweden.',
     url: `${BASE_URL}/FullstackDev`,
     type: 'website',
@@ -280,7 +280,7 @@ export const FULLSTACK_DEV_METADATA: Metadata = {
         url: '/og-fullstack-dev.png',
         width: 1200,
         height: 630,
-        alt: 'Zenit Digital Fullstack Development Services Sweden',
+        alt: 'Zenia Digital Fullstack Development Services Sweden',
         type: 'image/png',
       },
     ],
@@ -288,8 +288,56 @@ export const FULLSTACK_DEV_METADATA: Metadata = {
   twitter: {
     card: 'summary_large_image',
     site: '@zeniadigital',
-    title: 'Fullstack Development Sweden | Zenit Digital',
+    title: 'Fullstack Development Sweden | Zenia Digital',
     description: 'Complete end-to-end development solutions for your business',
+  },
+};
+
+// AI Development Page Metadata
+export const AI_DEV_METADATA: Metadata = {
+  title: 'AI Development Sweden | Practical AI Integrations | Zenia Digital',
+  description: 'AI development and integration services in Sweden. From first proof of concept to production-ready integrations with Anthropic, OpenAI, and Google AI.',
+  keywords: [
+    'AI utveckling Sverige',
+    'AI integration Sverige',
+    'LLM development Sweden',
+    'OpenAI integration',
+    'Anthropic Claude integration',
+    'AI consultancy Sweden',
+    'GenAI development',
+    'AI proof of concept',
+    'AI development Sweden',
+  ],
+  alternates: {
+    canonical: `${BASE_URL}/AIDev`,
+    languages: {
+      'en': `${BASE_URL}/AIDev`,
+      'sv-SE': `${BASE_URL}/AIDev`,
+      'x-default': `${BASE_URL}/AIDev`,
+    },
+  },
+  openGraph: {
+    title: 'AI Development Sweden | Zenia Digital',
+    description: 'Practical AI work, whether you\'re starting from scratch or already shipping. Sized to the problem, not the hype.',
+    url: `${BASE_URL}/AIDev`,
+    type: 'website',
+    locale: 'en_US',
+    alternateLocale: ['sv_SE'],
+    images: [
+      {
+        url: '/og-ai-dev.png',
+        width: 1200,
+        height: 630,
+        alt: 'Zenia Digital AI Development Services Sweden',
+        type: 'image/png',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@zeniadigital',
+    title: 'AI Development Sweden | Zenia Digital',
+    description: 'Practical AI work, whether you\'re starting from scratch or already shipping.',
   },
 };
 
@@ -314,7 +362,7 @@ export const CONTACT_METADATA: Metadata = {
     },
   },
   openGraph: {
-    title: 'Contact Us | Zenit Digital Sweden',
+    title: 'Contact Us | Zenia Digital Sweden',
     description: "Let's discuss your next digital project. Professional web and app development in Sweden.",
     url: `${BASE_URL}/ContactPage`,
     type: 'website',
@@ -324,7 +372,7 @@ export const CONTACT_METADATA: Metadata = {
   twitter: {
     card: 'summary',
     site: '@zeniadigital',
-    title: 'Contact Us | Zenit Digital',
+    title: 'Contact Us | Zenia Digital',
     description: "Let's discuss your next digital project",
   },
 };
@@ -349,7 +397,7 @@ export const ABOUT_METADATA: Metadata = {
     },
   },
   openGraph: {
-    title: 'About Us | Zenit Digital Sweden',
+    title: 'About Us | Zenia Digital Sweden',
     description: 'Meet the team behind exceptional digital products in Sweden',
     url: `${BASE_URL}/about`,
     type: 'website',
@@ -364,7 +412,7 @@ export const LOCAL_BUSINESS_SCHEMA = {
   '@type': 'LocalBusiness',
   '@id': `${BASE_URL}/#organization`,
   name: COMPANY.name,
-  alternateName: 'Zenit Digital Agency',
+  alternateName: 'Zenia Digital Agency',
   description: 'Leading digital agency in Sweden. Specializing in web development, mobile apps, and fullstack solutions.',
   url: BASE_URL,
   logo: {

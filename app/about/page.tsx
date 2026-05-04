@@ -4,8 +4,8 @@ import Link from 'next/link';
 import Footer from '../components/Footer';
 
 export const metadata: Metadata = {
-  title: 'About Us - Zenit Digital',
-  description: 'Learn about Zenit Digital, our mission, values, and the team behind innovative digital solutions. Based in Sweden, serving clients internationally.',
+  title: 'About Us - Zenia Digital',
+  description: 'Learn about Zenia Digital, our mission, values, and the team behind innovative digital solutions. Based in Sweden, serving clients internationally.',
 };
 
 export default function AboutPage() {
@@ -32,7 +32,7 @@ export default function AboutPage() {
                 Our Mission
               </h2>
               <p className="text-xl text-white/90 leading-relaxed mb-6">
-                At Zenit Digital, we believe in the power of great design and cutting-edge technology to transform businesses. Our mission is to create digital experiences that not only look stunning but also deliver measurable results.
+                At Zenia Digital, we believe in the power of great design and cutting-edge technology to transform businesses. Our mission is to create digital experiences that not only look stunning but also deliver measurable results.
               </p>
               <p className="text-xl text-white/90 leading-relaxed">
                 We partner with forward-thinking companies to build products that their customers love and that drive sustainable growth.
@@ -100,7 +100,7 @@ export default function AboutPage() {
             Leadership
           </h2>
           <p className="text-xl text-gray-600 text-center mb-16 max-w-3xl mx-auto">
-            Meet the visionary behind Zenit Digital
+            Meet the visionary behind Zenia Digital
           </p>
 
           {/* Featured Team Member */}
@@ -241,7 +241,7 @@ export default function AboutPage() {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Zenit Digital Office Location - Göteborg, Sweden"
+                title="Zenia Digital Office Location - Göteborg, Sweden"
               />
             </div>
           </div>

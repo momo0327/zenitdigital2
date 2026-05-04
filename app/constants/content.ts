@@ -1,7 +1,7 @@
 /**
  * Content Constants
  *
- * Centralized text content and copy for Zenit Digital
+ * Centralized text content and copy for Zenia Digital
  * Makes content updates easier and ensures consistency
  */
 
@@ -228,7 +228,7 @@ export const FOOTER = {
 
 // Feature Grid Content
 export const FEATURES = {
-  title: 'Why Choose Zenit Digital',
+  title: 'Why Choose Zenia Digital',
   subtitle: 'Enterprise-grade solutions with startup agility',
   items: [
     {
@@ -302,21 +302,52 @@ export const CARD_STACK = {
   ],
 } as const;
 
+// Portfolio category → brand theme (mirrors SERVICES_OVERVIEW colors)
+export const PORTFOLIO_CATEGORY_THEMES = {
+  'Web Development': { bgColor: 'bg-[#240000]', textColor: 'text-[#FF5147]' },
+  'Mobile Development': { bgColor: 'bg-[#1a0f2e]', textColor: 'text-[#BEA1FC]' },
+  'Fullstack Development': { bgColor: 'bg-[#051E01]', textColor: 'text-[#B4FFA8]' },
+  'AI Development': { bgColor: 'bg-[#001028]', textColor: 'text-[#67E8F9]' },
+} as const;
+
+export type PortfolioCategory = keyof typeof PORTFOLIO_CATEGORY_THEMES;
+
 // Portfolio/Selected Work Items
-export const PORTFOLIO_ITEMS = [
+// All cards render at a fixed 16:9 ratio. Items with empty `image` render a
+// brand-color placeholder; set `image` to a real path to render that instead.
+export const PORTFOLIO_ITEMS: ReadonlyArray<{
+  title: string;
+  category: PortfolioCategory;
+  description: string;
+  image: string;
+  tags: ReadonlyArray<string>;
+  link: string;
+}> = [
   {
-    title: 'Polestar increased its users by 75%',
-    subtitle: 'Polestar',
-    image: '/polestar 2.png',
-    bgColor: 'bg-gray-900',
+    title: 'GamersVault',
+    category: 'Web Development',
+    description: 'Case study coming soon.',
+    image: '',
+    tags: ['Next.js', 'TypeScript'],
+    link: '#',
   },
   {
-    title: 'Superside creative platform showcase',
-    subtitle: 'Superside',
-    image: '/superside 3.png',
-    bgColor: 'bg-gray-900',
+    title: 'SDIA',
+    category: 'Mobile Development',
+    description: 'Case study coming soon.',
+    image: '',
+    tags: ['React Native', 'Expo'],
+    link: '#',
   },
-] as const;
+  {
+    title: 'ShelfWise',
+    category: 'Fullstack Development',
+    description: 'Case study coming soon.',
+    image: '',
+    tags: ['Next.js', 'PostgreSQL'],
+    link: '#',
+  },
+];
 
 // FAQ Content
 export const FAQ_ITEMS = [

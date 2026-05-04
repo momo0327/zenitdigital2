@@ -4,8 +4,8 @@ import Link from 'next/link';
 import Footer from '../components/Footer';
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy - Zenit Digital',
-  description: 'Read our privacy policy to understand how Zenit Digital collects, uses, and protects your personal information.',
+  title: 'Privacy Policy - Zenia Digital',
+  description: 'Read our privacy policy to understand how Zenia Digital collects, uses, and protects your personal information.',
 };
 
 export default function PrivacyPage() {
@@ -35,7 +35,7 @@ export default function PrivacyPage() {
                 Introduction
               </h2>
               <p className="text-gray-600 leading-relaxed">
-                At Zenit Digital, we take your privacy seriously. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services.
+                At Zenia Digital, we take your privacy seriously. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services.
               </p>
             </div>
 

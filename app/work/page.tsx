@@ -1,45 +1,18 @@
 import React from 'react';
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import Footer from '../components/Footer';
+import Cta from '../components/Cta';
+import { PORTFOLIO_ITEMS, PORTFOLIO_CATEGORY_THEMES } from '../constants/content';
 
 export const metadata: Metadata = {
-  title: 'Our Work - Zenit Digital Portfolio',
-  description: 'Explore our portfolio of web development, mobile apps, and fullstack projects. See how we help businesses grow with custom digital solutions.',
+  title: 'Our Work - Zenia Digital',
+  description: 'Selected case studies from Zenia Digital — web platforms, mobile apps, full-stack systems, and AI integrations.',
+  robots: { index: false, follow: false },
 };
 
 export default function WorkPage() {
-  // Sample projects - replace with real data
-  const projects = [
-    {
-      id: 1,
-      title: 'E-Commerce Platform',
-      category: 'Web Development',
-      description: 'A modern e-commerce solution with real-time inventory and seamless checkout.',
-      image: '/placeholder-project.jpg',
-      tags: ['Next.js', 'TypeScript', 'Stripe'],
-      link: '#'
-    },
-    {
-      id: 2,
-      title: 'Mobile Banking App',
-      category: 'Mobile Development',
-      description: 'Secure banking app with biometric authentication and instant transfers.',
-      image: '/placeholder-project.jpg',
-      tags: ['React Native', 'Firebase', 'Banking'],
-      link: '#'
-    },
-    {
-      id: 3,
-      title: 'SaaS Dashboard',
-      category: 'Fullstack Development',
-      description: 'Analytics dashboard with real-time data visualization and reporting.',
-      image: '/placeholder-project.jpg',
-      tags: ['React', 'Node.js', 'PostgreSQL'],
-      link: '#'
-    }
-  ];
-
   return (
     <div className="min-h-screen bg-[#F5F5F5]">
       {/* Hero Section */}
@@ -49,7 +22,7 @@ export default function WorkPage() {
             Our Work
           </h1>
           <p className="text-xl md:text-2xl text-gray-600 max-w-3xl">
-            Crafting digital experiences that drive results. Explore our portfolio of successful projects across web, mobile, and fullstack development.
+            Selected projects across web, mobile, full-stack, and AI. More case studies are landing soon — drop us a note if you want to see something specific.
           </p>
         </div>
       </section>
@@ -57,86 +30,66 @@ export default function WorkPage() {
       {/* Projects Grid */}
       <section className="px-6 md:px-12 lg:px-16 py-16">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project, index) => (
-              <Link
-                key={project.id}
-                href={project.link}
-                className="group block bg-gray-50 rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
-              >
-                {/* Project Image Placeholder */}
-                <div className="aspect-video bg-gradient-to-br from-[#0558F9] to-[#BEA1FC] relative overflow-hidden">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="text-white text-6xl font-antonio opacity-20">
-                      {index + 1}
-                    </span>
-                  </div>
-                </div>
-
-                {/* Project Details */}
-                <div className="p-6">
-                  <p className="text-sm text-[#0558F9] font-medium mb-2">
-                    {project.category}
-                  </p>
-                  <h3 className="text-2xl font-antonio font-bold text-black mb-3">
-                    {project.title}
-                  </h3>
-                  <p className="text-gray-600 mb-4 line-clamp-2">
-                    {project.description}
-                  </p>
-
-                  {/* Tags */}
-                  <div className="flex flex-wrap gap-2">
-                    {project.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="px-3 py-1 bg-gray-200 text-gray-700 text-xs rounded-full"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-
-                  {/* View Project Link */}
-                  <div className="mt-6 flex items-center text-black group-hover:text-[#0558F9] transition-colors">
-                    <span className="font-medium mr-2">View Project</span>
-                    <svg
-                      className="w-5 h-5 transform group-hover:translate-x-2 transition-transform"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M17 8l4 4m0 0l-4 4m4-4H3"
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 2xl:gap-8">
+            {PORTFOLIO_ITEMS.map((project, index) => {
+              const theme = PORTFOLIO_CATEGORY_THEMES[project.category];
+              return (
+                <Link
+                  key={index}
+                  href={project.link}
+                  className="group block bg-white rounded-xl 2xl:rounded-2xl overflow-hidden border-2 border-transparent hover:border-black transition-all duration-300"
+                >
+                  {/* Image container — fixed 16:9 ratio so every card matches */}
+                  <div className="relative aspect-video w-full overflow-hidden">
+                    {project.image ? (
+                      <Image
+                        src={project.image}
+                        alt={project.title}
+                        fill
+                        className="object-cover transition-transform duration-300 group-hover:scale-105"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       />
-                    </svg>
+                    ) : (
+                      <div className={`absolute inset-0 ${theme.bgColor} flex items-center justify-center`}>
+                        <span className={`${theme.textColor} text-3xl font-antonio font-bold opacity-40`}>
+                          {project.title}
+                        </span>
+                      </div>
+                    )}
                   </div>
-                </div>
-              </Link>
-            ))}
+
+                  {/* Project Details */}
+                  <div className="p-6 2xl:p-8">
+                    <p className="text-sm text-gray-500 font-medium mb-2">
+                      {project.category}
+                    </p>
+                    <h3 className="text-2xl font-antonio font-bold text-black mb-3">
+                      {project.title}
+                    </h3>
+                    <p className="text-gray-600 mb-4 line-clamp-2">
+                      {project.description}
+                    </p>
+
+                    {/* Tags */}
+                    <div className="flex flex-wrap gap-2">
+                      {project.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-full"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="px-6 md:px-12 lg:px-16 py-24 bg-black">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-6xl font-antonio font-bold text-white mb-6">
-            Ready to start your project?
-          </h2>
-          <p className="text-xl text-gray-300 mb-8">
-            Let&apos;s create something amazing together
-          </p>
-          <Link href="/ContactPage">
-            <button className="px-8 py-4 bg-[#F5F5F5] text-black font-semibold text-lg rounded-full hover:bg-gray-100 transition-all duration-300 transform hover:scale-105">
-              Get In Touch
-            </button>
-          </Link>
-        </div>
-      </section>
+      <Cta />
       <Footer />
     </div>
   );
