@@ -24,21 +24,21 @@ const Footer = ({ bgColor = '#000000', textColor }: FooterProps) => {
      
 
         {/* Footer content grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4  xl:gap-12 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12 mb-16">
           {/* Logo and Wordmark */}
           <div>
-            <Link href="/" className="flex items-center -ml-12 md:-ml-8 -mt-6 md:-mt-8">
-              {/* <Image
-                src="/zeniaWhite.png"
+            <Link href="/" className="inline-flex items-center gap-3" style={{ color: finalTextColor }}>
+              <Image
+                src="/zenialogo.png"
                 alt="Zenia Logo"
-                width={168}
-                height={128}
-                className="w-[168px] h-32"
+                width={48}
+                height={48}
+                className="w-10 h-10 lg:w-12 lg:h-12 object-contain invert"
                 unoptimized
-              /> */}
-              {/* <span className="text-5xl font-shentox font-normal tracking-wide" style={{ color: finalTextColor }}>
+              />
+              <span className="text-3xl lg:text-4xl font-shentox font-normal tracking-wide">
                 ZENIA
-              </span> */}
+              </span>
             </Link>
           </div>
 
@@ -49,15 +49,12 @@ const Footer = ({ bgColor = '#000000', textColor }: FooterProps) => {
               <Link href="/" className="block text-lg transition-colors hover:opacity-70" style={{ color: finalTextColor }}>
                 Home
               </Link>
-              {/* <Link href="/work" className="block text-lg transition-colors hover:opacity-70" style={{ color: finalTextColor }}>
-                Work
-              </Link> */}
               <Link href="/services" className="block text-lg transition-colors hover:opacity-70" style={{ color: finalTextColor }}>
                 Services
               </Link>
-              {/* <Link href="/faqs" className="block text-lg transition-colors hover:opacity-70" style={{ color: finalTextColor }}>
-                FAQs
-              </Link> */}
+              <Link href="/faqs" className="block text-lg transition-colors hover:opacity-70" style={{ color: finalTextColor }}>
+                FAQ
+              </Link>
               <Link href="/ContactPage" className="block text-lg transition-colors hover:opacity-70" style={{ color: finalTextColor }}>
                 Contact
               </Link>
@@ -90,9 +87,11 @@ const Footer = ({ bgColor = '#000000', textColor }: FooterProps) => {
               <Link href={`mailto:${COMPANY.email}`} className="block text-lg transition-colors hover:opacity-70" style={{ color: finalTextColor }}>
                 {COMPANY.email}
               </Link>
+              {/* Phone hidden until COMPANY.phone is replaced with a real number
               <Link href={`tel:${COMPANY.phone.replace(/\s/g, '')}`} className="block text-lg transition-colors hover:opacity-70" style={{ color: finalTextColor }}>
                 {COMPANY.phone}
               </Link>
+              */}
               <div className="text-base leading-relaxed pt-2" style={{ color: mutedTextColor }}>
                 {COMPANY.address.street}<br />
                 {COMPANY.address.postalCode} {COMPANY.address.city}<br />
@@ -108,7 +107,7 @@ const Footer = ({ bgColor = '#000000', textColor }: FooterProps) => {
         {/* Bottom section */}
         <div className="border-t pt-8" style={{ borderColor }}>
           <div className="flex flex-col xl:flex-row justify-between items-start xl:items-center space-y-4 xl:space-y-0">
-            <div className="flex flex-wrap items-center space-x-6 text-base" style={{ color: lighterTextColor }}>
+            <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-base" style={{ color: lighterTextColor }}>
               <span>© {new Date().getFullYear()} {COMPANY.name}</span>
               <span className="hidden xl:inline">|</span>
               <span>Sweden</span>
