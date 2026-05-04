@@ -3,7 +3,7 @@
  *
  * Centralized SEO metadata and configuration for Zenia Digital
  * Optimized for Swedish market visibility and international reach
- * Includes default metadata, Open Graph, Twitter cards, structured data, and page-specific SEO
+ * Includes default metadata, Open Graph, structured data, and page-specific SEO
  */
 
 import { Metadata } from 'next';
@@ -45,35 +45,17 @@ export const DEFAULT_METADATA: Metadata = {
     canonical: BASE_URL,
     languages: {
       'en': BASE_URL,
-      'sv-SE': BASE_URL,
       'x-default': BASE_URL,
     },
   },
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    alternateLocale: ['sv_SE'],
     url: BASE_URL,
     siteName: COMPANY.name,
     title: `${COMPANY.name} | ${COMPANY.tagline}`,
     description: COMPANY.description,
-    images: [
-      {
-        url: '/og-image.png',
-        width: 1200,
-        height: 630,
-        alt: `${COMPANY.name} - Digital Excellence`,
-        type: 'image/png',
-      },
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    site: '@zeniadigital',
-    creator: '@zeniadigital',
-    title: `${COMPANY.name} | ${COMPANY.tagline}`,
-    description: COMPANY.description,
-    images: ['/twitter-image.png'],
+    // Image auto-generated from app/opengraph-image.tsx
   },
   robots: {
     index: true,
@@ -87,11 +69,7 @@ export const DEFAULT_METADATA: Metadata = {
       'max-snippet': -1,
     },
   },
-  icons: {
-    icon: '/favicon.ico',
-    shortcut: '/favicon-16x16.png',
-    apple: '/apple-touch-icon.png',
-  },
+  // Icons are auto-generated from app/icon.tsx and app/apple-icon.tsx
   verification: {
     google: process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION,
     yandex: process.env.NEXT_PUBLIC_YANDEX_VERIFICATION,
@@ -120,7 +98,6 @@ export const HOME_METADATA: Metadata = {
     canonical: BASE_URL,
     languages: {
       'en': BASE_URL,
-      'sv-SE': BASE_URL,
       'x-default': BASE_URL,
     },
   },
@@ -130,16 +107,6 @@ export const HOME_METADATA: Metadata = {
     url: BASE_URL,
     type: 'website',
     locale: 'en_US',
-    alternateLocale: ['sv_SE'],
-    images: [
-      {
-        url: '/og-home.png',
-        width: 1200,
-        height: 630,
-        alt: `${COMPANY.name} - Digital Agency Sweden`,
-        type: 'image/png',
-      },
-    ],
   },
 };
 
@@ -164,7 +131,6 @@ export const WEB_DEV_METADATA: Metadata = {
     canonical: `${BASE_URL}/WebDev`,
     languages: {
       'en': `${BASE_URL}/WebDev`,
-      'sv-SE': `${BASE_URL}/WebDev`,
       'x-default': `${BASE_URL}/WebDev`,
     },
   },
@@ -174,22 +140,6 @@ export const WEB_DEV_METADATA: Metadata = {
     url: `${BASE_URL}/WebDev`,
     type: 'website',
     locale: 'en_US',
-    alternateLocale: ['sv_SE'],
-    images: [
-      {
-        url: '/og-web-dev.png',
-        width: 1200,
-        height: 630,
-        alt: 'Zenia Digital Web Development Services Sweden',
-        type: 'image/png',
-      },
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    site: '@zeniadigital',
-    title: 'Web Development Sweden | Zenia Digital',
-    description: 'Build fast, scalable web applications with modern technologies',
   },
 };
 
@@ -214,7 +164,6 @@ export const MOBILE_DEV_METADATA: Metadata = {
     canonical: `${BASE_URL}/MobileDev`,
     languages: {
       'en': `${BASE_URL}/MobileDev`,
-      'sv-SE': `${BASE_URL}/MobileDev`,
       'x-default': `${BASE_URL}/MobileDev`,
     },
   },
@@ -224,22 +173,6 @@ export const MOBILE_DEV_METADATA: Metadata = {
     url: `${BASE_URL}/MobileDev`,
     type: 'website',
     locale: 'en_US',
-    alternateLocale: ['sv_SE'],
-    images: [
-      {
-        url: '/og-mobile-dev.png',
-        width: 1200,
-        height: 630,
-        alt: 'Zenia Digital Mobile App Development Services Sweden',
-        type: 'image/png',
-      },
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    site: '@zeniadigital',
-    title: 'Mobile App Development Sweden | Zenia Digital',
-    description: 'Build native iOS and Android applications that users love',
   },
 };
 
@@ -264,7 +197,6 @@ export const FULLSTACK_DEV_METADATA: Metadata = {
     canonical: `${BASE_URL}/FullstackDev`,
     languages: {
       'en': `${BASE_URL}/FullstackDev`,
-      'sv-SE': `${BASE_URL}/FullstackDev`,
       'x-default': `${BASE_URL}/FullstackDev`,
     },
   },
@@ -274,22 +206,6 @@ export const FULLSTACK_DEV_METADATA: Metadata = {
     url: `${BASE_URL}/FullstackDev`,
     type: 'website',
     locale: 'en_US',
-    alternateLocale: ['sv_SE'],
-    images: [
-      {
-        url: '/og-fullstack-dev.png',
-        width: 1200,
-        height: 630,
-        alt: 'Zenia Digital Fullstack Development Services Sweden',
-        type: 'image/png',
-      },
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    site: '@zeniadigital',
-    title: 'Fullstack Development Sweden | Zenia Digital',
-    description: 'Complete end-to-end development solutions for your business',
   },
 };
 
@@ -312,7 +228,6 @@ export const AI_DEV_METADATA: Metadata = {
     canonical: `${BASE_URL}/AIDev`,
     languages: {
       'en': `${BASE_URL}/AIDev`,
-      'sv-SE': `${BASE_URL}/AIDev`,
       'x-default': `${BASE_URL}/AIDev`,
     },
   },
@@ -322,22 +237,6 @@ export const AI_DEV_METADATA: Metadata = {
     url: `${BASE_URL}/AIDev`,
     type: 'website',
     locale: 'en_US',
-    alternateLocale: ['sv_SE'],
-    images: [
-      {
-        url: '/og-ai-dev.png',
-        width: 1200,
-        height: 630,
-        alt: 'Zenia Digital AI Development Services Sweden',
-        type: 'image/png',
-      },
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    site: '@zeniadigital',
-    title: 'AI Development Sweden | Zenia Digital',
-    description: 'Practical AI work, whether you\'re starting from scratch or already shipping.',
   },
 };
 
@@ -357,7 +256,6 @@ export const CONTACT_METADATA: Metadata = {
     canonical: `${BASE_URL}/ContactPage`,
     languages: {
       'en': `${BASE_URL}/ContactPage`,
-      'sv-SE': `${BASE_URL}/ContactPage`,
       'x-default': `${BASE_URL}/ContactPage`,
     },
   },
@@ -367,13 +265,6 @@ export const CONTACT_METADATA: Metadata = {
     url: `${BASE_URL}/ContactPage`,
     type: 'website',
     locale: 'en_US',
-    alternateLocale: ['sv_SE'],
-  },
-  twitter: {
-    card: 'summary',
-    site: '@zeniadigital',
-    title: 'Contact Us | Zenia Digital',
-    description: "Let's discuss your next digital project",
   },
 };
 
@@ -392,7 +283,6 @@ export const ABOUT_METADATA: Metadata = {
     canonical: `${BASE_URL}/about`,
     languages: {
       'en': `${BASE_URL}/about`,
-      'sv-SE': `${BASE_URL}/about`,
       'x-default': `${BASE_URL}/about`,
     },
   },
@@ -402,7 +292,6 @@ export const ABOUT_METADATA: Metadata = {
     url: `${BASE_URL}/about`,
     type: 'website',
     locale: 'en_US',
-    alternateLocale: ['sv_SE'],
   },
 };
 
@@ -421,7 +310,7 @@ export const LOCAL_BUSINESS_SCHEMA = {
     width: 250,
     height: 60,
   },
-  image: `${BASE_URL}/og-image.png`,
+  image: `${BASE_URL}/opengraph-image`,
   email: COMPANY.email,
   telephone: COMPANY.phone,
   foundingDate: COMPANY.founded,
@@ -448,17 +337,21 @@ export const LOCAL_BUSINESS_SCHEMA = {
   ],
   sameAs: [
     'https://linkedin.com/company/zeniadigital',
-    'https://twitter.com/zeniadigital',
-    'https://github.com/zeniadigital',
+    'https://instagram.com/zeniadigital',
   ],
   knowsAbout: [
     'Web Development',
     'Mobile App Development',
     'Fullstack Development',
+    'AI Development',
     'Next.js',
     'React',
     'TypeScript',
     'React Native',
+    'Node.js',
+    'PostgreSQL',
+    'OpenAI',
+    'Anthropic Claude',
   ],
   slogan: COMPANY.tagline,
 };

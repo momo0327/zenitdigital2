@@ -64,9 +64,8 @@ const Navbar: React.FC<NavbarProps> = ({
   ];
 
   const socialItems = [
-    { label: 'Twitter', link: 'https://twitter.com' },
-    { label: 'GitHub', link: 'https://github.com' },
-    { label: 'LinkedIn', link: 'https://linkedin.com' }
+    { label: 'LinkedIn', link: 'https://linkedin.com/company/zeniadigital' },
+    { label: 'Instagram', link: 'https://instagram.com/zeniadigital' },
   ];
 
   return (
