@@ -81,7 +81,7 @@ const Header = () => {
             alt="Zenia Digital mobile app development showcase with modern interface design"
             width={700}
             height={800}
-            className="w-[480px] md:w-[480px] lg:w-[600px] xl:w-[680px] 2xl:w-[760px] h-auto object-contain [mask-image:linear-gradient(to_bottom,black_75%,transparent_100%)] [-webkit-mask-image:linear-gradient(to_bottom,black_75%,transparent_100%)]"
+            className="w-[480px] md:w-[480px] lg:w-[600px] xl:w-[680px] 2xl:w-[760px] h-auto object-contain [mask-image:linear-gradient(to_bottom,black_70%,transparent_92%)] [-webkit-mask-image:linear-gradient(to_bottom,black_70%,transparent_92%)]"
             priority
             quality={IMAGE_QUALITY.HIGH}
             enableBlur
