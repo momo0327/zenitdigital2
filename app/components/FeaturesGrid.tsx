@@ -146,7 +146,7 @@ const FeaturesGrid = () => {
               {features.map((feature, index) => (
                 <div
                   key={index}
-                  className={`${feature.bgColor} ${feature.textColor} rounded-xl p-6 w-[280px] h-[480px] flex flex-col justify-between snap-start flex-shrink-0`}
+                  className={`${feature.bgColor} ${feature.textColor} rounded-xl p-6 w-[280px] h-[360px] flex flex-col justify-between snap-start flex-shrink-0`}
                 >
                   {/* Number at top left */}
                   <div className="text-8xl font-antonio font-medium ">

@@ -97,7 +97,7 @@ const ServicesScroll = () => {
                 className="block flex-shrink-0 group"
               >
                 <div
-                  className={`${service.bgColor} rounded-2xl 2xl:rounded-3xl p-8 md:p-12 lg:p-16 2xl:p-20 w-[85vw] md:w-[700px] lg:w-[900px] 2xl:w-[1100px] h-[500px] md:h-[500px] lg:h-[500px] 2xl:h-[600px] flex flex-col justify-between transition-shadow duration-300 group-hover:shadow-2xl`}
+                  className={`${service.bgColor} rounded-2xl 2xl:rounded-3xl p-8 md:p-12 lg:p-16 2xl:p-20 w-[85vw] md:w-[700px] lg:w-[900px] 2xl:w-[1100px] h-[380px] md:h-[500px] lg:h-[500px] 2xl:h-[600px] flex flex-col justify-between transition-shadow duration-300 group-hover:shadow-2xl`}
                 >
                   {/* Text Content */}
                   <div className="text-left">

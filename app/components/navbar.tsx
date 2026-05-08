@@ -60,6 +60,7 @@ const Navbar: React.FC<NavbarProps> = ({
   const menuItems = [
     { label: 'Home', ariaLabel: 'Go to home page', link: '/' },
     { label: 'Services', ariaLabel: 'Explore our services', link: '/services' },
+    { label: 'FAQ', ariaLabel: 'Frequently asked questions', link: '/faqs' },
     { label: 'Contact', ariaLabel: 'Get in touch with us', link: '/ContactPage' },
   ];
 
@@ -122,9 +123,7 @@ const Navbar: React.FC<NavbarProps> = ({
                   changeMenuColorOnOpen={true}
                   colors={['#B19EEF', '#5227FF']}
                   logoUrl="/logowhite.png"
-                  accentColor="blue"
-                  onMenuOpen={() => console.log('Menu opened')}
-                  onMenuClose={() => console.log('Menu closed')}
+                  accentColor="#FF5147"
                 />
               </div>
             </div>

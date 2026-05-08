@@ -14,7 +14,7 @@ const Header = () => {
   }, []);
 
   return (
-    <div className="bg-[#F5F5F5] lg:py-20 py-17">
+    <div className="bg-[#F5F5F5] lg:py-20 py-17 overflow-x-hidden md:overflow-x-visible">
       <div className="bg-[transparent] px-8 md:px-12 lg:px-16 py-12 md:py-16 lg:py-10 min-h-[600px] md:min-h-[700px] lg:min-h-[800px] relative">
         {/* Title positioned at the very top */}
         <div className="text-center">
@@ -69,7 +69,7 @@ const Header = () => {
                      
         {/* Image positioned below with fade up animation */}
         <div
-          className="flex justify-center transition-all duration-1000 ease-out -mx-8 md:mx-0 relative z-10 -mt-1 md:-mt-6 lg:-mt-12 xl:-mt-20 2xl:-mt-28"
+          className="flex justify-center transition-all duration-1000 ease-out -mx-8 md:mx-0 relative z-10 -mt-24 md:-mt-6 lg:-mt-12 xl:-mt-20 2xl:-mt-28 translate-x-4 md:translate-x-0"
           style={{
             opacity: isVisible ? 1 : 0,
             transform: isVisible ? 'translateY(0)' : 'translateY(50px)',
@@ -81,7 +81,7 @@ const Header = () => {
             alt="Zenia Digital mobile app development showcase with modern interface design"
             width={700}
             height={800}
-            className="w-[480px] md:w-[480px] lg:w-[600px] xl:w-[680px] 2xl:w-[760px] h-auto object-contain [mask-image:linear-gradient(to_bottom,black_70%,transparent_92%)] [-webkit-mask-image:linear-gradient(to_bottom,black_70%,transparent_92%)]"
+            className="!w-[140vw] !max-w-none md:!w-[480px] md:!max-w-full lg:!w-[600px] xl:!w-[680px] 2xl:!w-[760px] h-auto object-contain [mask-image:linear-gradient(to_bottom,black_70%,transparent_92%)] [-webkit-mask-image:linear-gradient(to_bottom,black_70%,transparent_92%)]"
             priority
             quality={IMAGE_QUALITY.HIGH}
             enableBlur

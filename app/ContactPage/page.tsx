@@ -45,7 +45,7 @@ export default function ContactPage() {
         />
 
         <div className="relative z-10 w-full max-w-[60rem] text-center">
-          <h1 className="font-antonio font-bold text-white leading-[0.95] mb-[clamp(1.75rem,2.5vw,2.75rem)] text-[clamp(3rem,9vw,9.5rem)]">
+          <h1 className="font-antonio font-bold text-white leading-[0.95] mb-[clamp(1.75rem,2.5vw,2.75rem)] text-[clamp(4rem,9vw,9.5rem)]">
             LET&apos;S MAKE <br /> IT HAPPEN
           </h1>
 
@@ -54,7 +54,7 @@ export default function ContactPage() {
           </p>
 
           {/* Contact Info */}
-          <div className="bg-[#F5F5F5]/5 border border-white/10 rounded-2xl p-[clamp(1.5rem,2vw,2.5rem)] space-y-[clamp(0.875rem,1.25vw,1.5rem)] text-left max-w-[40rem] mx-auto">
+          <div className="bg-[#F5F5F5]/5 border border-white/10 rounded-2xl p-[clamp(1.5rem,2vw,2.5rem)] space-y-7 md:space-y-[clamp(0.875rem,1.25vw,1.5rem)] text-left max-w-[40rem] mx-auto">
             {/* Email */}
             <a
               href="mailto:hello@zeniadigital.se"
