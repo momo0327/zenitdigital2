@@ -69,7 +69,7 @@ export const DEFAULT_METADATA: Metadata = {
       'max-snippet': -1,
     },
   },
-  // Icons are auto-generated from app/icon.tsx and app/apple-icon.tsx
+  // Icons are static files: app/favicon.ico, app/icon.png, app/apple-icon.png
   verification: {
     google: process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION,
     yandex: process.env.NEXT_PUBLIC_YANDEX_VERIFICATION,
