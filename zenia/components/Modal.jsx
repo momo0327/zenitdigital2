@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 export default function Modal({
   children,
   className,
+  style,
   id,
   labelledBy,
   onClose,
@@ -26,6 +27,7 @@ export default function Modal({
       ref={ref}
       id={id}
       className={className}
+      style={style}
       aria-labelledby={labelledBy}
       onCancel={(event) => {
         event.preventDefault();

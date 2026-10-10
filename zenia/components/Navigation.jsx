@@ -6,6 +6,7 @@ import Logo from "./Logo";
 import Modal from "./Modal";
 
 export function Header({ onContact, onMenu, menuOpen, dark, transparent }) {
+  const triggerRef = useRef(null);
   // On sub-pages the in-page anchors have to travel back to the homepage first.
   const home = usePathname() === "/" ? "" : "/";
   return (
@@ -28,12 +29,20 @@ export function Header({ onContact, onMenu, menuOpen, dark, transparent }) {
         Let’s talk
       </button>
       <button
+        ref={triggerRef}
         className="menu-button"
         aria-label="Open menu"
         aria-controls="site-menu"
         aria-haspopup="dialog"
         aria-expanded={menuOpen}
-        onClick={onMenu}
+        onClick={(event) => {
+          // The overlay's circular reveal grows from the button's centre.
+          const rect = event.currentTarget.getBoundingClientRect();
+          onMenu({
+            x: rect.left + rect.width / 2,
+            y: rect.top + rect.height / 2,
+          });
+        }}
       >
         <span />
         <span />
@@ -42,8 +51,11 @@ export function Header({ onContact, onMenu, menuOpen, dark, transparent }) {
   );
 }
 
-export function Menu({ onClose, onContact, onProject, reducedMotion }) {
+export function Menu({ onClose, onContact, onProject, reducedMotion, origin }) {
   const [closing, setClosing] = useState(false);
+  // Drives the circular clip-path reveal: false on mount so the first paint is
+  // a zero-radius circle, flipped on after two frames so the transition runs.
+  const [expanded, setExpanded] = useState(false);
   const timer = useRef(null);
   const closingRef = useRef(false);
   function close(after) {
@@ -53,11 +65,24 @@ export function Menu({ onClose, onContact, onProject, reducedMotion }) {
       onClose();
       if (after) setTimeout(after, 0);
     };
+    setExpanded(false);
     if (reducedMotion) return finish();
     setClosing(true);
-    timer.current = setTimeout(finish, 360);
+    timer.current = setTimeout(finish, 420);
   }
   useEffect(() => () => clearTimeout(timer.current), []);
+  useEffect(() => {
+    if (reducedMotion) return setExpanded(true);
+    // Two frames: one for the dialog to paint closed, one to animate open.
+    let second = 0;
+    const first = requestAnimationFrame(() => {
+      second = requestAnimationFrame(() => setExpanded(true));
+    });
+    return () => {
+      cancelAnimationFrame(first);
+      cancelAnimationFrame(second);
+    };
+  }, [reducedMotion]);
   useEffect(() => {
     const query = window.matchMedia("(min-width:761px)");
     const resize = () => {
@@ -91,9 +116,15 @@ export function Menu({ onClose, onContact, onProject, reducedMotion }) {
   return (
     <Modal
       id="site-menu"
-      className={`menu-overlay${closing ? " is-closing" : ""}`}
+      className={`menu-overlay${closing ? " is-closing" : ""}${
+        expanded ? " is-expanded" : ""
+      }`}
       labelledBy="menu-title"
       onClose={() => close()}
+      style={{
+        "--menu-x": `${origin?.x ?? 0}px`,
+        "--menu-y": `${origin?.y ?? 40}px`,
+      }}
     >
       <div className="menu-shell" onClick={navigate}>
         <div className="menu-top container">
@@ -112,7 +143,7 @@ export function Menu({ onClose, onContact, onProject, reducedMotion }) {
             Explore Zenia
           </h2>
           <nav className="menu-links" aria-label="Expanded navigation">
-            <a href="/#cases">
+            <a style={{ "--link-index": 0 }} href="/#cases">
               <span className="menu-icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24">
                   <rect x="3" y="4" width="8" height="7" rx="1.6" />
@@ -126,7 +157,7 @@ export function Menu({ onClose, onContact, onProject, reducedMotion }) {
                 <span>Projects we have built</span>
               </span>
             </a>
-            <Link href="/#services" onClick={() => close()}>
+            <Link style={{ "--link-index": 1 }} href="/#services" onClick={() => close()}>
               <span className="menu-icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24">
                   <path d="M12 3.2 20 7.6v8.8L12 20.8 4 16.4V7.6z" />
@@ -138,7 +169,7 @@ export function Menu({ onClose, onContact, onProject, reducedMotion }) {
                 <span>What we do</span>
               </span>
             </Link>
-            <Link href="/#about" onClick={() => close()}>
+            <Link style={{ "--link-index": 2 }} href="/#about" onClick={() => close()}>
               <span className="menu-icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24">
                   <circle cx="12" cy="8.4" r="3.6" />
@@ -150,7 +181,7 @@ export function Menu({ onClose, onContact, onProject, reducedMotion }) {
                 <span>Who we are</span>
               </span>
             </Link>
-            <Link href="/portal" onClick={() => close()}>
+            <Link style={{ "--link-index": 3 }} href="/portal" onClick={() => close()}>
               <span className="menu-icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24">
                   <rect x="3" y="4.6" width="18" height="12.6" rx="1.8" />

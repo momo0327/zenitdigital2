@@ -14,6 +14,8 @@ import "./modo.css";
 export default function ZeniaShell({ children, dark, transparent }) {
   const [menuOpen, setMenuOpen] = useState(false),
     [dialog, setDialog] = useState(null);
+  // Centre of the menu button, so the overlay can expand from it.
+  const [menuOrigin, setMenuOrigin] = useState(null);
   const reducedMotion = useMediaQuery("(prefers-reduced-motion: reduce)");
   const closeMenu = useCallback(() => setMenuOpen(false), []);
   const openContact = useCallback(
@@ -40,7 +42,10 @@ export default function ZeniaShell({ children, dark, transparent }) {
       </a>
       <Header
         onContact={openContact}
-        onMenu={() => setMenuOpen(true)}
+        onMenu={(origin) => {
+          setMenuOrigin(origin);
+          setMenuOpen(true);
+        }}
         menuOpen={menuOpen}
         dark={dark}
         transparent={transparent}
@@ -51,6 +56,7 @@ export default function ZeniaShell({ children, dark, transparent }) {
           onContact={openContact}
           onProject={openProject}
           reducedMotion={reducedMotion}
+          origin={menuOrigin}
         />
       )}
       <main id="main">

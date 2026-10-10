@@ -2016,15 +2016,28 @@ body.menu-open {
   max-height: none;
   margin: 0;
   padding: 0;
-  background: transparent;
+  background: var(--ink);
   color: #fff;
   overflow: auto;
   overscroll-behavior: contain;
   z-index: 100;
+  /* Grows from the menu button's centre; --menu-x/-y are set inline. */
+  clip-path: circle(0px at var(--menu-x, 50%) var(--menu-y, 40px));
+  transition: clip-path 420ms cubic-bezier(0.55, 0, 0.8, 0.3);
 }
 .menu-overlay::backdrop {
-  background: rgba(11, 0, 26, 0.18);
-  backdrop-filter: blur(4px);
+  background: transparent;
+}
+.menu-overlay.is-expanded {
+  clip-path: circle(150vmax at var(--menu-x, 50%) var(--menu-y, 40px));
+  transition-duration: 680ms;
+  transition-timing-function: cubic-bezier(0.22, 0.7, 0.2, 1);
+}
+/* Collapsing back to the trigger; 420ms matches the JS unmount timer. */
+.menu-overlay.is-closing {
+  clip-path: circle(0px at var(--menu-x, 50%) var(--menu-y, 40px));
+  transition-duration: 420ms;
+  transition-timing-function: cubic-bezier(0.6, 0.2, 0.9, 0.4);
 }
 .menu-shell {
   background: var(--ink);
@@ -2033,11 +2046,38 @@ body.menu-open {
   flex-direction: column;
   overflow: hidden;
 }
-.menu-overlay[open] .menu-shell {
-  animation: menu-enter 0.65s cubic-bezier(0.65, 0, 0.25, 1) both;
+/* Links fade up once the circle is on its way out. */
+.menu-links > a {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 150ms ease, transform 150ms ease;
 }
-.menu-overlay.is-closing .menu-shell {
-  animation: menu-exit 0.45s cubic-bezier(0.65, 0, 0.35, 1) both;
+.menu-overlay.is-expanded .menu-links > a {
+  opacity: 1;
+  transform: translateY(0);
+  transition-duration: 400ms;
+  transition-delay: calc(160ms + var(--link-index, 0) * 60ms);
+}
+@media (prefers-reduced-motion: reduce) {
+  .menu-overlay,
+  .menu-overlay.is-expanded,
+  .menu-overlay.is-closing,
+  .menu-links > a,
+  .menu-overlay.is-expanded .menu-links > a {
+    transition: none;
+  }
+  /* No clip at all under reduced motion: these must beat the .is-* rules
+     above, which would otherwise leave the panel clipped to a 0px circle. */
+  .menu-overlay,
+  .menu-overlay.is-expanded,
+  .menu-overlay.is-closing {
+    clip-path: none;
+  }
+  .menu-links > a,
+  .menu-overlay .menu-links > a {
+    opacity: 1;
+    transform: none;
+  }
 }
 .menu-top {
   display: flex;
@@ -2222,22 +2262,6 @@ body.menu-open {
   }
   to {
     transform: scale(1);
-  }
-}
-@keyframes menu-enter {
-  from {
-    clip-path: inset(0 0 100% 0 round 0 0 40px 40px);
-  }
-  to {
-    clip-path: inset(0 round 0);
-  }
-}
-@keyframes menu-exit {
-  from {
-    clip-path: inset(0 round 0);
-  }
-  to {
-    clip-path: inset(0 0 100% 0 round 0 0 40px 40px);
   }
 }
 @keyframes menu-link-in {
