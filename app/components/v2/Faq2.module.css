@@ -1,0 +1,132 @@
+.section {
+  background-color: #ffffff;
+  padding: 6rem 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .section {
+    padding: 6rem 2.5rem;
+  }
+}
+
+.inner {
+  margin: 0 auto;
+  max-width: 100rem;
+}
+
+.head {
+  margin-bottom: 3.5rem;
+  text-align: center;
+}
+
+.title {
+  font-family: var(--font-v2-statement), sans-serif;
+  color: #021100;
+  font-size: 2.5rem;
+  line-height: 1;
+}
+
+@media (min-width: 640px) {
+  .title {
+    font-size: 3.25rem;
+  }
+}
+
+.list {
+  margin: 0 auto;
+  max-width: 48rem;
+  list-style: none;
+  padding: 0;
+  border-top: 1px solid rgb(2 17 0 / 10%);
+}
+
+.item {
+  border-bottom: 1px solid rgb(2 17 0 / 10%);
+}
+
+.question {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  background: transparent;
+  border: none;
+  padding: 1.5rem 0;
+  text-align: left;
+  font-family: var(--font-poppins), sans-serif;
+  font-size: clamp(17px, 1.6vw, 20px);
+  letter-spacing: -0.01em;
+  color: #021100;
+  cursor: pointer;
+}
+
+.icon {
+  position: relative;
+  height: 1.5rem;
+  width: 1.5rem;
+  flex: none;
+  border-radius: 9999px;
+  border: 1.5px solid rgb(2 17 0 / 20%);
+  transition: transform 250ms ease, border-color 250ms ease;
+}
+
+.icon::before,
+.icon::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: #021100;
+  transform: translate(-50%, -50%);
+}
+
+.icon::before {
+  width: 0.6rem;
+  height: 1.5px;
+}
+
+.icon::after {
+  width: 1.5px;
+  height: 0.6rem;
+  transition: opacity 200ms ease;
+}
+
+.itemOpen .icon {
+  transform: rotate(45deg);
+  border-color: #021100;
+}
+
+.answer {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 350ms ease-in-out;
+}
+
+.itemOpen .answer {
+  grid-template-rows: 1fr;
+}
+
+.answerText {
+  overflow: hidden;
+  font-family: var(--font-poppins), sans-serif;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: rgb(2 17 0 / 60%);
+  margin: 0;
+}
+
+.itemOpen .answerText {
+  padding-bottom: 1.5rem;
+}
+
+.fadeDown {
+  opacity: 0;
+  transform: translateY(-24px);
+  transition: opacity 600ms ease, transform 600ms ease;
+}
+
+.fadeDown.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

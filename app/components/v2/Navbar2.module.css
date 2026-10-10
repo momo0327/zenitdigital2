@@ -1,0 +1,136 @@
+.nav {
+  background-color: #ffffff;
+  padding: 1.25rem 1.25rem;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 60;
+}
+
+@media (min-width: 640px) {
+  .nav {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1536px) {
+  .nav {
+    padding: 1.75rem 2.5rem;
+  }
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+@media (min-width: 1536px) {
+  .inner {
+    max-width: 100rem;
+  }
+}
+
+.wordmark {
+  font-family: var(--font-v2-title), sans-serif;
+  color: #021100;
+  font-size: 1.5rem;
+  letter-spacing: -0.01em;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .wordmark {
+    font-size: 1.875rem;
+  }
+}
+
+@media (min-width: 1536px) {
+  .wordmark {
+    font-size: 2.25rem;
+  }
+}
+
+.links {
+  display: none;
+  gap: 2rem;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@media (min-width: 1024px) {
+  .links {
+    display: flex;
+  }
+}
+
+@media (min-width: 1536px) {
+  .links {
+    gap: 3rem;
+  }
+}
+
+.link {
+  font-family: var(--font-poppins), sans-serif;
+  color: #021100;
+  padding: 0.5rem 0.5rem;
+  transition: opacity 200ms ease;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .link {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: 0.875rem;
+  }
+}
+
+@media (min-width: 1536px) {
+  .link {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    font-size: 1rem;
+  }
+}
+
+.link:hover {
+  opacity: 0.6;
+}
+
+.cta {
+  font-family: var(--font-poppins), sans-serif;
+  background-color: #021100;
+  color: #ffffff;
+  padding: 0.625rem 1.25rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  transition: opacity 200ms ease;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .cta {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1536px) {
+  .cta {
+    padding: 0.875rem 2rem;
+    font-size: 1.25rem;
+  }
+}
+
+.cta:hover {
+  opacity: 0.85;
+}
