@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono, Poppins } from "next/font/google";
 import localFont from "next/font/local";
 import Script from "next/script";
@@ -42,6 +42,12 @@ const suisseIntl = localFont({
 });
 
 export const metadata: Metadata = DEFAULT_METADATA;
+
+// Tints the mobile browser chrome (Safari's URL bar and toolbar strips) to
+// match the site background.
+export const viewport: Viewport = {
+  themeColor: "#ffffff",
+};
 
 export default function RootLayout({
   children,

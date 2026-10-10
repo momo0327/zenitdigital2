@@ -42,6 +42,12 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: 32px;
 }
+/* "Back to top" links should land flush at 0, not 32px down. The global
+   scroll-padding exists to keep mid-page headings clear of the viewport
+   edge; a negative scroll-margin cancels it for this one target. */
+#top {
+  scroll-margin-top: -32px;
+}
 body {
   margin: 0;
   overflow-x: hidden;
@@ -77,6 +83,13 @@ button:focus-visible,
 summary:focus-visible {
   outline: 2px solid #8463bb;
   outline-offset: 5px;
+}
+/* Non-interactive focus holders: scroll targets (temporary tabindex="-1" so
+   an anchor jump moves focus for screen readers) and modal containers that
+   park focus on open. Neither should paint a focus ring. */
+[tabindex="-1"]:focus,
+[tabindex="-1"]:focus-visible {
+  outline: none;
 }
 h1,
 h2,
@@ -476,74 +489,28 @@ svg {
   .menu-links {
     display: flex;
     flex-direction: column;
-    /* Sits centred in the space above the action buttons. */
+    /* Centred in the space below the header. */
     justify-content: center;
     flex: 1;
-    gap: 38px;
+    gap: 22px;
   }
-  .menu-links a {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    padding: 4px 0;
+  /* Plain typographic rows, left-aligned. */
+  .menu-links a,
+  .menu-links button {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    background: none;
     color: inherit;
-    text-decoration: none;
-  }
-  .menu-icon {
-    flex: none;
-    display: grid;
-    place-items: center;
-    width: 42px;
-    height: 42px;
-    border-radius: 11px;
-    background: #fff;
-    color: var(--ink);
-  }
-  .menu-icon svg {
-    width: 21px;
-    height: 21px;
-    fill: none;
-    stroke: currentColor;
-    stroke-width: 1.8;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-  }
-  .menu-text {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-    min-width: 0;
-  }
-  .menu-text strong {
-    font-size: 19px;
+    font: inherit;
+    font-size: clamp(32px, 8vw, 58px);
     font-weight: 500;
-    letter-spacing: -0.03em;
-    line-height: 1.2;
-  }
-  .menu-text > span {
-    font-size: 14px;
-    color: #a39bad;
-    line-height: 1.4;
-  }
-  .menu-links a:hover .menu-icon {
-    background: var(--lavender);
-  }
-  .menu-actions {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    width: 100%;
-    gap: 12px;
-    margin-top: auto;
-    padding-top: 44px;
-  }
-  .menu-actions .button {
-    display: flex;
-    width: 100%;
-    min-height: 62px;
-    border-radius: 40px;
-    font-size: 17px;
+    line-height: 1.15;
+    letter-spacing: -0.045em;
+    text-align: left;
     text-decoration: none;
+    cursor: pointer;
   }
   .statement {
     padding-top: 52px;
@@ -1309,6 +1276,9 @@ legend {
   html {
     scroll-padding-top: 24px;
   }
+  #top {
+    scroll-margin-top: -24px;
+  }
   .container {
     width: calc(100% - 40px);
   }
@@ -1881,9 +1851,14 @@ legend {
   background: var(--ink);
   transition: transform 0.25s;
 }
-.menu-button:hover {
-  background: var(--lavender);
-  transform: rotate(-7deg);
+/* Touch devices keep :hover on the last-tapped element until you tap away or
+   scroll, which left the hamburger tinted and rotated after closing the menu.
+   Only apply it where a real pointer can hover. */
+@media (hover: hover) and (pointer: fine) {
+  .menu-button:hover {
+    background: var(--lavender);
+    transform: rotate(-7deg);
+  }
 }
 .header {
   gap: 28px;
@@ -2016,7 +1991,7 @@ body.menu-open {
   max-height: none;
   margin: 0;
   padding: 0;
-  background: var(--ink);
+  background: #000;
   color: #fff;
   overflow: auto;
   overscroll-behavior: contain;
@@ -2024,9 +1999,38 @@ body.menu-open {
   /* Grows from the menu button's centre; --menu-x/-y are set inline. */
   clip-path: circle(0px at var(--menu-x, 50%) var(--menu-y, 40px));
   transition: clip-path 420ms cubic-bezier(0.55, 0, 0.8, 0.3);
+  /* Rasterise the panel once and clip the finished layer, instead of
+     repainting the filtered logo and icons on every frame. */
+  will-change: clip-path;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 .menu-overlay::backdrop {
-  background: transparent;
+  /* Full-screen tint that fades in alongside the circular reveal, so the
+     whole viewport darkens rather than only the area the circle has reached.
+     ::backdrop cannot be targeted via the .is-expanded class, so it runs on
+     its own timeline via keyframes. */
+  background: #000;
+  animation: menu-backdrop-in 420ms ease both;
+}
+.menu-overlay.is-closing::backdrop {
+  animation: menu-backdrop-out 420ms ease both;
+}
+@keyframes menu-backdrop-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes menu-backdrop-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
 .menu-overlay.is-expanded {
   clip-path: circle(150vmax at var(--menu-x, 50%) var(--menu-y, 40px));
@@ -2040,19 +2044,21 @@ body.menu-open {
   transition-timing-function: cubic-bezier(0.6, 0.2, 0.9, 0.4);
 }
 .menu-shell {
-  background: var(--ink);
+  background: #000;
   min-height: 100%;
   display: flex;
   flex-direction: column;
   overflow: hidden;
 }
 /* Links fade up once the circle is on its way out. */
-.menu-links > a {
+.menu-links > a,
+.menu-links > button {
   opacity: 0;
   transform: translateY(18px);
   transition: opacity 150ms ease, transform 150ms ease;
 }
-.menu-overlay.is-expanded .menu-links > a {
+.menu-overlay.is-expanded .menu-links > a,
+.menu-overlay.is-expanded .menu-links > button {
   opacity: 1;
   transform: translateY(0);
   transition-duration: 400ms;
@@ -2063,7 +2069,9 @@ body.menu-open {
   .menu-overlay.is-expanded,
   .menu-overlay.is-closing,
   .menu-links > a,
-  .menu-overlay.is-expanded .menu-links > a {
+  .menu-links > button,
+  .menu-overlay.is-expanded .menu-links > a,
+  .menu-overlay.is-expanded .menu-links > button {
     transition: none;
   }
   /* No clip at all under reduced motion: these must beat the .is-* rules
@@ -2073,8 +2081,14 @@ body.menu-open {
   .menu-overlay.is-closing {
     clip-path: none;
   }
+  .menu-overlay::backdrop,
+  .menu-overlay.is-closing::backdrop {
+    animation: none;
+  }
   .menu-links > a,
-  .menu-overlay .menu-links > a {
+  .menu-links > button,
+  .menu-overlay .menu-links > a,
+  .menu-overlay .menu-links > button {
     opacity: 1;
     transform: none;
   }
@@ -2089,18 +2103,17 @@ body.menu-open {
 .menu-close {
   display: flex;
   align-items: center;
-  gap: 16px;
-  font-size: 14px;
-  color: white;
-  padding: 8px 0 8px 16px;
+  padding: 0;
 }
 .menu-close-icon {
   position: relative;
   display: block;
   width: 43px;
   height: 43px;
-  border: 1px solid #ffffff35;
+  border: 0;
   border-radius: 50%;
+  /* Same solid circle as the hamburger trigger it replaces. */
+  background: var(--gray);
   transition:
     background 0.2s,
     transform 0.3s;
@@ -2113,17 +2126,18 @@ body.menu-open {
   top: 20px;
   width: 18px;
   height: 1px;
-  background: #fff;
+  background: var(--ink);
   transform: rotate(45deg);
 }
 .menu-close-icon::after {
   transform: rotate(-45deg);
 }
-.menu-close:hover .menu-close-icon {
-  background: #ffffff16;
-  transform: rotate(90deg);
+@media (hover: hover) and (pointer: fine) {
+  .menu-close:hover .menu-close-icon {
+    background: var(--lavender);
+    transform: rotate(90deg);
+  }
 }
-/* Rounded tile holding the glyph, mirroring the reference layout. */
 .site-footer {
   background: var(--ink);
   color: #fff;
@@ -2294,7 +2308,8 @@ body.menu-open {
   .menu-main {
     gap: 50px;
   }
-  .menu-links a {
+  .menu-links a,
+  .menu-links button {
     font-size: 58px;
   }
   .footer-directory {
@@ -2378,11 +2393,6 @@ body.menu-open {
   .menu-top {
     min-height: 82px;
   }
-  .menu-close {
-    gap: 12px;
-    font-size: 13px;
-    padding: 5px 0;
-  }
   .menu-close-icon {
     width: 38px;
     height: 38px;
@@ -2394,16 +2404,16 @@ body.menu-open {
     width: 15px;
   }
   .menu-main {
-    grid-template-columns: 1fr;
     gap: 32px;
-    align-items: start;
+    /* Equal padding, so centring the links is not biased downward. */
     padding-top: 30px;
-    padding-bottom: 33px;
+    padding-bottom: 30px;
   }
   .menu-links {
     gap: 8px;
   }
-  .menu-links a {
+  .menu-links a,
+  .menu-links button {
     font-size: clamp(42px, 11vw, 64px);
     line-height: 1.18;
     padding: 2px 0;
@@ -2489,7 +2499,8 @@ body.menu-open {
     padding-top: 15px;
     gap: 30px;
   }
-  .menu-links a {
+  .menu-links a,
+  .menu-links button {
     font-size: 41px;
   }
   .footer-invitation h2 {
@@ -2504,13 +2515,6 @@ body.menu-open {
   .motion-ready [data-reveal] {
     opacity: 1;
     transform: none;
-  }
-  .menu-overlay[open] .menu-shell,
-  .menu-overlay.is-closing .menu-shell {
-    clip-path: none;
-  }
-  .menu-links a > span {
-    transform: none !important;
   }
 }
 

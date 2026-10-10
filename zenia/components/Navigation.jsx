@@ -72,18 +72,6 @@ export function Menu({ onClose, onContact, onProject, reducedMotion, origin }) {
   }
   useEffect(() => () => clearTimeout(timer.current), []);
   useEffect(() => {
-    if (reducedMotion) return setExpanded(true);
-    // Two frames: one for the dialog to paint closed, one to animate open.
-    let second = 0;
-    const first = requestAnimationFrame(() => {
-      second = requestAnimationFrame(() => setExpanded(true));
-    });
-    return () => {
-      cancelAnimationFrame(first);
-      cancelAnimationFrame(second);
-    };
-  }, [reducedMotion]);
-  useEffect(() => {
     const query = window.matchMedia("(min-width:761px)");
     const resize = () => {
       if (query.matches) onClose();
@@ -94,8 +82,10 @@ export function Menu({ onClose, onContact, onProject, reducedMotion, origin }) {
   function navigate(event) {
     const anchor = event.target.closest('a[href^="#"]');
     if (!anchor) return;
-    event.preventDefault();
     const id = anchor.getAttribute("href");
+    // A bare "#" is a placeholder, not a target; querySelector("#") throws.
+    if (id === "#") return;
+    event.preventDefault();
     close(() => {
       const target = document.querySelector(id);
       target?.scrollIntoView({
@@ -121,6 +111,7 @@ export function Menu({ onClose, onContact, onProject, reducedMotion, origin }) {
       }`}
       labelledBy="menu-title"
       onClose={() => close()}
+      onReveal={() => setExpanded(true)}
       style={{
         "--menu-x": `${origin?.x ?? 0}px`,
         "--menu-y": `${origin?.y ?? 40}px`,
@@ -134,7 +125,6 @@ export function Menu({ onClose, onContact, onProject, reducedMotion, origin }) {
             aria-label="Close menu"
             onClick={() => close()}
           >
-            <span>Close</span>
             <span className="menu-close-icon" aria-hidden="true" />
           </button>
         </div>
@@ -144,71 +134,37 @@ export function Menu({ onClose, onContact, onProject, reducedMotion, origin }) {
           </h2>
           <nav className="menu-links" aria-label="Expanded navigation">
             <a style={{ "--link-index": 0 }} href="/#cases">
-              <span className="menu-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24">
-                  <rect x="3" y="4" width="8" height="7" rx="1.6" />
-                  <rect x="13" y="4" width="8" height="7" rx="1.6" />
-                  <rect x="3" y="13" width="8" height="7" rx="1.6" />
-                  <rect x="13" y="13" width="8" height="7" rx="1.6" />
-                </svg>
-              </span>
-              <span className="menu-text">
-                <strong>Work</strong>
-                <span>Projects we have built</span>
-              </span>
+              Work
             </a>
-            <Link style={{ "--link-index": 1 }} href="/#services" onClick={() => close()}>
-              <span className="menu-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24">
-                  <path d="M12 3.2 20 7.6v8.8L12 20.8 4 16.4V7.6z" />
-                  <path d="M12 3.2v17.6M4 7.6l8 4.4 8-4.4" />
-                </svg>
-              </span>
-              <span className="menu-text">
-                <strong>Services</strong>
-                <span>What we do</span>
-              </span>
-            </Link>
-            <Link style={{ "--link-index": 2 }} href="/#about" onClick={() => close()}>
-              <span className="menu-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24">
-                  <circle cx="12" cy="8.4" r="3.6" />
-                  <path d="M4.8 20c0-3.6 3.2-5.8 7.2-5.8s7.2 2.2 7.2 5.8" />
-                </svg>
-              </span>
-              <span className="menu-text">
-                <strong>About</strong>
-                <span>Who we are</span>
-              </span>
-            </Link>
-            <Link style={{ "--link-index": 3 }} href="/portal" onClick={() => close()}>
-              <span className="menu-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24">
-                  <rect x="3" y="4.6" width="18" height="12.6" rx="1.8" />
-                  <path d="M8 20.4h8M3 14.2h18" />
-                </svg>
-              </span>
-              <span className="menu-text">
-                <strong>Client portal</strong>
-                <span>Your project, in one place</span>
-              </span>
-            </Link>
-          </nav>
-          <div className="menu-actions">
-            <button
-              className="button button-white"
-              onClick={() => close(() => onContact())}
-            >
-              Contact us
-            </button>
             <Link
-              className="button button-lavender"
+              style={{ "--link-index": 1 }}
+              href="/#services"
+              onClick={() => close()}
+            >
+              Services
+            </Link>
+            <Link
+              style={{ "--link-index": 2 }}
+              href="/#about"
+              onClick={() => close()}
+            >
+              About us
+            </Link>
+            <Link
+              style={{ "--link-index": 3 }}
               href="/portal"
               onClick={() => close()}
             >
-              Log in
+              Client portal
             </Link>
-          </div>
+            <button
+              style={{ "--link-index": 4 }}
+              type="button"
+              onClick={() => close(() => onContact())}
+            >
+              Contact
+            </button>
+          </nav>
         </div>
       </div>
     </Modal>
