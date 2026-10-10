@@ -3,7 +3,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #F5F5F5;
+  --background: #FFFFFF;
   --foreground: #171717;
 }
 .font-antonio {
@@ -22,6 +22,28 @@
   font-family: var(--font-suisse), sans-serif;
 }
 
+/* v2 redesign fonts — Right Grotesk */
+.font-v2-heading {
+  font-family: var(--font-v2-heading), sans-serif;
+}
+
+.font-v2-body {
+  font-family: var(--font-v2-body), sans-serif;
+}
+
+/* v2 redesign fonts — PP Neue Montreal */
+.font-v2-title {
+  font-family: var(--font-v2-title), sans-serif;
+}
+
+.font-v2-medium {
+  font-family: var(--font-v2-medium), sans-serif;
+}
+
+.font-v2-statement {
+  font-family: var(--font-v2-statement), sans-serif;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -31,6 +53,11 @@
   --font-poppins: var(--font-poppins);
   --font-shentox: var(--font-shentox);
   --font-suisse: var(--font-suisse);
+  --font-v2-heading: var(--font-v2-heading);
+  --font-v2-body: var(--font-v2-body);
+  --font-v2-title: var(--font-v2-title);
+  --font-v2-medium: var(--font-v2-medium);
+  --font-v2-statement: var(--font-v2-statement);
   --breakpoint-xs: 250px;
   --breakpoint-sm: 400px;
 }
@@ -40,7 +67,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #F5F5F5;
+    --background: #FFFFFF;
     --foreground: #ededed;
   }
 }
