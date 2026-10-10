@@ -2,32 +2,46 @@ import type { Metadata } from "next";
 import dynamic from 'next/dynamic';
 import Script from 'next/script';
 import { Suspense } from 'react';
-import Header from "./components/header";
-import SubHeader from "./components/subHeader";
-import ReversedHeader from "./components/ReversedHeader";
-import Text from "./components/text";
-import TriHeader from "./components/triHeader";
-import GreenCTA from "./components/GreenCta";
-import FeaturesGrid from "./components/FeaturesGrid";
-import SelectedWork from "./components/selectedWorks";
-import Cta from "./components/Cta";
-import Footer from "./components/Footer";
+import Header from "@/app/components/header";
+import SubHeader from "@/app/components/subHeader";
+import ReversedHeader from "@/app/components/ReversedHeader";
+import Text from "@/app/components/text";
+import TriHeader from "@/app/components/triHeader";
+import GreenCTA from "@/app/components/GreenCta";
+import FeaturesGrid from "@/app/components/FeaturesGrid";
+import SelectedWork from "@/app/components/selectedWorks";
+import Cta from "@/app/components/Cta";
+import Footer from "@/app/components/Footer";
+import Navbar2 from "@/app/components/v2/Navbar2";
+import Hero2 from "@/app/components/v2/Hero2";
+import Statement2 from "@/app/components/v2/Statement2";
+import Features2 from "@/app/components/v2/Features2";
+import Services2 from "@/app/components/v2/Services2";
+import Projects2 from "@/app/components/v2/Projects2";
+import CtaShowcase2 from "@/app/components/v2/CtaShowcase2";
+import AutomationShowcase2 from "@/app/components/v2/AutomationShowcase2";
 import {
   HOME_METADATA,
   BASE_URL,
   generateWebPageSchema,
   generateBreadcrumbSchema
-} from "./constants/seo";
+} from "@/app/constants/seo";
 
 // Dynamic imports for below-the-fold heavy components (code splitting)
-const ScrollStack = dynamic(() => import('./components/ScrollStack'), {
+const ScrollStack = dynamic(() => import('@/app/components/ScrollStack'), {
   loading: () => <div className="min-h-screen" />,
 });
-const Steps = dynamic(() => import('./components/Steps'), {
+const Steps = dynamic(() => import('@/app/components/Steps'), {
   loading: () => <div className="min-h-96" />,
 });
-const FAQ = dynamic(() => import('./components/Faq'), {
+const Process2 = dynamic(() => import('@/app/components/v2/Process2'), {
+  loading: () => <div className="min-h-screen bg-white" />,
+});
+const FAQ = dynamic(() => import('@/app/components/Faq'), {
   loading: () => <div className="min-h-96" />,
+});
+const Faq2 = dynamic(() => import('@/app/components/v2/Faq2'), {
+  loading: () => <div className="min-h-96 bg-white" />,
 });
 
 export const metadata: Metadata = HOME_METADATA;
@@ -61,15 +75,38 @@ export default function Home() {
         strategy="afterInteractive"
       />
 
-      <Header />
+      <Navbar2 />
 
-      <Text />
+      <Hero2 />
+      {/* <Header /> */}
+
+      <Statement2 />
+      {/* <Text /> */}
+
+      <Features2 />
+
+      <Projects2 />
+
+      <Services2 />
+
+      <CtaShowcase2 />
+
+      <AutomationShowcase2 />
+
+      {/* <Suspense fallback={<div className="min-h-screen bg-white" />}>
+        <Process2 />
+      </Suspense> */}
+
+      <Suspense fallback={<div className="min-h-96 bg-white" />}>
+        <Faq2 />
+      </Suspense>
+
       {/* Flex container for side-by-side components */}
-      <div className="flex flex-col lg:flex-row bg-[#F5F5F5]">
+      {/* <div className="flex flex-col lg:flex-row bg-[#F5F5F5]">
           <SubHeader />
           <ReversedHeader />
       </div>
-      <TriHeader/>
+      <TriHeader/> */}
         {/* <SelectedWork/> */}
         {/* <GreenCTA/> */}
         {/* <FeaturesGrid/> */}
@@ -77,7 +114,7 @@ export default function Home() {
       {/* <Suspense fallback={<div className="min-h-screen bg-[#F5F5F5]" />}>
         <ScrollStack/>
       </Suspense> */}
-      <Suspense fallback={<div className="min-h-96 bg-[#F5F5F5]" />}>
+      {/* <Suspense fallback={<div className="min-h-96 bg-[#F5F5F5]" />}>
             <Steps
         bgColor="bg-white"
         titleColor="text-[#1E1F1F]"
@@ -87,7 +124,7 @@ export default function Home() {
         iconBgColor="bg-[#0A0D24]/10"
         iconColor="text-[#0A0D24]"
       />
-      </Suspense>
+      </Suspense> */}
       {/* <div id="faq">
         <Suspense fallback={<div className="min-h-96 bg-[#F5F5F5]" />}>
           <FAQ/>

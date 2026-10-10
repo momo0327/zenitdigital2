@@ -1,15 +1,15 @@
 import React, { Suspense } from 'react';
 import type { Metadata } from 'next';
-import ServicesScroll from '../components/sections/ServicesScroll';
-import Steps from '../components/Steps';
-import Achievements from '../components/Achievments';
-import FAQ from '../components/Faq';
-import Cta from '../components/Cta';
-import ExpandableFeatures from '../components/ExpandableFeatures';
-import ScrollStack from '../components/ScrollStack';
-import HelpGrid from '../components/HelpGrid';
-import FeaturesGrid from '../components/FeaturesGrid';
-import Footer from '../components/Footer';
+import ServicesScroll from '@/app/components/sections/ServicesScroll';
+import Steps from '@/app/components/Steps';
+import Achievements from '@/app/components/Achievments';
+import FAQ from '@/app/components/Faq';
+import Cta from '@/app/components/Cta';
+import ExpandableFeatures from '@/app/components/ExpandableFeatures';
+import ScrollStack from '@/app/components/ScrollStack';
+import HelpGrid from '@/app/components/HelpGrid';
+import FeaturesGrid from '@/app/components/FeaturesGrid';
+import Footer from '@/app/components/Footer';
 
 export const metadata: Metadata = {
   title: 'Our Services - Zenit Digital',

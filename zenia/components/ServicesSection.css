@@ -1,0 +1,261 @@
+@font-face {
+  font-family: "Zenia Manrope";
+  src: url("/zenia-services/manrope-400.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: optional;
+}
+
+@font-face {
+  font-family: "Zenia Manrope";
+  src: url("/zenia-services/manrope-500.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: optional;
+}
+
+@font-face {
+  font-family: "Zenia Manrope";
+  src: url("/zenia-services/manrope-600.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: optional;
+}
+
+.zenia-services,
+.zenia-services *,
+.zenia-services *::before,
+.zenia-services *::after {
+  box-sizing: border-box;
+}
+
+.zenia-services {
+  width: calc(100% - 96px);
+  max-width: 1376px;
+  margin-inline: auto;
+  padding-block: 30px 135px;
+  color: #0b001a;
+  font-family: "Zenia Manrope", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.zenia-services a {
+  text-decoration: none;
+}
+
+.zenia-services-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+/* Matches .section-heading h2 ("Good ideas, out in the world"). */
+.zenia-services-heading h2 {
+  margin: 0;
+  color: #0b001a;
+  font-size: clamp(36px, 3.55vw, 52px);
+  font-weight: 400;
+  line-height: 1.14;
+  letter-spacing: -0.045em;
+}
+
+.zenia-services-heading p {
+  margin: 0;
+  padding-bottom: 5px;
+  color: #6c6575;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+/* Cards */
+
+.zenia-services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 56px;
+}
+
+.zenia-services-card {
+  position: relative;
+  container-type: inline-size;
+  isolation: isolate;
+  aspect-ratio: 430 / 502;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  border-radius: clamp(16px, 1.8vw, 24px);
+  background: var(--service-surface);
+  color: var(--service-accent);
+}
+
+.zenia-services-stack {
+  --service-surface: #031200;
+  --service-accent: #b4ffa8;
+}
+
+.zenia-services-mobile {
+  --service-surface: #0b001a;
+  --service-accent: #c69ff8;
+}
+
+.zenia-services-web {
+  --service-surface: #030d20;
+  --service-accent: #91d9f5;
+}
+
+.zenia-services-copy {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: min(8cqw, 40px) 16px 0;
+  text-align: center;
+}
+
+.zenia-services-card h3 {
+  margin: 0 0 clamp(12px, 5.1cqw, 22px);
+  color: inherit;
+  font-family: "Zenia Manrope", sans-serif;
+  font-size: clamp(18px, 7.45cqw, 38px);
+  font-weight: 500;
+  line-height: 1.18;
+  letter-spacing: -0.035em;
+}
+
+/* Buttons */
+
+.zenia-services-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  appearance: none;
+  border: 0;
+  border-radius: 40px;
+  padding: 8px 20px;
+  background: var(--service-accent);
+  color: #0b001a;
+  font: 600 12px/1.4 "Zenia Manrope", sans-serif;
+  cursor: pointer;
+  transition: background-color 180ms ease;
+}
+
+.zenia-services-cta:hover {
+  background: #fff;
+}
+
+.zenia-services-cta:focus-visible {
+  outline: 2px solid var(--service-accent);
+  outline-offset: 5px;
+}
+
+/* Device images scale relative to their card. */
+
+.zenia-services-device {
+  position: absolute;
+  display: block;
+  max-width: none;
+  height: auto;
+  pointer-events: none;
+  user-select: none;
+}
+
+.zenia-services-stack .zenia-services-device {
+  width: 145%;
+  left: 0;
+  bottom: -1px;
+}
+
+.zenia-services-mobile .zenia-services-device {
+  width: 95%;
+  left: 6%;
+  top: 43%;
+}
+
+.zenia-services-web .zenia-services-device {
+  width: 145%;
+  left: 11%;
+  top: 43%;
+}
+
+/* Responsive */
+
+@container (max-width: 340px) {
+  .zenia-services-mobile .zenia-services-device,
+  .zenia-services-web .zenia-services-device {
+    top: 47%;
+  }
+}
+
+/* Breakpoints below mirror .section-heading in styles.css so this heading
+   behaves identically to "Good ideas, out in the world" at every width. */
+@media (max-width: 1100px) {
+  .zenia-services {
+    width: calc(100% - 64px);
+  }
+
+  .zenia-services-heading {
+    gap: 25px;
+  }
+
+  .zenia-services-grid {
+    gap: 8px;
+    margin-top: 44px;
+  }
+}
+
+@media (max-width: 760px) {
+  .zenia-services {
+    width: calc(100% - 40px);
+    padding-block: 30px 77px;
+  }
+
+  .zenia-services-heading {
+    display: block;
+  }
+
+  .zenia-services-heading h2 {
+    font-size: 36px;
+    line-height: 1.15;
+  }
+
+  .zenia-services-heading p {
+    margin-top: 20px;
+    font-size: 16px;
+    line-height: 1.65;
+    padding: 0;
+  }
+
+  .zenia-services-heading p br {
+    display: none;
+  }
+
+  .zenia-services-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-top: 36px;
+  }
+
+  .zenia-services-card {
+    width: 100%;
+    max-width: 520px;
+    margin-inline: auto;
+    border-radius: 20px;
+  }
+
+}
+
+@media (max-width: 370px) {
+  .zenia-services {
+    width: calc(100% - 32px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .zenia-services-cta {
+    transition: none;
+  }
+}

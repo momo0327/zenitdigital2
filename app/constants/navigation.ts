@@ -14,7 +14,7 @@ export const MAIN_NAV_ITEMS = [
   },
   {
     label: 'About',
-    href: '/about',
+    href: '/zenit/about',
     ariaLabel: 'Learn about us',
   },
   {
@@ -45,7 +45,7 @@ export const CENTER_NAV_ITEMS = [
   },
   {
     label: 'About us',
-    href: '/about',
+    href: '/zenit/about',
   },
 ] as const;
 
@@ -103,7 +103,7 @@ export const FOOTER_NAV = {
     { label: 'Fullstack Development', href: '/FullstackDev' },
   ],
   company: [
-    { label: 'About', href: '/about' },
+    { label: 'About', href: '/zenit/about' },
     { label: 'Portfolio', href: '/#work' },
     { label: 'Contact', href: '/ContactPage' },
   ],
@@ -141,12 +141,12 @@ export const QUICK_ACTIONS = {
 // Breadcrumb Configuration
 export const BREADCRUMBS = {
   home: { label: 'Home', href: '/' },
-  services: { label: 'Services', href: '/services' },
+  services: { label: 'Services', href: '/zenit/services' },
   webDev: { label: 'Web Development', href: '/WebDev' },
   mobileDev: { label: 'Mobile Development', href: '/MobileDev' },
   fullstackDev: { label: 'Fullstack Development', href: '/FullstackDev' },
   contact: { label: 'Contact', href: '/ContactPage' },
-  about: { label: 'About', href: '/about' },
+  about: { label: 'About', href: '/zenit/about' },
 } as const;
 
 // Mobile Menu Items (includes additional items not in desktop nav)

@@ -261,3 +261,98 @@ Components using hooks or browser APIs must include `'use client'` directive:
 - The project uses App Router, not Pages Router
 - SEO is configured for Swedish market (Göteborg office location)
 - Company contact: hello@zenitdigital.se
+
+---
+
+# The Zenia site (ported Vite site) — now the primary site
+
+The Zenia site is the **primary site and owns the root routes**. It was built
+separately in a Vite + React project and ported here. It does **not** share
+components, CSS or conventions with the Zenit Digital site described above,
+which now lives under `/zenit`.
+
+## Where it lives
+
+| What | Path |
+|---|---|
+| Routes | `app/page.jsx`, `app/about/`, `app/portal/`, `app/services/` |
+| Components, CSS, data | `zenia/` (project root — this repo has no `src/`) |
+| Assets | `public/zenia/` (36 files) |
+| Shared chrome | `zenia/ZeniaShell.jsx` — header, mobile menu, footer, dialogs |
+
+Live at `/`, `/about`, `/portal`, `/services`.
+
+The former Zenit Digital homepage and its colliding `about`/`services` pages
+moved to `app/zenit/` (`/zenit`, `/zenit/about`, `/zenit/services`). Its other
+routes (`/work`, `/faqs`, `/WebDev`, `/ContactPage`, …) were not moved and still
+sit at the top level. Internal links in the legacy navbar, headers, footer and
+`app/constants/` were repointed to `/zenit/*`.
+
+Asset paths stay under `/zenia/...` and `/zenia-services/...` — those are
+`public/` directories, not routes, so they did not change.
+
+## Conventions — deliberately different from the main site
+
+- **Plain `.jsx`, not TypeScript.** Converting was declined to avoid visual drift.
+- **Hand-written CSS, not Tailwind.** Three global files imported by `ZeniaShell`:
+  `zenia/styles.css` (~5000 lines), `hero-cards.css`, `modo.css`.
+- **Namespaced** (`zenia/`, `public/zenia/`) because `ContactForm` collides with
+  `app/components/`, and to guarantee the two sites can't affect each other.
+- The CSS is global. It loads on the routes `ZeniaShell` renders, but rendering
+  these components inside a legacy `/zenit` page would leak styles.
+
+## Changes made to the legacy site
+
+`app/components/NavbarSwitcher.tsx` — the root layout renders the legacy navbar on
+every route, so it skips the Zenia routes (which ship their own header inside
+`ZeniaShell`) and `/zenit` (which mounts `Navbar2`):
+
+```tsx
+const ZENIA_ROUTES = ['/', '/about', '/services', '/portal'];
+if (ZENIA_ROUTES.includes(pathname) || pathname === '/zenit') return null;
+```
+
+The Manrope preloads that lived in `app/zenia/layout.tsx` moved into the `<head>`
+of `app/layout.tsx` when that layout was removed.
+
+## Porting rules (if syncing from the Vite project again)
+
+The source of truth is `~/Downloads/zenia-react-vite`. Five transforms are needed
+on every file copied across:
+
+1. `"use client"` at the top — nearly everything uses hooks or DOM APIs.
+2. `react-router-dom` → `next/link`: `<Link to=` → `<Link href=`,
+   `useLocation().pathname` → `usePathname()`.
+3. Asset paths → `/zenia/...` absolute. Relative `assets/...` breaks on nested routes.
+4. Internal links point at root paths (`/about`, `/services`, `/portal`). In-page
+   anchors must be root-absolute (`/#cases`, not `#cases`) — the footer, logo and
+   mobile menu render on sub-pages too, where a bare `#hash` would not navigate.
+5. Guard browser APIs — see below.
+
+## SSR/hydration fixes (do not regress these)
+
+The Vite original was client-only, so these only surface under Next:
+
+- `zenia/hooks.js` — `useMediaQuery` and `usePageVisible` read `window`/`document`
+  in their initial `useState`. Both now check `typeof window === "undefined"` and
+  re-sync in `useEffect`.
+- Refs can be `null` during hydration or route changes. Guarded in:
+  `Testimonials.jsx` (`measure()` called `getComputedStyle(null)`),
+  plus `observer.observe()` in `Testimonials.jsx`, `Sections.jsx`, `Statement.jsx`.
+
+## Known issues
+
+- **`npm run build` fails** with repeated "Unexpected end of JSON input". This is
+  **pre-existing and unrelated to `/zenia`** — verified by removing the `/zenia`
+  files entirely and rebuilding, which fails identically on `app/components/navbar.tsx`,
+  `app/api/contact/route.ts`, `robots.ts` and `sitemap.ts`. Clearing `.next` does not
+  help and all project JSON is valid. Looks like a Turbopack issue; the `build` script
+  hardcodes `--turbopack`. Dev mode works. **This blocks deploying.**
+- **The logo is a placeholder** — `public/zenia/airmee-wordmark.png` is Airmee's
+  wordmark, used locally while the real Zenia logo is pending. It must be replaced
+  before anything ships. Swap the `src` in `zenia/components/Logo.jsx` and the footer
+  instance in `zenia/components/Sections.jsx`. A ZENIA SVG sprite (`#zenia-mark`) is
+  still defined in `Sections.jsx` if you prefer that route — it uses `currentColor`,
+  which would let the `filter: invert(1)` rules in `styles.css` be removed.
+- **Placeholder copy** — the Atlas case study, the three newest testimonials, and the
+  About/Services page body text are invented and need real content.

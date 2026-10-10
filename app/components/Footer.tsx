@@ -52,7 +52,7 @@ const Footer = ({ bgColor = '#000000', textColor }: FooterProps) => {
               {/* <Link href="/work" className="block text-lg transition-colors hover:opacity-70" style={{ color: finalTextColor }}>
                 Work
               </Link> */}
-              <Link href="/services" className="block text-lg transition-colors hover:opacity-70" style={{ color: finalTextColor }}>
+              <Link href="/zenit/services" className="block text-lg transition-colors hover:opacity-70" style={{ color: finalTextColor }}>
                 Services
               </Link>
               {/* <Link href="/faqs" className="block text-lg transition-colors hover:opacity-70" style={{ color: finalTextColor }}>

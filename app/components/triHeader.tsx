@@ -16,7 +16,7 @@ const TriHeader = () => {
               Discover a revolutionary way to learn with our cutting-edge platform that adapts to your pace and style.
             </p>
             <div className="flex gap-4 2xl:gap-6">
-            <Link href="/services">
+            <Link href="/zenit/services">
               <button className="bg-[#B4FFA8] text-black px-6 py-3 2xl:px-10 2xl:py-4 text-sm 2xl:text-lg rounded-full font-semibold hover:bg-[#B4FFA8] transition-colors duration-200">
                 Explore
               </button>

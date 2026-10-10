@@ -153,7 +153,7 @@ export const FOOTER = {
     company: {
       title: 'Company',
       links: [
-        { label: 'About', href: '/about' },
+        { label: 'About', href: '/zenit/about' },
         { label: 'Contact', href: '/ContactPage' },
         { label: 'Portfolio', href: '/#work' },
       ],

@@ -16,7 +16,7 @@ const Header = () => {
               The way we work has changed, but learning software hasnt.
             </p>
             <div className="flex gap-4 2xl:gap-6">
-            <Link href="/services">
+            <Link href="/zenit/services">
               <button className="bg-[#FF5147] text-[#240000] px-6 py-3 2xl:px-10 2xl:py-4 text-sm 2xl:text-lg rounded-full font-semibold hover:bg-orange-600 transition-colors duration-200">
                 Explore
               </button>

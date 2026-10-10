@@ -59,7 +59,7 @@ const Navbar: React.FC<NavbarProps> = ({
 
   const menuItems = [
     { label: 'Home', ariaLabel: 'Go to home page', link: '/' },
-    { label: 'Services', ariaLabel: 'Explore our services', link: '/services' },
+    { label: 'Services', ariaLabel: 'Explore our services', link: '/zenit/services' },
     { label: 'Contact', ariaLabel: 'Get in touch with us', link: '/ContactPage' },
   ];
 
@@ -96,7 +96,7 @@ const Navbar: React.FC<NavbarProps> = ({
               <Link href="/" className={`${textColor}  hover:opacity-100 px-2 md:px-4 2xl:px-6 py-2 2xl:py-3 rounded-md ${hoverBgColor} transition-all duration-200 text-sm md:text-lg 2xl:text-xl cursor-pointer`}>
                 Home
               </Link>
-              <Link href="/services" className={`${textColor}  hover:opacity-100 px-2 md:px-4 2xl:px-6 py-2 2xl:py-3 rounded-md ${hoverBgColor} transition-all duration-200 text-sm md:text-lg 2xl:text-xl cursor-pointer`}>
+              <Link href="/zenit/services" className={`${textColor}  hover:opacity-100 px-2 md:px-4 2xl:px-6 py-2 2xl:py-3 rounded-md ${hoverBgColor} transition-all duration-200 text-sm md:text-lg 2xl:text-xl cursor-pointer`}>
                 Services
               </Link>
               <Link href="/#faq" className={`${textColor}  hover:opacity-100 px-2 md:px-4 2xl:px-6 py-2 2xl:py-3 rounded-md ${hoverBgColor} transition-all duration-200 text-sm md:text-lg 2xl:text-xl cursor-pointer`}>
