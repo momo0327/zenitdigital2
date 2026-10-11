@@ -1991,7 +1991,7 @@ body.menu-open {
   max-height: none;
   margin: 0;
   padding: 0;
-  background: #000;
+  background: #09080a;
   color: #fff;
   overflow: auto;
   overscroll-behavior: contain;
@@ -2010,7 +2010,7 @@ body.menu-open {
      whole viewport darkens rather than only the area the circle has reached.
      ::backdrop cannot be targeted via the .is-expanded class, so it runs on
      its own timeline via keyframes. */
-  background: #000;
+  background: #09080a;
   animation: menu-backdrop-in 420ms ease both;
 }
 .menu-overlay.is-closing::backdrop {
@@ -2044,7 +2044,7 @@ body.menu-open {
   transition-timing-function: cubic-bezier(0.6, 0.2, 0.9, 0.4);
 }
 .menu-shell {
-  background: #000;
+  background: #09080a;
   min-height: 100%;
   display: flex;
   flex-direction: column;
