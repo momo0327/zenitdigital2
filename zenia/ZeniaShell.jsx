@@ -2,11 +2,11 @@
 
 // Shared chrome ported from the Vite App.jsx: header, menu, footer, dialogs.
 import { useCallback, useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import { useMediaQuery, useScrollReveal } from "./hooks";
 import { BrandDefinitions, Footer } from "./components/Sections";
 import { Header, Menu } from "./components/Navigation";
 import CaseStudy from "./components/CaseStudy";
-import ContactForm from "./components/ContactForm";
 import "./styles.css";
 import "./hero-cards.css";
 import "./modo.css";
@@ -18,10 +18,10 @@ export default function ZeniaShell({ children, dark, transparent }) {
   const [menuOrigin, setMenuOrigin] = useState(null);
   const reducedMotion = useMediaQuery("(prefers-reduced-motion: reduce)");
   const closeMenu = useCallback(() => setMenuOpen(false), []);
-  const openContact = useCallback(
-    (service) => setDialog({ type: "contact", service }),
-    [],
-  );
+  const router = useRouter();
+  // Contact used to open a modal brief form; it is a page now. Kept under the
+  // same name so every existing trigger keeps working.
+  const openContact = useCallback(() => router.push("/contact"), [router]);
   const openProject = useCallback(
     (project) => setDialog({ type: "case", project }),
     [],
@@ -77,9 +77,6 @@ export default function ZeniaShell({ children, dark, transparent }) {
           onProject={openProject}
           onClose={closeDialog}
         />
-      )}
-      {dialog?.type === "contact" && (
-        <ContactForm service={dialog.service} onClose={closeDialog} />
       )}
     </>
   );

@@ -2,6 +2,7 @@
 // Presentational sections retain the original semantic markup and regular CSS.
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import ContactContainer from "./ContactContainer";
 export function BrandDefinitions({ onContact, onProject }) {
   return (
     <svg
@@ -668,6 +669,7 @@ export function PortalActions({ onContact }) {
             </span>
           </a>
         </div>
+        <ContactContainer />
       </div>
     </section>
   );

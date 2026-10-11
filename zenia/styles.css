@@ -4098,10 +4098,11 @@ body.menu-open {
   line-height: 1.65;
   max-width: 217px;
 }
-/* Two call-to-action panels closing the portal section. */
+/* Call-to-action panels closing the portal section. */
 .portal-actions-section {
   padding-top: 72px;
-  padding-bottom: 20px;
+  /* The FAQ below supplies its own 118px top padding via .section. */
+  padding-bottom: 0;
 }
 .portal-actions {
   margin: 0 auto;
