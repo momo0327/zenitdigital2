@@ -783,13 +783,7 @@ export function Footer({ onContact, onProject }) {
         <div className="footer-directory">
           <div className="footer-identity">
             <a className="wordmark" href="/#top" aria-label="Zenia home">
-              <img
-                className="brand-svg"
-                src="/zenia/airmee-wordmark.png"
-                alt=""
-                width="1200"
-                height="272"
-              />
+              <span className="brand-text">ZENIA</span>
             </a>
             <p>
               Thoughtful digital.

@@ -4325,17 +4325,31 @@ body.menu-open {
 img.brand-svg {
   object-fit: contain;
 }
-.site-footer img.brand-svg,
-.customer-portal img.brand-svg,
-.menu-shell img.brand-svg,
-.header-dark img.brand-svg {
-  filter: invert(1) brightness(2);
-}
 /* New brand mark: wider-than-tall artwork, let height follow the width. */
 .brand-svg {
   height: auto;
 }
-/* Client portal page: the header sits on black, so it inverts. */
+/* Wordmark set as text. Inherits colour, so dark surfaces need no invert. */
+.brand-text {
+  display: block;
+  font-size: 27px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  color: inherit;
+  white-space: nowrap;
+}
+@media (max-width: 760px) {
+  .brand-text {
+    font-size: 24px;
+  }
+}
+@media (max-width: 370px) {
+  .brand-text {
+    font-size: 21px;
+  }
+}
+/* Client portal page: the header sits on black, so its text goes white. */
 .header-dark {
   background: #000;
   color: #fff;
