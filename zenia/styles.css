@@ -4036,12 +4036,12 @@ body.menu-open {
     display: block;
   }
 }
-.portal-intro h2 {
+.portal-intro :is(h1, h2) {
   font-size: clamp(34px, 3.65vw, 54px);
   line-height: 1.17;
   letter-spacing: -0.045em;
 }
-.portal-intro h2 > span {
+.portal-intro :is(h1, h2) > span {
   color: #96969b;
 }
 .portal-description {
@@ -4282,7 +4282,7 @@ body.menu-open {
     font-size: 12px;
     margin-bottom: 20px;
   }
-  .portal-intro h2 {
+  .portal-intro :is(h1, h2) {
     font-size: 35px;
     line-height: 1.18;
   }
@@ -4327,7 +4327,7 @@ body.menu-open {
   .testimonial-card-content {
     padding: 24px 21px;
   }
-  .portal-intro h2 {
+  .portal-intro :is(h1, h2) {
     font-size: 31px;
   }
 }
@@ -4414,14 +4414,14 @@ img.brand-svg {
   /* Leaves room for the larger artwork so the copy never runs under it. */
   max-width: 46%;
 }
-.services-hero h2 {
+.services-hero h1 {
   font-size: clamp(34px, 3.8vw, 56px);
   font-weight: 500;
   line-height: 1.17;
   letter-spacing: -0.045em;
   margin: 0;
 }
-.services-hero h2 > span {
+.services-hero h1 > span {
   color: #9c94a5;
 }
 .services-hero .portal-eyebrow {
@@ -4472,7 +4472,7 @@ img.brand-svg {
   .services-hero .portal-intro {
     max-width: none;
   }
-  .services-hero h2 {
+  .services-hero h1 {
     font-size: clamp(32px, 8.4vw, 42px);
   }
   .services-hero .portal-description {
@@ -4569,13 +4569,13 @@ img.brand-svg {
   max-width: 640px;
   font-size: 19px;
 }
-.about-hero h2 {
+.about-hero h1 {
   font-size: clamp(40px, 4.4vw, 66px);
   line-height: 1.17;
   letter-spacing: -0.045em;
   margin: 0;
 }
-.about-hero h2 > span {
+.about-hero h1 > span {
   color: #d8d2dd;
 }
 @media (max-width: 1100px) {
@@ -4591,7 +4591,7 @@ img.brand-svg {
     padding-bottom: 76px;
     min-height: 78vh;
   }
-  .about-hero h2 {
+  .about-hero h1 {
     font-size: clamp(32px, 8.4vw, 42px);
   }
   .about-hero .portal-description {
@@ -4610,14 +4610,14 @@ img.brand-svg {
   max-width: 880px;
   margin: 0 auto;
 }
-.portal-page-hero h2 {
+.portal-page-hero h1 {
   font-size: clamp(38px, 4.1vw, 62px);
   line-height: 1.17;
   letter-spacing: -0.045em;
   margin: 0;
 }
 
-.portal-page-hero h2 > span {
+.portal-page-hero h1 > span {
   color: #96969b;
 }
 .portal-page-artwork {

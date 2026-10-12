@@ -498,7 +498,7 @@ export function PortalHero() {
       <div className="container">
         <div className="portal-intro">
           <p className="portal-eyebrow">YOUR CUSTOMER PORTAL</p>
-          <h2 id="portal-page-title">
+          <h1 id="portal-page-title">
             Your project. <br className="portal-break" />
             One shared space.
             <br />
@@ -506,7 +506,7 @@ export function PortalHero() {
               Stay close to every detail, from the first idea to the next
               release.
             </span>
-          </h2>
+          </h1>
           <p className="portal-description">
             Follow progress, review designs, and share feedback with your team.
             Everything in one place, so you always know where things stand.
@@ -570,13 +570,13 @@ export function AboutPage() {
         <div className="container">
           <div className="portal-intro">
             <p className="portal-eyebrow">WE ARE ZENIA</p>
-            <h2 id="about-hero-title">
+            <h1 id="about-hero-title">
               A small team with a long attention span.
               <br />
               <span>
                 Designers and developers who care how things are made.
               </span>
-            </h2>
+            </h1>
             <p className="portal-description">
               We build digital products end to end, from the first conversation
               to the details nobody notices until they are missing.
@@ -629,10 +629,10 @@ export function ServicesPage({ onContact }) {
         <div className="container">
           <div className="portal-intro">
             <p className="portal-eyebrow">WHAT WE DO</p>
-            <h2 id="services-hero-title">
+            <h1 id="services-hero-title">
               Everything your product needs,{" "}
               <span>designed and built together</span>
-            </h2>
+            </h1>
             <p className="portal-description">
               Apps, websites, and connected platforms. One team to bring your
               next chapter to life.
