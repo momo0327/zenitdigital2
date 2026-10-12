@@ -186,6 +186,9 @@ export default function HeroCarousel({ onProject, reducedMotion, blocked }) {
                 width="1536"
                 height="1024"
                 fetchPriority={index === 0 ? "high" : "auto"}
+                // Keeps the hidden slides out of the preload scanner, so the
+                // first slide is not competing with them for bandwidth.
+                loading={index === 0 ? "eager" : "lazy"}
               />
             </div>
           </div>

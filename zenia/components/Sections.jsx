@@ -178,100 +178,6 @@ export function Cases({ onContact, onProject }) {
   );
 }
 
-export function Services({ onContact, onProject, dark }) {
-  return (
-    <section
-      className={`services container section${dark ? " services-dark" : ""}`}
-      id="services"
-      aria-labelledby="services-title"
-    >
-      <div className="section-heading">
-        <h2 id="services-title">
-          Your idea.
-          <br />
-          Our kind of challenge.
-        </h2>
-        <p>
-          From a first release to your next big chapter.
-          <br />
-          One team to bring it all together.
-        </p>
-      </div>
-      <div className="service-columns">
-        <article className="service-card service-stack">
-          <div className="service-card-copy">
-            <h3>
-              Fullstack
-              <br />
-              development
-            </h3>
-            <button
-              className="service-link"
-              data-service="Full-stack platforms"
-              onClick={() => onContact("Full-stack platforms")}
-            >
-              Start a project
-            </button>
-          </div>
-          <div className="service-card-art">
-            <img
-              src="/zenia/svc-fullstack.png"
-              alt="A phone and laptop showing a connected platform"
-              loading="lazy"
-            />
-          </div>
-        </article>
-        <article className="service-card service-mobile">
-          <div className="service-card-copy">
-            <h3>
-              Mobile
-              <br />
-              development
-            </h3>
-            <button
-              className="service-link"
-              data-service="Mobile development"
-              onClick={() => onContact("Mobile development")}
-            >
-              Start a project
-            </button>
-          </div>
-          <div className="service-card-art">
-            <img
-              src="/zenia/svc-mobile.png"
-              alt="A phone showing a mobile app interface"
-              loading="lazy"
-            />
-          </div>
-        </article>
-        <article className="service-card service-web">
-          <div className="service-card-copy">
-            <h3>
-              Web
-              <br />
-              development
-            </h3>
-            <button
-              className="service-link"
-              data-service="Web development"
-              onClick={() => onContact("Web development")}
-            >
-              Start a project
-            </button>
-          </div>
-          <div className="service-card-art">
-            <img
-              src="/zenia/svc-web.png"
-              alt="A tablet showing a dashboard interface"
-              loading="lazy"
-            />
-          </div>
-        </article>
-      </div>
-    </section>
-  );
-}
-
 function ProcessMark() {
   // Two interlocking brackets that trace themselves, mirroring the supplied mark.
   return (
@@ -514,7 +420,7 @@ export function PortalHero() {
         </div>
         <figure className="portal-page-artwork">
           <img
-            src="/zenia/portal-hero.png"
+            src="/zenia/portal-hero.webp"
             alt="The client portal open on an iPad"
             width="1779"
             height="884"
@@ -641,7 +547,7 @@ export function ServicesPage({ onContact }) {
         </div>
         <img
           className="services-hero-art"
-          src="/zenia/services-hero.png"
+          src="/zenia/services-hero.webp"
           alt="A tablet and phone showing a responsive site design"
           width="2000"
           height="1232"

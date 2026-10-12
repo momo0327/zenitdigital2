@@ -4548,7 +4548,7 @@ img.brand-svg {
       rgb(0 0 0 / 25%) 45%,
       rgb(0 0 0 / 45%) 100%
     ),
-    url("/zenia/about-hero.png") center / cover no-repeat;
+    url("/zenia/about-hero.webp") center / cover no-repeat;
   color: #fff;
   /* Clears the overlaid header, then holds the copy low in the frame. */
   padding-top: 260px;
