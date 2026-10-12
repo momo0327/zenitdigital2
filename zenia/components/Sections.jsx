@@ -795,7 +795,7 @@ export function Footer({ onContact, onProject }) {
           </div>
           <nav aria-label="Explore Zenia">
             <h3>Explore</h3>
-            <a href="/#cases">Our work</a>
+            <Link href="/work">Our work</Link>
             <a href="/#about">About us</a>
             <a href="/#process">Our process</a>
             <a href="/#faq">Questions &amp; answers</a>

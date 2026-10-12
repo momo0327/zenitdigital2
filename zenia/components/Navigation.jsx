@@ -17,7 +17,7 @@ export function Header({ onContact, onMenu, menuOpen, dark, transparent }) {
     >
       <Logo />
       <nav className="desktop-nav" aria-label="Main navigation">
-        <a href={`${home}#cases`}>Work</a>
+        <Link href="/work">Work</Link>
         <a href={`${home}#services`}>Services</a>
         <a href={`${home}#about`}>About us</a>
         <Link href="/portal">Client portal</Link>
@@ -133,9 +133,13 @@ export function Menu({ onClose, onContact, onProject, reducedMotion, origin }) {
             Explore Zenia
           </h2>
           <nav className="menu-links" aria-label="Expanded navigation">
-            <a style={{ "--link-index": 0 }} href="/#cases">
+            <Link
+              style={{ "--link-index": 0 }}
+              href="/work"
+              onClick={() => close()}
+            >
               Work
-            </a>
+            </Link>
             <Link
               style={{ "--link-index": 1 }}
               href="/#services"

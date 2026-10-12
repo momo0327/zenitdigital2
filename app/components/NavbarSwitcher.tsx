@@ -3,22 +3,37 @@ import React from 'react';
 import { usePathname } from 'next/navigation';
 import Navbar from './navbar';
 
-// The Zenia site is the primary site and ships its own header inside
-// ZeniaShell, so the legacy Navbar must stay out of its routes.
-const ZENIA_ROUTES = ['/', '/about', '/services', '/portal'];
-
 /**
- * Renders the legacy Navbar only on the remaining Zenit Digital pages. The
- * Zenia routes bring their own header, and /zenit mounts its own v2 navbar.
+ * The legacy Zenit Digital navbar. The Zenia site is the primary site now and
+ * ships its own header inside ZeniaShell, and /zenit mounts its own v2 navbar,
+ * so this renders only on the remaining legacy pages.
+ *
+ * Opt-in rather than opt-out: a new Zenia route gets no legacy navbar by
+ * default. The previous version listed the Zenia routes to skip, so every
+ * route added there showed a second header until this list was updated.
  */
+const LEGACY_NAVBAR_ROUTES = [
+  '/ContactPage',
+  '/FullstackDev',
+  '/MobileDev',
+  '/WebDev',
+  '/faqs',
+  '/privacy',
+  '/terms',
+  // /zenit itself mounts Navbar2; its sub-pages carry no navbar of their own.
+  '/zenit/about',
+  '/zenit/services',
+  '/zenit/work',
+];
+
 const NavbarSwitcher: React.FC = () => {
   const pathname = usePathname();
 
-  if (ZENIA_ROUTES.includes(pathname) || pathname === '/zenit') {
-    return null;
-  }
+  const isLegacyRoute = LEGACY_NAVBAR_ROUTES.some(
+    (route) => pathname === route || pathname.startsWith(`${route}/`),
+  );
 
-  return <Navbar />;
+  return isLegacyRoute ? <Navbar /> : null;
 };
 
 export default NavbarSwitcher;

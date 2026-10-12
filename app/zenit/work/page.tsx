@@ -1,7 +1,7 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import Footer from '../components/Footer';
+import Footer from '@/app/components/Footer';
 
 export const metadata: Metadata = {
   title: 'Our Work - Zenit Digital Portfolio',
