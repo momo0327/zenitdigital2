@@ -39,7 +39,7 @@ export const StaggeredMenuHeader: React.FC<StaggeredMenuHeaderProps> = ({
       <div className="sm-logo flex items-center select-none pointer-events-auto" aria-label="Logo">
         <OptimizedImage
           src={logoUrl}
-          alt="Zenit Digital Logo"
+          alt="Zenia Digital Logo"
           width={110}
           height={32}
           className="sm-logo-img block h-8 w-auto object-contain"

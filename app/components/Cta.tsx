@@ -13,7 +13,7 @@ const CTA: React.FC<CTAProps> = ({
   accentColor = 'text-[#FF5147]'
 }) => {
   return (
-    <div className="px-5 md:px-12 lg:px-16 2xl:px-16 py-16 md:py-20 lg:py-24 2xl:py-32 bg-[#F5F5F5]">
+    <div className="px-5 md:px-12 lg:px-16 2xl:px-16 pt-6 pb-16 md:py-20 lg:py-24 2xl:py-32 bg-[#F5F5F5]">
       <div className="max-w-6xl 2xl:max-w-[2250px] mx-auto relative">
         <div className={`${bgColor} rounded-xl 2xl:rounded-2xl px-8 py-24 md:px-16 md:py-20 lg:px-20 lg:py-24 2xl:px-28 2xl:py-32 text-center relative overflow-hidden`}>
 

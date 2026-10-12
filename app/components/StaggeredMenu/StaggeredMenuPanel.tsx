@@ -1,7 +1,9 @@
-import React, { forwardRef } from 'react';
+import React from 'react';
+import Link from 'next/link';
 import { StaggeredMenuItem, StaggeredMenuSocialItem } from './StaggeredMenu.types';
 
 interface StaggeredMenuPanelProps {
+  ref?: React.Ref<HTMLElement>;
   open: boolean;
   items: StaggeredMenuItem[];
   socialItems: StaggeredMenuSocialItem[];
@@ -12,14 +14,20 @@ interface StaggeredMenuPanelProps {
 /**
  * Menu panel with navigation items and social links
  */
-export const StaggeredMenuPanel = forwardRef<HTMLElement, StaggeredMenuPanelProps>(
-  ({ open, items, socialItems, displaySocials, displayItemNumbering }, ref) => {
+export const StaggeredMenuPanel = ({
+  ref,
+  open,
+  items,
+  socialItems,
+  displaySocials,
+  displayItemNumbering,
+}: StaggeredMenuPanelProps) => {
     return (
       <aside
         id="staggered-menu-panel"
         ref={ref}
-        className="staggered-menu-panel absolute top-0 right-0 h-full bg-[#F5F5F5] flex flex-col p-[6em_2em_2em_2em] overflow-y-auto z-10 backdrop-blur-[12px]"
-        style={{ WebkitBackdropFilter: 'blur(12px)' }}
+        className="staggered-menu-panel absolute top-0 right-0 h-full bg-[#F5F5F5] flex flex-col p-[6em_2em_2em_2em] overflow-y-auto z-10 backdrop-blur-[8px] will-change-transform"
+        style={{ WebkitBackdropFilter: 'blur(8px)' }}
         aria-hidden={!open}
       >
         <div className="sm-panel-inner flex-1 flex flex-col gap-5">
@@ -31,7 +39,7 @@ export const StaggeredMenuPanel = forwardRef<HTMLElement, StaggeredMenuPanelProp
             {items && items.length ? (
               items.map((it, idx) => (
                 <li className="sm-panel-itemWrap relative overflow-hidden leading-none" key={it.label + idx}>
-                  <a
+                  <Link
                     className="sm-panel-item relative text-black font-semibold text-[4rem] cursor-pointer leading-none tracking-[-2px] uppercase transition-[background,color] duration-150 ease-linear inline-block no-underline pr-[1.4em]"
                     href={it.link}
                     aria-label={it.ariaLabel}
@@ -40,7 +48,7 @@ export const StaggeredMenuPanel = forwardRef<HTMLElement, StaggeredMenuPanelProp
                     <span className="sm-panel-itemLabel inline-block [transform-origin:50%_100%] will-change-transform">
                       {it.label}
                     </span>
-                  </a>
+                  </Link>
                 </li>
               ))
             ) : (
@@ -81,7 +89,4 @@ export const StaggeredMenuPanel = forwardRef<HTMLElement, StaggeredMenuPanelProp
         </div>
       </aside>
     );
-  }
-);
-
-StaggeredMenuPanel.displayName = 'StaggeredMenuPanel';
+};

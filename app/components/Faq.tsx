@@ -1,6 +1,7 @@
 'use client'
 import React, { useState } from 'react';
 import { Plus, Minus } from 'lucide-react';
+import { FAQ_ITEMS } from '@/app/constants/content';
 
 interface FAQProps {
   bgColor?: string;
@@ -15,32 +16,7 @@ const FAQ: React.FC<FAQProps> = ({
 }) => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
-  const faqs = [
-    {
-      question: "Vad gör era sensorer?",
-      answer: "Våra sensorer övervakar och samlar in data från olika miljöer för att ge er värdefull insikt och kontroll över era system."
-    },
-    {
-      question: "Vad är skillnaden mellan era sensorer och andra?",
-      answer: "Våra sensorer erbjuder högre precision, längre batteritid och seamless integration med moderna system."
-    },
-    {
-      question: "Vad är leverans tiden för era sensorer?",
-      answer: "Standard leveranstid är 3-5 arbetsdagar inom Sverige. Expressleverans finns tillgänglig."
-    },
-    {
-      question: "Har man rätt till retur?",
-      answer: "Ja, vi erbjuder 30 dagars öppet köp på alla våra produkter enligt svensk konsumentlagstiftning."
-    },
-    {
-      question: "Har man rätt till ångerrätt?",
-      answer: "Ja, du har 14 dagars ångerrätt från det att du mottagit produkten."
-    },
-    {
-      question: "Vad gör era sensorer?",
-      answer: "Våra sensorer övervakar och samlar in data från olika miljöer för att ge er värdefull insikt och kontroll över era system."
-    }
-  ];
+  const faqs = FAQ_ITEMS;
 
   const toggleFAQ = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);

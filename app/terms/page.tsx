@@ -4,8 +4,8 @@ import Link from 'next/link';
 import Footer from '../components/Footer';
 
 export const metadata: Metadata = {
-  title: 'Terms of Service - Zenit Digital',
-  description: 'Read our terms of service to understand the agreement between you and Zenit Digital when using our services.',
+  title: 'Terms of Service - Zenia Digital',
+  description: 'Read our terms of service to understand the agreement between you and Zenia Digital when using our services.',
 };
 
 export default function TermsPage() {
@@ -35,7 +35,7 @@ export default function TermsPage() {
                 Agreement to Terms
               </h2>
               <p className="text-gray-600 leading-relaxed">
-                By accessing or using Zenit Digital&apos;s services, you agree to be bound by these Terms of Service. If you disagree with any part of these terms, you may not access our services.
+                By accessing or using Zenia Digital&apos;s services, you agree to be bound by these Terms of Service. If you disagree with any part of these terms, you may not access our services.
               </p>
             </div>
 
@@ -45,7 +45,7 @@ export default function TermsPage() {
                 Services
               </h2>
               <p className="text-gray-600 leading-relaxed mb-4">
-                Zenit Digital provides web development, mobile development, and fullstack development services. Our services include but are not limited to:
+                Zenia Digital provides web development, mobile development, and fullstack development services. Our services include but are not limited to:
               </p>
               <ul className="list-disc pl-6 text-gray-600 space-y-2">
                 <li>Custom website and web application development</li>
@@ -62,7 +62,7 @@ export default function TermsPage() {
                 Intellectual Property
               </h2>
               <p className="text-gray-600 leading-relaxed">
-                Unless otherwise stated, Zenit Digital and/or its licensors own the intellectual property rights for all material on this website and in our services. Upon full payment for services rendered, clients receive the agreed-upon rights to the deliverables as specified in the project agreement.
+                Unless otherwise stated, Zenia Digital and/or its licensors own the intellectual property rights for all material on this website and in our services. Upon full payment for services rendered, clients receive the agreed-upon rights to the deliverables as specified in the project agreement.
               </p>
             </div>
 
@@ -109,7 +109,7 @@ export default function TermsPage() {
                 Limitation of Liability
               </h2>
               <p className="text-gray-600 leading-relaxed">
-                Zenit Digital shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your use of or inability to use our services.
+                Zenia Digital shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your use of or inability to use our services.
               </p>
             </div>
 

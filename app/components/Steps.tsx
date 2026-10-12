@@ -28,41 +28,40 @@ const Steps: React.FC<StepsProps> = ({
     {
       number: "01",
       title: "Contact Us",
-      description: "Reach out to our team and let's start a conversation about your project goals and vision.",
+      description: "Tell us what you want to build, who it's for, and what success looks like. We'll reply within a working day.",
       icon: MessageCircle
     },
     {
       number: "02",
       title: "Strategic Meeting",
-      description: "We dive deep into your requirements, analyze your needs, and craft a tailored strategy for success.",
+      description: "We map scope, timeline, and budget together, then send a written proposal you can hold us to.",
       icon: Target
     },
     {
       number: "03",
       title: "Development",
-      description: "Our expert team brings your vision to life with cutting-edge technology and best practices.",
+      description: "We build in two-week sprints with weekly demos, so you see real progress instead of status reports.",
       icon: Code
     },
     {
       number: "04",
       title: "Launch & Support",
-      description: "We launch your product and provide ongoing support to ensure continued success and growth.",
+      description: "We ship to production, monitor performance, and iterate post-launch. Your product keeps evolving past day one.",
       icon: Rocket
     }
   ];
 
   return (
-    <div className={`${bgColor} py-16 md:py-20 lg:py-42 2xl:py-56 mb-20 2xl:mb-32`}>
+    <div className={`${bgColor} pt-16 md:pt-20 lg:pt-42 2xl:pt-56 pb-12 md:pb-16 lg:pb-20 2xl:pb-24`}>
       <div className="w-full">
         {/* Header Section */}
         <div className="mb-8 md:mb-12 2xl:mb-16 px-5 md:px-12 lg:px-16 2xl:px-24">
           <h2 className={`text-4xl md:text-5xl lg:text-6xl xl:text-8xl 2xl:text-9xl font-bold font-antonio ${titleColor} leading-tight mb-4 2xl:mb-8`}>
-          TAKE THE STEPS TO YOUR <br className="hidden md:block" />  STARTUP SUCCESS
+          FROM FIRST CALL TO <br className="hidden md:block" />  LIVE PRODUCT
           </h2>
           <p className={`${subtitleColor} text-base md:text-lg 2xl:text-3xl max-w-xl 2xl:max-w-3xl`}>
-            A streamlined approach to transform your ideas into reality. A streamlined approach to transform your ideas into reality.
-
-          </p>
+            A clear four-step process from first conversation to launched product. No scope creep, no surprises.
+</p>
         </div>
 
         {/* Horizontal Scroll Steps */}

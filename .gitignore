@@ -36,6 +36,13 @@ yarn-error.log*
 # vercel
 .vercel
 
+# cloudflare / opennext
+.open-next
+.wrangler
+
+# playwright mcp snapshots
+.playwright-mcp
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

@@ -1,7 +1,6 @@
 import React, { Suspense } from 'react';
 import type { Metadata } from 'next';
 import ServicesScroll from '@/app/components/sections/ServicesScroll';
-import Steps from '@/app/components/Steps';
 import Achievements from '@/app/components/Achievments';
 import FAQ from '@/app/components/Faq';
 import Cta from '@/app/components/Cta';
@@ -12,7 +11,7 @@ import FeaturesGrid from '@/app/components/FeaturesGrid';
 import Footer from '@/app/components/Footer';
 
 export const metadata: Metadata = {
-  title: 'Our Services - Zenit Digital',
+  title: 'Our Services - Zenia Digital',
   description: 'Explore our comprehensive digital services: Web Development, Mobile App Development, and Fullstack Solutions. Custom-built solutions for your business needs.',
 };
 
@@ -57,8 +56,7 @@ export default function ServicesPage() {
        {/* <HelpGrid/>  */}
       <Suspense fallback={<div className="min-h-screen bg-[#F5F5F5]" />}>
         <ScrollStack/>
-      </Suspense> 
-      <Steps />
+      </Suspense>
 
       <FAQ
         bgColor="bg-[#051E01]"

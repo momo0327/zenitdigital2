@@ -3,8 +3,6 @@ import dynamic from 'next/dynamic';
 import Script from 'next/script';
 import { Suspense } from 'react';
 import Header from "@/app/components/header";
-import SubHeader from "@/app/components/subHeader";
-import ReversedHeader from "@/app/components/ReversedHeader";
 import Text from "@/app/components/text";
 import TriHeader from "@/app/components/triHeader";
 import GreenCTA from "@/app/components/GreenCta";
@@ -49,7 +47,7 @@ export const metadata: Metadata = HOME_METADATA;
 export default function Home() {
   // Structured Data for Homepage
   const webPageSchema = generateWebPageSchema(
-    'Zenit Digital - Digital Agency Sweden',
+    'Zenia Digital - Digital Agency Sweden',
     'Leading digital agency in Sweden. Web development, mobile apps, and fullstack solutions.',
     BASE_URL
   );
@@ -103,8 +101,9 @@ export default function Home() {
 
       {/* Flex container for side-by-side components */}
       {/* <div className="flex flex-col lg:flex-row bg-[#F5F5F5]">
-          <SubHeader />
-          <ReversedHeader />
+        {HOMEPAGE_SERVICE_CARDS.map((card) => (
+          <HomepageServiceCard key={card.id} card={card} />
+        ))}
       </div>
       <TriHeader/> */}
         {/* <SelectedWork/> */}

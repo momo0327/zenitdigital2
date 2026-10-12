@@ -97,11 +97,11 @@ const ServicesScroll = () => {
                 className="block flex-shrink-0 group"
               >
                 <div
-                  className={`${service.bgColor} rounded-2xl 2xl:rounded-3xl p-8 md:p-12 lg:p-16 2xl:p-20 w-[85vw] md:w-[700px] lg:w-[900px] 2xl:w-[1100px] h-[500px] md:h-[500px] lg:h-[500px] 2xl:h-[600px] flex flex-col justify-between transition-shadow duration-300 group-hover:shadow-2xl`}
+                  className={`${service.bgColor} rounded-2xl 2xl:rounded-3xl p-8 md:p-12 lg:p-16 2xl:p-20 w-[85vw] md:w-[700px] lg:w-[900px] 2xl:w-[1100px] h-[380px] md:h-[500px] lg:h-[500px] 2xl:h-[600px] flex flex-col justify-between transition-shadow duration-300 group-hover:shadow-2xl`}
                 >
                   {/* Text Content */}
                   <div className="text-left">
-                    <h3 className={`text-5xl md:text-7xl lg:text-8xl 2xl:text-9xl font-bold font-antonio ${service.textColor} mb-6 2xl:mb-8 leading-none`}>
+                    <h3 className={`text-5xl md:text-7xl lg:text-8xl 2xl:text-9xl font-bold font-antonio ${service.textColor} mb-6 2xl:mb-8 leading-none whitespace-pre-line`}>
                       {service.title}
                     </h3>
                     <p className={`text-sm md:text-base lg:text-lg 2xl:text-xl lg:w-max-md ${service.textColor} opacity-80 leading-relaxed`}>
