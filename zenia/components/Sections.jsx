@@ -656,7 +656,7 @@ export function PortalActions({ onContact }) {
     <section className="portal-actions-section" aria-label="Next steps">
       <div className="container">
         <div className="portal-actions">
-          <Link className="portal-action" href="/portal">
+          <Link className="portal-action" href="/contact">
             <span className="portal-action-label">Portal</span>
             <span className="portal-action-title">
               Book a walkthrough <span aria-hidden="true">&rarr;</span>

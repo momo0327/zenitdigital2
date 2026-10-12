@@ -1,14 +1,11 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import Logo from "./Logo";
 import Modal from "./Modal";
 
 export function Header({ onContact, onMenu, menuOpen, dark, transparent }) {
   const triggerRef = useRef(null);
-  // On sub-pages the in-page anchors have to travel back to the homepage first.
-  const home = usePathname() === "/" ? "" : "/";
   return (
     <header
       className={`header container${dark ? " header-dark" : ""}${
@@ -18,8 +15,8 @@ export function Header({ onContact, onMenu, menuOpen, dark, transparent }) {
       <Logo />
       <nav className="desktop-nav" aria-label="Main navigation">
         <Link href="/work">Work</Link>
-        <a href={`${home}#services`}>Services</a>
-        <a href={`${home}#about`}>About us</a>
+        <Link href="/services">Services</Link>
+        <Link href="/about">About us</Link>
         <Link href="/portal">Client portal</Link>
       </nav>
       <button
@@ -142,14 +139,14 @@ export function Menu({ onClose, onContact, onProject, reducedMotion, origin }) {
             </Link>
             <Link
               style={{ "--link-index": 1 }}
-              href="/#services"
+              href="/services"
               onClick={() => close()}
             >
               Services
             </Link>
             <Link
               style={{ "--link-index": 2 }}
-              href="/#about"
+              href="/about"
               onClick={() => close()}
             >
               About us

@@ -2247,6 +2247,19 @@ body.menu-open {
   display: flex;
   gap: 20px;
 }
+/* 404 and error pages (app/not-found.tsx, app/error.tsx). */
+.error-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 40px;
+}
+.error-detail {
+  margin-top: 32px;
+  font-size: 13px;
+  white-space: pre-wrap;
+  color: var(--muted);
+}
 .motion-ready [data-reveal] {
   opacity: 0;
   transform: translateY(24px);

@@ -11,7 +11,7 @@ import "./styles.css";
 import "./hero-cards.css";
 import "./modo.css";
 
-export default function ZeniaShell({ children, dark, transparent }) {
+export default function ZeniaShell({ children, dark = false, transparent = false }) {
   const [menuOpen, setMenuOpen] = useState(false),
     [dialog, setDialog] = useState(null);
   // Centre of the menu button, so the overlay can expand from it.
