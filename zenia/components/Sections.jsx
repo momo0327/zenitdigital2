@@ -842,7 +842,11 @@ export function Footer({ onContact, onProject }) {
             © <span id="year">{new Date().getFullYear()}</span> Zenia
           </p>
           <span>Design &amp; development, together.</span>
-          <a href="/#top">Back to the top</a>
+          <div className="footer-links">
+            <Link href="/privacy">Privacy</Link>
+            <Link href="/terms">Terms</Link>
+            <a href="/#top">Back to the top</a>
+          </div>
         </div>
       </div>
     </footer>

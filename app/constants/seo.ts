@@ -253,16 +253,16 @@ export const CONTACT_METADATA: Metadata = {
     'kostnadsfri konsultation',
   ],
   alternates: {
-    canonical: `${BASE_URL}/ContactPage`,
+    canonical: `${BASE_URL}/contact`,
     languages: {
-      'en': `${BASE_URL}/ContactPage`,
-      'x-default': `${BASE_URL}/ContactPage`,
+      'en': `${BASE_URL}/contact`,
+      'x-default': `${BASE_URL}/contact`,
     },
   },
   openGraph: {
     title: 'Contact Us | Zenia Digital Sweden',
     description: "Let's discuss your next digital project. Professional web and app development in Sweden.",
-    url: `${BASE_URL}/ContactPage`,
+    url: `${BASE_URL}/contact`,
     type: 'website',
     locale: 'en_US',
   },

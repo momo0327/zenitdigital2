@@ -2243,6 +2243,10 @@ body.menu-open {
 .footer-base a:hover {
   color: white;
 }
+.footer-links {
+  display: flex;
+  gap: 20px;
+}
 .motion-ready [data-reveal] {
   opacity: 0;
   transform: translateY(24px);

@@ -139,7 +139,7 @@ export default function PrivacyPage() {
                 If you have any questions about this Privacy Policy, please contact us:
               </p>
               <Link
-                href="/ContactPage"
+                href="/contact"
                 className="inline-flex items-center text-[#0558F9] hover:text-[#0558F9]/80 transition-colors font-semibold"
               >
                 <span className="mr-2">Contact Page</span>
