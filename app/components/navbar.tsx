@@ -60,8 +60,7 @@ const Navbar: React.FC<NavbarProps> = ({
   const menuItems = [
     { label: 'Home', ariaLabel: 'Go to home page', link: '/' },
     { label: 'Services', ariaLabel: 'Explore our services', link: '/services' },
-    { label: 'FAQ', ariaLabel: 'Frequently asked questions', link: '/faqs' },
-    { label: 'Contact', ariaLabel: 'Get in touch with us', link: '/ContactPage' },
+    { label: 'Contact', ariaLabel: 'Get in touch with us', link: '/contact' },
   ];
 
   const socialItems = [
@@ -101,7 +100,7 @@ const Navbar: React.FC<NavbarProps> = ({
               <Link href="/services" className={`${textColor}  hover:opacity-100 px-2 md:px-4 2xl:px-6 py-2 2xl:py-3 rounded-md ${hoverBgColor} transition-all duration-200 text-sm md:text-lg 2xl:text-xl cursor-pointer`}>
                 Services
               </Link>
-              <Link href="/faqs" className={`${textColor}  hover:opacity-100 px-2 md:px-4 2xl:px-6 py-2 2xl:py-3 rounded-md ${hoverBgColor} transition-all duration-200 text-sm md:text-lg 2xl:text-xl cursor-pointer`}>
+              <Link href="/#faq" className={`${textColor}  hover:opacity-100 px-2 md:px-4 2xl:px-6 py-2 2xl:py-3 rounded-md ${hoverBgColor} transition-all duration-200 text-sm md:text-lg 2xl:text-xl cursor-pointer`}>
                 FAQ
               </Link>
             </div>
@@ -130,7 +129,7 @@ const Navbar: React.FC<NavbarProps> = ({
 
             {/* Let's Talk button (only on desktop) */}
             <div className="hidden lg:flex items-center">
-              <Link href="/ContactPage" className="group relative bg-black text-white px-6 py-2.5 2xl:px-8 2xl:py-3.5 rounded-full overflow-hidden transition-all duration-300 text-base 2xl:text-xl font-medium flex items-center gap-2 shadow-md hover:shadow-lg cursor-pointer transform hover:scale-105 z-10">
+              <Link href="/contact" className="group relative bg-black text-white px-6 py-2.5 2xl:px-8 2xl:py-3.5 rounded-full overflow-hidden transition-all duration-300 text-base 2xl:text-xl font-medium flex items-center gap-2 shadow-md hover:shadow-lg cursor-pointer transform hover:scale-105 z-10">
                 <span className="absolute inset-0 bg-[#D5EA9D] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out rounded-full -z-10"></span>
                 <span className="relative z-10 transition-colors duration-500 group-hover:text-black">Lets Talk</span>
                 <ArrowUpRight className="relative z-10 w-4 h-4 2xl:w-5 2xl:h-5 transition-all duration-500 ease-in-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-black" />

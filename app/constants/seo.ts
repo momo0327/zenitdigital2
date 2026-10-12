@@ -55,7 +55,7 @@ export const DEFAULT_METADATA: Metadata = {
     siteName: COMPANY.name,
     title: `${COMPANY.name} | ${COMPANY.tagline}`,
     description: COMPANY.description,
-    // Image auto-generated from app/opengraph-image.tsx
+    // Image is the static app/opengraph-image.png; a generated one 500s on Cloudflare.
   },
   robots: {
     index: true,
@@ -79,7 +79,7 @@ export const DEFAULT_METADATA: Metadata = {
 
 // Home Page Metadata
 export const HOME_METADATA: Metadata = {
-  title: 'Digital Byrå Sverige | Webbutveckling & Apputveckling',
+  title: `${COMPANY.name} | Web & App Development in Sweden`,
   description: `${COMPANY.name} - Leading digital agency in Sweden. We build exceptional web applications, mobile apps, and fullstack solutions. Expert developers delivering cutting-edge digital products for Swedish businesses.`,
   keywords: [
     'digital byrå Sverige',
@@ -242,7 +242,7 @@ export const AI_DEV_METADATA: Metadata = {
 
 // Contact Page Metadata
 export const CONTACT_METADATA: Metadata = {
-  title: 'Kontakta Oss | Digital Byrå Sverige',
+  title: 'Contact Us | Digital Agency in Sweden',
   description: `Contact ${COMPANY.name} in Sweden. Let's discuss your digital project - web development, app development, or fullstack solutions. Email: ${COMPANY.email} | Phone: ${COMPANY.phone}`,
   keywords: [
     'kontakta digital byrå',
@@ -253,16 +253,16 @@ export const CONTACT_METADATA: Metadata = {
     'kostnadsfri konsultation',
   ],
   alternates: {
-    canonical: `${BASE_URL}/ContactPage`,
+    canonical: `${BASE_URL}/contact`,
     languages: {
-      'en': `${BASE_URL}/ContactPage`,
-      'x-default': `${BASE_URL}/ContactPage`,
+      'en': `${BASE_URL}/contact`,
+      'x-default': `${BASE_URL}/contact`,
     },
   },
   openGraph: {
     title: 'Contact Us | Zenia Digital Sweden',
     description: "Let's discuss your next digital project. Professional web and app development in Sweden.",
-    url: `${BASE_URL}/ContactPage`,
+    url: `${BASE_URL}/contact`,
     type: 'website',
     locale: 'en_US',
   },
@@ -270,7 +270,7 @@ export const CONTACT_METADATA: Metadata = {
 
 // About Page Metadata (for future use)
 export const ABOUT_METADATA: Metadata = {
-  title: 'Om Oss | Digital Byrå i Sverige',
+  title: 'About Us | Digital Agency in Sweden',
   description: `Learn about ${COMPANY.name} - leading digital agency in Sweden. Our team, values, and approach to building exceptional digital products. Passionate developers dedicated to your success.`,
   keywords: [
     'om oss',
@@ -310,7 +310,7 @@ export const LOCAL_BUSINESS_SCHEMA = {
     width: 250,
     height: 60,
   },
-  image: `${BASE_URL}/opengraph-image`,
+  image: `${BASE_URL}/opengraph-image.png`,
   email: COMPANY.email,
   telephone: COMPANY.phone,
   foundingDate: COMPANY.founded,

@@ -61,7 +61,7 @@ const Header = () => {
                 transitionDelay: '600ms'
               }}
             >
-              <Link href='/services' className='bg-[#1E1F1F] text-[#fff] py-2 px-6 rounded-full'>Explore</Link>
+              <Link href='/zenit/services' className='bg-[#1E1F1F] text-[#fff] py-2 px-6 rounded-full'>Explore</Link>
               <Link href='/ContactPage' className='bg-[#fff] border-1 border-[#1E1F1F] text-[#1E1F1F] py-2 px-6 rounded-full'>Contact</Link>
             </div>
           </div>
@@ -101,7 +101,7 @@ const Header = () => {
             {MARKETING_COPY.tagline}
           </p>
           <div className='flex gap-3 2xl:gap-4'>
-            <Link href='/services' className='bg-[#000] text-[#fff] py-3 px-7 2xl:py-4 2xl:px-10 text-sm 2xl:text-lg rounded-full font-bold hover:bg-[#0FA0EF] transition-colors'>
+            <Link href='/zenit/services' className='bg-[#000] text-[#fff] py-3 px-7 2xl:py-4 2xl:px-10 text-sm 2xl:text-lg rounded-full font-bold hover:bg-[#0FA0EF] transition-colors'>
               Explore
             </Link>
             <Link href='/ContactPage' className='bg-transparent border-2 border-[#000] text-[#000] py-3 px-7 2xl:py-4 2xl:px-10 text-sm 2xl:text-lg rounded-full font-medium hover:bg-[#14AAFF]/10 transition-colors'>

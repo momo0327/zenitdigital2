@@ -52,13 +52,12 @@ app/
 
 ### App Router Pages
 - `app/page.tsx` - Homepage
-- `app/layout.tsx` - Root layout with fonts, SEO, and structure (Navbar, Footer, CookieConsent)
+- `app/layout.tsx` - Root layout with fonts, SEO and the legacy navbar switcher. There is no cookie banner: the site sets no cookies and has no tracking; add one with any analytics.
 - `app/about/page.tsx` - About page
-- `app/ContactPage/` - Contact page route
-- `app/WebDev/`, `app/MobileDev/`, `app/FullstackDev/` - Service pages
+- `app/WebDev/`, `app/MobileDev/`, `app/FullstackDev/`, `app/AIDev/` - Service pages
 - `app/work/page.tsx` - Portfolio page
-- `app/faqs/page.tsx` - FAQ page
 - `app/services/page.tsx` - Services overview
+- `next.config.ts` redirects `/zenit/*`, `/ContactPage` and `/faqs` to the Zenia pages
 - `app/privacy/page.tsx`, `app/terms/page.tsx` - Legal pages
 - `app/sitemap.ts`, `app/robots.ts` - SEO configuration files
 
@@ -68,7 +67,6 @@ app/
 - `navbar.tsx` - Main navigation with StaggeredMenu integration
 - `Footer.tsx` - Site footer with company info and navigation
 - `ContactForm.tsx` - Contact form with validation
-- `CookieConsent.tsx` - GDPR-compliant cookie consent banner
 
 **Layout Components**
 - `header.tsx`, `subHeader.tsx`, `ReversedHeader.tsx`, `triHeader.tsx` - Various header layouts
@@ -208,7 +206,7 @@ Comprehensive set of custom React hooks in `app/hooks/`:
 ### Client Components
 Components using hooks or browser APIs must include `'use client'` directive:
 - Navigation components (navbar, StaggeredMenu)
-- Interactive components (ContactForm, CookieConsent)
+- Interactive components (ContactForm)
 - Animation components (FadeInOnScroll)
 
 ### GSAP Animation Patterns
@@ -241,8 +239,7 @@ Components using hooks or browser APIs must include `'use client'` directive:
 ### Error Handling
 - `error.tsx` - Route-level error boundary
 - `global-error.tsx` - Global error boundary
-- `not-found.tsx` - 404 page
-- `loading.tsx` - Loading states for pages
+- `not-found.tsx` - 404 page (Zenia-styled, rendered inside `ZeniaShell`, as is `error.tsx`)
 
 ## Development Workflow
 
@@ -261,3 +258,95 @@ Components using hooks or browser APIs must include `'use client'` directive:
 - The project uses App Router, not Pages Router
 - SEO is configured for Swedish market (Göteborg office location)
 - Company contact: hello@zeniadigital.se
+
+---
+
+# The Zenia site (ported Vite site) — now the primary site
+
+The Zenia site is the **primary site and owns the root routes**. It was built
+separately in a Vite + React project and ported here. It does **not** share
+components, CSS or conventions with the Zenit Digital site described above,
+whose remaining pages are listed under "Changes made to the legacy site".
+
+## Where it lives
+
+| What | Path |
+|---|---|
+| Routes | `app/page.jsx`, `app/about/`, `app/contact/`, `app/portal/`, `app/services/`, `app/work/` |
+| Components, CSS, data | `zenia/` (project root — this repo has no `src/`) |
+| Assets | `public/zenia/` (28 files) |
+| Shared chrome | `zenia/ZeniaShell.jsx` — header, mobile menu, footer, dialogs |
+
+Live at `/`, `/about`, `/contact`, `/portal`, `/services`, `/work`.
+
+The route `page.jsx` files are client components, so they cannot export
+`metadata`. Each route's metadata lives in a sibling `layout.tsx` instead; the
+homepage body is `zenia/ZeniaHome.jsx`, wrapped by a server `app/page.jsx`.
+Without per-route metadata a page inherits the root `canonical` (the homepage).
+
+The former Zenit Digital homepage, about, services and work pages, `/ContactPage`
+and `/faqs` were removed; `next.config.ts` redirects them (permanently) to the
+matching Zenia page. The legacy `/AIDev`, `/WebDev`, `/MobileDev`, `/FullstackDev`,
+`/privacy` and `/terms` remain, in the old design, and link to the Zenia routes.
+
+Asset paths stay under `/zenia/...` and `/zenia-services/...` — those are
+`public/` directories, not routes, so they did not change.
+
+## Conventions — deliberately different from the main site
+
+- **Plain `.jsx`, not TypeScript.** Converting was declined to avoid visual drift.
+- **Hand-written CSS, not Tailwind.** Three global files imported by `ZeniaShell`:
+  `zenia/styles.css` (~5000 lines), `hero-cards.css`, `modo.css`.
+- **Namespaced** (`zenia/`, `public/zenia/`) because `ContactForm` collides with
+  `app/components/`, and to guarantee the two sites can't affect each other.
+- The CSS is global. It loads on the routes `ZeniaShell` renders, but rendering
+  these components inside a legacy page would leak styles.
+
+## Changes made to the legacy site
+
+`app/components/NavbarSwitcher.tsx` — the root layout mounts this instead of the
+legacy navbar. It is opt-in: the navbar renders only on the routes listed in
+`LEGACY_NAVBAR_ROUTES`. **A new legacy route must be added there** or it renders
+with no navbar.
+
+The Manrope preloads that lived in `app/zenia/layout.tsx` moved into the `<head>`
+of `app/layout.tsx` when that layout was removed.
+
+## Porting rules (if syncing from the Vite project again)
+
+The source of truth is `~/Downloads/zenia-react-vite`. Five transforms are needed
+on every file copied across:
+
+1. `"use client"` at the top — nearly everything uses hooks or DOM APIs.
+2. `react-router-dom` → `next/link`: `<Link to=` → `<Link href=`,
+   `useLocation().pathname` → `usePathname()`.
+3. Asset paths → `/zenia/...` absolute. Relative `assets/...` breaks on nested routes.
+4. Internal links point at root paths (`/about`, `/services`, `/portal`). In-page
+   anchors must be root-absolute (`/#cases`, not `#cases`) — the footer, logo and
+   mobile menu render on sub-pages too, where a bare `#hash` would not navigate.
+5. Guard browser APIs — see below.
+
+## SSR/hydration fixes (do not regress these)
+
+The Vite original was client-only, so these only surface under Next:
+
+- `zenia/hooks.js` — `useMediaQuery` and `usePageVisible` start from the
+  server's value (`false` / `true`) and read `window`/`document` only in
+  `useEffect`. Reading them in the `useState` initialiser causes a hydration
+  mismatch (e.g. for visitors with reduced motion on).
+- Refs can be `null` during hydration or route changes. Guarded in:
+  `Testimonials.jsx` (`measure()` called `getComputedStyle(null)`),
+  plus `observer.observe()` in `Testimonials.jsx` and `Sections.jsx`.
+
+## Known issues
+
+- **Hidden until real content exists** — the testimonials (`zenia/components/Testimonials.jsx`,
+  not rendered by `ZeniaHome.jsx`) and the homepage stats row (removed from
+  `Statement.jsx`; restore it from git history).
+- **Concept work** — every case study is a concept, labelled "Concept" on the
+  hero, the homepage cards and `/work`. Drop the label when real client work lands.
+  Project imagery must be Zenia's own mockups: the earlier card images were
+  third-party product screenshots and were replaced.
+- **Placeholder copy** — the About/Services page body text is invented and needs
+  real content.
+- **X link on `/contact` is `#`** — kept to match the design until there is an account.

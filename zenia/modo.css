@@ -1,0 +1,45 @@
+.modo-board { background: #fc554b; border-radius: 22px; padding: clamp(20px, 5vw, 58px); color: #240000; }
+.modo-screens { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; align-items: start; }
+.modo-screen { background: #fffdfa; border-radius: 13px; padding: 24px; min-width: 0; min-height: 620px; display: flex; flex-direction: column; font-family: Manrope, sans-serif; }
+.modo-screen:nth-child(2) { margin-top: 34px; }
+.modo-screen:nth-child(3) { margin-top: 68px; }
+.modo-top { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 32px; }
+.modo-top strong { font-size: 27px; letter-spacing: -.06em; }
+.modo-top span { font-size: 11px; }
+.modo-screen h4 { font-size: clamp(28px, 3vw, 39px); font-weight: 500; letter-spacing: -.055em; line-height: 1.08; margin: 0 0 25px; }
+.modo-search { border-bottom: 1px solid #24000025; font-size: 12px; padding: 5px 0 14px; margin-bottom: 16px; }
+.modo-chips { display: flex; gap: 7px; margin-bottom: 20px; }
+.modo-chips span { font-size: 11px; padding: 7px 13px; border: 1px solid #24000025; border-radius: 20px; }
+.modo-chips span:first-child { background: #240000; color: #fff; }
+.modo-feature { background: #e4d8ff; border-radius: 10px; padding: 20px; }
+.modo-feature span, .modo-booking > span { font-size: 10px; letter-spacing: .05em; }
+.modo-feature strong { display: block; font-size: 44px; line-height: .98; letter-spacing: -.06em; font-weight: 500; margin: 27px 0 12px; }
+.modo-feature p { font-size: 12px; margin: 0 0 25px; }
+.modo-list { display: grid; gap: 6px; padding: 20px 0; font-size: 14px; }
+.modo-list span { font-size: 11px; }
+.modo-list b { font-size: 13px; font-weight: 500; }
+.modo-bottom { margin-top: auto; display: flex; justify-content: space-between; border-top: 1px solid #24000018; padding-top: 18px; font-size: 10px; }
+.modo-kicker { font-size: 10px; letter-spacing: .04em; margin: 0 0 18px; }
+.modo-description { font-size: 12px; line-height: 1.7; margin: 0 0 20px; }
+.modo-details > div { display: grid; gap: 6px; border-top: 1px solid #24000018; padding: 15px 0; }
+.modo-details span { font-size: 10px; }
+.modo-details strong { font-size: 12px; font-weight: 500; line-height: 1.6; }
+.modo-note { background: #f5f5f7; padding: 13px; border-radius: 8px; font-size: 10px; line-height: 1.7; margin: 10px 0 20px; }
+.modo-price { font-size: 20px; margin: auto 0 15px; }
+.modo-price small { font-size: 11px; font-weight: 400; }
+.modo-cta { display: block; text-align: center; padding: 14px 8px; background: #fc554b; color: #240000; font-size: 12px; font-weight: 600; border-radius: 8px; }
+.modo-booking { background: #e4d8ff; border-radius: 10px; padding: 20px; }
+.modo-booking strong { display: block; font-size: 25px; font-weight: 500; margin-top: 20px; letter-spacing: -.04em; }
+.modo-booking p { font-size: 12px; line-height: 1.7; margin: 10px 0 0; }
+.modo-summary { padding: 23px 0; margin-bottom: auto; }
+.modo-summary > div { display: flex; justify-content: space-between; gap: 10px; padding: 9px 0; font-size: 12px; }
+.modo-summary strong { font-weight: 500; }
+.modo-summary .modo-total { border-top: 1px solid #24000025; margin-top: 10px; padding-top: 18px; font-size: 16px; }
+@media (max-width: 1000px) {
+  .modo-screens { grid-template-columns: repeat(3, 265px); }
+  .modo-board { overflow-x: auto; }
+}
+@media (max-width: 600px) {
+  .modo-screens { grid-template-columns: minmax(0, 1fr); max-width: 340px; margin: auto; }
+  .modo-screen:nth-child(n) { margin-top: 0; min-height: 610px; }
+}

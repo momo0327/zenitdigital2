@@ -22,12 +22,12 @@ const Header = () => {
             </p>
                          
             <div className="flex justify-center lg:justify-start flex-row gap-4">
-              <Link href="/ContactPage">
+              <Link href="/contact">
               <button className="bg-[#FF5147] hover:bg-[#BEA1FC] text-[#120128] font-semibold px-4 py-3 text-sm md:px-6 md:py-3 rounded-full md:text-md transition-all duration-300 transform hover:scale-105 shadow-lg">
                 Get Started
               </button>
               </Link>
-              <Link href="/ContactPage">
+              <Link href="/contact">
               <button className="border-1 border-[#FF5147] text-[#FF5147] font-semibold md:px-6 md:py-3 rounded-full text-md px-4 py-3 text-sm transition-all duration-300 backdrop-blur-sm hover:bg-[#F5F5F5]/10">
                 Learn More
               </button>

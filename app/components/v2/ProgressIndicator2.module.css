@@ -1,0 +1,21 @@
+.dots {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.dot {
+  width: 0.625rem;
+  height: 0.625rem;
+  border-radius: 9999px;
+  border: 1.5px solid #021100;
+  background-color: transparent;
+  padding: 0;
+  cursor: pointer;
+  transition: width 300ms ease, background-color 200ms ease;
+}
+
+.dotActive {
+  width: 2.25rem;
+  background-color: #021100;
+}

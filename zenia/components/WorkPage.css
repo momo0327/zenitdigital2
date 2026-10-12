@@ -1,0 +1,288 @@
+.work-page {
+  padding-top: 64px;
+  padding-bottom: 118px;
+}
+
+.work-page__head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 32px;
+  margin-bottom: 64px;
+}
+
+.work-page__title {
+  margin: 0;
+  font-family: var(--font);
+  font-weight: 500;
+  font-size: clamp(42px, 5.2vw, 78px);
+  line-height: 1.13;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+}
+
+/* Second line drops back, matching the contact page heading. */
+.work-page__title > span {
+  color: #96969b;
+}
+
+/* Layout switch */
+.work-page__views {
+  display: flex;
+  flex: none;
+  gap: 4px;
+  padding: 4px;
+  border-radius: 50px;
+  background: var(--gray);
+}
+
+.work-page__view {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 16px;
+  border: 0;
+  border-radius: 50px;
+  background: none;
+  color: var(--muted);
+  font: inherit;
+  font-size: 14px;
+  line-height: 1.4;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.work-page__view svg {
+  width: 14px;
+  height: 14px;
+  fill: currentColor;
+}
+
+.work-page__view[aria-pressed="true"] {
+  background: #fff;
+  color: var(--ink);
+}
+
+/* Items */
+.work-page__items {
+  display: grid;
+  gap: 38px 30px;
+}
+
+.work-page__items--grid {
+  grid-template-columns: 1fr 1fr;
+}
+
+.work-page__items--list {
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.work-card__image {
+  display: block;
+  position: relative;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  aspect-ratio: 1.45;
+  background: var(--gray);
+  text-align: left;
+  cursor: pointer;
+}
+
+.work-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.2, 0.7, 0.3, 1);
+}
+
+.work-card__view {
+  position: absolute;
+  left: 16px;
+  bottom: 16px;
+  padding: 8px 15px;
+  border-radius: 50px;
+  background: #ffffffeb;
+  color: var(--ink);
+  font-size: 13px;
+  line-height: 1.4;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.25s, transform 0.25s;
+}
+
+.work-card__caption {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 15px;
+  padding-top: 19px;
+}
+
+.work-card__caption h2 {
+  margin: 0;
+  font-size: 21px;
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  line-height: 1.25;
+}
+
+.work-card__caption h2 button {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+.work-card__caption p {
+  margin: 6px 0 0;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.work-card__meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  flex: none;
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--muted);
+  text-align: right;
+}
+
+.work-card__year {
+  color: #a6a1ad;
+}
+
+/* List view: image beside the copy rather than above it. */
+.work-page__items--list .work-card {
+  display: grid;
+  grid-template-columns: minmax(0, 320px) 1fr;
+  align-items: center;
+  gap: 28px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #e3e1e7;
+}
+
+.work-page__items--list .work-card__image {
+  aspect-ratio: 1.7;
+  border-radius: 8px;
+}
+
+.work-page__items--list .work-card__caption {
+  padding-top: 0;
+}
+
+.work-page__items--list .work-card__caption h2 {
+  font-size: clamp(22px, 2.1vw, 30px);
+}
+
+/* Scoped so the homepage instance keeps its own 24px. */
+.work-page .contact-container {
+  margin-top: 96px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .work-card__image:hover img {
+    transform: scale(1.03);
+  }
+
+  .work-card__image:hover .work-card__view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .work-page__view:hover {
+    color: var(--ink);
+  }
+}
+
+@media (max-width: 860px) {
+  .work-page__head {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 36px;
+  }
+}
+
+@media (max-width: 760px) {
+  .work-page {
+    padding-top: 32px;
+    padding-bottom: 72px;
+  }
+
+  /* Grid stacks to one column; list stays a row, just more compact. */
+  .work-page__items--grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .work-page__items--list {
+    gap: 18px;
+  }
+
+  .work-page__items--list .work-card {
+    grid-template-columns: 116px 1fr;
+    align-items: center;
+    gap: 16px;
+    padding-bottom: 18px;
+  }
+
+  .work-page__items--list .work-card__image {
+    aspect-ratio: 1.25;
+    border-radius: 7px;
+  }
+
+  /* The hover reveal has no meaning on touch, and it would not fit here. */
+  .work-page__items--list .work-card__view {
+    display: none;
+  }
+
+  .work-page__items--list .work-card__caption {
+    display: block;
+    padding-top: 0;
+  }
+
+  .work-page__items--list .work-card__caption h2 {
+    font-size: 18px;
+  }
+
+  .work-page__items--list .work-card__caption p {
+    margin-top: 4px;
+    font-size: 13px;
+    line-height: 1.45;
+  }
+
+  .work-page__items--list .work-card__meta {
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    margin-top: 7px;
+    font-size: 12px;
+    text-align: left;
+  }
+
+  .work-page .contact-container {
+    margin-top: 56px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .work-card__image img,
+  .work-card__view {
+    transition: none;
+  }
+
+  .work-card__image:hover img {
+    transform: none;
+  }
+}

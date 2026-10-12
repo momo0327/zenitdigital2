@@ -12,7 +12,7 @@ const BigText = () => {
         <div className="text-left lg:text-left max-w-2xl lg:max-w-none">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-[400] text-black leading-none mb-3 2xl:mb-6 font-sans">
             <ScrollTextReveal
-              highlightColor="#000000"
+              highlightColor="#1E1F1F"
               dimColor="#D1D5DB"
               start="top 55%"
               end="top 20%"

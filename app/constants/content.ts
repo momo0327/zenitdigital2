@@ -11,7 +11,7 @@ export const COMPANY = {
   tagline: 'Digital Excellence, Delivered',
   description: 'We build exceptional digital products that drive business growth.',
   email: 'hello@zeniadigital.se',
-  phone: '+46 (0) 123 456 789', // Update with your Swedish phone number
+  phone: '+46 72-336 43 84',
   founded: '2024',
   address: {
     street: 'St Badhusgatan 18',
@@ -211,7 +211,7 @@ export const FOOTER = {
     company: {
       title: 'Company',
       links: [
-        { label: 'About', href: '/about' },
+        { label: 'About', href: '/zenit/about' },
         { label: 'Contact', href: '/ContactPage' },
         { label: 'Portfolio', href: '/#work' },
       ],

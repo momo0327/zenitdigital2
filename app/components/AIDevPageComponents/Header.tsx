@@ -20,12 +20,12 @@ const Header = () => {
             </p>
 
             <div className="flex justify-center lg:justify-start flex-row gap-4">
-              <Link href="/ContactPage">
+              <Link href="/contact">
                 <button className="bg-[#67E8F9] hover:bg-[#A5F3FC] text-[#001028] font-semibold px-4 py-3 text-sm md:px-6 md:py-3 rounded-full md:text-md transition-all duration-300 transform hover:scale-105 shadow-lg">
                   Get Started
                 </button>
               </Link>
-              <Link href="/ContactPage">
+              <Link href="/contact">
                 <button className="border border-[#67E8F9] text-[#67E8F9] font-semibold md:px-6 md:py-3 rounded-full text-md px-4 py-3 text-sm transition-all duration-300 backdrop-blur-sm hover:bg-[#67E8F9]/10">
                   Learn More
                 </button>

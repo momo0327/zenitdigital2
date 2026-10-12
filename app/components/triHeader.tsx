@@ -16,7 +16,7 @@ const TriHeader = () => {
               From polished interfaces to resilient backends, we build end-to-end web platforms that perform, scale, and evolve with your business.
             </p>
             <div className="flex gap-4 2xl:gap-6">
-            <Link href="/services">
+            <Link href="/zenit/services">
               <button className="bg-[#B4FFA8] text-black px-6 py-3 2xl:px-10 2xl:py-4 text-sm 2xl:text-lg rounded-full font-semibold hover:bg-[#B4FFA8] transition-colors duration-200">
                 Explore
               </button>

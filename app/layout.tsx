@@ -1,12 +1,17 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono, Poppins, Antonio } from "next/font/google";
 import localFont from "next/font/local";
 import Script from "next/script";
 import "./globals.css";
 import { DEFAULT_METADATA, LOCAL_BUSINESS_SCHEMA } from "./constants/seo";
-import Navbar from "./components/navbar";
-import { CookieConsent } from "./components/CookieConsent";
-import TransitionProvider from "./components/TransitionProvider";
+import NavbarSwitcher from "./components/NavbarSwitcher";
+import {
+  rightGroteskCompactBlack,
+  rightGroteskMedium,
+  ppNeueMontrealSemibold,
+  ppNeueMontrealRegular,
+  ppNeueMontrealMedium,
+} from "./fonts/v2";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -45,6 +50,12 @@ const suisseIntl = localFont({
 
 export const metadata: Metadata = DEFAULT_METADATA;
 
+// Tints the mobile browser chrome (Safari's URL bar and toolbar strips) to
+// match the site background.
+export const viewport: Viewport = {
+  themeColor: "#ffffff",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -53,6 +64,19 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        {/* Preloads the Manrope faces used across the site. Without this the
+            browser only discovers them after parsing the stylesheet, so the
+            first paint uses a fallback and visibly swaps (FOUT). */}
+        {["400", "500", "600"].map((weight) => (
+          <link
+            key={weight}
+            rel="preload"
+            href={`/zenia/manrope-${weight}.woff`}
+            as="font"
+            type="font/woff"
+            crossOrigin="anonymous"
+          />
+        ))}
         {/* LocalBusiness Schema for Swedish Market SEO */}
         <Script
           id="local-business-schema"
@@ -64,13 +88,10 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} ${antonio.variable} ${shentox.variable} ${suisseIntl.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} ${antonio.variable} ${shentox.variable} ${suisseIntl.variable} ${rightGroteskCompactBlack.variable} ${rightGroteskMedium.variable} ${ppNeueMontrealSemibold.variable} ${ppNeueMontrealRegular.variable} ${ppNeueMontrealMedium.variable} antialiased`}
       >
-        <Navbar />
-        <TransitionProvider>
-          {children}
-        </TransitionProvider>
-        <CookieConsent />
+        <NavbarSwitcher />
+        {children}
       </body>
     </html>
   );

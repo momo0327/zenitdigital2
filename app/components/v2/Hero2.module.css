@@ -1,0 +1,150 @@
+.section {
+  background-color: #ffffff;
+  padding: 7rem 1.25rem 2.5rem;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 10.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+}
+
+@media (min-width: 1536px) {
+  .section {
+    padding-top: 13rem;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: 4.5rem;
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr 1.75fr;
+    gap: 0;
+    align-items: start;
+  }
+}
+
+@media (min-width: 1536px) {
+  .grid {
+    max-width: 100rem;
+  }
+}
+
+.copy {
+  position: relative;
+  z-index: 10;
+}
+
+@media (min-width: 1024px) {
+  .copy {
+    margin-top: 4.5rem;
+  }
+}
+
+.title {
+  font-family: var(--font-v2-title), sans-serif;
+  color: #021100;
+  font-size: 4.5rem;
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+
+@media (min-width: 640px) {
+  .title {
+    font-size: 4rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 6rem;
+  }
+}
+
+@media (min-width: 1536px) {
+  .title {
+    font-size: 10rem;
+  }
+}
+
+.subtitle {
+  font-family: var(--font-poppins), sans-serif;
+  color: rgb(2 17 0 / 80%);
+  font-size: 0.875rem;
+  line-height: 1.25;
+  margin-top: 1.5rem;
+  max-width: 28rem;
+}
+
+@media (min-width: 768px) {
+  .subtitle {
+    font-size: 1rem;
+  }
+}
+
+.cta {
+  font-family: var(--font-poppins), sans-serif;
+  display: inline-block;
+  background-color: transparent;
+  border: 1.5px solid #000000;
+  color: #000000;
+  font-weight: 500;
+  padding: 0.75rem 1.75rem;
+  border-radius: 9999px;
+  margin-top: 2rem;
+  font-size: 0.875rem;
+  transition: transform 200ms ease;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .cta {
+    font-size: 1rem;
+  }
+}
+
+.cta:hover {
+  transform: scale(1.05);
+}
+
+.imageWrap {
+  position: relative;
+  z-index: 20;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+}
+
+@media (min-width: 1024px) {
+  .image {
+    width: 140%;
+    max-width: none;
+    margin-top: -3.5rem;
+    transform: translateX(-8rem);
+  }
+}
+
+@media (min-width: 1536px) {
+  .image {
+    width: 135%;
+  }
+}
