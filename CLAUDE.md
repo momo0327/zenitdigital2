@@ -241,7 +241,6 @@ Components using hooks or browser APIs must include `'use client'` directive:
 - `error.tsx` - Route-level error boundary
 - `global-error.tsx` - Global error boundary
 - `not-found.tsx` - 404 page (Zenia-styled, rendered inside `ZeniaShell`, as is `error.tsx`)
-- `loading.tsx` - Loading states for pages
 
 ## Development Workflow
 
@@ -276,7 +275,7 @@ whose remaining pages are listed under "Changes made to the legacy site".
 |---|---|
 | Routes | `app/page.jsx`, `app/about/`, `app/contact/`, `app/portal/`, `app/services/`, `app/work/` |
 | Components, CSS, data | `zenia/` (project root — this repo has no `src/`) |
-| Assets | `public/zenia/` (36 files) |
+| Assets | `public/zenia/` (33 files) |
 | Shared chrome | `zenia/ZeniaShell.jsx` — header, mobile menu, footer, dialogs |
 
 Live at `/`, `/about`, `/contact`, `/portal`, `/services`, `/work`.

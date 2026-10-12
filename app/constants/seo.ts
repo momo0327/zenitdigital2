@@ -55,7 +55,7 @@ export const DEFAULT_METADATA: Metadata = {
     siteName: COMPANY.name,
     title: `${COMPANY.name} | ${COMPANY.tagline}`,
     description: COMPANY.description,
-    // Image auto-generated from app/opengraph-image.tsx
+    // Image is the static app/opengraph-image.png; a generated one 500s on Cloudflare.
   },
   robots: {
     index: true,
@@ -310,7 +310,7 @@ export const LOCAL_BUSINESS_SCHEMA = {
     width: 250,
     height: 60,
   },
-  image: `${BASE_URL}/opengraph-image`,
+  image: `${BASE_URL}/opengraph-image.png`,
   email: COMPANY.email,
   telephone: COMPANY.phone,
   foundingDate: COMPANY.founded,
