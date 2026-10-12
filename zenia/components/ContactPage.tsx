@@ -1,25 +1,11 @@
 "use client";
 
+import { COMPANY } from "@/app/constants/content";
+import { SOCIAL_LINKS } from "@/app/constants/navigation";
 import ContactContainer from "./ContactContainer";
 import "./ContactPage.css";
 
-// Zenia has no details of its own yet; these are Zenit Digital's and the
-// social links are placeholders. Swap them for the real ones before launch.
-const EMAIL = "hello@zenitdigital.se";
-const PHONE = "+46 (0) 123 456 789";
-
-const ADDRESS = {
-  street: "St Badhusgatan 18",
-  postalCode: "411 21",
-  city: "Göteborg",
-  country: "Sweden",
-};
-
-const SOCIALS = [
-  { label: "LinkedIn", href: "#" },
-  { label: "Instagram", href: "#" },
-  { label: "X", href: "#" },
-];
+const { email: EMAIL, phone: PHONE, address: ADDRESS } = COMPANY;
 
 export default function ContactPage() {
   return (
@@ -63,7 +49,7 @@ export default function ContactPage() {
           <div className="contact-page__card">
             <span className="contact-page__label">Follow</span>
             <ul className="contact-page__socials">
-              {SOCIALS.map((social) => (
+              {SOCIAL_LINKS.map((social) => (
                 <li key={social.label}>
                   <a href={social.href}>{social.label}</a>
                 </li>

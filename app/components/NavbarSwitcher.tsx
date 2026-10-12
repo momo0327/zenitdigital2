@@ -13,6 +13,7 @@ import Navbar from './navbar';
  * route added there showed a second header until this list was updated.
  */
 const LEGACY_NAVBAR_ROUTES = [
+  '/AIDev',
   '/ContactPage',
   '/FullstackDev',
   '/MobileDev',

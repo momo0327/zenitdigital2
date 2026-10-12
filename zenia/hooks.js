@@ -2,9 +2,7 @@
 import { useEffect, useState } from "react";
 
 export function useMediaQuery(query) {
-  const [matches, setMatches] = useState(() =>
-    typeof window === "undefined" ? false : window.matchMedia(query).matches,
-  );
+  const [matches, setMatches] = useState(false);
   useEffect(() => {
     const media = window.matchMedia(query);
     const update = () => setMatches(media.matches);
@@ -16,11 +14,10 @@ export function useMediaQuery(query) {
 }
 
 export function usePageVisible() {
-  const [visible, setVisible] = useState(
-    () => typeof document === "undefined" || !document.hidden,
-  );
+  const [visible, setVisible] = useState(true);
   useEffect(() => {
     const update = () => setVisible(!document.hidden);
+    update();
     document.addEventListener("visibilitychange", update);
     return () => document.removeEventListener("visibilitychange", update);
   }, []);

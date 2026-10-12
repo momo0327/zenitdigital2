@@ -67,18 +67,16 @@ export default function RootLayout({
         {/* Preloads the Manrope faces used across the site. Without this the
             browser only discovers them after parsing the stylesheet, so the
             first paint uses a fallback and visibly swaps (FOUT). */}
-        {["/zenia", "/zenia-services"].flatMap((dir) =>
-          ["400", "500", "600"].map((weight) => (
-            <link
-              key={`${dir}-${weight}`}
-              rel="preload"
-              href={`${dir}/manrope-${weight}.woff`}
-              as="font"
-              type="font/woff"
-              crossOrigin="anonymous"
-            />
-          )),
-        )}
+        {["400", "500", "600"].map((weight) => (
+          <link
+            key={weight}
+            rel="preload"
+            href={`/zenia/manrope-${weight}.woff`}
+            as="font"
+            type="font/woff"
+            crossOrigin="anonymous"
+          />
+        ))}
         {/* LocalBusiness Schema for Swedish Market SEO */}
         <Script
           id="local-business-schema"

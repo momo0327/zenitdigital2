@@ -275,16 +275,21 @@ which now lives under `/zenit`.
 
 | What | Path |
 |---|---|
-| Routes | `app/page.jsx`, `app/about/`, `app/portal/`, `app/services/` |
+| Routes | `app/page.jsx`, `app/about/`, `app/contact/`, `app/portal/`, `app/services/`, `app/work/` |
 | Components, CSS, data | `zenia/` (project root — this repo has no `src/`) |
 | Assets | `public/zenia/` (36 files) |
 | Shared chrome | `zenia/ZeniaShell.jsx` — header, mobile menu, footer, dialogs |
 
-Live at `/`, `/about`, `/portal`, `/services`.
+Live at `/`, `/about`, `/contact`, `/portal`, `/services`, `/work`.
+
+The route `page.jsx` files are client components, so they cannot export
+`metadata`. Each route's metadata lives in a sibling `layout.tsx` instead; the
+homepage body is `zenia/ZeniaHome.jsx`, wrapped by a server `app/page.jsx`.
+Without per-route metadata a page inherits the root `canonical` (the homepage).
 
 The former Zenit Digital homepage and its colliding `about`/`services` pages
-moved to `app/zenit/` (`/zenit`, `/zenit/about`, `/zenit/services`). Its other
-routes (`/work`, `/faqs`, `/WebDev`, `/ContactPage`, …) were not moved and still
+moved to `app/zenit/` (`/zenit`, `/zenit/about`, `/zenit/services`, `/zenit/work`).
+Its other routes (`/faqs`, `/AIDev`, `/WebDev`, `/ContactPage`, …) were not moved and still
 sit at the top level. Internal links in the legacy navbar, headers, footer and
 `app/constants/` were repointed to `/zenit/*`.
 
@@ -303,14 +308,10 @@ Asset paths stay under `/zenia/...` and `/zenia-services/...` — those are
 
 ## Changes made to the legacy site
 
-`app/components/NavbarSwitcher.tsx` — the root layout renders the legacy navbar on
-every route, so it skips the Zenia routes (which ship their own header inside
-`ZeniaShell`) and `/zenit` (which mounts `Navbar2`):
-
-```tsx
-const ZENIA_ROUTES = ['/', '/about', '/services', '/portal'];
-if (ZENIA_ROUTES.includes(pathname) || pathname === '/zenit') return null;
-```
+`app/components/NavbarSwitcher.tsx` — the root layout mounts this instead of the
+legacy navbar. It is opt-in: the navbar renders only on the routes listed in
+`LEGACY_NAVBAR_ROUTES`. **A new legacy route must be added there** or it renders
+with no navbar.
 
 The Manrope preloads that lived in `app/zenia/layout.tsx` moved into the `<head>`
 of `app/layout.tsx` when that layout was removed.
@@ -333,26 +334,17 @@ on every file copied across:
 
 The Vite original was client-only, so these only surface under Next:
 
-- `zenia/hooks.js` — `useMediaQuery` and `usePageVisible` read `window`/`document`
-  in their initial `useState`. Both now check `typeof window === "undefined"` and
-  re-sync in `useEffect`.
+- `zenia/hooks.js` — `useMediaQuery` and `usePageVisible` start from the
+  server's value (`false` / `true`) and read `window`/`document` only in
+  `useEffect`. Reading them in the `useState` initialiser causes a hydration
+  mismatch (e.g. for visitors with reduced motion on).
 - Refs can be `null` during hydration or route changes. Guarded in:
   `Testimonials.jsx` (`measure()` called `getComputedStyle(null)`),
   plus `observer.observe()` in `Testimonials.jsx`, `Sections.jsx`, `Statement.jsx`.
 
 ## Known issues
 
-- **`npm run build` fails** with repeated "Unexpected end of JSON input". This is
-  **pre-existing and unrelated to `/zenia`** — verified by removing the `/zenia`
-  files entirely and rebuilding, which fails identically on `app/components/navbar.tsx`,
-  `app/api/contact/route.ts`, `robots.ts` and `sitemap.ts`. Clearing `.next` does not
-  help and all project JSON is valid. Looks like a Turbopack issue; the `build` script
-  hardcodes `--turbopack`. Dev mode works. **This blocks deploying.**
-- **The logo is a placeholder** — `public/zenia/airmee-wordmark.png` is Airmee's
-  wordmark, used locally while the real Zenia logo is pending. It must be replaced
-  before anything ships. Swap the `src` in `zenia/components/Logo.jsx` and the footer
-  instance in `zenia/components/Sections.jsx`. A ZENIA SVG sprite (`#zenia-mark`) is
-  still defined in `Sections.jsx` if you prefer that route — it uses `currentColor`,
-  which would let the `filter: invert(1)` rules in `styles.css` be removed.
 - **Placeholder copy** — the Atlas case study, the three newest testimonials, and the
   About/Services page body text are invented and need real content.
+- **Phone number is a placeholder** — `COMPANY.phone` in `app/constants/content.ts`
+  is shown on `/contact`.
