@@ -54,11 +54,10 @@ app/
 - `app/page.tsx` - Homepage
 - `app/layout.tsx` - Root layout with fonts, SEO, and structure (Navbar, Footer, CookieConsent)
 - `app/about/page.tsx` - About page
-- `app/ContactPage/` - Contact page route
-- `app/WebDev/`, `app/MobileDev/`, `app/FullstackDev/` - Service pages
+- `app/WebDev/`, `app/MobileDev/`, `app/FullstackDev/`, `app/AIDev/` - Service pages
 - `app/work/page.tsx` - Portfolio page
-- `app/faqs/page.tsx` - FAQ page
 - `app/services/page.tsx` - Services overview
+- `next.config.ts` redirects `/zenit/*`, `/ContactPage` and `/faqs` to the Zenia pages
 - `app/privacy/page.tsx`, `app/terms/page.tsx` - Legal pages
 - `app/sitemap.ts`, `app/robots.ts` - SEO configuration files
 
@@ -241,7 +240,7 @@ Components using hooks or browser APIs must include `'use client'` directive:
 ### Error Handling
 - `error.tsx` - Route-level error boundary
 - `global-error.tsx` - Global error boundary
-- `not-found.tsx` - 404 page
+- `not-found.tsx` - 404 page (Zenia-styled, rendered inside `ZeniaShell`, as is `error.tsx`)
 - `loading.tsx` - Loading states for pages
 
 ## Development Workflow
@@ -269,7 +268,7 @@ Components using hooks or browser APIs must include `'use client'` directive:
 The Zenia site is the **primary site and owns the root routes**. It was built
 separately in a Vite + React project and ported here. It does **not** share
 components, CSS or conventions with the Zenit Digital site described above,
-which now lives under `/zenit`.
+whose remaining pages are listed under "Changes made to the legacy site".
 
 ## Where it lives
 
@@ -287,11 +286,10 @@ The route `page.jsx` files are client components, so they cannot export
 homepage body is `zenia/ZeniaHome.jsx`, wrapped by a server `app/page.jsx`.
 Without per-route metadata a page inherits the root `canonical` (the homepage).
 
-The former Zenit Digital homepage and its colliding `about`/`services` pages
-moved to `app/zenit/` (`/zenit`, `/zenit/about`, `/zenit/services`, `/zenit/work`).
-Its other routes (`/faqs`, `/AIDev`, `/WebDev`, `/ContactPage`, …) were not moved and still
-sit at the top level. Internal links in the legacy navbar, headers, footer and
-`app/constants/` were repointed to `/zenit/*`.
+The former Zenit Digital homepage, about, services and work pages, `/ContactPage`
+and `/faqs` were removed; `next.config.ts` redirects them (permanently) to the
+matching Zenia page. The legacy `/AIDev`, `/WebDev`, `/MobileDev`, `/FullstackDev`,
+`/privacy` and `/terms` remain, in the old design, and link to the Zenia routes.
 
 Asset paths stay under `/zenia/...` and `/zenia-services/...` — those are
 `public/` directories, not routes, so they did not change.
@@ -304,7 +302,7 @@ Asset paths stay under `/zenia/...` and `/zenia-services/...` — those are
 - **Namespaced** (`zenia/`, `public/zenia/`) because `ContactForm` collides with
   `app/components/`, and to guarantee the two sites can't affect each other.
 - The CSS is global. It loads on the routes `ZeniaShell` renders, but rendering
-  these components inside a legacy `/zenit` page would leak styles.
+  these components inside a legacy page would leak styles.
 
 ## Changes made to the legacy site
 
@@ -340,11 +338,15 @@ The Vite original was client-only, so these only surface under Next:
   mismatch (e.g. for visitors with reduced motion on).
 - Refs can be `null` during hydration or route changes. Guarded in:
   `Testimonials.jsx` (`measure()` called `getComputedStyle(null)`),
-  plus `observer.observe()` in `Testimonials.jsx`, `Sections.jsx`, `Statement.jsx`.
+  plus `observer.observe()` in `Testimonials.jsx` and `Sections.jsx`.
 
 ## Known issues
 
-- **Placeholder copy** — the Atlas case study, the three newest testimonials, and the
-  About/Services page body text are invented and need real content.
-- **Phone number is a placeholder** — `COMPANY.phone` in `app/constants/content.ts`
-  is shown on `/contact`.
+- **Hidden until real content exists** — the testimonials (`zenia/components/Testimonials.jsx`,
+  not rendered by `ZeniaHome.jsx`) and the homepage stats row (removed from
+  `Statement.jsx`; restore it from git history).
+- **Concept work** — every case study is a concept, labelled "Concept" on the
+  hero, the homepage cards and `/work`. Drop the label when real client work lands.
+- **Placeholder copy** — the Atlas case study and the About/Services page body
+  text are invented and need real content.
+- **X link on `/contact` is `#`** — kept to match the design until there is an account.
