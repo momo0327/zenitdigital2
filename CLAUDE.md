@@ -52,7 +52,7 @@ app/
 
 ### App Router Pages
 - `app/page.tsx` - Homepage
-- `app/layout.tsx` - Root layout with fonts, SEO, and structure (Navbar, Footer, CookieConsent)
+- `app/layout.tsx` - Root layout with fonts, SEO and the legacy navbar switcher. There is no cookie banner: the site sets no cookies and has no tracking; add one with any analytics.
 - `app/about/page.tsx` - About page
 - `app/WebDev/`, `app/MobileDev/`, `app/FullstackDev/`, `app/AIDev/` - Service pages
 - `app/work/page.tsx` - Portfolio page
@@ -67,7 +67,6 @@ app/
 - `navbar.tsx` - Main navigation with StaggeredMenu integration
 - `Footer.tsx` - Site footer with company info and navigation
 - `ContactForm.tsx` - Contact form with validation
-- `CookieConsent.tsx` - GDPR-compliant cookie consent banner
 
 **Layout Components**
 - `header.tsx`, `subHeader.tsx`, `ReversedHeader.tsx`, `triHeader.tsx` - Various header layouts
@@ -207,7 +206,7 @@ Comprehensive set of custom React hooks in `app/hooks/`:
 ### Client Components
 Components using hooks or browser APIs must include `'use client'` directive:
 - Navigation components (navbar, StaggeredMenu)
-- Interactive components (ContactForm, CookieConsent)
+- Interactive components (ContactForm)
 - Animation components (FadeInOnScroll)
 
 ### GSAP Animation Patterns
@@ -275,7 +274,7 @@ whose remaining pages are listed under "Changes made to the legacy site".
 |---|---|
 | Routes | `app/page.jsx`, `app/about/`, `app/contact/`, `app/portal/`, `app/services/`, `app/work/` |
 | Components, CSS, data | `zenia/` (project root — this repo has no `src/`) |
-| Assets | `public/zenia/` (33 files) |
+| Assets | `public/zenia/` (28 files) |
 | Shared chrome | `zenia/ZeniaShell.jsx` — header, mobile menu, footer, dialogs |
 
 Live at `/`, `/about`, `/contact`, `/portal`, `/services`, `/work`.
@@ -346,6 +345,8 @@ The Vite original was client-only, so these only surface under Next:
   `Statement.jsx`; restore it from git history).
 - **Concept work** — every case study is a concept, labelled "Concept" on the
   hero, the homepage cards and `/work`. Drop the label when real client work lands.
-- **Placeholder copy** — the Atlas case study and the About/Services page body
-  text are invented and need real content.
+  Project imagery must be Zenia's own mockups: the earlier card images were
+  third-party product screenshots and were replaced.
+- **Placeholder copy** — the About/Services page body text is invented and needs
+  real content.
 - **X link on `/contact` is `#`** — kept to match the design until there is an account.

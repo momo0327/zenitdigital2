@@ -69,7 +69,7 @@ export function Cases({ onContact, onProject }) {
             onClick={() => onProject("hemma")}
           >
             <img
-              src="/zenia/project-6.webp"
+              src="/zenia/hemma.webp"
               alt="Hemma project imagery"
               width="1536"
               height="1024"
@@ -97,7 +97,7 @@ export function Cases({ onContact, onProject }) {
             onClick={() => onProject("relay")}
           >
             <img
-              src="/zenia/project-4.webp"
+              src="/zenia/relay.webp"
               alt="Relay project imagery"
               width="1536"
               height="1024"
@@ -125,7 +125,7 @@ export function Cases({ onContact, onProject }) {
             onClick={() => onProject("form")}
           >
             <img
-              src="/zenia/project-3.webp"
+              src="/zenia/form.webp"
               alt="Form project imagery"
               width="1536"
               height="1024"
@@ -148,13 +148,13 @@ export function Cases({ onContact, onProject }) {
         <article className="case-card">
           <button
             className="case-card-image"
-            data-project="atlas"
-            aria-label="Explore the Atlas case study"
-            onClick={() => onProject("atlas")}
+            data-project="modo"
+            aria-label="Explore the Modo case study"
+            onClick={() => onProject("modo")}
           >
             <img
-              src="/zenia/project-1.webp"
-              alt="Atlas project imagery"
+              src="/zenia/hero-modo-ipad.webp"
+              alt="Modo project imagery"
               width="1536"
               height="1024"
               loading="lazy"
@@ -164,13 +164,13 @@ export function Cases({ onContact, onProject }) {
           <div className="case-card-caption">
             <div>
               <h3>
-                <button data-project="atlas" onClick={() => onProject("atlas")}>
-                  Atlas
+                <button data-project="modo" onClick={() => onProject("modo")}>
+                  Modo
                 </button>
               </h3>
-              <p>Everything your team already knows.</p>
+              <p>Every detail, by design.</p>
             </div>
-            <span>Web app · Concept</span>
+            <span>UI/UX design · Concept</span>
           </div>
         </article>
       </div>

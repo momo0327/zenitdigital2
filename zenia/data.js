@@ -66,29 +66,6 @@ export const projects = {
       "Flexible content system",
       "Considered product stories",
     ],
-    next: "atlas",
-  },
-  atlas: {
-    name: "Atlas",
-    title: "Every answer, in one place.",
-    subtitle:
-      "A knowledge workspace that helps growing teams find what they already know, without digging through a dozen tools.",
-    image: "service-stack",
-    alt: "Atlas knowledge workspace shown on a desktop screen",
-    category: "Web app · Product design",
-    services: ["Product strategy", "UX & UI design", "Web development"],
-    year: "2026",
-    challenge:
-      "Teams lose hours to questions that have already been answered somewhere. Atlas set out to turn scattered documents, decisions, and conversations into something a person could actually search, without asking anyone to change how they work.",
-    approach:
-      "We designed around retrieval rather than storage. A fast, forgiving search sits at the centre, with structured spaces for teams and a lightweight editor that keeps contributing easy. Clear permissions let people share confidently across a growing organisation.",
-    result:
-      "A complete workspace concept with search at its core. The handover includes a component library, an information architecture built to scale, and patterns for bringing new teams on board.",
-    outcomes: [
-      "Search-first interface",
-      "Scalable permissions",
-      "Reusable component library",
-    ],
     next: "modo",
   },
   modo: {
