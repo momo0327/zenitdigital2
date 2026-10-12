@@ -105,7 +105,8 @@ export default function WorkPage({ onProject }) {
                     <p>{tagline}</p>
                   </div>
                   <span className="work-card__meta">
-                    {project.category?.split(" · ")[0]}
+                    {/* Every project so far is a concept, not client work. */}
+                    {project.category?.split(" · ")[0]} · Concept
                     <span className="work-card__year">{project.year}</span>
                   </span>
                 </div>

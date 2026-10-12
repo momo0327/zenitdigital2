@@ -86,7 +86,7 @@ export function Cases({ onContact, onProject }) {
               </h3>
               <p>Finding a home, made human.</p>
             </div>
-            <span>Mobile app</span>
+            <span>Mobile app · Concept</span>
           </div>
         </article>
         <article className="case-card">
@@ -114,7 +114,7 @@ export function Cases({ onContact, onProject }) {
               </h3>
               <p>Bringing every moving part together.</p>
             </div>
-            <span>Full-stack platform</span>
+            <span>Full-stack platform · Concept</span>
           </div>
         </article>
         <article className="case-card">
@@ -142,7 +142,7 @@ export function Cases({ onContact, onProject }) {
               </h3>
               <p>A little more room for good design.</p>
             </div>
-            <span>E-commerce</span>
+            <span>E-commerce · Concept</span>
           </div>
         </article>
         <article className="case-card">
@@ -170,7 +170,7 @@ export function Cases({ onContact, onProject }) {
               </h3>
               <p>Everything your team already knows.</p>
             </div>
-            <span>Web app</span>
+            <span>Web app · Concept</span>
           </div>
         </article>
       </div>
