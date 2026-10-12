@@ -7,7 +7,9 @@ const nextConfig: NextConfig = {
   // Pages of the old site that the Zenia redesign replaced.
   async redirects() {
     return [
-      { source: "/zenit/:path*", destination: "/:path*", permanent: true },
+      // Separate rules: on OpenNext an empty :path* is left in the destination literally.
+      { source: "/zenit", destination: "/", permanent: true },
+      { source: "/zenit/:path+", destination: "/:path+", permanent: true },
       { source: "/ContactPage", destination: "/contact", permanent: true },
       { source: "/faqs", destination: "/#faq", permanent: true },
     ];
