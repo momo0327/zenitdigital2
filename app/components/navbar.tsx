@@ -60,7 +60,6 @@ const Navbar: React.FC<NavbarProps> = ({
   const menuItems = [
     { label: 'Home', ariaLabel: 'Go to home page', link: '/' },
     { label: 'Services', ariaLabel: 'Explore our services', link: '/zenit/services' },
-    { label: 'FAQ', ariaLabel: 'Frequently asked questions', link: '/faqs' },
     { label: 'Contact', ariaLabel: 'Get in touch with us', link: '/ContactPage' },
   ];
 

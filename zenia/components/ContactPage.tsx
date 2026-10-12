@@ -6,6 +6,8 @@ import ContactContainer from "./ContactContainer";
 import "./ContactPage.css";
 
 const { email: EMAIL, phone: PHONE, address: ADDRESS } = COMPANY;
+// The design shows X too; it stays a placeholder until there is an account.
+const SOCIALS = [...SOCIAL_LINKS, { label: "X", href: "#" }];
 
 export default function ContactPage() {
   return (
@@ -49,7 +51,7 @@ export default function ContactPage() {
           <div className="contact-page__card">
             <span className="contact-page__label">Follow</span>
             <ul className="contact-page__socials">
-              {SOCIAL_LINKS.map((social) => (
+              {SOCIALS.map((social) => (
                 <li key={social.label}>
                   <a href={social.href}>{social.label}</a>
                 </li>
