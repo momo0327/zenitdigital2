@@ -12,6 +12,9 @@ const nextConfig: NextConfig = {
       { source: "/zenit/:path+", destination: "/:path+", permanent: true },
       { source: "/ContactPage", destination: "/contact", permanent: true },
       { source: "/faqs", destination: "/#faq", permanent: true },
+      // One host for search engines: www serves the same pages as the apex.
+      { source: "/", has: [{ type: "host", value: "www.zeniadigital.se" }], destination: "https://zeniadigital.se/", permanent: true },
+      { source: "/:path+", has: [{ type: "host", value: "www.zeniadigital.se" }], destination: "https://zeniadigital.se/:path+", permanent: true },
     ];
   },
 };

@@ -24,7 +24,46 @@ export const SWEDISH_MARKET = {
   currency: 'SEK',
 } as const;
 
-// Default Site Metadata
+// Shared social image. Set on every page explicitly: a page's openGraph object
+// replaces its parent's entirely, image included.
+const OG_IMAGE = {
+  url: '/opengraph-image.png',
+  width: 1200,
+  height: 630,
+  alt: `${COMPANY.name}: design and development studio building websites, apps and digital products`,
+};
+
+/**
+ * Metadata for one page: title, description, its own canonical URL, and
+ * Open Graph/Twitter tags that point at that URL.
+ */
+export function pageMetadata(title: string, description: string, path: string): Metadata {
+  const url = `${BASE_URL}${path}`;
+  const socialTitle = title.includes(COMPANY.name) ? title : `${title} | ${COMPANY.name}`;
+  return {
+    title,
+    description,
+    alternates: { canonical: url },
+    openGraph: {
+      type: 'website',
+      locale: 'en_US',
+      siteName: COMPANY.name,
+      url,
+      title: socialTitle,
+      description,
+      images: [OG_IMAGE],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: socialTitle,
+      description,
+      images: [OG_IMAGE.url],
+    },
+  };
+}
+
+// Default Site Metadata. Deliberately no canonical: a page without its own
+// would inherit it and tell Google it is a copy of the homepage.
 export const DEFAULT_METADATA: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
@@ -41,21 +80,18 @@ export const DEFAULT_METADATA: Metadata = {
     address: false,
     telephone: false,
   },
-  alternates: {
-    canonical: BASE_URL,
-    languages: {
-      'en': BASE_URL,
-      'x-default': BASE_URL,
-    },
-  },
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: BASE_URL,
     siteName: COMPANY.name,
     title: `${COMPANY.name} | ${COMPANY.tagline}`,
     description: COMPANY.description,
-    // Image is the static app/opengraph-image.png; a generated one 500s on Cloudflare.
+    // A static file: an image generated at request time 500s on Cloudflare.
+    images: [OG_IMAGE],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: [OG_IMAGE.url],
   },
   robots: {
     index: true,
@@ -79,8 +115,11 @@ export const DEFAULT_METADATA: Metadata = {
 
 // Home Page Metadata
 export const HOME_METADATA: Metadata = {
-  title: `${COMPANY.name} | Web & App Development in Sweden`,
-  description: `${COMPANY.name} - Leading digital agency in Sweden. We build exceptional web applications, mobile apps, and fullstack solutions. Expert developers delivering cutting-edge digital products for Swedish businesses.`,
+  ...pageMetadata(
+    `${COMPANY.name} | Web & App Development in Sweden`,
+    `${COMPANY.name} is a design and development studio in Gothenburg, Sweden. We design and build websites, mobile apps and full-stack platforms.`,
+    '',
+  ),
   keywords: [
     'digital byrå Sverige',
     'webbutveckling Sverige',
@@ -94,26 +133,15 @@ export const HOME_METADATA: Metadata = {
     'web development Sweden',
     'app development Sweden',
   ],
-  alternates: {
-    canonical: BASE_URL,
-    languages: {
-      'en': BASE_URL,
-      'x-default': BASE_URL,
-    },
-  },
-  openGraph: {
-    title: `${COMPANY.name} | Modern Digital Solutions in Sweden`,
-    description: 'Transform your business with cutting-edge web and mobile development from Sweden\'s leading digital agency',
-    url: BASE_URL,
-    type: 'website',
-    locale: 'en_US',
-  },
 };
 
 // Web Development Page Metadata
 export const WEB_DEV_METADATA: Metadata = {
-  title: 'Webbutveckling Sverige | Next.js & React Development',
-  description: 'Professional web development services in Sweden. Custom web applications with Next.js, React, and TypeScript. Build fast, scalable, SEO-optimized websites. Expert Swedish web developers.',
+  ...pageMetadata(
+    'Webbutveckling Sverige | Next.js & React Development',
+    'Web development in Sweden: custom web applications built with Next.js, React and TypeScript. Fast, scalable, SEO-friendly websites.',
+    '/WebDev',
+  ),
   keywords: [
     'webbutveckling Sverige',
     'webbapplikation utveckling',
@@ -127,26 +155,15 @@ export const WEB_DEV_METADATA: Metadata = {
     'responsive web design Sweden',
     'e-handel utveckling',
   ],
-  alternates: {
-    canonical: `${BASE_URL}/WebDev`,
-    languages: {
-      'en': `${BASE_URL}/WebDev`,
-      'x-default': `${BASE_URL}/WebDev`,
-    },
-  },
-  openGraph: {
-    title: 'Web Development Sweden | Zenia Digital',
-    description: 'Build fast, scalable web applications with modern technologies. Expert web development in Sweden.',
-    url: `${BASE_URL}/WebDev`,
-    type: 'website',
-    locale: 'en_US',
-  },
 };
 
 // Mobile Development Page Metadata
 export const MOBILE_DEV_METADATA: Metadata = {
-  title: 'Apputveckling Sverige | iOS & Android App Development',
-  description: 'Professional mobile app development in Sweden. Native iOS and Android apps, React Native cross-platform solutions. Expert Swedish mobile developers creating engaging user experiences.',
+  ...pageMetadata(
+    'Apputveckling Sverige | iOS & Android App Development',
+    'Mobile app development in Sweden: native iOS and Android apps and React Native cross-platform apps, designed and built by one team.',
+    '/MobileDev',
+  ),
   keywords: [
     'apputveckling Sverige',
     'mobilapp utveckling Sverige',
@@ -160,26 +177,15 @@ export const MOBILE_DEV_METADATA: Metadata = {
     'Android app Sverige',
     'app design Sverige',
   ],
-  alternates: {
-    canonical: `${BASE_URL}/MobileDev`,
-    languages: {
-      'en': `${BASE_URL}/MobileDev`,
-      'x-default': `${BASE_URL}/MobileDev`,
-    },
-  },
-  openGraph: {
-    title: 'Mobile App Development Sweden | Zenia Digital',
-    description: 'Build native iOS and Android applications that users love. Expert mobile development in Sweden.',
-    url: `${BASE_URL}/MobileDev`,
-    type: 'website',
-    locale: 'en_US',
-  },
 };
 
 // Fullstack Development Page Metadata
 export const FULLSTACK_DEV_METADATA: Metadata = {
-  title: 'Fullstack Utveckling Sverige | Backend & Frontend Development',
-  description: 'Complete fullstack development services in Sweden. End-to-end solutions from frontend to backend, database to cloud deployment. Expert Swedish fullstack developers.',
+  ...pageMetadata(
+    'Fullstack Utveckling Sverige | Backend & Frontend Development',
+    'Fullstack development in Sweden: end-to-end solutions from frontend to backend, database to cloud deployment.',
+    '/FullstackDev',
+  ),
   keywords: [
     'fullstack utvecklare Sverige',
     'backend utveckling Sverige',
@@ -193,26 +199,15 @@ export const FULLSTACK_DEV_METADATA: Metadata = {
     'DevOps Sverige',
     'serverless utveckling',
   ],
-  alternates: {
-    canonical: `${BASE_URL}/FullstackDev`,
-    languages: {
-      'en': `${BASE_URL}/FullstackDev`,
-      'x-default': `${BASE_URL}/FullstackDev`,
-    },
-  },
-  openGraph: {
-    title: 'Fullstack Development Sweden | Zenia Digital',
-    description: 'Complete end-to-end development solutions for your business. Expert fullstack development in Sweden.',
-    url: `${BASE_URL}/FullstackDev`,
-    type: 'website',
-    locale: 'en_US',
-  },
 };
 
 // AI Development Page Metadata
 export const AI_DEV_METADATA: Metadata = {
-  title: 'AI Development Sweden | Practical AI Integrations | Zenia Digital',
-  description: 'AI development and integration services in Sweden. From first proof of concept to production-ready integrations with Anthropic, OpenAI, and Google AI.',
+  ...pageMetadata(
+    'AI Development Sweden | Practical AI Integrations',
+    'AI development and integration services in Sweden. From first proof of concept to production-ready integrations with Anthropic, OpenAI, and Google AI.',
+    '/AIDev',
+  ),
   keywords: [
     'AI utveckling Sverige',
     'AI integration Sverige',
@@ -224,26 +219,15 @@ export const AI_DEV_METADATA: Metadata = {
     'AI proof of concept',
     'AI development Sweden',
   ],
-  alternates: {
-    canonical: `${BASE_URL}/AIDev`,
-    languages: {
-      'en': `${BASE_URL}/AIDev`,
-      'x-default': `${BASE_URL}/AIDev`,
-    },
-  },
-  openGraph: {
-    title: 'AI Development Sweden | Zenia Digital',
-    description: 'Practical AI work, whether you\'re starting from scratch or already shipping. Sized to the problem, not the hype.',
-    url: `${BASE_URL}/AIDev`,
-    type: 'website',
-    locale: 'en_US',
-  },
 };
 
 // Contact Page Metadata
 export const CONTACT_METADATA: Metadata = {
-  title: 'Contact Us | Digital Agency in Sweden',
-  description: `Contact ${COMPANY.name} in Sweden. Let's discuss your digital project - web development, app development, or fullstack solutions. Email: ${COMPANY.email} | Phone: ${COMPANY.phone}`,
+  ...pageMetadata(
+    'Contact Us | Digital Agency in Sweden',
+    `Contact ${COMPANY.name} in Gothenburg, Sweden. Email ${COMPANY.email} or call ${COMPANY.phone} to talk about your website, app or platform.`,
+    '/contact',
+  ),
   keywords: [
     'kontakta digital byrå',
     'webbyrå Sverige kontakt',
@@ -252,26 +236,15 @@ export const CONTACT_METADATA: Metadata = {
     'project inquiry Sweden',
     'kostnadsfri konsultation',
   ],
-  alternates: {
-    canonical: `${BASE_URL}/contact`,
-    languages: {
-      'en': `${BASE_URL}/contact`,
-      'x-default': `${BASE_URL}/contact`,
-    },
-  },
-  openGraph: {
-    title: 'Contact Us | Zenia Digital Sweden',
-    description: "Let's discuss your next digital project. Professional web and app development in Sweden.",
-    url: `${BASE_URL}/contact`,
-    type: 'website',
-    locale: 'en_US',
-  },
 };
 
-// About Page Metadata (for future use)
+// About Page Metadata
 export const ABOUT_METADATA: Metadata = {
-  title: 'About Us | Digital Agency in Sweden',
-  description: `Learn about ${COMPANY.name} - leading digital agency in Sweden. Our team, values, and approach to building exceptional digital products. Passionate developers dedicated to your success.`,
+  ...pageMetadata(
+    'About Us | Digital Agency in Sweden',
+    `${COMPANY.name} is a small team of designers and developers in Gothenburg who build digital products end to end, from the first conversation to launch.`,
+    '/about',
+  ),
   keywords: [
     'om oss',
     'digital byrå Sverige',
@@ -279,20 +252,6 @@ export const ABOUT_METADATA: Metadata = {
     'about us',
     'Swedish web developers',
   ],
-  alternates: {
-    canonical: `${BASE_URL}/about`,
-    languages: {
-      'en': `${BASE_URL}/about`,
-      'x-default': `${BASE_URL}/about`,
-    },
-  },
-  openGraph: {
-    title: 'About Us | Zenia Digital Sweden',
-    description: 'Meet the team behind exceptional digital products in Sweden',
-    url: `${BASE_URL}/about`,
-    type: 'website',
-    locale: 'en_US',
-  },
 };
 
 // Structured Data - LocalBusiness Schema (Optimized for Swedish Market)
@@ -302,13 +261,14 @@ export const LOCAL_BUSINESS_SCHEMA = {
   '@id': `${BASE_URL}/#organization`,
   name: COMPANY.name,
   alternateName: 'Zenia Digital Agency',
-  description: 'Leading digital agency in Sweden. Specializing in web development, mobile apps, and fullstack solutions.',
+  description: 'Design and development studio in Gothenburg, Sweden, building websites, mobile apps, full-stack platforms and AI integrations.',
   url: BASE_URL,
+  // The dark mark: Google shows the logo on white, where logowhite.png disappears.
   logo: {
     '@type': 'ImageObject',
-    url: `${BASE_URL}/logowhite.png`,
-    width: 250,
-    height: 60,
+    url: `${BASE_URL}/zenialogo.png`,
+    width: 752,
+    height: 689,
   },
   image: `${BASE_URL}/opengraph-image.png`,
   email: COMPANY.email,
@@ -359,6 +319,17 @@ export const LOCAL_BUSINESS_SCHEMA = {
 // Legacy Organization Schema (kept for backwards compatibility)
 export const ORGANIZATION_SCHEMA = LOCAL_BUSINESS_SCHEMA;
 
+// WebSite schema: Google uses its name for the site name shown in results.
+export const WEBSITE_SCHEMA = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': `${BASE_URL}/#website`,
+  name: COMPANY.name,
+  url: BASE_URL,
+  inLanguage: 'en',
+  publisher: { '@id': `${BASE_URL}/#organization` },
+};
+
 // Structured Data - Service Schema Generator
 export const generateServiceSchema = (serviceName: string, description: string, url?: string) => ({
   '@context': 'https://schema.org',
@@ -380,11 +351,6 @@ export const generateServiceSchema = (serviceName: string, description: string, 
     },
     'Worldwide',
   ],
-  offers: {
-    '@type': 'Offer',
-    availability: 'https://schema.org/InStock',
-    priceRange: '$$',
-  },
 });
 
 // Breadcrumb Schema Generator
@@ -423,7 +389,7 @@ export const generateWebPageSchema = (
   about: {
     '@id': `${BASE_URL}/#organization`,
   },
-  inLanguage: ['en', 'sv'],
+  inLanguage: 'en',
 });
 
 // Helper function to merge metadata

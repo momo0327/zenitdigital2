@@ -1,9 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono, Poppins, Antonio } from "next/font/google";
 import localFont from "next/font/local";
-import Script from "next/script";
 import "./globals.css";
-import { DEFAULT_METADATA, LOCAL_BUSINESS_SCHEMA } from "./constants/seo";
+import { DEFAULT_METADATA, LOCAL_BUSINESS_SCHEMA, WEBSITE_SCHEMA } from "./constants/seo";
 import NavbarSwitcher from "./components/NavbarSwitcher";
 import {
   rightGroteskCompactBlack,
@@ -77,14 +76,13 @@ export default function RootLayout({
             crossOrigin="anonymous"
           />
         ))}
-        {/* LocalBusiness Schema for Swedish Market SEO */}
-        <Script
-          id="local-business-schema"
+        {/* A plain <script>, not next/script: next/script injects it with
+            JavaScript, so crawlers that read the raw HTML never saw it. */}
+        <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(LOCAL_BUSINESS_SCHEMA),
+            __html: JSON.stringify([LOCAL_BUSINESS_SCHEMA, WEBSITE_SCHEMA]),
           }}
-          strategy="beforeInteractive"
         />
       </head>
       <body

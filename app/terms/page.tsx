@@ -2,11 +2,13 @@ import React from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Footer from '../components/Footer';
+import { pageMetadata } from '../constants/seo';
 
-export const metadata: Metadata = {
-  title: 'Terms of Service - Zenia Digital',
-  description: 'Read our terms of service to understand the agreement between you and Zenia Digital when using our services.',
-};
+export const metadata: Metadata = pageMetadata(
+  'Terms of Service',
+  'Read our terms of service to understand the agreement between you and Zenia Digital when using our services.',
+  '/terms',
+);
 
 export default function TermsPage() {
   const lastUpdated = 'January 2025';

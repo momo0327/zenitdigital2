@@ -1,10 +1,13 @@
 import type { Metadata } from 'next';
+import { pageMetadata } from '@/app/constants/seo';
 
 // page.jsx is a client component, so its metadata lives here.
 export const metadata: Metadata = {
-  title: 'Our Work',
-  description: 'Selected case studies from Zenia Digital — web platforms, mobile apps, full-stack systems, and AI integrations.',
-  alternates: { canonical: '/work' },
+  ...pageMetadata(
+    'Our Work',
+    'Concept projects from Zenia Digital: a mobile app, a full-stack platform, an e-commerce store and a UI/UX design, each with a case study.',
+    '/work',
+  ),
   robots: { index: false, follow: false },
 };
 
