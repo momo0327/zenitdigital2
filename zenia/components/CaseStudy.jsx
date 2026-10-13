@@ -57,6 +57,16 @@ export default function CaseStudy({ project, onProject, onClose }) {
                 <dt>Client</dt>
                 <dd>{p.client || p.name}</dd>
               </div>
+              {p.url && (
+                <div>
+                  <dt>Live site</dt>
+                  <dd>
+                    <a href={p.url} target="_blank" rel="noopener">
+                      {new URL(p.url).host} ↗
+                    </a>
+                  </dd>
+                </div>
+              )}
               <div>
                 <dt>Year</dt>
                 <dd>{p.year}</dd>

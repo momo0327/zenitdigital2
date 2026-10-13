@@ -959,12 +959,11 @@ dialog::backdrop {
   max-width: 430px;
   padding-bottom: 3px;
 }
+/* The whole photo, at its own 3:2: a crop cut the devices off. */
 .case-hero {
   border-radius: 22px;
   width: 100%;
-  max-height: 650px;
-  object-fit: cover;
-  aspect-ratio: 1.9;
+  height: auto;
 }
 .case-body {
   display: grid;
@@ -987,6 +986,11 @@ dialog::backdrop {
   font-size: 16px;
   line-height: 1.7;
   margin: 0;
+}
+.case-facts a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 .case-story section + section {
   margin-top: 35px;
@@ -1643,9 +1647,7 @@ legend {
     line-height: 1.7;
   }
   .case-hero {
-    aspect-ratio: 1.1;
     border-radius: 16px;
-    max-height: none;
   }
   .case-body {
     grid-template-columns: 1fr;
@@ -2771,6 +2773,17 @@ body.menu-open {
 .ui-board-shelfwise {
   background: #ffd9bd;
   padding: 60px 40px;
+}
+.ui-board-calyourfriends {
+  background: #fdebb8;
+}
+/* Cal Your Friends shows real screenshots, so the screen takes the image's height. */
+.app-screen.cyf-screen {
+  min-height: 0;
+}
+.cyf-screen img {
+  width: 100%;
+  height: auto;
 }
 .ui-board-form {
   background: #adddff;

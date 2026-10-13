@@ -1,10 +1,34 @@
+// Projects labelled Internal are Zenia's own live products; the rest are concepts.
 export const projects = {
+  calyourfriends: {
+    name: "Cal Your Friends",
+    brand: "Cal Your Friends", // the slider shows the lowercase key unless a real brand is set
+    label: "Internal",
+    client: "Internal, Zenia Digital",
+    url: "https://calyourfriends.app",
+    title: "Find the day everyone’s free.",
+    subtitle:
+      "An iPhone and iPad app that shows a group of friends the days that work for everyone, without anyone sharing what’s in their calendar.",
+    image: "calyourfriends",
+    alt: "Hand holding an iPhone showing the Cal Your Friends group calendar against a butter-yellow background",
+    category: "Mobile app · Product design",
+    services: ["Product & interaction design", "Mobile development", "Backend & invite site"],
+    year: "2026",
+    challenge:
+      "“When are we all free?” shouldn’t take forty messages. Shared calendars ask people to show too much, and polls ask them to do too much. Cal Your Friends had to give a group a clear answer while keeping everyone’s calendar private.",
+    approach:
+      "Each phone reads its own calendars and shares only when someone is busy: a start and an end, never a title. The group’s month turns green where everyone is free and yellow where most are, with the next good day set large at the top. Plans become invitations with art drawn from their title, and one link brings friends straight to the plan. Motion, haptics and copy were designed alongside the screens.",
+    result:
+      "A complete product, designed and built end to end: the iPhone and iPad app with a Home Screen widget, the backend and the invite site. It follows the system’s text size, Dark Mode and Reduce Motion settings, and its text passes WCAG AA contrast in both themes.",
+    outcomes: ["iPhone & iPad", "Private by design", "Home Screen widget"],
+    next: "shelfwise",
+  },
   shelfwise: {
     name: "ShelfWise",
-    brand: "ShelfWise", // the slider shows the lowercase key unless a real brand is set
-    // Real, live work built before Zenia; every other project is a concept.
-    label: "Founder project",
-    client: "Own product, by co-founder Jassin Al-Safe",
+    brand: "ShelfWise",
+    label: "Internal",
+    client: "Internal, Zenia Digital",
+    url: "https://shelfwiseapp.com",
     title: "Less counting. More cooking.",
     subtitle:
       "An inventory tool for small restaurant teams, shaped by conversations with restaurant owners in Gothenburg.",
@@ -106,10 +130,10 @@ export const projects = {
     approach: "The proposed journey moves from discovery to workshop details and a clear booking summary. A warm visual identity, generous typography, and consistent components bring the screens together. Price, location, and experience level stay visible at the moments they matter.",
     result: "A focused interface direction and a reusable foundation for a future prototype. The next step would be testing the booking journey with prospective participants before development.",
     outcomes: ["Three connected screens", "Reusable UI patterns", "Clear booking journey"],
-    next: "shelfwise",
+    next: "calyourfriends",
   },
 };
 export const projectKeys = Object.keys(projects);
 // The hero slider shows a curated subset, in its own running order;
 // the case grid still lists every project.
-export const sliderKeys = ["shelfwise", "relay", "hemma", "modo", "form"];
+export const sliderKeys = ["calyourfriends", "shelfwise", "relay", "hemma", "modo", "form"];

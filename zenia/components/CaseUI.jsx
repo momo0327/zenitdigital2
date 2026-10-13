@@ -176,6 +176,48 @@ export default function CaseUI({ project }) {
         </div>
       </section>
     );
+  // Real app screenshots in the Hemma screen row.
+  if (project === "calyourfriends")
+    return (
+      <section
+        className="case-ui-section"
+        aria-labelledby="ui-heading-calyourfriends"
+      >
+        <div className="case-ui-heading">
+          <h3 id="ui-heading-calyourfriends">From a free day to a plan.</h3>
+          <p>
+            The day shows why it works, the plan becomes an invitation, and
+            one link brings everyone in.
+          </p>
+        </div>
+        <div
+          className="ui-board ui-board-calyourfriends"
+          tabIndex="0"
+          role="img"
+          aria-label="Three Cal Your Friends screens: a day's timeline showing who is free, a brunch plan styled as an invitation, and the invite sheet with a join code"
+        >
+          <div className="ui-board-content" aria-hidden="true">
+            <div className="hemma-screen-row">
+              {["day", "plan", "invite"].map((screen) => (
+                <div className="app-screen cyf-screen" key={screen}>
+                  <img
+                    src={`/zenia/cyf-${screen}.webp`}
+                    alt=""
+                    width="660"
+                    height="1434"
+                    loading="lazy"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+        <div className="ui-caption">
+          <span>Screens from the app.</span>
+          <span>Interface design</span>
+        </div>
+      </section>
+    );
   // Shares the Relay dashboard layout; .shelfwise-ui recolours it.
   if (project === "shelfwise")
     return (
