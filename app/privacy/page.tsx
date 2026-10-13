@@ -2,11 +2,13 @@ import React from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Footer from '../components/Footer';
+import { pageMetadata } from '../constants/seo';
 
-export const metadata: Metadata = {
-  title: 'Privacy Policy - Zenia Digital',
-  description: 'Read our privacy policy to understand how Zenia Digital collects, uses, and protects your personal information.',
-};
+export const metadata: Metadata = pageMetadata(
+  'Privacy Policy',
+  'Read our privacy policy to understand how Zenia Digital collects, uses, and protects your personal information.',
+  '/privacy',
+);
 
 export default function PrivacyPage() {
   const lastUpdated = 'January 2025';

@@ -1,6 +1,5 @@
 import React from 'react'
 import type { Metadata } from 'next'
-import Script from 'next/script'
 import Header from '../components/AIDevPageComponents/Header'
 import Footer from '../components/Footer'
 import {
@@ -33,23 +32,20 @@ function page() {
 
   return (
     <div>
-      <Script
+      <script
         id="service-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
-        strategy="afterInteractive"
       />
-      <Script
+      <script
         id="webpage-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
-        strategy="afterInteractive"
       />
-      <Script
+      <script
         id="breadcrumb-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-        strategy="afterInteractive"
       />
 
       <Header />

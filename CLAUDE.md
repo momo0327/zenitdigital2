@@ -230,8 +230,16 @@ Components using hooks or browser APIs must include `'use client'` directive:
 - Responsive breakpoints: mobile (640px), tablet (768px), desktop (1024px)
 
 ### SEO & Performance
-- Metadata exported from page components using Next.js Metadata API
-- LocalBusiness JSON-LD schema for Swedish market SEO
+- Metadata exported from page components using Next.js Metadata API. Build every
+  page's metadata with `pageMetadata(title, description, path)` from
+  `app/constants/seo.ts`: it sets the page's own canonical, og:url, share image and
+  Twitter card. The root sets no canonical, so a page without one has none, and a
+  page's `openGraph` replaces the parent's entirely, image included.
+- LocalBusiness + WebSite JSON-LD in `app/layout.tsx`. Render JSON-LD with a plain
+  `<script type="application/ld+json">`, never `next/script`: that injects it with
+  JavaScript, so it is missing from the HTML that crawlers read.
+- `/llms.txt` (`app/llms.txt/route.ts`) summarises the site for AI assistants; update it
+  when pages or services change.
 - Loading states with Skeleton components
 - Image optimization with custom hooks and Next.js Image
 - `robots.ts` and `sitemap.ts` for search engine configuration

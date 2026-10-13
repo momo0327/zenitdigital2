@@ -2,29 +2,14 @@ import { MetadataRoute } from 'next';
 import { BASE_URL } from './constants/seo';
 
 /**
- * Robots.txt configuration
- * Controls search engine crawling and indexing
- * Optimized for Swedish market visibility
+ * Robots.txt: everything is crawlable, search engines and AI crawlers alike.
+ * Never disallow /_next/ — crawlers need the CSS and JS to render the pages.
+ * Which AI training crawlers get through is set in Cloudflare, not here.
  */
 export default function robots(): MetadataRoute.Robots {
   return {
-    rules: [
-      {
-        userAgent: '*',
-        allow: '/',
-        disallow: ['/api/', '/admin/', '/_next/'],
-      },
-      {
-        userAgent: 'Googlebot',
-        allow: '/',
-        disallow: ['/api/', '/admin/'],
-      },
-      {
-        userAgent: 'Bingbot',
-        allow: '/',
-        disallow: ['/api/', '/admin/'],
-      },
-    ],
+    rules: [{ userAgent: '*', allow: '/' }],
     sitemap: `${BASE_URL}/sitemap.xml`,
+    host: BASE_URL,
   };
 }
