@@ -24,7 +24,7 @@ export default function ZeniaHome() {
             reducedMotion={reducedMotion}
             blocked={menuOpen || !!dialog}
           />
-          <Statement />
+          <Statement reducedMotion={reducedMotion} />
           <Cases onProject={openProject} />
           <ServicesSection onContact={openContact} />
           {/* Testimonials (components/Testimonials.jsx) are hidden until there are real client quotes. */}
