@@ -22,7 +22,7 @@ export function GET() {
 ## Company
 
 - [About](${BASE_URL}/about): a small team of designers and developers who build digital products end to end.
-- [Work](${BASE_URL}/work): Zenia's internal products, Cal Your Friends (calyourfriends.app), an iPhone and iPad app that finds the day a group of friends is free, and ShelfWise (shelfwiseapp.com), inventory software for restaurants; plus concept projects (Hemma, Relay, Form and Modo). None of these is client work.
+- [Work](${BASE_URL}/work): Zenia's internal products, Cal Your Friends (calyourfriends.app), an iPhone and iPad app that finds the day a group of friends is free, and ShelfWise (shelfwiseapp.com), inventory software for restaurants; plus concept projects (Hemma, Relay, Form, Atlas and Modo). None of these is client work.
 - [Client portal](${BASE_URL}/portal): where clients follow progress, review designs and share feedback.
 - [Contact](${BASE_URL}/contact): ${email}, ${phone}, ${address.street}, ${address.postalCode} ${address.city}, ${address.country}.
 

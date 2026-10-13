@@ -968,6 +968,12 @@ dialog::backdrop {
   width: 100%;
   height: auto;
 }
+/* The original design's crop, for photos that are not 3:2 (Atlas). */
+.case-hero-crop {
+  max-height: 650px;
+  object-fit: cover;
+  aspect-ratio: 1.9;
+}
 .case-body {
   display: grid;
   grid-template-columns: 1fr 2.1fr;
@@ -1651,6 +1657,10 @@ legend {
   }
   .case-hero {
     border-radius: 16px;
+  }
+  .case-hero-crop {
+    aspect-ratio: 1.1;
+    max-height: none;
   }
   .case-body {
     grid-template-columns: 1fr;
