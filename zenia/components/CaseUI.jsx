@@ -176,6 +176,181 @@ export default function CaseUI({ project }) {
         </div>
       </section>
     );
+  // Shares the Relay dashboard layout; .shelfwise-ui recolours it.
+  if (project === "shelfwise")
+    return (
+      <section className="case-ui-section" aria-labelledby="ui-heading-shelfwise">
+        <div className="case-ui-heading">
+          <h3 id="ui-heading-shelfwise">What’s low, what’s next.</h3>
+          <p>
+            One overview for the whole kitchen, from stock levels to the
+            shopping list.
+          </p>
+        </div>
+        <div
+          className="ui-board ui-board-shelfwise"
+          tabIndex="0"
+          role="img"
+          aria-label="Flat ShelfWise desktop dashboard showing stock levels, items running low, stock value and a ready shopping list"
+        >
+          <div className="ui-board-content" aria-hidden="true">
+            <div className="desktop-screen relay-ui shelfwise-ui">
+              <aside className="relay-sidebar">
+                <strong className="relay-ui-brand">
+                  Shelf<span>Wise</span>
+                </strong>
+                <div className="relay-ui-workspace">
+                  <span>T</span>
+                  <div>
+                    <strong>Trattoria Nord</strong>
+                    <small>2 locations</small>
+                  </div>
+                </div>
+                <div className="relay-ui-nav">
+                  <span className="active">
+                    <i>◫</i> Overview
+                  </span>
+                  <span>
+                    <i>□</i> Inventory
+                  </span>
+                  <span>
+                    <i>◎</i> Recipes
+                  </span>
+                  <span>
+                    <i>⌁</i> Suppliers
+                  </span>
+                  <span>
+                    <i>▤</i> Shopping lists
+                  </span>
+                </div>
+                <div className="relay-ui-user">
+                  <span className="ui-avatar">LS</span>
+                  <div>
+                    <strong>Lina Svensson</strong>
+                    <small>Head chef</small>
+                  </div>
+                </div>
+              </aside>
+              <div className="relay-main">
+                <div className="relay-topbar">
+                  <span>
+                    Trattoria Nord / <strong>Overview</strong>
+                  </span>
+                  <div>
+                    <span className="ui-notification">◌</span>
+                    <span className="ui-avatar">LS</span>
+                  </div>
+                </div>
+                <div className="relay-content">
+                  <div className="relay-greeting">
+                    <div>
+                      <p className="ui-overline">TUESDAY, 13 OCTOBER</p>
+                      <h4>Good morning, Lina.</h4>
+                      <p>Here’s what the kitchen needs today.</p>
+                    </div>
+                    <span className="relay-period">This week⌄</span>
+                  </div>
+                  <div className="relay-metrics">
+                    <div>
+                      <span>Items tracked</span>
+                      <strong>
+                        248<small className="neutral">Live</small>
+                      </strong>
+                      <p>Across both locations</p>
+                    </div>
+                    <div>
+                      <span>Running low</span>
+                      <strong>
+                        5<small>Reorder</small>
+                      </strong>
+                      <p>Added to your shopping list</p>
+                    </div>
+                    <div>
+                      <span>Expiring soon</span>
+                      <strong>
+                        2<small>2 days</small>
+                      </strong>
+                      <p>Use first in today’s prep</p>
+                    </div>
+                  </div>
+                  <div className="relay-dashboard-row">
+                    <div className="relay-shipments">
+                      <div className="ui-panel-heading">
+                        <strong>Stock levels</strong>
+                        <span>View all</span>
+                      </div>
+                      <div className="ui-shipment-table">
+                        <div className="ui-table-head">
+                          <span>Item</span>
+                          <span>On hand</span>
+                          <span>Status</span>
+                        </div>
+                        <div>
+                          <strong>Tomatoes</strong>
+                          <span>4 kg</span>
+                          <em className="low">Low</em>
+                        </div>
+                        <div>
+                          <strong>Mozzarella</strong>
+                          <span>12 pcs</span>
+                          <em>In stock</em>
+                        </div>
+                        <div>
+                          <strong>Fresh basil</strong>
+                          <span>3 bunches</span>
+                          <em className="planned">Expiring</em>
+                        </div>
+                        <div>
+                          <strong>Olive oil</strong>
+                          <span>6 L</span>
+                          <em>In stock</em>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="relay-performance">
+                      <div className="ui-panel-heading">
+                        <strong>Stock value</strong>
+                      </div>
+                      <strong className="ui-performance-number">
+                        38 400<span> kr</span>
+                      </strong>
+                      <p>Across both locations.</p>
+                      <div className="ui-bar-chart">
+                        <span style={{ "--bar": "70%" }}></span>
+                        <span style={{ "--bar": "58%" }}></span>
+                        <span style={{ "--bar": "64%" }}></span>
+                        <span style={{ "--bar": "82%" }}></span>
+                        <span style={{ "--bar": "60%" }}></span>
+                        <span style={{ "--bar": "88%" }}></span>
+                        <span style={{ "--bar": "76%" }}></span>
+                      </div>
+                      <div className="ui-chart-labels">
+                        <span>Mon</span>
+                        <span>Sun</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="relay-bottom-note">
+                    <span className="ui-verified">✓</span>
+                    <div>
+                      <strong>Your shopping list is ready.</strong>
+                      <span>
+                        Five items from three suppliers, grouped so ordering
+                        takes minutes.
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="ui-caption">
+          <span>Stock control, without the spreadsheet.</span>
+          <span>Interface design</span>
+        </div>
+      </section>
+    );
   if (project === "relay")
     return (
       <section className="case-ui-section" aria-labelledby="ui-heading-relay">

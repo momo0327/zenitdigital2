@@ -55,7 +55,7 @@ export default function CaseStudy({ project, onProject, onClose }) {
             <dl className="case-facts">
               <div>
                 <dt>Client</dt>
-                <dd>{p.name}</dd>
+                <dd>{p.client || p.name}</dd>
               </div>
               <div>
                 <dt>Year</dt>

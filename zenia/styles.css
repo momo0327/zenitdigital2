@@ -2768,6 +2768,10 @@ body.menu-open {
   background: #b4ffa8;
   padding: 60px 40px;
 }
+.ui-board-shelfwise {
+  background: #ffd9bd;
+  padding: 60px 40px;
+}
 .ui-board-form {
   background: #adddff;
   padding: 58px 65px;
@@ -3466,6 +3470,85 @@ body.menu-open {
   color: #99a68f;
   margin-top: 3px;
 }
+/* ShelfWise reuses the Relay dashboard layout in its own orange. */
+.shelfwise-ui {
+  color: #1c1917;
+}
+.shelfwise-ui .relay-sidebar {
+  background: #fcfbf9;
+  border-color: #f1ece6;
+}
+.shelfwise-ui .relay-topbar {
+  border-color: #f1ece6;
+}
+.shelfwise-ui .relay-ui-brand {
+  font-size: 23px;
+  letter-spacing: -0.8px;
+}
+.shelfwise-ui .relay-ui-brand > span {
+  color: #f26b1d;
+  font-size: inherit;
+  letter-spacing: inherit;
+  vertical-align: baseline;
+  margin: 0;
+}
+.shelfwise-ui .relay-ui-workspace {
+  border-color: #f1ece6;
+}
+.shelfwise-ui .relay-ui-workspace > span,
+.shelfwise-ui .relay-metrics small,
+.shelfwise-ui .ui-shipment-table em.low {
+  background: #ffeadb;
+  color: #c4531a;
+}
+.shelfwise-ui .relay-ui-nav .active {
+  background: #fff1e6;
+  color: #c4531a;
+}
+.shelfwise-ui .relay-ui-nav > span:not(.active),
+.shelfwise-ui .relay-ui-workspace small,
+.shelfwise-ui .relay-ui-user small,
+.shelfwise-ui .relay-greeting .ui-overline,
+.shelfwise-ui .relay-greeting p:not(.ui-overline),
+.shelfwise-ui .relay-metrics > div > span,
+.shelfwise-ui .relay-metrics p,
+.shelfwise-ui .relay-performance p,
+.shelfwise-ui .ui-shipment-table > div > span,
+.shelfwise-ui .ui-chart-labels,
+.shelfwise-ui .relay-bottom-note div > span {
+  color: #9a9087;
+}
+.shelfwise-ui .ui-avatar,
+.shelfwise-ui .relay-metrics small.neutral {
+  background: #f4efe9;
+  color: #7a6f65;
+}
+.shelfwise-ui .relay-period,
+.shelfwise-ui .relay-metrics > div,
+.shelfwise-ui .relay-shipments,
+.shelfwise-ui .relay-performance {
+  border-color: #f1ece6;
+}
+.shelfwise-ui .relay-metrics > div,
+.shelfwise-ui .relay-bottom-note {
+  background: #fcf8f4;
+}
+.shelfwise-ui .ui-panel-heading > span {
+  color: #e0732f;
+}
+.shelfwise-ui .ui-performance-number > span {
+  color: #e9a072;
+}
+.shelfwise-ui .ui-bar-chart > span {
+  background: #fcd9bf;
+}
+.shelfwise-ui .ui-bar-chart > span:nth-last-child(-n + 2) {
+  background: #f26b1d;
+}
+.shelfwise-ui .ui-verified {
+  background: #ffeadb;
+  color: #c4531a;
+}
 .form-ui {
   color: #202323;
 }
@@ -3660,7 +3743,8 @@ body.menu-open {
     font-size: 8px;
     padding: 9px;
   }
-  .ui-board-relay {
+  .ui-board-relay,
+  .ui-board-shelfwise {
     padding: 40px 25px;
   }
   .relay-ui {
@@ -3800,6 +3884,7 @@ body.menu-open {
     color: #a193ac;
   }
   .ui-board-relay,
+  .ui-board-shelfwise,
   .ui-board-form {
     padding: 28px 22px;
   }

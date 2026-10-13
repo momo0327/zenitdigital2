@@ -7,6 +7,7 @@ import "./WorkPage.css";
 
 // Card imagery is not in data.js, so it is mapped here. Keys match `projects`.
 const CARDS = [
+  { key: "shelfwise", image: "shelfwise", tagline: "Stock control for busy kitchens." },
   { key: "hemma", image: "hemma", tagline: "Finding a home, made human." },
   {
     key: "relay",
@@ -100,8 +101,7 @@ export default function WorkPage({ onProject }) {
                     <p>{tagline}</p>
                   </div>
                   <span className="work-card__meta">
-                    {/* Every project so far is a concept, not client work. */}
-                    {project.category?.split(" · ")[0]} · Concept
+                    {project.category?.split(" · ")[0]} · {project.label || "Concept"}
                     <span className="work-card__year">{project.year}</span>
                   </span>
                 </div>

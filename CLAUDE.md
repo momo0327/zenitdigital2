@@ -351,8 +351,11 @@ The Vite original was client-only, so these only surface under Next:
 - **Hidden until real content exists** — the testimonials (`zenia/components/Testimonials.jsx`,
   not rendered by `ZeniaHome.jsx`) and the homepage stats row (removed from
   `Statement.jsx`; restore it from git history).
-- **Concept work** — every case study is a concept, labelled "Concept" on the
-  hero, the homepage cards and `/work`. Drop the label when real client work lands.
+- **Concept work** — every case study except ShelfWise is a concept, labelled
+  "Concept" on the hero, the homepage cards and `/work`. A project's `label` in
+  `zenia/data.js` replaces it (ShelfWise: "Founder project", real work built by
+  co-founder Jassin Al-Safe before Zenia). Homepage cards are hard-coded in
+  `Sections.jsx`, so their labels are edited there.
   Project imagery must be Zenia's own mockups: the earlier card images were
   third-party product screenshots and were replaced.
 - **Placeholder copy** — the About/Services page body text is invented and needs
