@@ -16,6 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/MobileDev`, lastModified: currentDate, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${BASE_URL}/FullstackDev`, lastModified: currentDate, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${BASE_URL}/AIDev`, lastModified: currentDate, changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${BASE_URL}/work`, lastModified: currentDate, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/about`, lastModified: currentDate, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/portal`, lastModified: currentDate, changeFrequency: 'monthly', priority: 0.6 },
     { url: `${BASE_URL}/contact`, lastModified: currentDate, changeFrequency: 'monthly', priority: 0.8 },
