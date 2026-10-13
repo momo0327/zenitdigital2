@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef } from "react";
-import { projects } from "../data";
+import { projects } from "../constants/projects";
 import Modal from "./Modal";
 import Logo from "./Logo";
 import CaseUI from "./CaseUI";

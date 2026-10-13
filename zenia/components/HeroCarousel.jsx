@@ -1,80 +1,24 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
-import { projects, sliderKeys } from "../data";
+import { Fragment, useEffect, useRef, useState } from "react";
+import { projects, sliderKeys } from "../constants/projects";
 import { usePageVisible } from "../hooks";
 import "../hero-cards.css";
 
-// Keyed by project so the slider order can change without desyncing.
-const copy = {
-  hemma: {
-    tag: "Mobile app",
-    title: (
-      <>
-        A place to
-        {" "}<br />
-        call yours.
-      </>
-    ),
-    description: (
-      <>
-        A simpler way to find
-        {" "}<br />
-        your next home.
-      </>
-    ),
-  },
-  relay: {
-    tag: "Platform",
-    title: (
-      <>
-        Everything.
-        {" "}<br />
-        Moving together.
-      </>
-    ),
-    description: (
-      <>
-        Clarity for the people
-        {" "}<br />
-        keeping things moving.
-      </>
-    ),
-  },
-  form: {
-    tag: "E-commerce",
-    title: (
-      <>
-        More room
-        {" "}<br />
-        for good living.
-      </>
-    ),
-    description: (
-      <>
-        A digital home for
-        {" "}<br />
-        considered design.
-      </>
-    ),
-  },
-  modo: {
-    tag: "UI/UX design",
-    title: (
-      <>
-        Every detail.
-        {" "}<br />
-        By design.
-      </>
-    ),
-    description: (
-      <>
-        From a first idea to
-        {" "}<br />
-        an effortless experience.
-      </>
-    ),
-  },
-};
+// Slide copy is stored one line per string; desktop breaks between lines, and
+// the space keeps words apart on mobile, where the breaks are hidden.
+function lines(text) {
+  return text.map((line, index) => (
+    <Fragment key={line}>
+      {index > 0 && (
+        <>
+          {" "}
+          <br />
+        </>
+      )}
+      {line}
+    </Fragment>
+  ));
+}
 export function MotionIcon() {
   return (
     <>
@@ -165,12 +109,12 @@ export default function HeroCarousel({ onProject, reducedMotion, blocked }) {
                   {key}
                 </span>
                 <div className="slide-tags">
-                  <span>{copy[key].tag}</span>
+                  <span>{projects[key].slide.tag}</span>
                   <span>Concept</span>
                 </div>
               </div>
-              <h2>{copy[key].title}</h2>
-              <p>{copy[key].description}</p>
+              <h2>{lines(projects[key].slide.title)}</h2>
+              <p>{lines(projects[key].slide.description)}</p>
               <button
                 className="button button-white"
                 onClick={() => onProject(key)}

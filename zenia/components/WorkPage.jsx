@@ -1,27 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { projects } from "../data";
+import { projects, workKeys } from "../constants/projects";
 import ContactContainer from "./ContactContainer";
 import "./WorkPage.css";
-
-// Card imagery is not in data.js, so it is mapped here. Keys match `projects`.
-const CARDS = [
-  { key: "hemma", image: "project-6", tagline: "Finding a home, made human." },
-  {
-    key: "relay",
-    image: "project-4",
-    tagline: "Bringing every moving part together.",
-  },
-  { key: "form", image: "project-3", tagline: "A little more room for good design." },
-  { key: "modo", image: "hero-modo-ipad", tagline: "Every detail, by design." },
-  {
-    key: "calyourfriends",
-    image: "calyourfriends",
-    tagline: "Find the day everyone’s free.",
-  },
-  { key: "shelfwise", image: "shelfwise", tagline: "Stock control for busy kitchens." },
-];
 
 const VIEWS = [
   { id: "grid", label: "Grid" },
@@ -77,9 +59,8 @@ export default function WorkPage({ onProject }) {
         </div>
 
         <div className={`work-page__items work-page__items--${view}`}>
-          {CARDS.map(({ key, image, tagline }) => {
+          {workKeys.map((key) => {
             const project = projects[key];
-            if (!project) return null;
             return (
               <article className="work-card" key={key}>
                 <button
@@ -88,7 +69,7 @@ export default function WorkPage({ onProject }) {
                   onClick={() => onProject(key)}
                 >
                   <img
-                    src={`/zenia/${image}.webp`}
+                    src={`/zenia/${project.cardImage}.webp`}
                     alt=""
                     width="1536"
                     height="1024"
@@ -103,7 +84,7 @@ export default function WorkPage({ onProject }) {
                         {project.name}
                       </button>
                     </h2>
-                    <p>{tagline}</p>
+                    <p>{project.tagline}</p>
                   </div>
                   <span className="work-card__meta">
                     {project.category?.split(" · ")[0]} · {project.label || "Concept"}

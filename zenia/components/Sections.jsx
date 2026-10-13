@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import ContactContainer from "./ContactContainer";
+import { homeCaseKeys, projects } from "../constants/projects";
 export function BrandDefinitions({ onContact, onProject }) {
   return (
     <svg
@@ -61,118 +62,39 @@ export function Cases({ onContact, onProject }) {
         </p>
       </div>
       <div className="case-grid">
-        <article className="case-card">
-          <button
-            className="case-card-image"
-            data-project="hemma"
-            aria-label="Explore the Hemma case study"
-            onClick={() => onProject("hemma")}
-          >
-            <img
-              src="/zenia/project-6.webp"
-              alt="Hemma project imagery"
-              width="1536"
-              height="1024"
-              loading="lazy"
-            />
-            <span className="case-view">Explore project</span>
-          </button>
-          <div className="case-card-caption">
-            <div>
-              <h3>
-                <button data-project="hemma" onClick={() => onProject("hemma")}>
-                  Hemma
-                </button>
-              </h3>
-              <p>Finding a home, made human.</p>
-            </div>
-            <span>Mobile app · Concept</span>
-          </div>
-        </article>
-        <article className="case-card">
-          <button
-            className="case-card-image"
-            data-project="relay"
-            aria-label="Explore the Relay case study"
-            onClick={() => onProject("relay")}
-          >
-            <img
-              src="/zenia/project-4.webp"
-              alt="Relay project imagery"
-              width="1536"
-              height="1024"
-              loading="lazy"
-            />
-            <span className="case-view">Explore project</span>
-          </button>
-          <div className="case-card-caption">
-            <div>
-              <h3>
-                <button data-project="relay" onClick={() => onProject("relay")}>
-                  Relay
-                </button>
-              </h3>
-              <p>Bringing every moving part together.</p>
-            </div>
-            <span>Full-stack platform · Concept</span>
-          </div>
-        </article>
-        <article className="case-card">
-          <button
-            className="case-card-image"
-            data-project="form"
-            aria-label="Explore the Form case study"
-            onClick={() => onProject("form")}
-          >
-            <img
-              src="/zenia/project-3.webp"
-              alt="Form project imagery"
-              width="1536"
-              height="1024"
-              loading="lazy"
-            />
-            <span className="case-view">Explore project</span>
-          </button>
-          <div className="case-card-caption">
-            <div>
-              <h3>
-                <button data-project="form" onClick={() => onProject("form")}>
-                  Form
-                </button>
-              </h3>
-              <p>A little more room for good design.</p>
-            </div>
-            <span>E-commerce · Concept</span>
-          </div>
-        </article>
-        <article className="case-card">
-          <button
-            className="case-card-image"
-            data-project="modo"
-            aria-label="Explore the Modo case study"
-            onClick={() => onProject("modo")}
-          >
-            <img
-              src="/zenia/hero-modo-ipad.webp"
-              alt="Modo project imagery"
-              width="1536"
-              height="1024"
-              loading="lazy"
-            />
-            <span className="case-view">Explore project</span>
-          </button>
-          <div className="case-card-caption">
-            <div>
-              <h3>
-                <button data-project="modo" onClick={() => onProject("modo")}>
-                  Modo
-                </button>
-              </h3>
-              <p>Every detail, by design.</p>
-            </div>
-            <span>UI/UX design · Concept</span>
-          </div>
-        </article>
+        {homeCaseKeys.map((key) => {
+          const project = projects[key];
+          return (
+            <article className="case-card" key={key}>
+              <button
+                className="case-card-image"
+                data-project={key}
+                aria-label={`Explore the ${project.name} case study`}
+                onClick={() => onProject(key)}
+              >
+                <img
+                  src={`/zenia/${project.cardImage}.webp`}
+                  alt={`${project.name} project imagery`}
+                  width="1536"
+                  height="1024"
+                  loading="lazy"
+                />
+                <span className="case-view">Explore project</span>
+              </button>
+              <div className="case-card-caption">
+                <div>
+                  <h3>
+                    <button data-project={key} onClick={() => onProject(key)}>
+                      {project.name}
+                    </button>
+                  </h3>
+                  <p>{project.tagline}</p>
+                </div>
+                <span>{`${project.category.split(" · ")[0]} · ${project.label || "Concept"}`}</span>
+              </div>
+            </article>
+          );
+        })}
       </div>
     </section>
   );
