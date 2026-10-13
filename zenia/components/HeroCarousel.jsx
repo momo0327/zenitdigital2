@@ -6,6 +6,23 @@ import "../hero-cards.css";
 
 // Keyed by project so the slider order can change without desyncing.
 const copy = {
+  shelfwise: {
+    tag: "SaaS product",
+    title: (
+      <>
+        Less counting.
+        <br />
+        More cooking.
+      </>
+    ),
+    description: (
+      <>
+        Stock control for
+        <br />
+        busy kitchens.
+      </>
+    ),
+  },
   hemma: {
     tag: "Mobile app",
     title: (
@@ -162,11 +179,11 @@ export default function HeroCarousel({ onProject, reducedMotion, blocked }) {
                 <span
                   className={`project-brand${key === "form" ? " form-brand" : ""}`}
                 >
-                  {key}
+                  {projects[key].brand || key}
                 </span>
                 <div className="slide-tags">
                   <span>{copy[key].tag}</span>
-                  <span>Concept</span>
+                  <span>{projects[key].label || "Concept"}</span>
                 </div>
               </div>
               <h2>{copy[key].title}</h2>

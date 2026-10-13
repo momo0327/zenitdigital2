@@ -1,4 +1,27 @@
 export const projects = {
+  shelfwise: {
+    name: "ShelfWise",
+    brand: "ShelfWise", // the slider shows the lowercase key unless a real brand is set
+    // Real, live work built before Zenia; every other project is a concept.
+    label: "Founder project",
+    client: "Own product, by co-founder Jassin Al-Safe",
+    title: "Less counting. More cooking.",
+    subtitle:
+      "An inventory tool for small restaurant teams, shaped by conversations with restaurant owners in Gothenburg.",
+    image: "shelfwise",
+    alt: "Hand holding a phone showing the ShelfWise stock overview against a peach background",
+    category: "Restaurant SaaS · Full-stack product",
+    services: ["User research", "UX & UI design", "Full-stack development"],
+    year: "2024",
+    challenge:
+      "Small restaurant teams were running their stock on spreadsheets, notebooks and memory. Conversations with restaurant owners in Gothenburg made the brief clear: anything new had to be quicker than the spreadsheet it replaced, or nobody would open it in the middle of a service.",
+    approach:
+      "ShelfWise is built around the questions a kitchen asks every day: what is running low, what expires soon, and what needs ordering. Recipes are linked to their ingredients, so stock levels and shopping lists follow what the kitchen actually cooks. Signing up takes an email, and business details can wait. Changes sync in real time, so the whole team sees the same numbers.",
+    result:
+      "A live product, designed and built end to end, from the data model to the interface. React, TypeScript and Supabase keep it quick to work on, and it supports more than one location from the start.",
+    outcomes: ["Live product", "Real-time sync", "Recipe-linked stock"],
+    next: "hemma",
+  },
   hemma: {
     name: "Hemma",
     title: "A place to call yours.",
@@ -83,10 +106,10 @@ export const projects = {
     approach: "The proposed journey moves from discovery to workshop details and a clear booking summary. A warm visual identity, generous typography, and consistent components bring the screens together. Price, location, and experience level stay visible at the moments they matter.",
     result: "A focused interface direction and a reusable foundation for a future prototype. The next step would be testing the booking journey with prospective participants before development.",
     outcomes: ["Three connected screens", "Reusable UI patterns", "Clear booking journey"],
-    next: "hemma",
+    next: "shelfwise",
   },
 };
 export const projectKeys = Object.keys(projects);
 // The hero slider shows a curated subset, in its own running order;
 // the case grid still lists every project.
-export const sliderKeys = ["relay", "hemma", "modo", "form"];
+export const sliderKeys = ["shelfwise", "relay", "hemma", "modo", "form"];

@@ -54,6 +54,8 @@
 .showcase-editorial .slide-relay { background: #b9fbb6; }
 .showcase-editorial .slide-form { background: #9dd4fd; }
 .showcase-editorial .slide-modo { background: #fc554b; color: #240000; }
+/* Matches the flat background of hero-shelfwise.webp. */
+.showcase-editorial .slide-shelfwise { background: #fed1ae; color: #2a1305; }
 @media (max-width: 1100px) and (min-width: 901px) {
   .showcase-editorial .slide-copy { width: 44%; min-height: 500px; padding: 30px 0 30px 30px; }
   .showcase-editorial .slide-copy h2 { font-size: 37px; }
