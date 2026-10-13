@@ -44,7 +44,7 @@ export default function CaseStudy({ project, onProject, onClose }) {
             <p>{p.subtitle}</p>
           </div>
           <img
-            className="case-hero"
+            className={`case-hero${p.cropHero ? " case-hero-crop" : ""}`}
             src={`/zenia/${p.image}.webp`}
             alt={p.alt}
             width="1536"

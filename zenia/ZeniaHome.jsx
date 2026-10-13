@@ -12,6 +12,7 @@ import {
 import ServicesSection from "@/zenia/components/ServicesSection";
 import HeroCarousel from "@/zenia/components/HeroCarousel";
 import Statement from "@/zenia/components/Statement";
+import Testimonials from "@/zenia/components/Testimonials";
 
 export default function ZeniaHome() {
   return (
@@ -27,7 +28,10 @@ export default function ZeniaHome() {
           <Statement reducedMotion={reducedMotion} />
           <Cases onProject={openProject} />
           <ServicesSection onContact={openContact} />
-          {/* Testimonials (components/Testimonials.jsx) are hidden until there are real client quotes. */}
+          <Testimonials
+            reducedMotion={reducedMotion}
+            blocked={menuOpen || !!dialog}
+          />
           <Process />
           <Portal onContact={openContact} />
           <PortalActions onContact={openContact} />

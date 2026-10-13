@@ -4,7 +4,7 @@ import { pageMetadata } from '@/app/constants/seo';
 // page.jsx is a client component, so its metadata lives here.
 export const metadata: Metadata = pageMetadata(
   'Our Work',
-  'Work from Zenia Digital: our internal products Cal Your Friends, an app for finding the day friends are free, and ShelfWise, restaurant inventory software, plus four concept projects.',
+  'Work from Zenia Digital: our internal products Cal Your Friends, an app for finding the day friends are free, and ShelfWise, restaurant inventory software, plus five concept projects.',
   '/work',
 );
 
