@@ -50,13 +50,11 @@
 .showcase-editorial .slide-copy .button { align-self: flex-start; color: inherit; background: #fff; border: 1px solid #fff; padding: 12px 21px; min-height: 46px; font-size: 13px; white-space: normal; text-align: left; }
 .showcase-editorial .slide-copy .button:hover { background: #f5f5f7; border-color: #f5f5f7; transform: none; }
 .showcase-editorial .showcase-slide.active .slide-media img { animation: none; }
-.showcase-editorial .slide-hemma { background: #d8cffd; }
-.showcase-editorial .slide-relay { background: #b9fbb6; }
 .showcase-editorial .slide-form { background: #9dd4fd; }
 .showcase-editorial .slide-modo { background: #fc554b; color: #240000; }
 /* Each matches the flat background of its hero-{key}.webp. */
-.showcase-editorial .slide-shelfwise { background: #fed1ae; color: #2a1305; }
-.showcase-editorial .slide-calyourfriends { background: #fce59c; color: #2a2000; }
+.showcase-editorial .slide-shelfwise { background: #fdceaa; color: #2a1305; }
+.showcase-editorial .slide-calyourfriends { background: #fde69c; color: #2a2000; }
 @media (max-width: 1100px) and (min-width: 901px) {
   .showcase-editorial .slide-copy { width: 44%; min-height: 500px; padding: 30px 0 30px 30px; }
   .showcase-editorial .slide-copy h2 { font-size: 37px; }
