@@ -224,6 +224,9 @@ svg {
   background: var(--gray);
   border-radius: 40px;
   padding: 11px 26px;
+  /* Centred with left: 50%, it may only shrink to half the header, which wrapped
+     "About us" and "Client portal" when text renders wider (Safari, zoom). */
+  white-space: nowrap;
 }
 .desktop-nav a {
   transition: color 0.2s;
@@ -285,6 +288,13 @@ svg {
   visibility: visible;
   pointer-events: auto;
   z-index: 1;
+}
+.slide-hemma {
+  background: #e7ddff;
+}
+.slide-relay {
+  background: var(--green);
+  color: #031200;
 }
 .slide-form {
   background: var(--blue);
@@ -4127,12 +4137,14 @@ body.menu-open {
     display: block;
   }
 }
-.portal-intro :is(h1, h2) {
+.portal-intro h1,
+.portal-intro h2 {
   font-size: clamp(34px, 3.65vw, 54px);
   line-height: 1.17;
   letter-spacing: -0.045em;
 }
-.portal-intro :is(h1, h2) > span {
+.portal-intro h1 > span,
+.portal-intro h2 > span {
   color: #96969b;
 }
 .portal-description {
@@ -4373,7 +4385,8 @@ body.menu-open {
     font-size: 12px;
     margin-bottom: 20px;
   }
-  .portal-intro :is(h1, h2) {
+  .portal-intro h1,
+  .portal-intro h2 {
     font-size: 35px;
     line-height: 1.18;
   }
@@ -4418,7 +4431,8 @@ body.menu-open {
   .testimonial-card-content {
     padding: 24px 21px;
   }
-  .portal-intro :is(h1, h2) {
+  .portal-intro h1,
+  .portal-intro h2 {
     font-size: 31px;
   }
 }

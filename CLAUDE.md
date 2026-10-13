@@ -302,6 +302,12 @@ Asset paths stay under `/zenia/...` and `/zenia-services/...` — those are
 
 ## Conventions — deliberately different from the main site
 
+- **Project content lives in `zenia/constants/projects.js`**, not in components:
+  every project's copy (case study, slider, card tagline, interface-board
+  heading and caption) and its images (case, slider, card, board). Which
+  projects appear where is set there too: `sliderKeys`, `homeCaseKeys`,
+  `workKeys`. Components only hold layout and the mock-UI markup inside boards.
+
 - **Plain `.jsx`, not TypeScript.** Converting was declined to avoid visual drift.
 - **Hand-written CSS, not Tailwind.** Three global files imported by `ZeniaShell`:
   `zenia/styles.css` (~5000 lines), `hero-cards.css`, `modo.css`.
@@ -354,11 +360,13 @@ The Vite original was client-only, so these only surface under Next:
   is live; its figures were confirmed by the owner on 2026-10-13.
 - **Concept work** — every case study except Cal Your Friends and ShelfWise is a
   concept, labelled "Concept" on the hero, the homepage cards and `/work`. A
-  project's `label` in `zenia/data.js` replaces it ("Internal" for those two,
-  which Zenia owns; their `url` shows as a "Live site" link in the case study). Homepage cards are hard-coded in `Sections.jsx`, so their
-  labels are edited there.
-  Project imagery must be Zenia's own mockups: the earlier card images were
-  third-party product screenshots and were replaced.
+  project's `label` replaces it ("Internal" for those two, which Zenia owns;
+  their `url` shows as a "Live site" link in the case study).
+  The homepage (hero slider and case grid) keeps the original design's projects;
+  Cal Your Friends and ShelfWise appear only on `/work` and in their case studies.
+  The Hemma, Relay and Form cards (homepage and `/work`) use the original design's
+  images (`project-6/4/3.webp`), kept at the owner's request on 2026-10-13; they
+  are third-party product screenshots. The case studies use Zenia's own mockups.
 - **Placeholder copy** — the About/Services page body text is invented and needs
   real content.
 - **X link on `/contact` is `#`** — kept to match the design until there is an account.
