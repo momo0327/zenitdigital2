@@ -286,13 +286,6 @@ svg {
   pointer-events: auto;
   z-index: 1;
 }
-.slide-hemma {
-  background: #e7ddff;
-}
-.slide-relay {
-  background: var(--green);
-  color: #031200;
-}
 .slide-form {
   background: var(--blue);
   color: #02131f;

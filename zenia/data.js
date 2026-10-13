@@ -134,6 +134,6 @@ export const projects = {
   },
 };
 export const projectKeys = Object.keys(projects);
-// The hero slider shows a curated subset, in its own running order;
-// the case grid still lists every project.
-export const sliderKeys = ["calyourfriends", "shelfwise", "relay", "hemma", "modo", "form"];
+// The hero slider shows at most four projects, one per thing we do:
+// full-stack, mobile, web and design. The case grid still lists every project.
+export const sliderKeys = ["shelfwise", "calyourfriends", "form", "modo"];

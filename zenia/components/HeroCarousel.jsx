@@ -7,103 +7,69 @@ import "../hero-cards.css";
 // Keyed by project so the slider order can change without desyncing.
 const copy = {
   calyourfriends: {
-    tag: "Mobile app",
+    tag: "Mobile",
     title: (
       <>
         Find the day
-        <br />
+        {" "}<br />
         everyone’s free.
       </>
     ),
     description: (
       <>
         Plans with friends, without
-        <br />
+        {" "}<br />
         forty messages.
       </>
     ),
   },
   shelfwise: {
-    tag: "SaaS product",
+    tag: "Full-stack",
     title: (
       <>
         Less counting.
-        <br />
+        {" "}<br />
         More cooking.
       </>
     ),
     description: (
       <>
         Stock control for
-        <br />
+        {" "}<br />
         busy kitchens.
       </>
     ),
   },
-  hemma: {
-    tag: "Mobile app",
-    title: (
-      <>
-        A place to
-        <br />
-        call yours.
-      </>
-    ),
-    description: (
-      <>
-        A simpler way to find
-        <br />
-        your next home.
-      </>
-    ),
-  },
-  relay: {
-    tag: "Platform",
-    title: (
-      <>
-        Everything.
-        <br />
-        Moving together.
-      </>
-    ),
-    description: (
-      <>
-        Clarity for the people
-        <br />
-        keeping things moving.
-      </>
-    ),
-  },
   form: {
-    tag: "E-commerce",
+    tag: "Web",
     title: (
       <>
         More room
-        <br />
+        {" "}<br />
         for good living.
       </>
     ),
     description: (
       <>
         A digital home for
-        <br />
+        {" "}<br />
         considered design.
       </>
     ),
   },
   modo: {
-    tag: "UI/UX design",
+    tag: "Design",
     title: (
       <>
         Every detail.
-        <br />
+        {" "}<br />
         By design.
       </>
     ),
     description: (
       <>
         From a first idea to
-        <br />
+        {" "}<br />
         an effortless experience.
       </>
     ),
