@@ -349,8 +349,9 @@ The Vite original was client-only, so these only surface under Next:
 ## Known issues
 
 - **Hidden until real content exists** — the testimonials (`zenia/components/Testimonials.jsx`,
-  not rendered by `ZeniaHome.jsx`) and the homepage stats row (removed from
-  `Statement.jsx`; restore it from git history).
+  not rendered by `ZeniaHome.jsx`): the sample quotes are invented, so they stay
+  off until there are real client quotes. The homepage stats row in `Statement.jsx`
+  is live; its figures were confirmed by the owner on 2026-10-13.
 - **Concept work** — every case study except Cal Your Friends and ShelfWise is a
   concept, labelled "Concept" on the hero, the homepage cards and `/work`. A
   project's `label` in `zenia/data.js` replaces it ("Internal" for those two,
