@@ -64,6 +64,37 @@ export function Cases({ onContact, onProject }) {
         <article className="case-card">
           <button
             className="case-card-image"
+            data-project="calyourfriends"
+            aria-label="Explore the Cal Your Friends case study"
+            onClick={() => onProject("calyourfriends")}
+          >
+            <img
+              src="/zenia/calyourfriends.webp"
+              alt="Cal Your Friends project imagery"
+              width="1536"
+              height="1024"
+              loading="lazy"
+            />
+            <span className="case-view">Explore project</span>
+          </button>
+          <div className="case-card-caption">
+            <div>
+              <h3>
+                <button
+                  data-project="calyourfriends"
+                  onClick={() => onProject("calyourfriends")}
+                >
+                  Cal Your Friends
+                </button>
+              </h3>
+              <p>Find the day everyone’s free.</p>
+            </div>
+            <span>Mobile app · Internal</span>
+          </div>
+        </article>
+        <article className="case-card">
+          <button
+            className="case-card-image"
             data-project="shelfwise"
             aria-label="Explore the ShelfWise case study"
             onClick={() => onProject("shelfwise")}
@@ -86,35 +117,7 @@ export function Cases({ onContact, onProject }) {
               </h3>
               <p>Stock control for busy kitchens.</p>
             </div>
-            <span>Restaurant SaaS · Founder project</span>
-          </div>
-        </article>
-        <article className="case-card">
-          <button
-            className="case-card-image"
-            data-project="hemma"
-            aria-label="Explore the Hemma case study"
-            onClick={() => onProject("hemma")}
-          >
-            <img
-              src="/zenia/hemma.webp"
-              alt="Hemma project imagery"
-              width="1536"
-              height="1024"
-              loading="lazy"
-            />
-            <span className="case-view">Explore project</span>
-          </button>
-          <div className="case-card-caption">
-            <div>
-              <h3>
-                <button data-project="hemma" onClick={() => onProject("hemma")}>
-                  Hemma
-                </button>
-              </h3>
-              <p>Finding a home, made human.</p>
-            </div>
-            <span>Mobile app · Concept</span>
+            <span>Restaurant SaaS · Internal</span>
           </div>
         </article>
         <article className="case-card">

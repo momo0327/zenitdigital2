@@ -6,6 +6,23 @@ import "../hero-cards.css";
 
 // Keyed by project so the slider order can change without desyncing.
 const copy = {
+  calyourfriends: {
+    tag: "Mobile app",
+    title: (
+      <>
+        Find the day
+        <br />
+        everyone’s free.
+      </>
+    ),
+    description: (
+      <>
+        Plans with friends, without
+        <br />
+        forty messages.
+      </>
+    ),
+  },
   shelfwise: {
     tag: "SaaS product",
     title: (

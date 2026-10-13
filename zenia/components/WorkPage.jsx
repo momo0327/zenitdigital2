@@ -7,6 +7,11 @@ import "./WorkPage.css";
 
 // Card imagery is not in data.js, so it is mapped here. Keys match `projects`.
 const CARDS = [
+  {
+    key: "calyourfriends",
+    image: "calyourfriends",
+    tagline: "Find the day everyone’s free.",
+  },
   { key: "shelfwise", image: "shelfwise", tagline: "Stock control for busy kitchens." },
   { key: "hemma", image: "hemma", tagline: "Finding a home, made human." },
   {
