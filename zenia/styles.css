@@ -224,6 +224,9 @@ svg {
   background: var(--gray);
   border-radius: 40px;
   padding: 11px 26px;
+  /* Centred with left: 50%, it may only shrink to half the header, which wrapped
+     "About us" and "Client portal" when text renders wider (Safari, zoom). */
+  white-space: nowrap;
 }
 .desktop-nav a {
   transition: color 0.2s;
