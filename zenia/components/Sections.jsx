@@ -64,13 +64,13 @@ export function Cases({ onContact, onProject }) {
         <article className="case-card">
           <button
             className="case-card-image"
-            data-project="calyourfriends"
-            aria-label="Explore the Cal Your Friends case study"
-            onClick={() => onProject("calyourfriends")}
+            data-project="hemma"
+            aria-label="Explore the Hemma case study"
+            onClick={() => onProject("hemma")}
           >
             <img
-              src="/zenia/calyourfriends.webp"
-              alt="Cal Your Friends project imagery"
+              src="/zenia/hemma.webp"
+              alt="Hemma project imagery"
               width="1536"
               height="1024"
               loading="lazy"
@@ -80,44 +80,13 @@ export function Cases({ onContact, onProject }) {
           <div className="case-card-caption">
             <div>
               <h3>
-                <button
-                  data-project="calyourfriends"
-                  onClick={() => onProject("calyourfriends")}
-                >
-                  Cal Your Friends
+                <button data-project="hemma" onClick={() => onProject("hemma")}>
+                  Hemma
                 </button>
               </h3>
-              <p>Find the day everyone’s free.</p>
+              <p>Finding a home, made human.</p>
             </div>
-            <span>Mobile app · Internal</span>
-          </div>
-        </article>
-        <article className="case-card">
-          <button
-            className="case-card-image"
-            data-project="shelfwise"
-            aria-label="Explore the ShelfWise case study"
-            onClick={() => onProject("shelfwise")}
-          >
-            <img
-              src="/zenia/shelfwise.webp"
-              alt="ShelfWise project imagery"
-              width="1536"
-              height="1024"
-              loading="lazy"
-            />
-            <span className="case-view">Explore project</span>
-          </button>
-          <div className="case-card-caption">
-            <div>
-              <h3>
-                <button data-project="shelfwise" onClick={() => onProject("shelfwise")}>
-                  ShelfWise
-                </button>
-              </h3>
-              <p>Stock control for busy kitchens.</p>
-            </div>
-            <span>Restaurant SaaS · Internal</span>
+            <span>Mobile app · Concept</span>
           </div>
         </article>
         <article className="case-card">
@@ -174,6 +143,34 @@ export function Cases({ onContact, onProject }) {
               <p>A little more room for good design.</p>
             </div>
             <span>E-commerce · Concept</span>
+          </div>
+        </article>
+        <article className="case-card">
+          <button
+            className="case-card-image"
+            data-project="modo"
+            aria-label="Explore the Modo case study"
+            onClick={() => onProject("modo")}
+          >
+            <img
+              src="/zenia/hero-modo-ipad.webp"
+              alt="Modo project imagery"
+              width="1536"
+              height="1024"
+              loading="lazy"
+            />
+            <span className="case-view">Explore project</span>
+          </button>
+          <div className="case-card-caption">
+            <div>
+              <h3>
+                <button data-project="modo" onClick={() => onProject("modo")}>
+                  Modo
+                </button>
+              </h3>
+              <p>Every detail, by design.</p>
+            </div>
+            <span>UI/UX design · Concept</span>
           </div>
         </article>
       </div>

@@ -357,6 +357,8 @@ The Vite original was client-only, so these only surface under Next:
   project's `label` in `zenia/data.js` replaces it ("Internal" for those two,
   which Zenia owns; their `url` shows as a "Live site" link in the case study). Homepage cards are hard-coded in `Sections.jsx`, so their
   labels are edited there.
+  The homepage (hero slider and case grid) keeps the original design's projects;
+  Cal Your Friends and ShelfWise appear only on `/work` and in their case studies.
   Project imagery must be Zenia's own mockups: the earlier card images were
   third-party product screenshots and were replaced.
 - **Placeholder copy** — the About/Services page body text is invented and needs

@@ -2,7 +2,6 @@
 export const projects = {
   calyourfriends: {
     name: "Cal Your Friends",
-    brand: "Cal Your Friends", // the slider shows the lowercase key unless a real brand is set
     label: "Internal",
     client: "Internal, Zenia Digital",
     url: "https://calyourfriends.app",
@@ -25,7 +24,6 @@ export const projects = {
   },
   shelfwise: {
     name: "ShelfWise",
-    brand: "ShelfWise",
     label: "Internal",
     client: "Internal, Zenia Digital",
     url: "https://shelfwiseapp.com",
@@ -134,6 +132,6 @@ export const projects = {
   },
 };
 export const projectKeys = Object.keys(projects);
-// The hero slider shows at most four projects, one per thing we do:
-// full-stack, mobile, web and design. The case grid still lists every project.
-export const sliderKeys = ["shelfwise", "calyourfriends", "form", "modo"];
+// The hero slider shows a curated subset, in its own running order;
+// the case grid still lists every project.
+export const sliderKeys = ["relay", "hemma", "modo", "form"];
