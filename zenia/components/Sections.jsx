@@ -69,7 +69,7 @@ export function Cases({ onContact, onProject }) {
             onClick={() => onProject("hemma")}
           >
             <img
-              src="/zenia/hemma.webp"
+              src="/zenia/project-6.webp"
               alt="Hemma project imagery"
               width="1536"
               height="1024"
@@ -97,7 +97,7 @@ export function Cases({ onContact, onProject }) {
             onClick={() => onProject("relay")}
           >
             <img
-              src="/zenia/relay.webp"
+              src="/zenia/project-4.webp"
               alt="Relay project imagery"
               width="1536"
               height="1024"
@@ -125,7 +125,7 @@ export function Cases({ onContact, onProject }) {
             onClick={() => onProject("form")}
           >
             <img
-              src="/zenia/form.webp"
+              src="/zenia/project-3.webp"
               alt="Form project imagery"
               width="1536"
               height="1024"

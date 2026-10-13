@@ -7,13 +7,13 @@ import "./WorkPage.css";
 
 // Card imagery is not in data.js, so it is mapped here. Keys match `projects`.
 const CARDS = [
-  { key: "hemma", image: "hemma", tagline: "Finding a home, made human." },
+  { key: "hemma", image: "project-6", tagline: "Finding a home, made human." },
   {
     key: "relay",
-    image: "relay",
+    image: "project-4",
     tagline: "Bringing every moving part together.",
   },
-  { key: "form", image: "form", tagline: "A little more room for good design." },
+  { key: "form", image: "project-3", tagline: "A little more room for good design." },
   { key: "modo", image: "hero-modo-ipad", tagline: "Every detail, by design." },
   {
     key: "calyourfriends",

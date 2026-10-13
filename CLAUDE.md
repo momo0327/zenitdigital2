@@ -359,8 +359,9 @@ The Vite original was client-only, so these only surface under Next:
   labels are edited there.
   The homepage (hero slider and case grid) keeps the original design's projects;
   Cal Your Friends and ShelfWise appear only on `/work` and in their case studies.
-  Project imagery must be Zenia's own mockups: the earlier card images were
-  third-party product screenshots and were replaced.
+  The Hemma, Relay and Form cards (homepage and `/work`) use the original design's
+  images (`project-6/4/3.webp`), kept at the owner's request on 2026-10-13; they
+  are third-party product screenshots. The case studies use Zenia's own mockups.
 - **Placeholder copy** — the About/Services page body text is invented and needs
   real content.
 - **X link on `/contact` is `#`** — kept to match the design until there is an account.
